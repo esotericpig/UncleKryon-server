@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unclekryon (1.0.0)
+    unclekryon (0.0.1)
       nokogiri (>= 1.8.1)
 
 GEM
