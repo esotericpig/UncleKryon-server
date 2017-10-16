@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    unclekryon (1.0.0)
+      nokogiri (>= 1.8.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.15)
+  unclekryon!
+
+BUNDLED WITH
+   1.15.4
