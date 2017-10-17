@@ -177,8 +177,8 @@ module UncleKryon
     
     def self.parse_kryon_date(date)
       date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
-      date.gsub!(/SEPT\s+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
-      date.gsub!(/Septembe\s+/i,'September') # "Septembe 4, 2016"
+      date.gsub!(/SEPT[[:space:]]+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
+      date.gsub!(/Septembe[[::space:]]+/i,'September ') # "Septembe 4, 2016"
       
       # "May 6 2017"
       comma = date.include?(',') ? ',' : ''
