@@ -187,7 +187,7 @@ module UncleKryon
       begin
         if date.include?('-')
           # "SEPT 29 - OCT 9, 2017"
-          if date =~ /[[:alpha:]]+\s+[[:digit:]]+\s+\-\s+[[:alpha:]]+\s+[[:digit:]]+/
+          if date =~ /[[:alpha:]]+[[:space:]]+[[:digit:]]+[[:space:]]+\-[[:space:]]+[[:alpha:]]+[[:space:]]+[[:digit:]]+/
             r1f = "%B %d - %B %d#{comma} %Y"
           else
             # "MAY 15-16-17, 2017" and "January 7-8, 2017"
