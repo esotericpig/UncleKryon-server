@@ -34,7 +34,7 @@ module UncleKryon
     def parse_kryon_aum_year(year)
       artist = ArtistData.new
       year_parser = KryonAumYearParser.new
-      release = year_parser.parse_site(artist,year,get_kryon_year_url(year))
+      release = year_parser.parse_site(artist,year,Util::get_kryon_year_url(year))
       
       if @no_clobber
         puts release.to_s(artist)
@@ -48,15 +48,18 @@ module UncleKryon
         new_date = Date.strptime(date,'%Y.%m.%d')
       rescue ArgumentError
         new_date = Date.strptime(date,'%m.%d')
+        
+        if !year.nil?
+          new_date = Date.new(year.to_i,new_date.month,new_date.day)
+        end
       end
       
       date = new_date
       
-      if !year.nil?
-        date = Date.new(year.to_i,date.month,date.day)
+      if year.nil?
+        # #year is actually the release's title, so only override it if have to
+        year = date.year.to_s
       end
-      
-      year = date.year.to_s
       
       # Try the yaml file
       artist = Util::load_artist_yaml(get_kryon_filepath())
@@ -66,7 +69,7 @@ module UncleKryon
         # Try manually from the site
         artist = ArtistData.new
         year_parser = KryonAumYearParser.new
-        release = year_parser.parse_site(artist,year,get_kryon_year_url(year))
+        release = year_parser.parse_site(artist,year,Util::get_kryon_year_url(year))
       end
       
       # Find the album
@@ -110,7 +113,7 @@ module UncleKryon
         # Try manually from the site
         artist = ArtistData.new
         year_parser = KryonAumYearParser.new
-        release = year_parser.parse_site(artist,year,get_kryon_year_url(year))
+        release = year_parser.parse_site(artist,year,Util::get_kryon_year_url(year))
       end
       
       album_parser = KryonAumYearAlbumParser.new
@@ -130,16 +133,6 @@ module UncleKryon
     
     def get_kryon_filepath()
       return File.join(@dirname,@kryon_filename)
-    end
-    
-    def get_kryon_year_url(year)
-      if year == '2002-2005'
-        url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
-      else
-        url = "http://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
-      end
-      
-      return url
     end
   end
 end

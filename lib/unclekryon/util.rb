@@ -104,6 +104,16 @@ module UncleKryon
       return Digest::MD5.base64digest(url)
     end
     
+    def self.get_kryon_year_url(year)
+      if year == '2002-2005'
+        url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
+      else
+        url = "http://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
+      end
+      
+      return url
+    end
+    
     def self.get_top_link(url)
       http_regex = /\A(http\:)|(\.)/i # Check '.' to prevent infinite loop
       prev_link = url
