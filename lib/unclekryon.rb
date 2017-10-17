@@ -11,15 +11,15 @@ require 'unclekryon/version'
 
 # TODO: make command-line program for hacker, server, uploader
 #
-# unclekryon hax --dir ./yaml kryon --file 'kryon.yaml' aum year --title 2017 --album 4.30
-# unclekryon hax kryon aum year --title 2017 --albums
-# unclekryon --no-clobber hax kryon aum year --title 2017
+# hax kryon scroll main, hax lems aum main, hax ssb scroll year
 #
 # unclekryon srv (uses site dir and current year) (default is just help)
 # unclekryon srv --every 10min
 # unclekryon srv --once
 #
-# unclekryon up kryon (upload kryon.yaml to database)
+# unclekryon up kryon/lems/ssb (upload kryon.yaml to database)
+#
+# for bash completion, have "--bash-completion" option output bash completion options and use in file
 
 module UncleKryon
   class Main
@@ -37,17 +37,28 @@ module UncleKryon
     
     def main
       parser = OptionParser.new do |op|
-        op.banner = <<~EOF
+        op.program_name = 'unclekryon'
+        op.version = VERSION
         
-          Usage:    unclekryon [options] <commands> [options]
+        op.banner = <<~EOS
+          Usage:    #{op.program_name} [options] <commands> [options]
           
-          Commands: hax [options] kryon [options] aum year [options]
+          Commands: [options] hax [options] kryon [options] aum year [options]
           
           Options:
-        EOF
+        EOS
         
-        op.on('-n','--no-clobber','No clobbering of files, dry run') do
+        op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console') do
           @options[:no_clobber] = true
+        end
+        
+        op.on('-h','--help','Print help to console') do
+          @options[:help] = true
+        end
+        
+        op.on('-v','--version','Print version to console') do
+          @options[:help] = true # Don't do cmd
+          @options[:version] = true
         end
       end
       
@@ -59,9 +70,22 @@ module UncleKryon
       end
       
       if !@did_cmd
-        @parsers.each do |p|
-          puts p
-          puts
+        if @options[:version]
+          puts "#{parser.program_name} v#{parser.version}"
+        else
+          @parsers.each do |p|
+            puts p
+            puts
+          end
+          
+          puts <<~EOS
+            Examples:
+            $ #{parser.program_name} -n hax kryon aum year -t 2017
+            $ #{parser.program_name} hax -d ./db kryon -f k.yaml aum year -t 2017
+            $ #{parser.program_name} hax kryon aum year -t 2017 -s
+            $ #{parser.program_name} hax kryon aum year -a 2017.9.29
+            $ #{parser.program_name} hax kryon aum year -t 2017 -a 10.9
+          EOS
         end
       end
     end
@@ -74,6 +98,14 @@ module UncleKryon
 
         op.on('-d','--dir <dir>',"Directory to save the yaml data to (default: #{Hacker::DIRNAME})") do |dir|
           @options[:dir] = dir
+        end
+        
+        op.on('-r','--replace',"Replace the new data loaded, but don't overwrite non-loaded data") do
+          @options[:replace] = true
+        end
+        
+        op.on('-o','--overwrite','Overwrite all data, even non-loaded data; overrides --replace') do
+          @options[:overwrite] = true
         end
       end
       
@@ -122,7 +154,7 @@ module UncleKryon
           @options[:title] = title
         end
         
-        op.on('-a','--album <album>','Album to hack (e.g., 2017.12.25)') do |album|
+        op.on('-a','--album <album>','Album to hack (e.g., 2017.12.25, 1.10)') do |album|
           @options[:album] = album
         end
         
@@ -134,27 +166,29 @@ module UncleKryon
       @parsers.push(parser)
       parser.order!(@args)
       
-      Log.instance.log.info("Using options[#{@options}]")
+      Log.instance.log.info("Using options#{@options}")
       
-      hax = Hacker.new(@options[:no_clobber])
-      
-      if @options[:dir]
-        hax.dirname = @options[:dir]
-      end
-      if @options[:file]
-        hax.kryon_filename = @options[:file]
-      end
-      
-      if @options[:album]
-        hax.parse_kryon_aum_year_album(@options[:album],@options[:title])
-        @did_cmd = true
-      elsif @options[:title]
-        if @options[:albums]
-          hax.parse_kryon_aum_year_albums(@options[:title])
-        else
-          hax.parse_kryon_aum_year(@options[:title])
+      if !@options[:help]
+        hax = Hacker.new(no_clobber=@options[:no_clobber],replace=@options[:replace],overwrite=@options[:overwrite])
+        
+        if @options[:dir]
+          hax.dirname = @options[:dir]
         end
-        @did_cmd = true
+        if @options[:file]
+          hax.kryon_filename = @options[:file]
+        end
+        
+        if @options[:album]
+          hax.parse_kryon_aum_year_album(@options[:album],@options[:title])
+          @did_cmd = true
+        elsif @options[:title]
+          if @options[:albums]
+            hax.parse_kryon_aum_year_albums(@options[:title])
+          else
+            hax.parse_kryon_aum_year(@options[:title])
+          end
+          @did_cmd = true
+        end
       end
     end
   end

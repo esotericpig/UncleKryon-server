@@ -20,11 +20,15 @@ module UncleKryon
     attr_accessor :dirname
     attr_accessor :kryon_filename
     attr_accessor :no_clobber
+    attr_accessor :overwrite
+    attr_accessor :replace
     
-    def initialize(no_clobber=false,dirname=DIRNAME)
-      @dirname = dirname
+    def initialize(no_clobber=false,replace=true,overwrite=false)
+      @dirname = DIRNAME
       @kryon_filename = KRYON_FILENAME
       @no_clobber = no_clobber
+      @overwrite = overwrite
+      @replace = replace
     end
     
     def parse_kryon_aum_year(year)
@@ -35,7 +39,7 @@ module UncleKryon
       if @no_clobber
         puts release.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),overwrite=true,who=:kryon_aum_year)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year,overwrite=@overwrite)
       end
     end
     
@@ -84,7 +88,7 @@ module UncleKryon
       end
       
       if album.nil?
-        raise "Invalid Album[#{date}]"
+        raise "Invalid album[#{date}]"
       end
       
       album_parser = KryonAumYearAlbumParser.new
@@ -93,7 +97,7 @@ module UncleKryon
       if @no_clobber
         puts album.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),overwrite=true,who=:kryon_aum_year_album)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year_album,overwrite=@overwrite)
       end
     end
     
@@ -120,7 +124,7 @@ module UncleKryon
       if @no_clobber
         puts release.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),overwrite=true,who=:kryon_aum_year_album)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year_album,overwrite=@overwrite)
       end
     end
     

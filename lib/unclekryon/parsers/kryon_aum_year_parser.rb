@@ -105,7 +105,7 @@ module UncleKryon
       return false if cell.nil?
       return false if (cell = cell.content).nil?
       
-      album.r_topic = Util::clean_data(cell)
+      album.r_topic = Util::fix_shortwith_text(Util::clean_data(cell))
       
       return false if album.r_topic.empty?
       return true

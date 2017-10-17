@@ -84,6 +84,17 @@ module UncleKryon
       return link
     end
     
+    def self.fix_shortwith_text(text)
+      if text =~ /w\/[[:alnum:]]/i
+        # I think it looks better with a space, personally.
+        #  Some grammar guides say no space, but the Chicago style guide says there should be a space when it
+        #    is a word by itself.
+        text = text.gsub(/w\//i,'w/ ')
+      end
+      
+      return text
+    end
+    
     def self.format_date(date)
       return date.strftime(DATE_FORMAT)
     end
@@ -212,17 +223,47 @@ module UncleKryon
       return File.basename(uri.path)
     end
     
-    def self.save_artist_yaml(artist,filename,overwrite=false,who=nil)
+    def self.save_artist_yaml(artist,filename,replace=false,who=nil,overwrite=false)
       filedata = YAML.load_file(filename) if File.exists?(filename)
       filedata = {} if !filedata
       
       self.hash_def(filedata,['Artist'],{})
       
-      if overwrite && who.nil?
-        filedata['Artist']['Releases'] = artist.releases
-        filedata['Artist']['Albums'] = artist.albums
-        filedata['Artist']['Aums'] = artist.aums
-        filedata['Artist']['Pics'] = artist.pics
+      if overwrite
+        if who.nil?
+          filedata['Artist']['Releases'] = artist.releases
+          filedata['Artist']['Albums'] = artist.albums
+          filedata['Artist']['Aums'] = artist.aums
+          filedata['Artist']['Pics'] = artist.pics
+        elsif who == :kryon_aum_year
+          artist.releases.each do |key,release|
+            filedata['Artist']['Releases'][key] = release
+          end
+          
+          artist.albums.each do |key,album|
+            if filedata['Artist']['Albums'][key].nil?
+              filedata['Artist']['Albums'][key] = album
+            else
+              filedata['Artist']['Albums'][key].set_release_data(album)
+            end
+          end
+        elsif who == :kryon_aum_year_album
+          artist.albums.each do |key,album|
+            if filedata['Artist']['Albums'][key].nil?
+              filedata['Artist']['Albums'][key] = album
+            else
+              filedata['Artist']['Albums'][key].set_nonrelease_data(album)
+            end
+          end
+          
+          artist.aums.each do |key,aum|
+            filedata['Artist']['Aums'][key] = aum
+          end
+          
+          artist.pics.each do |key,pic|
+            filedata['Artist']['Pics'][key] = pic
+          end
+        end
       else
         self.hash_def(filedata,['Artist','Releases'],{})
         self.hash_def(filedata,['Artist','Albums'],{})
@@ -234,7 +275,7 @@ module UncleKryon
         end
         
         artist.albums.each do |key,album|
-          if !overwrite || filedata['Artist']['Albums'][key].nil?
+          if !replace || filedata['Artist']['Albums'][key].nil?
             self.hash_def(filedata,['Artist','Albums',key],album)
           elsif who == :kryon_aum_year
             filedata['Artist']['Albums'][key].set_release_data(album)
