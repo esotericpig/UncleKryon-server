@@ -39,7 +39,7 @@ module UncleKryon
       if @no_clobber
         puts release.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year,overwrite=@overwrite)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=@replace,who=:kryon_aum_year,overwrite=@overwrite)
       end
     end
     
@@ -97,7 +97,7 @@ module UncleKryon
       if @no_clobber
         puts album.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year_album,overwrite=@overwrite)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=@replace,who=:kryon_aum_year_album,overwrite=@overwrite)
       end
     end
     
@@ -124,7 +124,7 @@ module UncleKryon
       if @no_clobber
         puts release.to_s(artist)
       else
-        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=true,who=:kryon_aum_year_album,overwrite=@overwrite)
+        Util::save_artist_yaml(artist,get_kryon_filepath(),replace=@replace,who=:kryon_aum_year_album,overwrite=@overwrite)
       end
     end
     
