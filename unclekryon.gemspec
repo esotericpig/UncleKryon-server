@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.post_install_message   = 'You can now use "unclekryon" on the command-line.'
   
   spec.required_ruby_version  = '>= 2.3.0' # 2.1.0 for nokogiri; 2.3.0 for indention heredoc "<<~"
-  spec.requirements          << 'Fedora:   yum install -y gcc ruby-devel zlib-devel'
+  spec.requirements          << 'Fedora:   dnf install gcc ruby-devel zlib-devel'
   spec.requirements          << 'nokogiri: http://www.nokogiri.org/tutorials/installing_nokogiri.html'
   
   spec.add_runtime_dependency 'nokogiri','>= 1.8.1' # For hacking html
