@@ -1,5 +1,23 @@
 #!/usr/bin/env ruby
 
+###
+# This file is part of UncleKryon-server.
+# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# 
+# UncleKryon-server is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# UncleKryon-server is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
+###
+
 require 'bundler/setup'
 
 require 'optparse'
@@ -17,7 +35,7 @@ require 'unclekryon/version'
 # unclekryon srv --every 10min
 # unclekryon srv --once
 #
-# unclekryon up kryon/lems/ssb (upload kryon.yaml to database)
+# unclekryon up --dir x --file x kryon/lems/ssb (upload kryon.yaml to database)
 #
 # for bash completion, have "--bash-completion" option output bash completion options and use in file
 
@@ -78,14 +96,16 @@ module UncleKryon
             puts
           end
           
-          puts <<~EOS
+          s = <<~EOS
             Examples:
-            $ #{parser.program_name} -n hax kryon aum year -t 2017
-            $ #{parser.program_name} hax -d ./db kryon -f k.yaml aum year -t 2017
-            $ #{parser.program_name} hax kryon aum year -t 2017 -s
-            $ #{parser.program_name} hax kryon aum year -a 2017.9.29
-            $ #{parser.program_name} hax kryon aum year -t 2017 -a 10.9
+            |    <hax>:
+            |    $ #{parser.program_name} -n hax kryon aum year -t 2017
+            |    $ #{parser.program_name} hax -d ./db -o kryon -f k.yaml aum year -t 2017
+            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -s
+            |    $ #{parser.program_name} hax -r kryon aum year -a 2017.9.29
+            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 10.9
           EOS
+          puts s.gsub(/\|(\s\s\s\s+)/,'\1')
         end
       end
     end
@@ -104,7 +124,7 @@ module UncleKryon
           @options[:replace] = true
         end
         
-        op.on('-o','--overwrite','Overwrite all data, even non-loaded data; overrides --replace') do
+        op.on('-o','--overwrite',"Overwrite all data, even non-loaded data; overrides --replace") do
           @options[:overwrite] = true
         end
       end
@@ -190,6 +210,10 @@ module UncleKryon
           @did_cmd = true
         end
       end
+    end
+    
+    def to_flag(b)
+      return b ? 'on' : 'off'
     end
   end
 end

@@ -1,5 +1,23 @@
 #!/usr/bin/env ruby
 
+###
+# This file is part of UncleKryon-server.
+# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# 
+# UncleKryon-server is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# UncleKryon-server is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
+###
+
 require 'yaml'
 
 module UncleKryon
@@ -50,6 +68,26 @@ module UncleKryon
       @dump = nil
     end
     
+    def fill_empty_data
+      # Clone to avoid yaml pointer/reference syntax; nil has clone
+      
+      if @title.nil? || @title.empty?
+        @title = @r_topic.clone
+      end
+      if @date_begin.nil? || (@date_begin.respond_to?('empty?') && @date_begin.empty?)
+        @date_begin = @r_year_begin.clone
+      end
+      if @date_end.nil? || (@date_end.respond_to?('empty?') && @date_end.empty?)
+        @date_end = @r_year_end.clone
+      end
+      if @location.nil? || @location.empty?
+        @location = @r_location.clone
+      end
+      if @language.nil? || @language.empty?
+        @language = @r_language.clone
+      end
+    end
+    
     def set_nonrelease_data(album)
       @title = album.title
       @date_begin = album.date_begin
@@ -63,6 +101,8 @@ module UncleKryon
       @aum_ids = album.aum_ids
       
       @dump = album.dump
+      
+      fill_empty_data()
     end
     
     def set_release_data(album)
@@ -71,6 +111,8 @@ module UncleKryon
       @r_topic = album.r_topic
       @r_location = album.r_location
       @r_language = album.r_language
+      
+      fill_empty_data()
     end
     
     def to_s(artist=nil)

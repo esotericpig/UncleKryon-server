@@ -1,5 +1,23 @@
 #!/usr/bin/env ruby
 
+###
+# This file is part of UncleKryon-server.
+# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# 
+# UncleKryon-server is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# UncleKryon-server is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
+###
+
 require 'nokogiri'
 require 'open-uri'
 
@@ -41,6 +59,7 @@ module UncleKryon
         next_row = !parse_language_cell(cells,album) && next_row
         next if next_row
         
+        album.fill_empty_data()
         artist.albums[album.id] = album
         @release.album_ids.push(album.id)
       end
@@ -76,7 +95,8 @@ module UncleKryon
       return false if (cell = cells[4]).nil?
       return false if (cell = cell.content).nil?
       
-      album.r_language = Util::clean_data(cell)
+      cell = Util::clean_data(cell)
+      album.r_language = Util::get_kryon_lang_codes(cell)
       
       return false if album.r_language.empty?
       return true
@@ -87,7 +107,7 @@ module UncleKryon
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
       
-      album.r_location = Util::clean_data(cell)
+      album.r_location = Util::parse_kryon_location(cell)
       
       return false if album.r_location.empty?
       return true

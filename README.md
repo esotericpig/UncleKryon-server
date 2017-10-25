@@ -2,10 +2,10 @@
 Server (and Hacker) for the Uncle Kryon Android project.  
 Tasks include sending push notifications, building the database, and parsing/hacking the websites for the data.
 
-# temporary
+## temp
 Fedora:
 - http://www.nokogiri.org/tutorials/installing_nokogiri.html
-- sudo yum install -y gcc ruby-devel zlib-devel
+- sudo dnf install gcc ruby-devel zlib-devel
 
 Fedora Service:
 - https://fedoraproject.org/wiki/Systemd#How_do_I_customize_a_unit_file.2F_add_a_custom_unit_file.3F
@@ -13,14 +13,19 @@ Fedora Service:
 Folders to add:
 - /fedora/(unclekryon.service)
 
-[Compression]  
-Compress yaml for storage in apk:  
-So far, 7zip is the best, but just use normal settings, not ultra, for more compatibility.  
-xz is most compatible with Linux and what Fedora uses, but probably don't need to preserve Linux file props.  
-Use apache commons-compress for using 7zip in Android.
+## license
+UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
+Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)  
 
-bzip2 --best -k kryon.yaml  
-zip -9 kryon.zip kryon.yaml  
-7za a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on kryon_ultra.7z kryon.yaml  
-xz -k kryon.yaml  
-lzma -k kryon.yaml  
+UncleKryon-server is free software: you can redistribute it and/or modify  
+it under the terms of the GNU General Public License as published by  
+the Free Software Foundation, either version 3 of the License, or  
+(at your option) any later version.  
+
+UncleKryon-server is distributed in the hope that it will be useful,  
+but WITHOUT ANY WARRANTY; without even the implied warranty of  
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  
+GNU General Public License for more details.  
+
+You should have received a copy of the GNU General Public License  
+along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.  

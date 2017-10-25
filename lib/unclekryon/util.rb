@@ -1,7 +1,26 @@
 #!/usr/bin/env ruby
 
+###
+# This file is part of UncleKryon-server.
+# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# 
+# UncleKryon-server is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# UncleKryon-server is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
+###
+
 require 'date'
 require 'digest'
+require 'iso-639'
 require 'uri'
 require 'yaml'
 
@@ -33,14 +52,14 @@ module UncleKryon
     end
     
     def self.clean_link(url,link)
-      if url !~ /\/\z/ # / \z
+      if url !~ /\/\z/
         # Don't know if the end is a filename or a dirname, so just assume it is a filename and chop it off
         url = File.dirname(url)
         url = add_trail_slash(url)
       end
       
       # 1st, handle "/" (because you won't have "/../filename", which is invalid)
-      slash_regex = /\A(\/+\.*\/*)+/ # \A (/+ .* /*)+
+      slash_regex = /\A(\/+\.*\/*)+/
       
       if link =~ slash_regex
         link = ling.gsub(slash_regex,'')
@@ -67,7 +86,7 @@ module UncleKryon
       end
       
       # 3rd, handle "./"
-      dot_regex = /\A(\.\/+)+/ # \A ( . /+ )+
+      dot_regex = /\A(\.\/+)+/
       
       if link =~ dot_regex
         link = link.gsub(dot_regex,'')
@@ -96,12 +115,32 @@ module UncleKryon
     end
     
     def self.format_date(date)
-      return date.strftime(DATE_FORMAT)
+      return (!date.nil?) ? date.strftime(DATE_FORMAT) : nil
     end
     
     def self.gen_id(url)
       # base64 is shorter than hex
       return Digest::MD5.base64digest(url)
+    end
+    
+    def self.get_kryon_lang_codes(lang)
+      ls = lang.split('/')
+      r = []
+      
+      ls.each do |l|
+        # See 2017 "Boulder Colorao w/Marilyn & Prageet (6)"
+        fl = l.gsub(/\A[[:space:]]*ENG[[:space:]]*\z/i,'English')
+        e = self.get_lang_entry(fl)
+        
+        if !e.nil?
+          r.push(e.alpha3_bibliographic)
+        else
+          Log.instance.log.warn("Invalid language[#{l},#{fl}] from #{lang}")
+          r.push(l)
+        end
+      end
+      
+      return r
     end
     
     def self.get_kryon_year_url(year)
@@ -112,6 +151,25 @@ module UncleKryon
       end
       
       return url
+    end
+    
+    def self.get_lang_entry(lang)
+      lang = lang.gsub(/[[:space:]]+/,'')
+      lang = lang.downcase
+      
+      ISO_639::ISO_639_2.each do |e|
+        ls = e.english_name
+        ls = ls.split(';')
+        
+        ls.each do |l|
+          l = l.gsub(/[[:space:]]+/,'')
+          l = l.downcase
+          
+          return e if l == lang
+        end
+      end
+      
+      return nil
     end
     
     def self.get_top_link(url)
@@ -128,14 +186,13 @@ module UncleKryon
       return add_trail_slash(prev_link)
     end
     
-    def self.get_url_content_data(url)
+    def self.get_url_header_data(url)
       uri = URI(url)
       r = {}
       
       Net::HTTP.start(uri.host,uri.port) do |http|
-        request = Net::HTTP::Get.new(uri)
-        response = http.request(request)
-        r['length'] = response['content-length']
+        resp = http.request_head(uri)
+        r = resp.to_hash
       end
       
       return r
@@ -228,9 +285,23 @@ module UncleKryon
       return r
     end
     
+    def self.parse_kryon_location(loc)
+      loc = self.clean_data(loc)
+      a = loc.split(/([[:space:]]+)|(\,)|(\-)|(\/)/)
+      
+      a.map! do |l|
+        # If 2 chars, probably a state abbreviation
+        l = (l.length > 2) ? l.capitalize : l
+      end
+      
+      return a.join.split('/')
+    end
+    
     def self.parse_url_filename(url)
       uri = URI.parse(url)
-      return File.basename(uri.path)
+      r = File.basename(uri.path)
+      r = URI.unescape(r)
+      return r
     end
     
     def self.save_artist_yaml(artist,filename,replace=false,who=nil,overwrite=false)
