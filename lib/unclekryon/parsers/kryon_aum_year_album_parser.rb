@@ -179,7 +179,9 @@ module UncleKryon
         
         if add_to_dump
           album.dump.push(c)
-          album.dump.push(Util::clean_data(td.to_s)) # For bold, etc. html
+          
+          # For now, don't do this; if the font size is big, it's bad for mobile anyway
+          #album.dump.push(Util::clean_data(td.to_s)) # For bold, etc. html
         end
       end
     end
