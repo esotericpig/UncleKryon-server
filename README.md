@@ -2,16 +2,13 @@
 Server (and Hacker) for the Uncle Kryon Android project.  
 Tasks include sending push notifications, building the database, and parsing/hacking the websites for the data.
 
-## temp
-Fedora:
+## setup
+For Nokogiri:
 - http://www.nokogiri.org/tutorials/installing_nokogiri.html
-- sudo dnf install gcc ruby-devel zlib-devel
-
-Fedora Service:
-- https://fedoraproject.org/wiki/Systemd#How_do_I_customize_a_unit_file.2F_add_a_custom_unit_file.3F
-
-Folders to add:
-- /fedora/(unclekryon.service)
+- Fedora
+  - `$ sudo dnf install gcc ruby-devel zlib-devel`
+- Ubuntu / Debian
+  - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
 
 ## license
 UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
