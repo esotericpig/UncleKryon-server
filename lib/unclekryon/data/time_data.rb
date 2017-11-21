@@ -30,6 +30,7 @@ module UncleKryon
       @secs = 0
       
       if !time.nil? && !time.empty?
+        time = time.gsub(/\A[^\(]+\(/,'') # "One hour 6 minutes - (66 minutes)"
         time = time.gsub(/[^[[:digit:]]\:\.]+/,'')
         a = time.split(/[\:\.]/)
         
@@ -42,6 +43,15 @@ module UncleKryon
           @hours = a[0].to_i
           @mins = a[1].to_i
           @secs = a[2].to_i
+        end
+        
+        if @secs >= 60
+          @mins += (@secs / 60)
+          @secs = @secs % 60
+        end
+        if @mins >= 60
+          @hours += (@mins / 60)
+          @mins = @mins % 60
         end
       end
     end

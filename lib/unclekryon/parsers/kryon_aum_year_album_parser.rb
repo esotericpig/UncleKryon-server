@@ -146,7 +146,8 @@ module UncleKryon
         Salt[[:space:]]+mine[[:space:]]+\(second[[:space:]]+group\)|
         Porto[[:space:]]+\-[[:space:]]+End[[:space:]]+of[[:space:]]+Fatima[[:space:]]+Channeling|
         DHARAMSHALA\-KANGRA[[:space:]]+FORT|
-        Prageet[[:space:]]+Harris[[:space:]]+and[[:space:]]+Lee[[:space:]]+Carroll
+        Prageet[[:space:]]+Harris[[:space:]]+and[[:space:]]+Lee[[:space:]]+Carroll|
+        ENTIRE[[:space:]]+PANEL[[:space:]]+RECORDING
       /x
       exclude_title_regex = /
         Kryon[[:space:]]+Channelling|
@@ -157,17 +158,21 @@ module UncleKryon
         (
           KRYON.*CHANNELLING|
           KRYON[[:space:]]+\&|
-          ENTIRE[[:space:]]+PANEL[[:space:]]+RECORDING|
           STORY[[:space:]]+OF[[:space:]]+BABY|
           THE[[:space:]]+COUNCIL|
-          DUAL[[:space:]]+CHANNELLING[[:space:]]+\-[[:space:]]+
+          DUAL[[:space:]]+CHANNELLING[[:space:]]+\-[[:space:]]+|
+          Moderated[[:space:]]+by[[:space:]]+
         )
       /x
       
       # 2017 "Petra, Jordan (5)" has a ":" in the megabytes cell
       size_regex = /\A[[:space:]]*[[:digit:]]+(\.|\:|[[:digit:]]|[[:space:]])*megabytes[[:space:]]*\z/i
       # 2017 "Monument Valley Tour (11)" has a "." in the minutes cell
-      time_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*minutes[[:space:]]*\z/i
+      # 2017 "SUMMER LIGHT CONFERENCE PANEL (1)" is a special case ("One hour 6 minutes - (66 minutes)")
+      time_regex = /
+        \A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*minutes[[:space:]]*\z|
+        \([[:space:]]*[[:digit:]]+[[:space:]]+minutes[[:space:]]*\)[[:space:]]*\z
+      /ix
       # 2017 " KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
       time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*\z/i
       
