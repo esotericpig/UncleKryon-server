@@ -5,10 +5,10 @@ Tasks include sending push notifications, building the database, and parsing/hac
 ## setup
 For Nokogiri:
 - http://www.nokogiri.org/tutorials/installing_nokogiri.html
-- Fedora
-  - `$ sudo dnf install gcc ruby-devel zlib-devel`
-- Ubuntu / Debian
-  - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
+  - Fedora
+    - `$ sudo dnf install gcc ruby-devel zlib-devel`
+  - Ubuntu / Debian
+    - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
 
 ## license
 UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
