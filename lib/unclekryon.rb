@@ -59,9 +59,9 @@ module UncleKryon
         op.version = VERSION
         
         op.banner = <<~EOS
-          Usage:    #{op.program_name} [options] <commands> [options]
+          Usage:    #{op.program_name} [options] <command> [options] <command>...
           
-          Commands: [options] hax [options] kryon [options] aum year [options]
+          Commands: hax kryon aum year
           
           Options:
         EOS
@@ -104,6 +104,7 @@ module UncleKryon
             |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -s
             |    $ #{parser.program_name} hax -r kryon aum year -a 2017.9.29
             |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 10.9
+            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 6.4:2 # 2nd one
           EOS
           puts s.gsub(/\|(\s\s\s\s+)/,'\1')
         end
@@ -118,6 +119,10 @@ module UncleKryon
 
         op.on('-d','--dir <dir>',"Directory to save the yaml data to (default: #{Hacker::DIRNAME})") do |dir|
           @options[:dir] = dir
+        end
+        
+        op.on('-f','--fast',"Hax it fast at the expense of losing data, ONLY for debugging") do |fast|
+          @options[:fast] = fast
         end
         
         op.on('-r','--replace',"Replace the new data loaded, but don't overwrite non-loaded data") do
@@ -174,7 +179,7 @@ module UncleKryon
           @options[:title] = title
         end
         
-        op.on('-a','--album <album>','Album to hack (e.g., 2017.12.25, 1.10)') do |album|
+        op.on('-a','--album <album>','Album to hack (e.g., 2017.12.25, 1.10, 6.4:2)') do |album|
           @options[:album] = album
         end
         
@@ -189,7 +194,12 @@ module UncleKryon
       Log.instance.log.info("Using options#{@options}")
       
       if !@options[:help]
-        hax = Hacker.new(no_clobber=@options[:no_clobber],replace=@options[:replace],overwrite=@options[:overwrite])
+        hax = Hacker.new()
+        
+        hax.no_clobber = @options[:no_clobber]
+        hax.overwrite = @options[:overwrite]
+        hax.replace = @options[:replace]
+        hax.slow = !@options[:fast]
         
         if @options[:dir]
           hax.dirname = @options[:dir]

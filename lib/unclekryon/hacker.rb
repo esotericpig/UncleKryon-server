@@ -40,13 +40,15 @@ module UncleKryon
     attr_accessor :no_clobber
     attr_accessor :overwrite
     attr_accessor :replace
+    attr_accessor :slow
     
-    def initialize(no_clobber=false,replace=true,overwrite=false)
+    def initialize()
       @dirname = DIRNAME
       @kryon_filename = KRYON_FILENAME
-      @no_clobber = no_clobber
-      @overwrite = overwrite
-      @replace = replace
+      @no_clobber = false
+      @overwrite = false
+      @replace = true
+      @slow = true
     end
     
     def parse_kryon_aum_year(year)
@@ -62,6 +64,10 @@ module UncleKryon
     end
     
     def parse_kryon_aum_year_album(date,year=nil)
+      index = date.split(':')
+      date = index[0]
+      index = (index.length <= 1) ? 0 : (index[1].to_i() - 1)
+      
       begin
         new_date = Date.strptime(date,'%Y.%m.%d')
       rescue ArgumentError
@@ -91,6 +97,7 @@ module UncleKryon
       end
       
       # Find the album
+      albums = []
       album = nil
       
       artist.albums.values.each do |a|
@@ -103,8 +110,15 @@ module UncleKryon
                              (!r_year_end && date == r_year_begin))) ||
            (date_begin && ((date_end  && date >= date_begin && date <= date_end) ||
                            (!date_end && date == date_begin)))
-          album = a
-          break
+          albums.push(a)
+        end
+      end
+      
+      if !albums.empty?
+        if index >= 0 && index < albums.length
+          album = albums[index]
+        else
+          raise "Invalid album ordinal number[#{index + 1}]"
         end
       end
       
@@ -113,7 +127,7 @@ module UncleKryon
       end
       
       album_parser = KryonAumYearAlbumParser.new
-      album = album_parser.parse_site(artist,album.url)
+      album = album_parser.parse_site(artist,album.url,@slow)
       
       if @no_clobber
         puts album.to_s(artist)
@@ -139,7 +153,7 @@ module UncleKryon
       release.album_ids.each do |album_id|
         album = artist.albums[album_id]
         Log.instance.log.info("Hacking album[#{album.r_year_begin},#{album.r_year_end},#{album.r_topic}]")
-        album = album_parser.parse_site(artist,album.url)
+        album = album_parser.parse_site(artist,album.url,@slow)
       end
       
       if @no_clobber

@@ -30,8 +30,8 @@ module UncleKryon
       @secs = 0
       
       if !time.nil? && !time.empty?
-        time = time.gsub(/[^[[:digit:]]\:]/,'')
-        a = time.split(/\:/)
+        time = time.gsub(/[^[[:digit:]]\:\.]+/,'')
+        a = time.split(/[\:\.]/)
         
         if a.length == 1
           @mins = a[0].to_i

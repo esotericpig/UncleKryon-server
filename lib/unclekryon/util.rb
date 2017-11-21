@@ -28,6 +28,13 @@ require 'net/http'
 
 require 'unclekryon/log'
 
+require 'unclekryon/data/artist_data'
+require 'unclekryon/data/kryon_aum_album_data'
+require 'unclekryon/data/kryon_aum_data'
+require 'unclekryon/data/pic_data'
+require 'unclekryon/data/release_data'
+require 'unclekryon/data/time_data'
+
 module UncleKryon
   module Util
     DATE_FORMAT = '%F'
@@ -257,6 +264,8 @@ module UncleKryon
           if date =~ /[[:alpha:]]+[[:space:]]+[[:digit:]]+[[:space:]]+\-[[:space:]]+[[:alpha:]]+[[:space:]]+[[:digit:]]+/
             r1f = "%B %d - %B %d#{comma} %Y"
           else
+            # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
+            date = date.gsub(/[[:space:]]+\-[[:space:]]+/,'-')
             # "MAY 15-16-17, 2017" and "January 7-8, 2017"
             r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
           end

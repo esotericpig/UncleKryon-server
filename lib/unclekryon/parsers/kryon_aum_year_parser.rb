@@ -61,7 +61,7 @@ module UncleKryon
         
         album.fill_empty_data()
         artist.albums[album.id] = album
-        @release.album_ids.push(album.id)
+        @release.album_ids.push(album.id) if !@release.album_ids.include?(album.id)
       end
       
       return @release

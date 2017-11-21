@@ -24,6 +24,7 @@ module UncleKryon
   class KryonAumData
     attr_accessor :id
     attr_accessor :title
+    attr_accessor :subtitle
     attr_accessor :time
     attr_accessor :size
     attr_accessor :filename
@@ -32,6 +33,7 @@ module UncleKryon
     def initialize
       @id = 0
       @title = ''
+      @subtitle = ''
       @time = ''
       @size = ''
       @filename = ''
