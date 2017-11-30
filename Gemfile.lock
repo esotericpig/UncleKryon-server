@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unclekryon (0.0.1)
+    unclekryon (0.3.3)
       iso-639 (>= 0.2.8)
       nokogiri (>= 1.8.1)
 

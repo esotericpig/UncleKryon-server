@@ -3,6 +3,8 @@ Server (and Hacker) for the Uncle Kryon Android project.
 
 Tasks include sending push notifications, building the database, and parsing/hacking the websites for the data.
 
+**Note:** This project is currently in development on v0.3.3. The first working version will be v1.0.0.
+
 # TOC
 - [Setup](#setup)
 - [License](#license)
