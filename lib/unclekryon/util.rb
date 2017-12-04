@@ -20,6 +20,7 @@
 
 require 'date'
 require 'digest'
+require 'fileutils'
 require 'iso-639'
 require 'uri'
 require 'yaml'
@@ -45,15 +46,10 @@ module UncleKryon
     end
     
     def self.clean_data(str)
-      # Have to use [[:space:]] for &nbsp; and <br/>
-      
-      #str = str.gsub(/\u00a0/,' ') # Try to replace &nbsp; with normal spaces
-      #str = str.gsub(/\A[[:space:]]+/,'') # lstrip
-      #str = str.gsub(/[[:space:]]+\z/,'') # rstrip
-      
+      # Have to use "[[:space:]]" for "&nbsp;" and "<br/>"
       # This is necessary for "<br />\s+" (see 2015 "KRYON IN LIMA, PERU (2)")
       str = str.gsub(/[[:space:]]+/,' ') # Replace all spaces with one space
-      str = str.strip
+      str = str.strip()
       
       return str
     end
@@ -142,7 +138,7 @@ module UncleKryon
         if !e.nil?
           r.push(e.alpha3_bibliographic)
         else
-          Log.instance.log.warn("Invalid language[#{l},#{fl}] from #{lang}")
+          Log.instance.warn("Invalid language[#{l},#{fl}] from #{lang}")
           r.push(l)
         end
       end
@@ -230,8 +226,8 @@ module UncleKryon
       return v[keys[keys.length-1]]
     end
     
-    def self.load_artist_yaml(filename)
-      filedata = YAML.load_file(filename) if File.exists?(filename)
+    def self.load_artist_yaml(filepath)
+      filedata = YAML.load_file(filepath) if File.exists?(filepath)
       filedata = {} if !filedata
       
       artist = ArtistData.new
@@ -243,6 +239,16 @@ module UncleKryon
       artist.pics = self.hash_def(filedata,['Artist','Pics'],artist.pics)
       
       return artist
+    end
+    
+    def self.mk_dirs_from_filepath(filepath)
+      dirname = File.dirname(filepath)
+      
+      if !dirname.nil?() && !dirname.empty?() && !Dir.exist?(dirname)
+        raise "Spaces in dirname[#{dirname}]" if dirname != dirname.strip()
+        Log.instance.info("Making dirs[#{dirname}]...")
+        FileUtils.mkdir_p(dirname)
+      end
     end
     
     def self.parse_date(date)
@@ -283,8 +289,7 @@ module UncleKryon
           r[1] = nil
         end
       rescue ArgumentError => e
-        # TODO: make own methods; pass in e; log e and e.backtrace.join("\n\t> ")
-        Log.instance.log.fatal("Invalid Date: '#{date}'")
+        Log.instance.fatal("Invalid Date: '#{date}'",e)
         raise
       end
       
@@ -313,8 +318,10 @@ module UncleKryon
       return r
     end
     
-    def self.save_artist_yaml(artist,filename,replace=false,who=nil,overwrite=false)
-      filedata = YAML.load_file(filename) if File.exists?(filename)
+    def self.save_artist_yaml(artist,filepath,replace: false,who: nil,overwrite: false,**options)
+      raise "Empty filepath[#{filepath}]" if filepath.nil?() || (filepath = filepath.strip()).empty?()
+      
+      filedata = YAML.load_file(filepath) if File.exists?(filepath)
       filedata = {} if !filedata
       
       self.hash_def(filedata,['Artist'],{})
@@ -383,7 +390,9 @@ module UncleKryon
         end
       end
       
-      File.open(filename,'w') do |f|
+      mk_dirs_from_filepath(filepath)
+      
+      File.open(filepath,'w') do |f|
         YAML.dump(filedata,f)
       end
     end
