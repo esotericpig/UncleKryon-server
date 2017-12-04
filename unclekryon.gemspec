@@ -48,13 +48,12 @@ Gem::Specification.new do |spec|
   spec.executables            = ['unclekryon']
   spec.post_install_message   = 'You can now use "unclekryon" on the command-line.'
   
-  # 2.1.0 for nokogiri
-  # 2.3.0 for indention heredoc "<<~"
-  spec.required_ruby_version  = '>= 2.3.0'
+  spec.required_ruby_version  = '>= 2.4.0'
   spec.requirements          << 'Fedora:   dnf install gcc ruby-devel zlib-devel'
   spec.requirements          << 'nokogiri: http://www.nokogiri.org/tutorials/installing_nokogiri.html'
   
   spec.add_runtime_dependency 'iso-639' ,'>= 0.2.8' # For language codes
+  spec.add_runtime_dependency 'nbayes'  ,'>= 0.1.2' # For training type of text (machine learning)
   spec.add_runtime_dependency 'nokogiri','>= 1.8.1' # For hacking html
   
   spec.add_development_dependency 'bundler','>= 1.15'

@@ -1,8 +1,15 @@
+GIT
+  remote: https://github.com/oasic/nbayes.git
+  revision: 3dd46bd2c8a2258ccdb69ee9ceff7d2fb5d62ed5
+  specs:
+    nbayes (0.1.2)
+
 PATH
   remote: .
   specs:
     unclekryon (0.3.3)
       iso-639 (>= 0.2.8)
+      nbayes (>= 0.1.2)
       nokogiri (>= 1.8.1)
 
 GEM
@@ -18,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (>= 1.15)
+  nbayes!
   unclekryon!
 
 BUNDLED WITH

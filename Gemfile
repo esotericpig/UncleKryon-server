@@ -21,6 +21,13 @@
 
 source 'https://rubygems.org'
 
-#git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+# nbayes Gem is out-of-date, so must use GitHub.
+# 
+# The version is specified in the gemspec file.
+# ":git" with "https" is used instead of ":github" for security.
+# Use "bundler show" (not "gem list") to see it.
+# 
+# @see http://bundler.io/v1.16/guides/git.html
+gem 'nbayes',:git=>'https://github.com/oasic/nbayes.git' #:ref=>'3dd46bd'
 
 gemspec
