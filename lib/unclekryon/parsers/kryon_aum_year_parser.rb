@@ -78,14 +78,14 @@ module UncleKryon
       return false if cell.content.nil?
       return false if cell['href'].nil?
       
-      r_year = Util::parse_kryon_date(Util::clean_data(cell.content))
+      r_year = Util.parse_kryon_date(Util.clean_data(cell.content))
       album.r_year_begin = r_year[0]
       album.r_year_end = r_year[1]
-      album.url = Util::clean_link(@release.url,cell['href'])
+      album.url = Util.clean_link(@release.url,cell['href'])
       
       return false if (album.r_year_begin.empty? || album.url.empty?)
       
-      album.id = Util::gen_id(album.url)
+      album.id = Util.gen_id(album.url)
       
       return true
     end
@@ -95,8 +95,8 @@ module UncleKryon
       return false if (cell = cells[4]).nil?
       return false if (cell = cell.content).nil?
       
-      cell = Util::clean_data(cell)
-      album.r_language = Util::get_kryon_lang_codes(cell)
+      cell = Util.clean_data(cell)
+      album.r_language = Util.get_kryon_lang_codes(cell)
       
       return false if album.r_language.empty?
       return true
@@ -107,7 +107,7 @@ module UncleKryon
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
       
-      album.r_location = Util::parse_kryon_location(cell)
+      album.r_location = Util.parse_kryon_location(cell)
       
       return false if album.r_location.empty?
       return true
@@ -125,7 +125,7 @@ module UncleKryon
       return false if cell.nil?
       return false if (cell = cell.content).nil?
       
-      album.r_topic = Util::fix_shortwith_text(Util::clean_data(cell))
+      album.r_topic = Util.fix_shortwith_text(Util.clean_data(cell))
       
       return false if album.r_topic.empty?
       return true
