@@ -21,19 +21,86 @@
 require 'logger'
 require 'singleton'
 
-# TODO: make own methods; take in Exception/Error e; log e and e.backtrace.join("\n\t> ")
 module UncleKryon
-  class Log
-    include Singleton
-  
-    attr_reader :log
-  
+  class UncleKryonLogger < Logger
     def initialize
-      @log = Logger.new(STDOUT)
+      super(STDOUT)
+      
+      @progname = self.class.to_s()
+    end
+    
+    def build_message(message,error: nil,**options)
+      # Don't use mutable methods
+      message += error.backtrace().map(){|e| "\n  > " + e}.join('') if !error.nil?
+      
+      return message
+    end
+    
+    def error(message,error: nil,**options)
+      super(build_message(message,error: error,**options))
+    end
+    
+    def fatal(message,error: nil,**options)
+      super(build_message(message,error: error,**options))
+    end
+    
+    def unknown(message,error: nil,**options)
+      super(build_message(message,error: error,**options))
+    end
+    
+    def warn(message,error: nil,**options)
+      super(build_message(message,error: error,**options))
+    end
+  end
+  
+  # Global for non-class use
+  class Log < UncleKryonLogger
+    include Singleton
+  end
+  
+  # Mixin for class use
+  module Logging
+    def init_log()
+    end
+    
+    def log()
+      if @log == nil
+        @log = UncleKryonLogger.new()
+        @log.progname = self.class.to_s()
+        
+        init_log()
+      end
+      return @log
     end
   end
 end
 
 if $0 == __FILE__
-  UncleKryon::Log.instance.log.fatal('oops!')
+  class Tester
+    include UncleKryon::Logging
+    
+    def init_log()
+      @log.progname.prepend("[Risky]")
+    end
+    
+    def take_risk()
+      log.fatal('Risky! Risky! Risky!')
+    end
+  end
+  
+  begin
+    t = Tester.new()
+    t.take_risk()
+    
+    raise 'Oops!'
+  rescue StandardError => e
+    UncleKryon::Log.instance.error(e.message,error: e)
+    UncleKryon::Log.instance.fatal(e.message,error: e)
+    UncleKryon::Log.instance.unknown(e.message,error: e)
+    UncleKryon::Log.instance.warn(e.message,error: e)
+    
+    UncleKryon::Log.instance.warn("Don't Worry") do
+      'This still works'
+    end
+  end
 end
