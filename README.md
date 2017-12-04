@@ -5,11 +5,11 @@ Tasks include sending push notifications, building the database, and parsing/hac
 
 **Note:** This project is currently in development on v0.3.3. The first working version will be v1.0.0.
 
-# Table of Contents
+# Contents
 - [Setup](#setup)
 - [License](#license)
 
-## [Setup](#table-of-contents)
+## [Setup](#contents)
 For Nokogiri:
 - http://www.nokogiri.org/tutorials/installing_nokogiri.html
   - Fedora
@@ -17,7 +17,7 @@ For Nokogiri:
   - Ubuntu / Debian
     - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
 
-## [License](#table-of-contents)
+## [License](#contents)
 > UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
 > Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)  
 > 
