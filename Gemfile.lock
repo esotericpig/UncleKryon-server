@@ -17,7 +17,7 @@ GEM
   specs:
     iso-639 (0.2.8)
     mini_portile2 (2.3.0)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
 
 PLATFORMS
@@ -29,4 +29,4 @@ DEPENDENCIES
   unclekryon!
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

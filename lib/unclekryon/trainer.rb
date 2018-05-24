@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,38 +20,193 @@
 
 require 'bundler/setup'
 
-require 'unclekryon/hacker'
+require 'nbayes'
+
+require 'unclekryon/util'
 
 module UncleKryon
-  class Trainer < Hacker
-    def initialize(**options)
-      # Don't use "()"
-      super
+  class Trainer
+    attr_accessor :max_tag_id_length
+    attr_accessor :max_tag_length
+    attr_accessor :tags
+    attr_accessor :trainer
+    
+    def self.to_tokens(text)
+      # TODO: split on more punctuation; be careful of "don't"
+      tokens = text.split(/([[:space:]]\,\.)+/)
+      tokens.select!() {|t| !t.empty?()}
+      
+      return tokens
     end
     
-    def train_kryon_aum_year_album(date,year=nil)
-      album_parser = create_kryon_aum_year_album_parser(date,year)
+    def initialize(tags={})
+      @max_tag_id_length = 0
+      @max_tag_length = 0
+      @tags = tags
+      @trainer = NBayes::Base.new()
       
-      album_parser.train = true
+      init_lengths()
+    end
+    
+    def init_lengths()
+      @max_tag_id_length = 0
+      @max_tag_length = 0
       
-      album = album_parser.parse_site()
-      
-      if @no_clobber
-        puts album_parser.trainer_s()
-      else
-        album_parser.save_trainer()
+      @tags.each do |id,tag|
+        @max_tag_id_length = id.length if id.length > @max_tag_id_length
+        @max_tag_length = tag.length if tag.length > @max_tag_length
       end
+      
+      @max_tag_id_length += 2 # Indention
+      @max_tag_length = -@max_tag_length # Left justify
+    end
+    
+    def train(text)
+      tokens = self.class.to_tokens(text)
+      
+      puts '#################'
+      puts '# Training Tags #'
+      puts '#################'
+      
+      tf = '%%%is = %%%is' % [@max_tag_id_length,@max_tag_length]
+      
+      @tags.each do |id,tag|
+        puts tf % [id,tag]
+      end
+      
+      puts '-----------------'
+      puts text
+      puts '-----------------'
+      print 'What is it? '
+      
+      #puts (tag_id = @tags.keys.sample()) # For testing purposes
+      tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args
+      puts
+      
+      raise "Invalid tag ID[#{tag_id}]" if !@tags.include?(tag_id)
+      tag = @tags[tag_id]
+      
+      @trainer.train(tokens,tag)
+      
+      return tag
+    end
+    
+    def tag(text)
+      return @trainer.classify(self.class.to_tokens(text)).max_class
+    end
+    
+    def to_s()
+      s = ''
+      s << @trainer.to_yaml()
+      s << "\n"
+      s << @trainer.data.category_stats()
+      
+      return s
+    end
+  end
+  
+  class Trainers
+    attr_accessor :filepath
+    attr_accessor :trainers
+    
+    def initialize(filepath=nil)
+      @filepath = filepath
+      @trainers = {}
+    end
+    
+    def load()
+      if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
+        raise ArgumentError,'Training filepath cannot be empty'
+      end
+      
+      if File.exist?(@filepath)
+        y = YAML.load_file(@filepath)
+        
+        y.each() do |id,trainer|
+          if !@trainers.key?(id)
+            @trainers[id] = trainer
+          else
+            @trainers[id].tags = trainer.tags.merge(@trainers[id].tags)
+            @trainers[id].trainer = trainer.trainer
+          end
+          
+          @trainers[id].trainer.reset_after_import()
+          @trainers[id].init_lengths()
+        end
+      end
+    end
+    
+    def save()
+      if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
+        raise ArgumentError,'Training filepath cannot be empty'
+      end
+      
+      Util.mk_dirs_from_filepath(@filepath)
+      
+      File.open(@filepath,'w') do |f|
+        f.write(to_s())
+      end
+    end
+    
+    def [](id)
+      @trainers[id]
+    end
+    
+    def []=(id,trainer)
+      @trainers[id] = trainer
+    end
+    
+    def to_s()
+      return YAML.dump(@trainers)
     end
   end
 end
 
 if $0 == __FILE__
-  trainer = UncleKryon::Trainer.new(no_clobber: true)
+  fp = 'test.yaml'
+  ts = UncleKryon::Trainers.new(fp)
   
-  puts trainer.no_clobber
-  puts trainer.replace
-  puts trainer.train_dirname
-  puts trainer.train_kryon_filename
+  ctx = ['dark black bitter',
+         'double espresso steamed milk foam',
+         'espresso steamed milk']
+  ttx = ['no withering and oxidation',
+         'broom-like, South Africa',
+         'young, minimal']
   
-  trainer.train_kryon_aum_year_album('2.2','2017')
+  if File.exist?(fp)
+    ts.load()
+    puts ts
+    puts
+    
+    puts '[Coffee]'
+    ctx.each do |v|
+      puts "'#{v}' => #{ts['coffee'].tag(v)}"
+    end
+    puts
+    
+    puts '[Tea]'
+    ttx.each do |v|
+      puts "'#{v}' => #{ts['tea'].tag(v)}"
+    end
+    puts
+    
+    puts 'What kind of drink would you like?'
+    txt = STDIN.gets().chomp().strip()
+    puts "coffee => #{ts['coffee'].tag(txt)}"
+    puts "tea    => #{ts['tea'].tag(txt)}"
+  else
+    ts['coffee'] = UncleKryon::Trainer.new(
+      {'b'=>'black','c'=>'cappuccino','l'=>'latte'})
+    ts['tea'] = UncleKryon::Trainer.new(
+      {'g'=>'green','r'=>'red','w'=>'white'})
+    
+    ctx.each do |v|
+      ts['coffee'].train(v)
+    end
+    ttx.each do |v|
+      ts['tea'].train(v)
+    end
+    
+    ts.save()
+  end
 end

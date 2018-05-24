@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,6 @@ require 'optparse'
 require 'unclekryon/hacker'
 require 'unclekryon/log'
 require 'unclekryon/server'
-require 'unclekryon/trainer'
 require 'unclekryon/version'
 
 # TODO: make command-line program for hacker, server, uploader
@@ -66,7 +65,9 @@ module UncleKryon
           Options:
         EOS
         
-        op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console')
+        op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console') do
+          @options[:no_clobber] = true
+        end
         op.on('-h','--help','Print help to console')
         op.on('-v','--version','Print version to console')
       end
@@ -91,6 +92,7 @@ module UncleKryon
             Examples:
             |    <hax>:
             |    # Train the data 1st before haxing (if there is no training data)
+            |    $ #{parser.program_name} hax -t kryon aum year -t 2017
             |    $ #{parser.program_name} hax -t kryon aum year -t 2017 -a 2.2
             |    
             |    # Hax the data (even though --title is not required, it is recommended)
@@ -103,7 +105,7 @@ module UncleKryon
             |    # Hax the 2nd "6.4" album (if there are 2)
             |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 6.4:2
           EOS
-          puts s.gsub(/\|(\s\s\s\s+)/,'\1')
+          puts s.gsub(/^\|/,'')
         end
       end
     end
@@ -127,7 +129,7 @@ module UncleKryon
         op.on('-r','--replace',"Replace the new hax data loaded, but don't overwrite non-loaded data")
         op.on('-o','--overwrite','Overwrite all hax data, even non-loaded data; overrides --replace')
         op.on('-t','--train','Train the data using machine learning')
-        op.on('-i','--train-dir <dir>',"Directory to save the training data to (default: #{Trainer::TRAIN_DIRNAME})") do |dir|
+        op.on('-i','--train-dir <dir>',"Directory to save the training data to (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
           @options[:train_dirname] = dir
         end
       end
@@ -149,7 +151,7 @@ module UncleKryon
         op.on('-f','--file <file>',"File to save the hax data to (default: #{Hacker::HAX_KRYON_FILENAME})") do |file|
           @options[:hax_kryon_filename] = file
         end
-        op.on('-t','--train-file <file>',"File to save the training data to (default: #{Trainer::TRAIN_KRYON_FILENAME})") do |file|
+        op.on('-t','--train-file <file>',"File to save the training data to (default: #{Hacker::TRAIN_KRYON_FILENAME})") do |file|
           @options[:train_kryon_filename] = file
         end
       end
@@ -188,16 +190,17 @@ module UncleKryon
       
       log_opts()
       
+      hacker = Hacker.new(@options)
+      
       if @options[:train]
-        trainer = Trainer.new(@options)
-        
         if @options[:album]
-          trainer.train_kryon_aum_year_album(@options[:album],@options[:title])
+          hacker.train_kryon_aum_year_album(@options[:album],@options[:title])
+          @did_cmd = true
+        elsif @options[:title]
+          hacker.train_kryon_aum_year(@options[:title])
           @did_cmd = true
         end
       else
-        hacker = Hacker.new(@options)
-        
         if @options[:album]
           hacker.parse_kryon_aum_year_album(@options[:album],@options[:title])
           @did_cmd = true

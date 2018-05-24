@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,22 +21,46 @@
 require 'nokogiri'
 require 'open-uri'
 
+require 'unclekryon/trainer'
+require 'unclekryon/util'
+
+require 'unclekryon/data/artist_data'
 require 'unclekryon/data/kryon_aum_album_data'
 require 'unclekryon/data/release_data'
-require 'unclekryon/util'
 
 module UncleKryon
   class KryonAumYearParser
+    attr_accessor :artist
     attr_accessor :release
+    attr_accessor :title
+    attr_accessor :trainers
+    attr_accessor :training
+    attr_accessor :url
     
-    def parse_site(artist,title,url)
-      @release = artist.releases[title]
+    alias_method :training?,:training
+    
+    def initialize(title=nil,url=nil,artist=ArtistData.new(),training: false,train_filepath: nil,**options)
+      @artist = artist
+      @title = title
+      @trainers = Trainers.new(train_filepath)
+      @training = training
+      @url = url
+      
+      @trainers['aum_year'] = Trainer.new({
+          'us'=>'USA',
+          'no'=>'Non-USA'
+        })
+    end
+    
+    def parse_site()
+      @release = @artist.releases[@title]
+      @trainers.load()
       
       if @release.nil?
         @release = ReleaseData.new
-        @release.title = title
-        @release.url = url
-        artist.releases[@release.title] = @release
+        @release.title = @title
+        @release.url = @url
+        @artist.releases[@title] = @release
       end
       
       doc = Nokogiri::HTML(open(@release.url),nil,'utf-8') # Force utf-8 encoding
@@ -60,7 +84,7 @@ module UncleKryon
         next if next_row
         
         album.fill_empty_data()
-        artist.albums[album.id] = album
+        @artist.albums[album.id] = album
         @release.album_ids.push(album.id) if !@release.album_ids.include?(album.id)
       end
       
@@ -110,9 +134,22 @@ module UncleKryon
       album.r_location = Util.parse_kryon_location(cell)
       
       return false if album.r_location.empty?
+      
+      album.r_location.each_with_index() do |l,i|
+        if @training
+          @trainers['aum_year'].train(l)
+        else
+          case @trainers['aum_year'].tag(l)
+          when 'USA'
+            album.r_location[i] << ', USA'
+          end
+        end
+      end
+      
       return true
     end
     
+    # TODO: for 2018, use Trainer and ignore if has "PLEASE READ"
     def parse_topic_cell(cells,album)
       return false if cells.length <= 2
       return false if (cell = cells[2]).nil?

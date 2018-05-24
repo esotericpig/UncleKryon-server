@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-require 'unclekryon/training'
+require 'unclekryon/trainer'
 require 'unclekryon/util'
 
 require 'unclekryon/data/kryon_aum_album_data'
@@ -31,44 +31,53 @@ require 'unclekryon/data/time_data'
 
 module UncleKryon
   class KryonAumYearAlbumParser
-    include Training
-    
     attr_accessor :album
     attr_accessor :artist
     attr_accessor :options
     attr_accessor :slow
+    attr_accessor :trainers
+    attr_accessor :training
     attr_accessor :url
     
     alias_method :slow?,:slow
+    alias_method :training?,:training
     
-    def initialize(artist=nil,url=nil,album: nil,slow: true,train: false,train_filepath: nil,**options)
+    def initialize(artist=nil,url=nil,album: nil,slow: true,training: false,train_filepath: nil,**options)
       @album = album
       @artist = artist
       @options = options
       @slow = slow
       @url = url
       
-      @train = train
-      @train_filepath = train_filepath
+      @trainers = Trainers.new(train_filepath)
+      @training = training
       
-      @train_tags = {
+      @trainers['aum_year_album'] = Trainer.new({
           'altt'=>'album_title',
           'alds'=>'album_dates',
           'allo'=>'album_location',
           'almi'=>'album_mini_desc',
           'alma'=>'album_main_desc',
           'aust'=>'aum_subtitle',
+          'ausl'=>'aum_subtitle_language', # See 2018 "Montreal QB w/Robert Coxon (3)" "FRENCH"
           'autt'=>'aum_title',
           'autm'=>'aum_time',
           'ausz'=>'aum_size',
           'aufn'=>'aum_filename',
           'audu'=>'dump',
           'i'   =>'ignore'
-        }
+        })
+      @trainers['aum_year_album_mini_desc'] = Trainer.new({
+          'd'=>'date',
+          'l'=>'location',
+          's'=>'desc',
+          'i'=>'ignore'
+        })
     end
     
     def parse_site(artist=nil,url=nil)
       @artist = artist if !artist.nil?()
+      @trainers.load()
       @url = url if !url.nil?()
       
       raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
@@ -77,6 +86,7 @@ module UncleKryon
       # Album data should never go in this, only for aums, pics, etc.
       @local_dump = {
           :aum_subtitle=>[],
+          :aum_language=>[],
           :aum_title=>[],
           :aum_time=>[],
           :aum_size=>[],
@@ -99,7 +109,7 @@ module UncleKryon
       
       parse_dump(doc,@album) # Must be first because other methods rely on @local_dump
       
-      return @album if @train # Currently, no other training occurs
+      return @album if @training # Currently, no other training occurs
       
       parse_pics(doc,@album)
       parse_aums(doc,@album)
@@ -136,6 +146,7 @@ module UncleKryon
         end
         
         aum.subtitle = @local_dump[:aum_subtitle][i] if i < @local_dump[:aum_subtitle].length
+        aum.language = @local_dump[:aum_language][i] if i < @local_dump[:aum_language].length
         aum.title = @local_dump[:aum_title][i] if i < @local_dump[:aum_title].length
         aum.time = @local_dump[:aum_time][i] if i < @local_dump[:aum_time].length
         
@@ -174,8 +185,6 @@ module UncleKryon
       
       size_count = 0
       time_count = 0
-      
-      init_train()
       
       tds.each do |td|
         next if td.nil?
@@ -219,25 +228,41 @@ module UncleKryon
             
             next if par.empty?()
             
-            tokens = par.split(/[[:space:]]+/)
-            tokens.select!() {|t| !t.empty?()}
-            
-            if train?()
-              train(par,tokens)
+            if @training
+              if @trainers['aum_year_album'].train(par) == 'album_mini_desc'
+                par.split(/\n+/).each() do |p|
+                  @trainers['aum_year_album_mini_desc'].train(p)
+                end
+              end
             else
-              tag = trainer_tag(tokens)
+              tag = @trainers['aum_year_album'].tag(par)
               
               case tag
               when 'album_mini_desc'
-                album.mini_desc << ' ' if !album.mini_desc.empty?()
-                album.mini_desc << Util.clean_data(par)
+                par.split(/\n+/).each() do |p|
+                  case @trainers['aum_year_album_mini_desc'].tag(p)
+                  when 'desc'
+                    album.mini_desc << ' ' if !album.mini_desc.empty?()
+                    album.mini_desc << Util.clean_data(p)
+                  end
+                end
+                
                 add_to_dump = false
               when 'album_main_desc'
                 album.main_desc << "\n\n" if !album.main_desc.empty?()
-                album.main_desc << par
+                
+                par.split(/\n+/).each() do |p|
+                  album.main_desc << Util.clean_data(p) << "\n"
+                end
+                
                 add_to_dump = false
               when 'aum_subtitle'
                 @local_dump[:aum_subtitle].push(Util.clean_data(par))
+                add_to_dump = false
+              when 'aum_subtitle_language'
+                p = Util.clean_data(par)
+                @local_dump[:aum_language].push(p)
+                @local_dump[:aum_subtitle].push(p)
                 add_to_dump = false
               when 'aum_title'
                 @local_dump[:aum_title].push(Util.clean_data(par))

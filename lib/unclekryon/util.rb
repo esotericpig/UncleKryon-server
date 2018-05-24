@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -122,8 +122,11 @@ module UncleKryon
     end
     
     def self.gen_id(url)
+      # Just use the URL to ensure 100% unique
+      return url
+      
       # base64 is shorter than hex
-      return Digest::MD5.base64digest(url)
+      #return Digest::MD5.base64digest(url)
     end
     
     def self.get_kryon_lang_codes(lang)

@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@ module UncleKryon
     attr_accessor :size
     attr_accessor :filename
     attr_accessor :url
+    attr_accessor :language
     
     def initialize
       @id = 0
@@ -38,6 +39,7 @@ module UncleKryon
       @size = ''
       @filename = ''
       @url = ''
+      @language = ''
     end
     
     def to_s(artist=nil)
