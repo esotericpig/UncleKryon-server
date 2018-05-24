@@ -228,7 +228,7 @@ module UncleKryon
       if @no_clobber
         puts year_parser.trainers.to_s()
       else
-        year_parser.trainers.save()
+        year_parser.trainers.save_file()
       end
     end
     
@@ -240,7 +240,7 @@ module UncleKryon
       if @no_clobber
         puts album_parser.trainers.to_s()
       else
-        album_parser.trainers.save()
+        album_parser.trainers.save_file()
       end
     end
     

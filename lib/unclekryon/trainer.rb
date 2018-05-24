@@ -114,7 +114,7 @@ module UncleKryon
       @trainers = {}
     end
     
-    def load()
+    def load_file()
       if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
         raise ArgumentError,'Training filepath cannot be empty'
       end
@@ -136,7 +136,7 @@ module UncleKryon
       end
     end
     
-    def save()
+    def save_file()
       if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
         raise ArgumentError,'Training filepath cannot be empty'
       end
@@ -174,7 +174,7 @@ if $0 == __FILE__
          'young, minimal']
   
   if File.exist?(fp)
-    ts.load()
+    ts.load_file()
     puts ts
     puts
     
@@ -207,6 +207,6 @@ if $0 == __FILE__
       ts['tea'].train(v)
     end
     
-    ts.save()
+    ts.save_file()
   end
 end

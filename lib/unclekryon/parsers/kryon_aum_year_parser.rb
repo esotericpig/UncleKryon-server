@@ -54,7 +54,7 @@ module UncleKryon
     
     def parse_site()
       @release = @artist.releases[@title]
-      @trainers.load()
+      @trainers.load_file()
       
       if @release.nil?
         @release = ReleaseData.new

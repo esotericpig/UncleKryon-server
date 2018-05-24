@@ -77,7 +77,7 @@ module UncleKryon
     
     def parse_site(artist=nil,url=nil)
       @artist = artist if !artist.nil?()
-      @trainers.load()
+      @trainers.load_file()
       @url = url if !url.nil?()
       
       raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
