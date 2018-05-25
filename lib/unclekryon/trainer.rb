@@ -82,8 +82,12 @@ module UncleKryon
       puts '-----------------'
       print 'What is it? '
       
-      #puts (tag_id = @tags.keys.sample()) # For testing purposes
-      tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args
+      # Use "-d" or "--debug" in the terminal
+      if $DEBUG
+        puts (tag_id = @tags.keys.sample()) # For testing purposes
+      else
+        tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args
+      end
       puts
       
       raise "Invalid tag ID[#{tag_id}]" if !@tags.include?(tag_id)
