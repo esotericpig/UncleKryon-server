@@ -32,9 +32,12 @@ module UncleKryon
     attr_accessor :trainer
     
     def self.to_tokens(text)
-      # TODO: split on more punctuation; be careful of "don't"
-      tokens = text.split(/([[:space:]]\,\.)+/)
-      tokens.select!() {|t| !t.empty?()}
+      tokens = []
+      
+      text.split(/[[:space:]]+/).each() do |t|
+        t.gsub!(/[[:punct:][:cntrl:]]+/,'')
+        tokens.push(t) if !t.empty?()
+      end
       
       return tokens
     end
