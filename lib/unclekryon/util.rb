@@ -230,7 +230,7 @@ module UncleKryon
     end
     
     def self.load_artist_yaml(filepath)
-      filedata = YAML.load_file(filepath) if File.exists?(filepath)
+      filedata = YAML.load_file(filepath) if File.exist?(filepath)
       filedata = {} if !filedata
       
       artist = ArtistData.new
@@ -324,7 +324,7 @@ module UncleKryon
     def self.save_artist_yaml(artist,filepath,replace: false,who: nil,overwrite: false,**options)
       raise "Empty filepath[#{filepath}]" if filepath.nil?() || (filepath = filepath.strip()).empty?()
       
-      filedata = YAML.load_file(filepath) if File.exists?(filepath)
+      filedata = YAML.load_file(filepath) if File.exist?(filepath)
       filedata = {} if !filedata
       
       self.hash_def(filedata,['Artist'],{})
