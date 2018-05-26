@@ -52,9 +52,17 @@ module UncleKryon
         })
     end
     
-    def parse_site()
+    def parse_site(title=nil,url=nil,artist=nil)
+      @artist = artist unless artist.nil?()
+      @title = title unless title.nil?()
+      @url = url unless url.nil?()
+      
       @release = @artist.releases[@title]
       @trainers.load_file()
+      
+      raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
+      raise ArgumentError,"Title cannot be empty" if @title.nil?() || (@title = @title.strip()).empty?()
+      raise ArgumentError,"URL cannot be empty" if @url.nil?() || (@url = @url.strip()).empty?()
       
       if @release.nil?
         @release = ReleaseData.new
@@ -149,7 +157,6 @@ module UncleKryon
       return true
     end
     
-    # TODO: for 2018, use Trainer and ignore if has "PLEASE READ"
     def parse_topic_cell(cells,album)
       return false if cells.length <= 2
       return false if (cell = cells[2]).nil?
@@ -161,6 +168,9 @@ module UncleKryon
       
       return false if cell.nil?
       return false if (cell = cell.content).nil?
+      
+      # For 2018 "Kryon Seminar in Longmont - (PLEASE READ)"
+      return false if cell =~ /PLEASE[[:space:]]+READ/i
       
       album.r_topic = Util.fix_shortwith_text(Util.clean_data(cell))
       

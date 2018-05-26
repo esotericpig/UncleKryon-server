@@ -76,15 +76,18 @@ module UncleKryon
     end
     
     def parse_site(artist=nil,url=nil)
-      @artist = artist if !artist.nil?()
+      @artist = artist unless artist.nil?()
+      @url = url unless url.nil?()
+      
       @trainers.load_file()
-      @url = url if !url.nil?()
       
       raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
       raise ArgumentError,"URL cannot be empty" if @url.nil?() || (@url = @url.strip()).empty?()
       
-      # Album data should never go in this, only for aums, pics, etc.
+      # Album data (flags are okay) should never go in this, only for aums, pics, etc.
       @local_dump = {
+          :album_mini_desc=>true,
+          :album_main_desc=>true,
           :aum_subtitle=>[],
           :aum_language=>[],
           :aum_title=>[],
@@ -172,6 +175,7 @@ module UncleKryon
         \A[[:space:]]*KRYON[[:space:]]+EGYPT[[:space:]]+TOUR[[:space:]]+1[[:space:]]*\z
       /x
       
+      filename_regex = /\.mp3[[:space:]]*\z/i
       # 2017 "Petra, Jordan (5)" has a ":" in the megabytes cell
       size_regex = /\A[[:space:]]*[[:digit:]]+(\.|\:|[[:digit:]]|[[:space:]])*megabytes[[:space:]]*\z/i
       # 2017 "Monument Valley Tour (11)" has a "." in the minutes cell
@@ -217,6 +221,8 @@ module UncleKryon
           end
           
           add_to_dump = false
+        elsif c =~ filename_regex
+          add_to_dump = false
         else
           # Paragraphs
           pars = orig_c.gsub(/\A[[:space:]]+/,'').gsub(/[[:space:]]+\z/,'')
@@ -240,16 +246,30 @@ module UncleKryon
               case tag
               when 'album_mini_desc'
                 par.split(/\n+/).each() do |p|
-                  case @trainers['aum_year_album_mini_desc'].tag(p)
-                  when 'desc'
-                    album.mini_desc << ' ' if !album.mini_desc.empty?()
-                    album.mini_desc << Util.clean_data(p)
+                  p = Util.clean_data(p)
+                  
+                  if !p.empty?()
+                    case @trainers['aum_year_album_mini_desc'].tag(p)
+                    when 'desc'
+                      if @local_dump[:album_mini_desc]
+                        @local_dump[:album_mini_desc] = false
+                        album.mini_desc = p
+                      else
+                        album.mini_desc << ' | ' if !album.mini_desc.empty?()
+                        album.mini_desc << p
+                      end
+                    end
                   end
                 end
                 
                 add_to_dump = false
               when 'album_main_desc'
-                album.main_desc << "\n\n" if !album.main_desc.empty?()
+                if @local_dump[:album_main_desc]
+                  @local_dump[:album_main_desc] = false
+                  album.main_desc = ''
+                else
+                  album.main_desc << "\n" if !album.main_desc.empty?()
+                end
                 
                 par.split(/\n+/).each() do |p|
                   album.main_desc << Util.clean_data(p) << "\n"
