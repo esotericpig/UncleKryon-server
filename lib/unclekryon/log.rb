@@ -64,7 +64,7 @@ module UncleKryon
     end
     
     def log()
-      if @log == nil
+      if !@log
         @log = UncleKryonLogger.new()
         @log.progname = self.class.to_s()
         
