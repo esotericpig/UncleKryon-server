@@ -38,21 +38,17 @@ require 'unclekryon/iso/iso_base'
 module UncleKryon
   class Country
     attr_reader :name
-    attr_reader :alt_name
-    attr_reader :display_name
+    attr_reader :names
     attr_reader :code
-    attr_reader :alt_code
-    attr_reader :display_code
+    attr_reader :codes
     attr_reader :alpha2_code
     attr_reader :alpha3_code
     
     def initialize(row=nil)
       @name = nil
-      @alt_name = nil
-      @display_name = nil
+      @names = nil
       @code = nil
-      @alt_code = nil
-      @display_code = nil
+      @codes = nil
       @alpha2_code = nil
       @alpha3_code = nil
       
@@ -61,17 +57,16 @@ module UncleKryon
         @alpha2_code = row[2]
         @alpha3_code = row[3]
         
-        @display_name = @name
+        @names = @name
         @code = @alpha3_code
-        @display_code = @alpha3_code
+        @codes = [@alpha3_code,@alpha2_code].compact().uniq().join(';')
       end
     end
     
     def to_s()
       s = '['
-      s << "\"#{@name}\",\"#{@alt_name}\",\"#{@display_name}\","
-      s << "#{@code},#{@alt_code},#{@display_code},"
-      s << "#{@alpha2_code},#{@alpha3_code}"
+      s << %Q("#{@name}","#{@names}",)
+      s << %Q(#{@code},"#{@codes}",#{@alpha2_code},#{@alpha3_code})
       s << ']'
       
       return s
