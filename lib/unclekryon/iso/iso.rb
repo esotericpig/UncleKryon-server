@@ -21,11 +21,13 @@
 require 'bundler/setup'
 
 require 'unclekryon/iso/country'
+require 'unclekryon/iso/language'
 require 'unclekryon/iso/usa_state'
 
 module UncleKryon
   module Iso
     @@countries = nil
+    @@languages = nil
     @@usa_states = nil
     
     def self.countries()
@@ -33,6 +35,13 @@ module UncleKryon
         @@countries = Countries.load_file()
       end
       return @@countries
+    end
+    
+    def self.languages()
+      if !@@languages
+        @@languages = Languages.load_file()
+      end
+      return @@languages
     end
     
     def self.usa_states()
@@ -46,5 +55,6 @@ end
 
 if $0 == __FILE__
   puts UncleKryon::Iso.countries['USA']
+  puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.usa_states['AL']
 end
