@@ -1,0 +1,3898 @@
+---
+Languages:
+  aar: !ruby/object:UncleKryon::Language
+    name: Afar
+    names: Afar
+    code: aar
+    codes: aar;aa
+    alpha2_code: aa
+    alpha3_code: aar
+    alpha3_code_b: 
+  abk: !ruby/object:UncleKryon::Language
+    name: Abkhazian
+    names: Abkhazian
+    code: abk
+    codes: abk;ab
+    alpha2_code: ab
+    alpha3_code: abk
+    alpha3_code_b: 
+  ace: !ruby/object:UncleKryon::Language
+    name: Achinese
+    names: Achinese
+    code: ace
+    codes: ace
+    alpha2_code: 
+    alpha3_code: ace
+    alpha3_code_b: 
+  ach: !ruby/object:UncleKryon::Language
+    name: Acoli
+    names: Acoli
+    code: ach
+    codes: ach
+    alpha2_code: 
+    alpha3_code: ach
+    alpha3_code_b: 
+  ada: !ruby/object:UncleKryon::Language
+    name: Adangme
+    names: Adangme
+    code: ada
+    codes: ada
+    alpha2_code: 
+    alpha3_code: ada
+    alpha3_code_b: 
+  ady: !ruby/object:UncleKryon::Language
+    name: Adyghe
+    names: Adyghe;Adygei
+    code: ady
+    codes: ady
+    alpha2_code: 
+    alpha3_code: ady
+    alpha3_code_b: 
+  afa: !ruby/object:UncleKryon::Language
+    name: Afro-Asiatic languages
+    names: Afro-Asiatic languages
+    code: afa
+    codes: afa
+    alpha2_code: 
+    alpha3_code: afa
+    alpha3_code_b: 
+  afh: !ruby/object:UncleKryon::Language
+    name: Afrihili
+    names: Afrihili
+    code: afh
+    codes: afh
+    alpha2_code: 
+    alpha3_code: afh
+    alpha3_code_b: 
+  afr: !ruby/object:UncleKryon::Language
+    name: Afrikaans
+    names: Afrikaans
+    code: afr
+    codes: afr;af
+    alpha2_code: af
+    alpha3_code: afr
+    alpha3_code_b: 
+  ain: !ruby/object:UncleKryon::Language
+    name: Ainu
+    names: Ainu
+    code: ain
+    codes: ain
+    alpha2_code: 
+    alpha3_code: ain
+    alpha3_code_b: 
+  aka: !ruby/object:UncleKryon::Language
+    name: Akan
+    names: Akan
+    code: aka
+    codes: aka;ak
+    alpha2_code: ak
+    alpha3_code: aka
+    alpha3_code_b: 
+  akk: !ruby/object:UncleKryon::Language
+    name: Akkadian
+    names: Akkadian
+    code: akk
+    codes: akk
+    alpha2_code: 
+    alpha3_code: akk
+    alpha3_code_b: 
+  ale: !ruby/object:UncleKryon::Language
+    name: Aleut
+    names: Aleut
+    code: ale
+    codes: ale
+    alpha2_code: 
+    alpha3_code: ale
+    alpha3_code_b: 
+  alg: !ruby/object:UncleKryon::Language
+    name: Algonquian languages
+    names: Algonquian languages
+    code: alg
+    codes: alg
+    alpha2_code: 
+    alpha3_code: alg
+    alpha3_code_b: 
+  alt: !ruby/object:UncleKryon::Language
+    name: Southern Altai
+    names: Southern Altai
+    code: alt
+    codes: alt
+    alpha2_code: 
+    alpha3_code: alt
+    alpha3_code_b: 
+  amh: !ruby/object:UncleKryon::Language
+    name: Amharic
+    names: Amharic
+    code: amh
+    codes: amh;am
+    alpha2_code: am
+    alpha3_code: amh
+    alpha3_code_b: 
+  ang: !ruby/object:UncleKryon::Language
+    name: Old English
+    names: Old English
+    code: ang
+    codes: ang
+    alpha2_code: 
+    alpha3_code: ang
+    alpha3_code_b: 
+  anp: !ruby/object:UncleKryon::Language
+    name: Angika
+    names: Angika
+    code: anp
+    codes: anp
+    alpha2_code: 
+    alpha3_code: anp
+    alpha3_code_b: 
+  apa: !ruby/object:UncleKryon::Language
+    name: Apache languages
+    names: Apache languages
+    code: apa
+    codes: apa
+    alpha2_code: 
+    alpha3_code: apa
+    alpha3_code_b: 
+  ara: !ruby/object:UncleKryon::Language
+    name: Arabic
+    names: Arabic
+    code: ara
+    codes: ara;ar
+    alpha2_code: ar
+    alpha3_code: ara
+    alpha3_code_b: 
+  arc: !ruby/object:UncleKryon::Language
+    name: Official Aramaic
+    names: Official Aramaic;Imperial Aramaic
+    code: arc
+    codes: arc
+    alpha2_code: 
+    alpha3_code: arc
+    alpha3_code_b: 
+  arg: !ruby/object:UncleKryon::Language
+    name: Aragonese
+    names: Aragonese
+    code: arg
+    codes: arg;an
+    alpha2_code: an
+    alpha3_code: arg
+    alpha3_code_b: 
+  arn: !ruby/object:UncleKryon::Language
+    name: Mapudungun
+    names: Mapudungun;Mapuche
+    code: arn
+    codes: arn
+    alpha2_code: 
+    alpha3_code: arn
+    alpha3_code_b: 
+  arp: !ruby/object:UncleKryon::Language
+    name: Arapaho
+    names: Arapaho
+    code: arp
+    codes: arp
+    alpha2_code: 
+    alpha3_code: arp
+    alpha3_code_b: 
+  art: !ruby/object:UncleKryon::Language
+    name: Artificial languages
+    names: Artificial languages
+    code: art
+    codes: art
+    alpha2_code: 
+    alpha3_code: art
+    alpha3_code_b: 
+  arw: !ruby/object:UncleKryon::Language
+    name: Arawak
+    names: Arawak
+    code: arw
+    codes: arw
+    alpha2_code: 
+    alpha3_code: arw
+    alpha3_code_b: 
+  asm: !ruby/object:UncleKryon::Language
+    name: Assamese
+    names: Assamese
+    code: asm
+    codes: asm;as
+    alpha2_code: as
+    alpha3_code: asm
+    alpha3_code_b: 
+  ast: !ruby/object:UncleKryon::Language
+    name: Asturian
+    names: Asturian;Bable;Leonese;Asturleonese
+    code: ast
+    codes: ast
+    alpha2_code: 
+    alpha3_code: ast
+    alpha3_code_b: 
+  ath: !ruby/object:UncleKryon::Language
+    name: Athapascan languages
+    names: Athapascan languages
+    code: ath
+    codes: ath
+    alpha2_code: 
+    alpha3_code: ath
+    alpha3_code_b: 
+  aus: !ruby/object:UncleKryon::Language
+    name: Australian languages
+    names: Australian languages
+    code: aus
+    codes: aus
+    alpha2_code: 
+    alpha3_code: aus
+    alpha3_code_b: 
+  ava: !ruby/object:UncleKryon::Language
+    name: Avaric
+    names: Avaric
+    code: ava
+    codes: ava;av
+    alpha2_code: av
+    alpha3_code: ava
+    alpha3_code_b: 
+  ave: !ruby/object:UncleKryon::Language
+    name: Avestan
+    names: Avestan
+    code: ave
+    codes: ave;ae
+    alpha2_code: ae
+    alpha3_code: ave
+    alpha3_code_b: 
+  awa: !ruby/object:UncleKryon::Language
+    name: Awadhi
+    names: Awadhi
+    code: awa
+    codes: awa
+    alpha2_code: 
+    alpha3_code: awa
+    alpha3_code_b: 
+  aym: !ruby/object:UncleKryon::Language
+    name: Aymara
+    names: Aymara
+    code: aym
+    codes: aym;ay
+    alpha2_code: ay
+    alpha3_code: aym
+    alpha3_code_b: 
+  aze: !ruby/object:UncleKryon::Language
+    name: Azerbaijani
+    names: Azerbaijani
+    code: aze
+    codes: aze;az
+    alpha2_code: az
+    alpha3_code: aze
+    alpha3_code_b: 
+  bad: !ruby/object:UncleKryon::Language
+    name: Banda languages
+    names: Banda languages
+    code: bad
+    codes: bad
+    alpha2_code: 
+    alpha3_code: bad
+    alpha3_code_b: 
+  bai: !ruby/object:UncleKryon::Language
+    name: Bamileke languages
+    names: Bamileke languages
+    code: bai
+    codes: bai
+    alpha2_code: 
+    alpha3_code: bai
+    alpha3_code_b: 
+  bak: !ruby/object:UncleKryon::Language
+    name: Bashkir
+    names: Bashkir
+    code: bak
+    codes: bak;ba
+    alpha2_code: ba
+    alpha3_code: bak
+    alpha3_code_b: 
+  bal: !ruby/object:UncleKryon::Language
+    name: Baluchi
+    names: Baluchi
+    code: bal
+    codes: bal
+    alpha2_code: 
+    alpha3_code: bal
+    alpha3_code_b: 
+  bam: !ruby/object:UncleKryon::Language
+    name: Bambara
+    names: Bambara
+    code: bam
+    codes: bam;bm
+    alpha2_code: bm
+    alpha3_code: bam
+    alpha3_code_b: 
+  ban: !ruby/object:UncleKryon::Language
+    name: Balinese
+    names: Balinese
+    code: ban
+    codes: ban
+    alpha2_code: 
+    alpha3_code: ban
+    alpha3_code_b: 
+  bas: !ruby/object:UncleKryon::Language
+    name: Basa
+    names: Basa
+    code: bas
+    codes: bas
+    alpha2_code: 
+    alpha3_code: bas
+    alpha3_code_b: 
+  bat: !ruby/object:UncleKryon::Language
+    name: Baltic languages
+    names: Baltic languages
+    code: bat
+    codes: bat
+    alpha2_code: 
+    alpha3_code: bat
+    alpha3_code_b: 
+  bej: !ruby/object:UncleKryon::Language
+    name: Beja
+    names: Beja;Bedawiyet
+    code: bej
+    codes: bej
+    alpha2_code: 
+    alpha3_code: bej
+    alpha3_code_b: 
+  bel: !ruby/object:UncleKryon::Language
+    name: Belarusian
+    names: Belarusian
+    code: bel
+    codes: bel;be
+    alpha2_code: be
+    alpha3_code: bel
+    alpha3_code_b: 
+  bem: !ruby/object:UncleKryon::Language
+    name: Bemba
+    names: Bemba
+    code: bem
+    codes: bem
+    alpha2_code: 
+    alpha3_code: bem
+    alpha3_code_b: 
+  ben: !ruby/object:UncleKryon::Language
+    name: Bengali
+    names: Bengali
+    code: ben
+    codes: ben;bn
+    alpha2_code: bn
+    alpha3_code: ben
+    alpha3_code_b: 
+  ber: !ruby/object:UncleKryon::Language
+    name: Berber languages
+    names: Berber languages
+    code: ber
+    codes: ber
+    alpha2_code: 
+    alpha3_code: ber
+    alpha3_code_b: 
+  bho: !ruby/object:UncleKryon::Language
+    name: Bhojpuri
+    names: Bhojpuri
+    code: bho
+    codes: bho
+    alpha2_code: 
+    alpha3_code: bho
+    alpha3_code_b: 
+  bih: !ruby/object:UncleKryon::Language
+    name: Bihari languages
+    names: Bihari languages
+    code: bih
+    codes: bih;bh
+    alpha2_code: bh
+    alpha3_code: bih
+    alpha3_code_b: 
+  bik: !ruby/object:UncleKryon::Language
+    name: Bikol
+    names: Bikol
+    code: bik
+    codes: bik
+    alpha2_code: 
+    alpha3_code: bik
+    alpha3_code_b: 
+  bin: !ruby/object:UncleKryon::Language
+    name: Bini
+    names: Bini;Edo
+    code: bin
+    codes: bin
+    alpha2_code: 
+    alpha3_code: bin
+    alpha3_code_b: 
+  bis: !ruby/object:UncleKryon::Language
+    name: Bislama
+    names: Bislama
+    code: bis
+    codes: bis;bi
+    alpha2_code: bi
+    alpha3_code: bis
+    alpha3_code_b: 
+  bla: !ruby/object:UncleKryon::Language
+    name: Siksika
+    names: Siksika
+    code: bla
+    codes: bla
+    alpha2_code: 
+    alpha3_code: bla
+    alpha3_code_b: 
+  bnt: !ruby/object:UncleKryon::Language
+    name: Bantu languages
+    names: Bantu languages
+    code: bnt
+    codes: bnt
+    alpha2_code: 
+    alpha3_code: bnt
+    alpha3_code_b: 
+  bod: !ruby/object:UncleKryon::Language
+    name: Tibetan
+    names: Tibetan
+    code: bod
+    codes: bod;tib;bo
+    alpha2_code: bo
+    alpha3_code: bod
+    alpha3_code_b: tib
+  bos: !ruby/object:UncleKryon::Language
+    name: Bosnian
+    names: Bosnian
+    code: bos
+    codes: bos;bs
+    alpha2_code: bs
+    alpha3_code: bos
+    alpha3_code_b: 
+  bra: !ruby/object:UncleKryon::Language
+    name: Braj
+    names: Braj
+    code: bra
+    codes: bra
+    alpha2_code: 
+    alpha3_code: bra
+    alpha3_code_b: 
+  bre: !ruby/object:UncleKryon::Language
+    name: Breton
+    names: Breton
+    code: bre
+    codes: bre;br
+    alpha2_code: br
+    alpha3_code: bre
+    alpha3_code_b: 
+  btk: !ruby/object:UncleKryon::Language
+    name: Batak languages
+    names: Batak languages
+    code: btk
+    codes: btk
+    alpha2_code: 
+    alpha3_code: btk
+    alpha3_code_b: 
+  bua: !ruby/object:UncleKryon::Language
+    name: Buriat
+    names: Buriat
+    code: bua
+    codes: bua
+    alpha2_code: 
+    alpha3_code: bua
+    alpha3_code_b: 
+  bug: !ruby/object:UncleKryon::Language
+    name: Buginese
+    names: Buginese
+    code: bug
+    codes: bug
+    alpha2_code: 
+    alpha3_code: bug
+    alpha3_code_b: 
+  bul: !ruby/object:UncleKryon::Language
+    name: Bulgarian
+    names: Bulgarian
+    code: bul
+    codes: bul;bg
+    alpha2_code: bg
+    alpha3_code: bul
+    alpha3_code_b: 
+  byn: !ruby/object:UncleKryon::Language
+    name: Blin
+    names: Blin;Bilin
+    code: byn
+    codes: byn
+    alpha2_code: 
+    alpha3_code: byn
+    alpha3_code_b: 
+  cad: !ruby/object:UncleKryon::Language
+    name: Caddo
+    names: Caddo
+    code: cad
+    codes: cad
+    alpha2_code: 
+    alpha3_code: cad
+    alpha3_code_b: 
+  cai: !ruby/object:UncleKryon::Language
+    name: Central American Indian languages
+    names: Central American Indian languages
+    code: cai
+    codes: cai
+    alpha2_code: 
+    alpha3_code: cai
+    alpha3_code_b: 
+  car: !ruby/object:UncleKryon::Language
+    name: Galibi Carib
+    names: Galibi Carib
+    code: car
+    codes: car
+    alpha2_code: 
+    alpha3_code: car
+    alpha3_code_b: 
+  cat: !ruby/object:UncleKryon::Language
+    name: Catalan
+    names: Catalan;Valencian
+    code: cat
+    codes: cat;ca
+    alpha2_code: ca
+    alpha3_code: cat
+    alpha3_code_b: 
+  cau: !ruby/object:UncleKryon::Language
+    name: Caucasian languages
+    names: Caucasian languages
+    code: cau
+    codes: cau
+    alpha2_code: 
+    alpha3_code: cau
+    alpha3_code_b: 
+  ceb: !ruby/object:UncleKryon::Language
+    name: Cebuano
+    names: Cebuano
+    code: ceb
+    codes: ceb
+    alpha2_code: 
+    alpha3_code: ceb
+    alpha3_code_b: 
+  cel: !ruby/object:UncleKryon::Language
+    name: Celtic languages
+    names: Celtic languages
+    code: cel
+    codes: cel
+    alpha2_code: 
+    alpha3_code: cel
+    alpha3_code_b: 
+  ces: !ruby/object:UncleKryon::Language
+    name: Czech
+    names: Czech
+    code: ces
+    codes: ces;cze;cs
+    alpha2_code: cs
+    alpha3_code: ces
+    alpha3_code_b: cze
+  cha: !ruby/object:UncleKryon::Language
+    name: Chamorro
+    names: Chamorro
+    code: cha
+    codes: cha;ch
+    alpha2_code: ch
+    alpha3_code: cha
+    alpha3_code_b: 
+  chb: !ruby/object:UncleKryon::Language
+    name: Chibcha
+    names: Chibcha
+    code: chb
+    codes: chb
+    alpha2_code: 
+    alpha3_code: chb
+    alpha3_code_b: 
+  che: !ruby/object:UncleKryon::Language
+    name: Chechen
+    names: Chechen
+    code: che
+    codes: che;ce
+    alpha2_code: ce
+    alpha3_code: che
+    alpha3_code_b: 
+  chg: !ruby/object:UncleKryon::Language
+    name: Chagatai
+    names: Chagatai
+    code: chg
+    codes: chg
+    alpha2_code: 
+    alpha3_code: chg
+    alpha3_code_b: 
+  chk: !ruby/object:UncleKryon::Language
+    name: Chuukese
+    names: Chuukese
+    code: chk
+    codes: chk
+    alpha2_code: 
+    alpha3_code: chk
+    alpha3_code_b: 
+  chm: !ruby/object:UncleKryon::Language
+    name: Mari
+    names: Mari
+    code: chm
+    codes: chm
+    alpha2_code: 
+    alpha3_code: chm
+    alpha3_code_b: 
+  chn: !ruby/object:UncleKryon::Language
+    name: Chinook jargon
+    names: Chinook jargon
+    code: chn
+    codes: chn
+    alpha2_code: 
+    alpha3_code: chn
+    alpha3_code_b: 
+  cho: !ruby/object:UncleKryon::Language
+    name: Choctaw
+    names: Choctaw
+    code: cho
+    codes: cho
+    alpha2_code: 
+    alpha3_code: cho
+    alpha3_code_b: 
+  chp: !ruby/object:UncleKryon::Language
+    name: Chipewyan
+    names: Chipewyan;Dene Suline
+    code: chp
+    codes: chp
+    alpha2_code: 
+    alpha3_code: chp
+    alpha3_code_b: 
+  chr: !ruby/object:UncleKryon::Language
+    name: Cherokee
+    names: Cherokee
+    code: chr
+    codes: chr
+    alpha2_code: 
+    alpha3_code: chr
+    alpha3_code_b: 
+  chu: !ruby/object:UncleKryon::Language
+    name: Church Slavic
+    names: Church Slavic;Old Slavonic;Church Slavonic;Old Bulgarian;Old Church Slavonic
+    code: chu
+    codes: chu;cu
+    alpha2_code: cu
+    alpha3_code: chu
+    alpha3_code_b: 
+  chv: !ruby/object:UncleKryon::Language
+    name: Chuvash
+    names: Chuvash
+    code: chv
+    codes: chv;cv
+    alpha2_code: cv
+    alpha3_code: chv
+    alpha3_code_b: 
+  chy: !ruby/object:UncleKryon::Language
+    name: Cheyenne
+    names: Cheyenne
+    code: chy
+    codes: chy
+    alpha2_code: 
+    alpha3_code: chy
+    alpha3_code_b: 
+  cmc: !ruby/object:UncleKryon::Language
+    name: Chamic languages
+    names: Chamic languages
+    code: cmc
+    codes: cmc
+    alpha2_code: 
+    alpha3_code: cmc
+    alpha3_code_b: 
+  cnr: !ruby/object:UncleKryon::Language
+    name: Montenegrin
+    names: Montenegrin
+    code: cnr
+    codes: cnr
+    alpha2_code: 
+    alpha3_code: cnr
+    alpha3_code_b: 
+  cop: !ruby/object:UncleKryon::Language
+    name: Coptic
+    names: Coptic
+    code: cop
+    codes: cop
+    alpha2_code: 
+    alpha3_code: cop
+    alpha3_code_b: 
+  cor: !ruby/object:UncleKryon::Language
+    name: Cornish
+    names: Cornish
+    code: cor
+    codes: cor;kw
+    alpha2_code: kw
+    alpha3_code: cor
+    alpha3_code_b: 
+  cos: !ruby/object:UncleKryon::Language
+    name: Corsican
+    names: Corsican
+    code: cos
+    codes: cos;co
+    alpha2_code: co
+    alpha3_code: cos
+    alpha3_code_b: 
+  cpe: !ruby/object:UncleKryon::Language
+    name: English based Creoles and pidgins
+    names: English based Creoles and pidgins
+    code: cpe
+    codes: cpe
+    alpha2_code: 
+    alpha3_code: cpe
+    alpha3_code_b: 
+  cpf: !ruby/object:UncleKryon::Language
+    name: French-based Creoles and pidgins
+    names: French-based Creoles and pidgins
+    code: cpf
+    codes: cpf
+    alpha2_code: 
+    alpha3_code: cpf
+    alpha3_code_b: 
+  cpp: !ruby/object:UncleKryon::Language
+    name: Portuguese-based Creoles and pidgins
+    names: Portuguese-based Creoles and pidgins
+    code: cpp
+    codes: cpp
+    alpha2_code: 
+    alpha3_code: cpp
+    alpha3_code_b: 
+  cre: !ruby/object:UncleKryon::Language
+    name: Cree
+    names: Cree
+    code: cre
+    codes: cre;cr
+    alpha2_code: cr
+    alpha3_code: cre
+    alpha3_code_b: 
+  crh: !ruby/object:UncleKryon::Language
+    name: Crimean Tatar
+    names: Crimean Tatar;Crimean Turkish
+    code: crh
+    codes: crh
+    alpha2_code: 
+    alpha3_code: crh
+    alpha3_code_b: 
+  crp: !ruby/object:UncleKryon::Language
+    name: Creoles and pidgins
+    names: Creoles and pidgins
+    code: crp
+    codes: crp
+    alpha2_code: 
+    alpha3_code: crp
+    alpha3_code_b: 
+  csb: !ruby/object:UncleKryon::Language
+    name: Kashubian
+    names: Kashubian
+    code: csb
+    codes: csb
+    alpha2_code: 
+    alpha3_code: csb
+    alpha3_code_b: 
+  cus: !ruby/object:UncleKryon::Language
+    name: Cushitic languages
+    names: Cushitic languages
+    code: cus
+    codes: cus
+    alpha2_code: 
+    alpha3_code: cus
+    alpha3_code_b: 
+  cym: !ruby/object:UncleKryon::Language
+    name: Welsh
+    names: Welsh
+    code: cym
+    codes: cym;wel;cy
+    alpha2_code: cy
+    alpha3_code: cym
+    alpha3_code_b: wel
+  dak: !ruby/object:UncleKryon::Language
+    name: Dakota
+    names: Dakota
+    code: dak
+    codes: dak
+    alpha2_code: 
+    alpha3_code: dak
+    alpha3_code_b: 
+  dan: !ruby/object:UncleKryon::Language
+    name: Danish
+    names: Danish
+    code: dan
+    codes: dan;da
+    alpha2_code: da
+    alpha3_code: dan
+    alpha3_code_b: 
+  dar: !ruby/object:UncleKryon::Language
+    name: Dargwa
+    names: Dargwa
+    code: dar
+    codes: dar
+    alpha2_code: 
+    alpha3_code: dar
+    alpha3_code_b: 
+  day: !ruby/object:UncleKryon::Language
+    name: Land Dayak languages
+    names: Land Dayak languages
+    code: day
+    codes: day
+    alpha2_code: 
+    alpha3_code: day
+    alpha3_code_b: 
+  del: !ruby/object:UncleKryon::Language
+    name: Delaware
+    names: Delaware
+    code: del
+    codes: del
+    alpha2_code: 
+    alpha3_code: del
+    alpha3_code_b: 
+  den: !ruby/object:UncleKryon::Language
+    name: Slave
+    names: Slave
+    code: den
+    codes: den
+    alpha2_code: 
+    alpha3_code: den
+    alpha3_code_b: 
+  deu: !ruby/object:UncleKryon::Language
+    name: German
+    names: German
+    code: deu
+    codes: deu;ger;de
+    alpha2_code: de
+    alpha3_code: deu
+    alpha3_code_b: ger
+  dgr: !ruby/object:UncleKryon::Language
+    name: Dogrib
+    names: Dogrib
+    code: dgr
+    codes: dgr
+    alpha2_code: 
+    alpha3_code: dgr
+    alpha3_code_b: 
+  din: !ruby/object:UncleKryon::Language
+    name: Dinka
+    names: Dinka
+    code: din
+    codes: din
+    alpha2_code: 
+    alpha3_code: din
+    alpha3_code_b: 
+  div: !ruby/object:UncleKryon::Language
+    name: Divehi
+    names: Divehi;Dhivehi;Maldivian
+    code: div
+    codes: div;dv
+    alpha2_code: dv
+    alpha3_code: div
+    alpha3_code_b: 
+  doi: !ruby/object:UncleKryon::Language
+    name: Dogri
+    names: Dogri
+    code: doi
+    codes: doi
+    alpha2_code: 
+    alpha3_code: doi
+    alpha3_code_b: 
+  dra: !ruby/object:UncleKryon::Language
+    name: Dravidian languages
+    names: Dravidian languages
+    code: dra
+    codes: dra
+    alpha2_code: 
+    alpha3_code: dra
+    alpha3_code_b: 
+  dsb: !ruby/object:UncleKryon::Language
+    name: Lower Sorbian
+    names: Lower Sorbian
+    code: dsb
+    codes: dsb
+    alpha2_code: 
+    alpha3_code: dsb
+    alpha3_code_b: 
+  dua: !ruby/object:UncleKryon::Language
+    name: Duala
+    names: Duala
+    code: dua
+    codes: dua
+    alpha2_code: 
+    alpha3_code: dua
+    alpha3_code_b: 
+  dum: !ruby/object:UncleKryon::Language
+    name: Middle Dutch
+    names: Middle Dutch
+    code: dum
+    codes: dum
+    alpha2_code: 
+    alpha3_code: dum
+    alpha3_code_b: 
+  dyu: !ruby/object:UncleKryon::Language
+    name: Dyula
+    names: Dyula
+    code: dyu
+    codes: dyu
+    alpha2_code: 
+    alpha3_code: dyu
+    alpha3_code_b: 
+  dzo: !ruby/object:UncleKryon::Language
+    name: Dzongkha
+    names: Dzongkha
+    code: dzo
+    codes: dzo;dz
+    alpha2_code: dz
+    alpha3_code: dzo
+    alpha3_code_b: 
+  efi: !ruby/object:UncleKryon::Language
+    name: Efik
+    names: Efik
+    code: efi
+    codes: efi
+    alpha2_code: 
+    alpha3_code: efi
+    alpha3_code_b: 
+  egy: !ruby/object:UncleKryon::Language
+    name: Egyptian
+    names: Egyptian
+    code: egy
+    codes: egy
+    alpha2_code: 
+    alpha3_code: egy
+    alpha3_code_b: 
+  eka: !ruby/object:UncleKryon::Language
+    name: Ekajuk
+    names: Ekajuk
+    code: eka
+    codes: eka
+    alpha2_code: 
+    alpha3_code: eka
+    alpha3_code_b: 
+  ell: !ruby/object:UncleKryon::Language
+    name: Modern Greek
+    names: Modern Greek
+    code: ell
+    codes: ell;gre;el
+    alpha2_code: el
+    alpha3_code: ell
+    alpha3_code_b: gre
+  elx: !ruby/object:UncleKryon::Language
+    name: Elamite
+    names: Elamite
+    code: elx
+    codes: elx
+    alpha2_code: 
+    alpha3_code: elx
+    alpha3_code_b: 
+  eng: !ruby/object:UncleKryon::Language
+    name: English
+    names: English
+    code: eng
+    codes: eng;en
+    alpha2_code: en
+    alpha3_code: eng
+    alpha3_code_b: 
+  enm: !ruby/object:UncleKryon::Language
+    name: Middle English
+    names: Middle English
+    code: enm
+    codes: enm
+    alpha2_code: 
+    alpha3_code: enm
+    alpha3_code_b: 
+  epo: !ruby/object:UncleKryon::Language
+    name: Esperanto
+    names: Esperanto
+    code: epo
+    codes: epo;eo
+    alpha2_code: eo
+    alpha3_code: epo
+    alpha3_code_b: 
+  est: !ruby/object:UncleKryon::Language
+    name: Estonian
+    names: Estonian
+    code: est
+    codes: est;et
+    alpha2_code: et
+    alpha3_code: est
+    alpha3_code_b: 
+  eus: !ruby/object:UncleKryon::Language
+    name: Basque
+    names: Basque
+    code: eus
+    codes: eus;baq;eu
+    alpha2_code: eu
+    alpha3_code: eus
+    alpha3_code_b: baq
+  ewe: !ruby/object:UncleKryon::Language
+    name: Ewe
+    names: Ewe
+    code: ewe
+    codes: ewe;ee
+    alpha2_code: ee
+    alpha3_code: ewe
+    alpha3_code_b: 
+  ewo: !ruby/object:UncleKryon::Language
+    name: Ewondo
+    names: Ewondo
+    code: ewo
+    codes: ewo
+    alpha2_code: 
+    alpha3_code: ewo
+    alpha3_code_b: 
+  fan: !ruby/object:UncleKryon::Language
+    name: Fang
+    names: Fang
+    code: fan
+    codes: fan
+    alpha2_code: 
+    alpha3_code: fan
+    alpha3_code_b: 
+  fao: !ruby/object:UncleKryon::Language
+    name: Faroese
+    names: Faroese
+    code: fao
+    codes: fao;fo
+    alpha2_code: fo
+    alpha3_code: fao
+    alpha3_code_b: 
+  fas: !ruby/object:UncleKryon::Language
+    name: Persian
+    names: Persian
+    code: fas
+    codes: fas;per;fa
+    alpha2_code: fa
+    alpha3_code: fas
+    alpha3_code_b: per
+  fat: !ruby/object:UncleKryon::Language
+    name: Fanti
+    names: Fanti
+    code: fat
+    codes: fat
+    alpha2_code: 
+    alpha3_code: fat
+    alpha3_code_b: 
+  fij: !ruby/object:UncleKryon::Language
+    name: Fijian
+    names: Fijian
+    code: fij
+    codes: fij;fj
+    alpha2_code: fj
+    alpha3_code: fij
+    alpha3_code_b: 
+  fil: !ruby/object:UncleKryon::Language
+    name: Filipino
+    names: Filipino;Pilipino
+    code: fil
+    codes: fil
+    alpha2_code: 
+    alpha3_code: fil
+    alpha3_code_b: 
+  fin: !ruby/object:UncleKryon::Language
+    name: Finnish
+    names: Finnish
+    code: fin
+    codes: fin;fi
+    alpha2_code: fi
+    alpha3_code: fin
+    alpha3_code_b: 
+  fiu: !ruby/object:UncleKryon::Language
+    name: Finno-Ugrian languages
+    names: Finno-Ugrian languages
+    code: fiu
+    codes: fiu
+    alpha2_code: 
+    alpha3_code: fiu
+    alpha3_code_b: 
+  fon: !ruby/object:UncleKryon::Language
+    name: Fon
+    names: Fon
+    code: fon
+    codes: fon
+    alpha2_code: 
+    alpha3_code: fon
+    alpha3_code_b: 
+  fra: !ruby/object:UncleKryon::Language
+    name: French
+    names: French
+    code: fra
+    codes: fra;fre;fr
+    alpha2_code: fr
+    alpha3_code: fra
+    alpha3_code_b: fre
+  frm: !ruby/object:UncleKryon::Language
+    name: Middle French
+    names: Middle French
+    code: frm
+    codes: frm
+    alpha2_code: 
+    alpha3_code: frm
+    alpha3_code_b: 
+  fro: !ruby/object:UncleKryon::Language
+    name: Old French
+    names: Old French
+    code: fro
+    codes: fro
+    alpha2_code: 
+    alpha3_code: fro
+    alpha3_code_b: 
+  frr: !ruby/object:UncleKryon::Language
+    name: Northern Frisian
+    names: Northern Frisian
+    code: frr
+    codes: frr
+    alpha2_code: 
+    alpha3_code: frr
+    alpha3_code_b: 
+  frs: !ruby/object:UncleKryon::Language
+    name: Eastern Frisian
+    names: Eastern Frisian
+    code: frs
+    codes: frs
+    alpha2_code: 
+    alpha3_code: frs
+    alpha3_code_b: 
+  fry: !ruby/object:UncleKryon::Language
+    name: Western Frisian
+    names: Western Frisian
+    code: fry
+    codes: fry;fy
+    alpha2_code: fy
+    alpha3_code: fry
+    alpha3_code_b: 
+  ful: !ruby/object:UncleKryon::Language
+    name: Fulah
+    names: Fulah
+    code: ful
+    codes: ful;ff
+    alpha2_code: ff
+    alpha3_code: ful
+    alpha3_code_b: 
+  fur: !ruby/object:UncleKryon::Language
+    name: Friulian
+    names: Friulian
+    code: fur
+    codes: fur
+    alpha2_code: 
+    alpha3_code: fur
+    alpha3_code_b: 
+  gaa: !ruby/object:UncleKryon::Language
+    name: Ga
+    names: Ga
+    code: gaa
+    codes: gaa
+    alpha2_code: 
+    alpha3_code: gaa
+    alpha3_code_b: 
+  gay: !ruby/object:UncleKryon::Language
+    name: Gayo
+    names: Gayo
+    code: gay
+    codes: gay
+    alpha2_code: 
+    alpha3_code: gay
+    alpha3_code_b: 
+  gba: !ruby/object:UncleKryon::Language
+    name: Gbaya
+    names: Gbaya
+    code: gba
+    codes: gba
+    alpha2_code: 
+    alpha3_code: gba
+    alpha3_code_b: 
+  gem: !ruby/object:UncleKryon::Language
+    name: Germanic languages
+    names: Germanic languages
+    code: gem
+    codes: gem
+    alpha2_code: 
+    alpha3_code: gem
+    alpha3_code_b: 
+  gez: !ruby/object:UncleKryon::Language
+    name: Geez
+    names: Geez
+    code: gez
+    codes: gez
+    alpha2_code: 
+    alpha3_code: gez
+    alpha3_code_b: 
+  gil: !ruby/object:UncleKryon::Language
+    name: Gilbertese
+    names: Gilbertese
+    code: gil
+    codes: gil
+    alpha2_code: 
+    alpha3_code: gil
+    alpha3_code_b: 
+  gla: !ruby/object:UncleKryon::Language
+    name: Gaelic
+    names: Gaelic;Scottish Gaelic
+    code: gla
+    codes: gla;gd
+    alpha2_code: gd
+    alpha3_code: gla
+    alpha3_code_b: 
+  gle: !ruby/object:UncleKryon::Language
+    name: Irish
+    names: Irish
+    code: gle
+    codes: gle;ga
+    alpha2_code: ga
+    alpha3_code: gle
+    alpha3_code_b: 
+  glg: !ruby/object:UncleKryon::Language
+    name: Galician
+    names: Galician
+    code: glg
+    codes: glg;gl
+    alpha2_code: gl
+    alpha3_code: glg
+    alpha3_code_b: 
+  glv: !ruby/object:UncleKryon::Language
+    name: Manx
+    names: Manx
+    code: glv
+    codes: glv;gv
+    alpha2_code: gv
+    alpha3_code: glv
+    alpha3_code_b: 
+  gmh: !ruby/object:UncleKryon::Language
+    name: Middle High German
+    names: Middle High German
+    code: gmh
+    codes: gmh
+    alpha2_code: 
+    alpha3_code: gmh
+    alpha3_code_b: 
+  goh: !ruby/object:UncleKryon::Language
+    name: Old High German
+    names: Old High German
+    code: goh
+    codes: goh
+    alpha2_code: 
+    alpha3_code: goh
+    alpha3_code_b: 
+  gon: !ruby/object:UncleKryon::Language
+    name: Gondi
+    names: Gondi
+    code: gon
+    codes: gon
+    alpha2_code: 
+    alpha3_code: gon
+    alpha3_code_b: 
+  gor: !ruby/object:UncleKryon::Language
+    name: Gorontalo
+    names: Gorontalo
+    code: gor
+    codes: gor
+    alpha2_code: 
+    alpha3_code: gor
+    alpha3_code_b: 
+  got: !ruby/object:UncleKryon::Language
+    name: Gothic
+    names: Gothic
+    code: got
+    codes: got
+    alpha2_code: 
+    alpha3_code: got
+    alpha3_code_b: 
+  grb: !ruby/object:UncleKryon::Language
+    name: Grebo
+    names: Grebo
+    code: grb
+    codes: grb
+    alpha2_code: 
+    alpha3_code: grb
+    alpha3_code_b: 
+  grc: !ruby/object:UncleKryon::Language
+    name: Ancient Greek
+    names: Ancient Greek
+    code: grc
+    codes: grc
+    alpha2_code: 
+    alpha3_code: grc
+    alpha3_code_b: 
+  grn: !ruby/object:UncleKryon::Language
+    name: Guarani
+    names: Guarani
+    code: grn
+    codes: grn;gn
+    alpha2_code: gn
+    alpha3_code: grn
+    alpha3_code_b: 
+  gsw: !ruby/object:UncleKryon::Language
+    name: Swiss German
+    names: Swiss German;Alemannic;Alsatian
+    code: gsw
+    codes: gsw
+    alpha2_code: 
+    alpha3_code: gsw
+    alpha3_code_b: 
+  guj: !ruby/object:UncleKryon::Language
+    name: Gujarati
+    names: Gujarati
+    code: guj
+    codes: guj;gu
+    alpha2_code: gu
+    alpha3_code: guj
+    alpha3_code_b: 
+  gwi: !ruby/object:UncleKryon::Language
+    name: Gwich'in
+    names: Gwich'in
+    code: gwi
+    codes: gwi
+    alpha2_code: 
+    alpha3_code: gwi
+    alpha3_code_b: 
+  hai: !ruby/object:UncleKryon::Language
+    name: Haida
+    names: Haida
+    code: hai
+    codes: hai
+    alpha2_code: 
+    alpha3_code: hai
+    alpha3_code_b: 
+  hat: !ruby/object:UncleKryon::Language
+    name: Haitian
+    names: Haitian;Haitian Creole
+    code: hat
+    codes: hat;ht
+    alpha2_code: ht
+    alpha3_code: hat
+    alpha3_code_b: 
+  hau: !ruby/object:UncleKryon::Language
+    name: Hausa
+    names: Hausa
+    code: hau
+    codes: hau;ha
+    alpha2_code: ha
+    alpha3_code: hau
+    alpha3_code_b: 
+  haw: !ruby/object:UncleKryon::Language
+    name: Hawaiian
+    names: Hawaiian
+    code: haw
+    codes: haw
+    alpha2_code: 
+    alpha3_code: haw
+    alpha3_code_b: 
+  heb: !ruby/object:UncleKryon::Language
+    name: Hebrew
+    names: Hebrew
+    code: heb
+    codes: heb;he
+    alpha2_code: he
+    alpha3_code: heb
+    alpha3_code_b: 
+  her: !ruby/object:UncleKryon::Language
+    name: Herero
+    names: Herero
+    code: her
+    codes: her;hz
+    alpha2_code: hz
+    alpha3_code: her
+    alpha3_code_b: 
+  hil: !ruby/object:UncleKryon::Language
+    name: Hiligaynon
+    names: Hiligaynon
+    code: hil
+    codes: hil
+    alpha2_code: 
+    alpha3_code: hil
+    alpha3_code_b: 
+  him: !ruby/object:UncleKryon::Language
+    name: Himachali languages
+    names: Himachali languages;Western Pahari languages
+    code: him
+    codes: him
+    alpha2_code: 
+    alpha3_code: him
+    alpha3_code_b: 
+  hin: !ruby/object:UncleKryon::Language
+    name: Hindi
+    names: Hindi
+    code: hin
+    codes: hin;hi
+    alpha2_code: hi
+    alpha3_code: hin
+    alpha3_code_b: 
+  hit: !ruby/object:UncleKryon::Language
+    name: Hittite
+    names: Hittite
+    code: hit
+    codes: hit
+    alpha2_code: 
+    alpha3_code: hit
+    alpha3_code_b: 
+  hmn: !ruby/object:UncleKryon::Language
+    name: Hmong
+    names: Hmong;Mong
+    code: hmn
+    codes: hmn
+    alpha2_code: 
+    alpha3_code: hmn
+    alpha3_code_b: 
+  hmo: !ruby/object:UncleKryon::Language
+    name: Hiri Motu
+    names: Hiri Motu
+    code: hmo
+    codes: hmo;ho
+    alpha2_code: ho
+    alpha3_code: hmo
+    alpha3_code_b: 
+  hrv: !ruby/object:UncleKryon::Language
+    name: Croatian
+    names: Croatian
+    code: hrv
+    codes: hrv;hr
+    alpha2_code: hr
+    alpha3_code: hrv
+    alpha3_code_b: 
+  hsb: !ruby/object:UncleKryon::Language
+    name: Upper Sorbian
+    names: Upper Sorbian
+    code: hsb
+    codes: hsb
+    alpha2_code: 
+    alpha3_code: hsb
+    alpha3_code_b: 
+  hun: !ruby/object:UncleKryon::Language
+    name: Hungarian
+    names: Hungarian
+    code: hun
+    codes: hun;hu
+    alpha2_code: hu
+    alpha3_code: hun
+    alpha3_code_b: 
+  hup: !ruby/object:UncleKryon::Language
+    name: Hupa
+    names: Hupa
+    code: hup
+    codes: hup
+    alpha2_code: 
+    alpha3_code: hup
+    alpha3_code_b: 
+  hye: !ruby/object:UncleKryon::Language
+    name: Armenian
+    names: Armenian
+    code: hye
+    codes: hye;arm;hy
+    alpha2_code: hy
+    alpha3_code: hye
+    alpha3_code_b: arm
+  iba: !ruby/object:UncleKryon::Language
+    name: Iban
+    names: Iban
+    code: iba
+    codes: iba
+    alpha2_code: 
+    alpha3_code: iba
+    alpha3_code_b: 
+  ibo: !ruby/object:UncleKryon::Language
+    name: Igbo
+    names: Igbo
+    code: ibo
+    codes: ibo;ig
+    alpha2_code: ig
+    alpha3_code: ibo
+    alpha3_code_b: 
+  ido: !ruby/object:UncleKryon::Language
+    name: Ido
+    names: Ido
+    code: ido
+    codes: ido;io
+    alpha2_code: io
+    alpha3_code: ido
+    alpha3_code_b: 
+  iii: !ruby/object:UncleKryon::Language
+    name: Sichuan Yi
+    names: Sichuan Yi;Nuosu
+    code: iii
+    codes: iii;ii
+    alpha2_code: ii
+    alpha3_code: iii
+    alpha3_code_b: 
+  ijo: !ruby/object:UncleKryon::Language
+    name: Ijo languages
+    names: Ijo languages
+    code: ijo
+    codes: ijo
+    alpha2_code: 
+    alpha3_code: ijo
+    alpha3_code_b: 
+  iku: !ruby/object:UncleKryon::Language
+    name: Inuktitut
+    names: Inuktitut
+    code: iku
+    codes: iku;iu
+    alpha2_code: iu
+    alpha3_code: iku
+    alpha3_code_b: 
+  ile: !ruby/object:UncleKryon::Language
+    name: Interlingue
+    names: Interlingue;Occidental
+    code: ile
+    codes: ile;ie
+    alpha2_code: ie
+    alpha3_code: ile
+    alpha3_code_b: 
+  ilo: !ruby/object:UncleKryon::Language
+    name: Iloko
+    names: Iloko
+    code: ilo
+    codes: ilo
+    alpha2_code: 
+    alpha3_code: ilo
+    alpha3_code_b: 
+  ina: !ruby/object:UncleKryon::Language
+    name: Interlingua
+    names: Interlingua
+    code: ina
+    codes: ina;ia
+    alpha2_code: ia
+    alpha3_code: ina
+    alpha3_code_b: 
+  inc: !ruby/object:UncleKryon::Language
+    name: Indic languages
+    names: Indic languages
+    code: inc
+    codes: inc
+    alpha2_code: 
+    alpha3_code: inc
+    alpha3_code_b: 
+  ind: !ruby/object:UncleKryon::Language
+    name: Indonesian
+    names: Indonesian
+    code: ind
+    codes: ind;id
+    alpha2_code: id
+    alpha3_code: ind
+    alpha3_code_b: 
+  ine: !ruby/object:UncleKryon::Language
+    name: Indo-European languages
+    names: Indo-European languages
+    code: ine
+    codes: ine
+    alpha2_code: 
+    alpha3_code: ine
+    alpha3_code_b: 
+  inh: !ruby/object:UncleKryon::Language
+    name: Ingush
+    names: Ingush
+    code: inh
+    codes: inh
+    alpha2_code: 
+    alpha3_code: inh
+    alpha3_code_b: 
+  ipk: !ruby/object:UncleKryon::Language
+    name: Inupiaq
+    names: Inupiaq
+    code: ipk
+    codes: ipk;ik
+    alpha2_code: ik
+    alpha3_code: ipk
+    alpha3_code_b: 
+  ira: !ruby/object:UncleKryon::Language
+    name: Iranian languages
+    names: Iranian languages
+    code: ira
+    codes: ira
+    alpha2_code: 
+    alpha3_code: ira
+    alpha3_code_b: 
+  iro: !ruby/object:UncleKryon::Language
+    name: Iroquoian languages
+    names: Iroquoian languages
+    code: iro
+    codes: iro
+    alpha2_code: 
+    alpha3_code: iro
+    alpha3_code_b: 
+  isl: !ruby/object:UncleKryon::Language
+    name: Icelandic
+    names: Icelandic
+    code: isl
+    codes: isl;ice;is
+    alpha2_code: is
+    alpha3_code: isl
+    alpha3_code_b: ice
+  ita: !ruby/object:UncleKryon::Language
+    name: Italian
+    names: Italian
+    code: ita
+    codes: ita;it
+    alpha2_code: it
+    alpha3_code: ita
+    alpha3_code_b: 
+  jav: !ruby/object:UncleKryon::Language
+    name: Javanese
+    names: Javanese
+    code: jav
+    codes: jav;jv
+    alpha2_code: jv
+    alpha3_code: jav
+    alpha3_code_b: 
+  jbo: !ruby/object:UncleKryon::Language
+    name: Lojban
+    names: Lojban
+    code: jbo
+    codes: jbo
+    alpha2_code: 
+    alpha3_code: jbo
+    alpha3_code_b: 
+  jpn: !ruby/object:UncleKryon::Language
+    name: Japanese
+    names: Japanese
+    code: jpn
+    codes: jpn;ja
+    alpha2_code: ja
+    alpha3_code: jpn
+    alpha3_code_b: 
+  jpr: !ruby/object:UncleKryon::Language
+    name: Judeo-Persian
+    names: Judeo-Persian
+    code: jpr
+    codes: jpr
+    alpha2_code: 
+    alpha3_code: jpr
+    alpha3_code_b: 
+  jrb: !ruby/object:UncleKryon::Language
+    name: Judeo-Arabic
+    names: Judeo-Arabic
+    code: jrb
+    codes: jrb
+    alpha2_code: 
+    alpha3_code: jrb
+    alpha3_code_b: 
+  kaa: !ruby/object:UncleKryon::Language
+    name: Kara-Kalpak
+    names: Kara-Kalpak
+    code: kaa
+    codes: kaa
+    alpha2_code: 
+    alpha3_code: kaa
+    alpha3_code_b: 
+  kab: !ruby/object:UncleKryon::Language
+    name: Kabyle
+    names: Kabyle
+    code: kab
+    codes: kab
+    alpha2_code: 
+    alpha3_code: kab
+    alpha3_code_b: 
+  kac: !ruby/object:UncleKryon::Language
+    name: Kachin
+    names: Kachin;Jingpho
+    code: kac
+    codes: kac
+    alpha2_code: 
+    alpha3_code: kac
+    alpha3_code_b: 
+  kal: !ruby/object:UncleKryon::Language
+    name: Kalaallisut
+    names: Kalaallisut;Greenlandic
+    code: kal
+    codes: kal;kl
+    alpha2_code: kl
+    alpha3_code: kal
+    alpha3_code_b: 
+  kam: !ruby/object:UncleKryon::Language
+    name: Kamba
+    names: Kamba
+    code: kam
+    codes: kam
+    alpha2_code: 
+    alpha3_code: kam
+    alpha3_code_b: 
+  kan: !ruby/object:UncleKryon::Language
+    name: Kannada
+    names: Kannada
+    code: kan
+    codes: kan;kn
+    alpha2_code: kn
+    alpha3_code: kan
+    alpha3_code_b: 
+  kar: !ruby/object:UncleKryon::Language
+    name: Karen languages
+    names: Karen languages
+    code: kar
+    codes: kar
+    alpha2_code: 
+    alpha3_code: kar
+    alpha3_code_b: 
+  kas: !ruby/object:UncleKryon::Language
+    name: Kashmiri
+    names: Kashmiri
+    code: kas
+    codes: kas;ks
+    alpha2_code: ks
+    alpha3_code: kas
+    alpha3_code_b: 
+  kat: !ruby/object:UncleKryon::Language
+    name: Georgian
+    names: Georgian
+    code: kat
+    codes: kat;geo;ka
+    alpha2_code: ka
+    alpha3_code: kat
+    alpha3_code_b: geo
+  kau: !ruby/object:UncleKryon::Language
+    name: Kanuri
+    names: Kanuri
+    code: kau
+    codes: kau;kr
+    alpha2_code: kr
+    alpha3_code: kau
+    alpha3_code_b: 
+  kaw: !ruby/object:UncleKryon::Language
+    name: Kawi
+    names: Kawi
+    code: kaw
+    codes: kaw
+    alpha2_code: 
+    alpha3_code: kaw
+    alpha3_code_b: 
+  kaz: !ruby/object:UncleKryon::Language
+    name: Kazakh
+    names: Kazakh
+    code: kaz
+    codes: kaz;kk
+    alpha2_code: kk
+    alpha3_code: kaz
+    alpha3_code_b: 
+  kbd: !ruby/object:UncleKryon::Language
+    name: Kabardian
+    names: Kabardian
+    code: kbd
+    codes: kbd
+    alpha2_code: 
+    alpha3_code: kbd
+    alpha3_code_b: 
+  kha: !ruby/object:UncleKryon::Language
+    name: Khasi
+    names: Khasi
+    code: kha
+    codes: kha
+    alpha2_code: 
+    alpha3_code: kha
+    alpha3_code_b: 
+  khi: !ruby/object:UncleKryon::Language
+    name: Khoisan languages
+    names: Khoisan languages
+    code: khi
+    codes: khi
+    alpha2_code: 
+    alpha3_code: khi
+    alpha3_code_b: 
+  khm: !ruby/object:UncleKryon::Language
+    name: Central Khmer
+    names: Central Khmer
+    code: khm
+    codes: khm;km
+    alpha2_code: km
+    alpha3_code: khm
+    alpha3_code_b: 
+  kho: !ruby/object:UncleKryon::Language
+    name: Khotanese
+    names: Khotanese;Sakan
+    code: kho
+    codes: kho
+    alpha2_code: 
+    alpha3_code: kho
+    alpha3_code_b: 
+  kik: !ruby/object:UncleKryon::Language
+    name: Kikuyu
+    names: Kikuyu;Gikuyu
+    code: kik
+    codes: kik;ki
+    alpha2_code: ki
+    alpha3_code: kik
+    alpha3_code_b: 
+  kin: !ruby/object:UncleKryon::Language
+    name: Kinyarwanda
+    names: Kinyarwanda
+    code: kin
+    codes: kin;rw
+    alpha2_code: rw
+    alpha3_code: kin
+    alpha3_code_b: 
+  kir: !ruby/object:UncleKryon::Language
+    name: Kirghiz
+    names: Kirghiz;Kyrgyz
+    code: kir
+    codes: kir;ky
+    alpha2_code: ky
+    alpha3_code: kir
+    alpha3_code_b: 
+  kmb: !ruby/object:UncleKryon::Language
+    name: Kimbundu
+    names: Kimbundu
+    code: kmb
+    codes: kmb
+    alpha2_code: 
+    alpha3_code: kmb
+    alpha3_code_b: 
+  kok: !ruby/object:UncleKryon::Language
+    name: Konkani
+    names: Konkani
+    code: kok
+    codes: kok
+    alpha2_code: 
+    alpha3_code: kok
+    alpha3_code_b: 
+  kom: !ruby/object:UncleKryon::Language
+    name: Komi
+    names: Komi
+    code: kom
+    codes: kom;kv
+    alpha2_code: kv
+    alpha3_code: kom
+    alpha3_code_b: 
+  kon: !ruby/object:UncleKryon::Language
+    name: Kongo
+    names: Kongo
+    code: kon
+    codes: kon;kg
+    alpha2_code: kg
+    alpha3_code: kon
+    alpha3_code_b: 
+  kor: !ruby/object:UncleKryon::Language
+    name: Korean
+    names: Korean
+    code: kor
+    codes: kor;ko
+    alpha2_code: ko
+    alpha3_code: kor
+    alpha3_code_b: 
+  kos: !ruby/object:UncleKryon::Language
+    name: Kosraean
+    names: Kosraean
+    code: kos
+    codes: kos
+    alpha2_code: 
+    alpha3_code: kos
+    alpha3_code_b: 
+  kpe: !ruby/object:UncleKryon::Language
+    name: Kpelle
+    names: Kpelle
+    code: kpe
+    codes: kpe
+    alpha2_code: 
+    alpha3_code: kpe
+    alpha3_code_b: 
+  krc: !ruby/object:UncleKryon::Language
+    name: Karachay-Balkar
+    names: Karachay-Balkar
+    code: krc
+    codes: krc
+    alpha2_code: 
+    alpha3_code: krc
+    alpha3_code_b: 
+  krl: !ruby/object:UncleKryon::Language
+    name: Karelian
+    names: Karelian
+    code: krl
+    codes: krl
+    alpha2_code: 
+    alpha3_code: krl
+    alpha3_code_b: 
+  kro: !ruby/object:UncleKryon::Language
+    name: Kru languages
+    names: Kru languages
+    code: kro
+    codes: kro
+    alpha2_code: 
+    alpha3_code: kro
+    alpha3_code_b: 
+  kru: !ruby/object:UncleKryon::Language
+    name: Kurukh
+    names: Kurukh
+    code: kru
+    codes: kru
+    alpha2_code: 
+    alpha3_code: kru
+    alpha3_code_b: 
+  kua: !ruby/object:UncleKryon::Language
+    name: Kuanyama
+    names: Kuanyama;Kwanyama
+    code: kua
+    codes: kua;kj
+    alpha2_code: kj
+    alpha3_code: kua
+    alpha3_code_b: 
+  kum: !ruby/object:UncleKryon::Language
+    name: Kumyk
+    names: Kumyk
+    code: kum
+    codes: kum
+    alpha2_code: 
+    alpha3_code: kum
+    alpha3_code_b: 
+  kur: !ruby/object:UncleKryon::Language
+    name: Kurdish
+    names: Kurdish
+    code: kur
+    codes: kur;ku
+    alpha2_code: ku
+    alpha3_code: kur
+    alpha3_code_b: 
+  kut: !ruby/object:UncleKryon::Language
+    name: Kutenai
+    names: Kutenai
+    code: kut
+    codes: kut
+    alpha2_code: 
+    alpha3_code: kut
+    alpha3_code_b: 
+  lad: !ruby/object:UncleKryon::Language
+    name: Ladino
+    names: Ladino
+    code: lad
+    codes: lad
+    alpha2_code: 
+    alpha3_code: lad
+    alpha3_code_b: 
+  lah: !ruby/object:UncleKryon::Language
+    name: Lahnda
+    names: Lahnda
+    code: lah
+    codes: lah
+    alpha2_code: 
+    alpha3_code: lah
+    alpha3_code_b: 
+  lam: !ruby/object:UncleKryon::Language
+    name: Lamba
+    names: Lamba
+    code: lam
+    codes: lam
+    alpha2_code: 
+    alpha3_code: lam
+    alpha3_code_b: 
+  lao: !ruby/object:UncleKryon::Language
+    name: Lao
+    names: Lao
+    code: lao
+    codes: lao;lo
+    alpha2_code: lo
+    alpha3_code: lao
+    alpha3_code_b: 
+  lat: !ruby/object:UncleKryon::Language
+    name: Latin
+    names: Latin
+    code: lat
+    codes: lat;la
+    alpha2_code: la
+    alpha3_code: lat
+    alpha3_code_b: 
+  lav: !ruby/object:UncleKryon::Language
+    name: Latvian
+    names: Latvian
+    code: lav
+    codes: lav;lv
+    alpha2_code: lv
+    alpha3_code: lav
+    alpha3_code_b: 
+  lez: !ruby/object:UncleKryon::Language
+    name: Lezghian
+    names: Lezghian
+    code: lez
+    codes: lez
+    alpha2_code: 
+    alpha3_code: lez
+    alpha3_code_b: 
+  lim: !ruby/object:UncleKryon::Language
+    name: Limburgan
+    names: Limburgan;Limburger;Limburgish
+    code: lim
+    codes: lim;li
+    alpha2_code: li
+    alpha3_code: lim
+    alpha3_code_b: 
+  lin: !ruby/object:UncleKryon::Language
+    name: Lingala
+    names: Lingala
+    code: lin
+    codes: lin;ln
+    alpha2_code: ln
+    alpha3_code: lin
+    alpha3_code_b: 
+  lit: !ruby/object:UncleKryon::Language
+    name: Lithuanian
+    names: Lithuanian
+    code: lit
+    codes: lit;lt
+    alpha2_code: lt
+    alpha3_code: lit
+    alpha3_code_b: 
+  lol: !ruby/object:UncleKryon::Language
+    name: Mongo
+    names: Mongo
+    code: lol
+    codes: lol
+    alpha2_code: 
+    alpha3_code: lol
+    alpha3_code_b: 
+  loz: !ruby/object:UncleKryon::Language
+    name: Lozi
+    names: Lozi
+    code: loz
+    codes: loz
+    alpha2_code: 
+    alpha3_code: loz
+    alpha3_code_b: 
+  ltz: !ruby/object:UncleKryon::Language
+    name: Luxembourgish
+    names: Luxembourgish;Letzeburgesch
+    code: ltz
+    codes: ltz;lb
+    alpha2_code: lb
+    alpha3_code: ltz
+    alpha3_code_b: 
+  lua: !ruby/object:UncleKryon::Language
+    name: Luba-Lulua
+    names: Luba-Lulua
+    code: lua
+    codes: lua
+    alpha2_code: 
+    alpha3_code: lua
+    alpha3_code_b: 
+  lub: !ruby/object:UncleKryon::Language
+    name: Luba-Katanga
+    names: Luba-Katanga
+    code: lub
+    codes: lub;lu
+    alpha2_code: lu
+    alpha3_code: lub
+    alpha3_code_b: 
+  lug: !ruby/object:UncleKryon::Language
+    name: Ganda
+    names: Ganda
+    code: lug
+    codes: lug;lg
+    alpha2_code: lg
+    alpha3_code: lug
+    alpha3_code_b: 
+  lui: !ruby/object:UncleKryon::Language
+    name: Luiseno
+    names: Luiseno
+    code: lui
+    codes: lui
+    alpha2_code: 
+    alpha3_code: lui
+    alpha3_code_b: 
+  lun: !ruby/object:UncleKryon::Language
+    name: Lunda
+    names: Lunda
+    code: lun
+    codes: lun
+    alpha2_code: 
+    alpha3_code: lun
+    alpha3_code_b: 
+  luo: !ruby/object:UncleKryon::Language
+    name: Luo
+    names: Luo
+    code: luo
+    codes: luo
+    alpha2_code: 
+    alpha3_code: luo
+    alpha3_code_b: 
+  lus: !ruby/object:UncleKryon::Language
+    name: Lushai
+    names: Lushai
+    code: lus
+    codes: lus
+    alpha2_code: 
+    alpha3_code: lus
+    alpha3_code_b: 
+  mad: !ruby/object:UncleKryon::Language
+    name: Madurese
+    names: Madurese
+    code: mad
+    codes: mad
+    alpha2_code: 
+    alpha3_code: mad
+    alpha3_code_b: 
+  mag: !ruby/object:UncleKryon::Language
+    name: Magahi
+    names: Magahi
+    code: mag
+    codes: mag
+    alpha2_code: 
+    alpha3_code: mag
+    alpha3_code_b: 
+  mah: !ruby/object:UncleKryon::Language
+    name: Marshallese
+    names: Marshallese
+    code: mah
+    codes: mah;mh
+    alpha2_code: mh
+    alpha3_code: mah
+    alpha3_code_b: 
+  mai: !ruby/object:UncleKryon::Language
+    name: Maithili
+    names: Maithili
+    code: mai
+    codes: mai
+    alpha2_code: 
+    alpha3_code: mai
+    alpha3_code_b: 
+  mak: !ruby/object:UncleKryon::Language
+    name: Makasar
+    names: Makasar
+    code: mak
+    codes: mak
+    alpha2_code: 
+    alpha3_code: mak
+    alpha3_code_b: 
+  mal: !ruby/object:UncleKryon::Language
+    name: Malayalam
+    names: Malayalam
+    code: mal
+    codes: mal;ml
+    alpha2_code: ml
+    alpha3_code: mal
+    alpha3_code_b: 
+  man: !ruby/object:UncleKryon::Language
+    name: Mandingo
+    names: Mandingo
+    code: man
+    codes: man
+    alpha2_code: 
+    alpha3_code: man
+    alpha3_code_b: 
+  map: !ruby/object:UncleKryon::Language
+    name: Austronesian languages
+    names: Austronesian languages
+    code: map
+    codes: map
+    alpha2_code: 
+    alpha3_code: map
+    alpha3_code_b: 
+  mar: !ruby/object:UncleKryon::Language
+    name: Marathi
+    names: Marathi
+    code: mar
+    codes: mar;mr
+    alpha2_code: mr
+    alpha3_code: mar
+    alpha3_code_b: 
+  mas: !ruby/object:UncleKryon::Language
+    name: Masai
+    names: Masai
+    code: mas
+    codes: mas
+    alpha2_code: 
+    alpha3_code: mas
+    alpha3_code_b: 
+  mdf: !ruby/object:UncleKryon::Language
+    name: Moksha
+    names: Moksha
+    code: mdf
+    codes: mdf
+    alpha2_code: 
+    alpha3_code: mdf
+    alpha3_code_b: 
+  mdr: !ruby/object:UncleKryon::Language
+    name: Mandar
+    names: Mandar
+    code: mdr
+    codes: mdr
+    alpha2_code: 
+    alpha3_code: mdr
+    alpha3_code_b: 
+  men: !ruby/object:UncleKryon::Language
+    name: Mende
+    names: Mende
+    code: men
+    codes: men
+    alpha2_code: 
+    alpha3_code: men
+    alpha3_code_b: 
+  mga: !ruby/object:UncleKryon::Language
+    name: Middle Irish
+    names: Middle Irish
+    code: mga
+    codes: mga
+    alpha2_code: 
+    alpha3_code: mga
+    alpha3_code_b: 
+  mic: !ruby/object:UncleKryon::Language
+    name: Mi'kmaq
+    names: Mi'kmaq;Micmac
+    code: mic
+    codes: mic
+    alpha2_code: 
+    alpha3_code: mic
+    alpha3_code_b: 
+  min: !ruby/object:UncleKryon::Language
+    name: Minangkabau
+    names: Minangkabau
+    code: min
+    codes: min
+    alpha2_code: 
+    alpha3_code: min
+    alpha3_code_b: 
+  mis: !ruby/object:UncleKryon::Language
+    name: Uncoded languages
+    names: Uncoded languages
+    code: mis
+    codes: mis
+    alpha2_code: 
+    alpha3_code: mis
+    alpha3_code_b: 
+  mkd: !ruby/object:UncleKryon::Language
+    name: Macedonian
+    names: Macedonian
+    code: mkd
+    codes: mkd;mac;mk
+    alpha2_code: mk
+    alpha3_code: mkd
+    alpha3_code_b: mac
+  mkh: !ruby/object:UncleKryon::Language
+    name: Mon-Khmer languages
+    names: Mon-Khmer languages
+    code: mkh
+    codes: mkh
+    alpha2_code: 
+    alpha3_code: mkh
+    alpha3_code_b: 
+  mlg: !ruby/object:UncleKryon::Language
+    name: Malagasy
+    names: Malagasy
+    code: mlg
+    codes: mlg;mg
+    alpha2_code: mg
+    alpha3_code: mlg
+    alpha3_code_b: 
+  mlt: !ruby/object:UncleKryon::Language
+    name: Maltese
+    names: Maltese
+    code: mlt
+    codes: mlt;mt
+    alpha2_code: mt
+    alpha3_code: mlt
+    alpha3_code_b: 
+  mnc: !ruby/object:UncleKryon::Language
+    name: Manchu
+    names: Manchu
+    code: mnc
+    codes: mnc
+    alpha2_code: 
+    alpha3_code: mnc
+    alpha3_code_b: 
+  mni: !ruby/object:UncleKryon::Language
+    name: Manipuri
+    names: Manipuri
+    code: mni
+    codes: mni
+    alpha2_code: 
+    alpha3_code: mni
+    alpha3_code_b: 
+  mno: !ruby/object:UncleKryon::Language
+    name: Manobo languages
+    names: Manobo languages
+    code: mno
+    codes: mno
+    alpha2_code: 
+    alpha3_code: mno
+    alpha3_code_b: 
+  moh: !ruby/object:UncleKryon::Language
+    name: Mohawk
+    names: Mohawk
+    code: moh
+    codes: moh
+    alpha2_code: 
+    alpha3_code: moh
+    alpha3_code_b: 
+  mon: !ruby/object:UncleKryon::Language
+    name: Mongolian
+    names: Mongolian
+    code: mon
+    codes: mon;mn
+    alpha2_code: mn
+    alpha3_code: mon
+    alpha3_code_b: 
+  mos: !ruby/object:UncleKryon::Language
+    name: Mossi
+    names: Mossi
+    code: mos
+    codes: mos
+    alpha2_code: 
+    alpha3_code: mos
+    alpha3_code_b: 
+  mri: !ruby/object:UncleKryon::Language
+    name: Maori
+    names: Maori
+    code: mri
+    codes: mri;mao;mi
+    alpha2_code: mi
+    alpha3_code: mri
+    alpha3_code_b: mao
+  msa: !ruby/object:UncleKryon::Language
+    name: Malay
+    names: Malay
+    code: msa
+    codes: msa;may;ms
+    alpha2_code: ms
+    alpha3_code: msa
+    alpha3_code_b: may
+  mul: !ruby/object:UncleKryon::Language
+    name: Multiple languages
+    names: Multiple languages
+    code: mul
+    codes: mul
+    alpha2_code: 
+    alpha3_code: mul
+    alpha3_code_b: 
+  mun: !ruby/object:UncleKryon::Language
+    name: Munda languages
+    names: Munda languages
+    code: mun
+    codes: mun
+    alpha2_code: 
+    alpha3_code: mun
+    alpha3_code_b: 
+  mus: !ruby/object:UncleKryon::Language
+    name: Creek
+    names: Creek
+    code: mus
+    codes: mus
+    alpha2_code: 
+    alpha3_code: mus
+    alpha3_code_b: 
+  mwl: !ruby/object:UncleKryon::Language
+    name: Mirandese
+    names: Mirandese
+    code: mwl
+    codes: mwl
+    alpha2_code: 
+    alpha3_code: mwl
+    alpha3_code_b: 
+  mwr: !ruby/object:UncleKryon::Language
+    name: Marwari
+    names: Marwari
+    code: mwr
+    codes: mwr
+    alpha2_code: 
+    alpha3_code: mwr
+    alpha3_code_b: 
+  mya: !ruby/object:UncleKryon::Language
+    name: Burmese
+    names: Burmese
+    code: mya
+    codes: mya;bur;my
+    alpha2_code: my
+    alpha3_code: mya
+    alpha3_code_b: bur
+  myn: !ruby/object:UncleKryon::Language
+    name: Mayan languages
+    names: Mayan languages
+    code: myn
+    codes: myn
+    alpha2_code: 
+    alpha3_code: myn
+    alpha3_code_b: 
+  myv: !ruby/object:UncleKryon::Language
+    name: Erzya
+    names: Erzya
+    code: myv
+    codes: myv
+    alpha2_code: 
+    alpha3_code: myv
+    alpha3_code_b: 
+  nah: !ruby/object:UncleKryon::Language
+    name: Nahuatl languages
+    names: Nahuatl languages
+    code: nah
+    codes: nah
+    alpha2_code: 
+    alpha3_code: nah
+    alpha3_code_b: 
+  nai: !ruby/object:UncleKryon::Language
+    name: North American Indian languages
+    names: North American Indian languages
+    code: nai
+    codes: nai
+    alpha2_code: 
+    alpha3_code: nai
+    alpha3_code_b: 
+  nap: !ruby/object:UncleKryon::Language
+    name: Neapolitan
+    names: Neapolitan
+    code: nap
+    codes: nap
+    alpha2_code: 
+    alpha3_code: nap
+    alpha3_code_b: 
+  nau: !ruby/object:UncleKryon::Language
+    name: Nauru
+    names: Nauru
+    code: nau
+    codes: nau;na
+    alpha2_code: na
+    alpha3_code: nau
+    alpha3_code_b: 
+  nav: !ruby/object:UncleKryon::Language
+    name: Navajo
+    names: Navajo;Navaho
+    code: nav
+    codes: nav;nv
+    alpha2_code: nv
+    alpha3_code: nav
+    alpha3_code_b: 
+  nbl: !ruby/object:UncleKryon::Language
+    name: South Ndebele
+    names: South Ndebele;South Ndebele
+    code: nbl
+    codes: nbl;nr
+    alpha2_code: nr
+    alpha3_code: nbl
+    alpha3_code_b: 
+  nde: !ruby/object:UncleKryon::Language
+    name: North Ndebele
+    names: North Ndebele;North Ndebele
+    code: nde
+    codes: nde;nd
+    alpha2_code: nd
+    alpha3_code: nde
+    alpha3_code_b: 
+  ndo: !ruby/object:UncleKryon::Language
+    name: Ndonga
+    names: Ndonga
+    code: ndo
+    codes: ndo;ng
+    alpha2_code: ng
+    alpha3_code: ndo
+    alpha3_code_b: 
+  nds: !ruby/object:UncleKryon::Language
+    name: Low German
+    names: Low German;Low Saxon;Low German;Low Saxon
+    code: nds
+    codes: nds
+    alpha2_code: 
+    alpha3_code: nds
+    alpha3_code_b: 
+  nep: !ruby/object:UncleKryon::Language
+    name: Nepali
+    names: Nepali
+    code: nep
+    codes: nep;ne
+    alpha2_code: ne
+    alpha3_code: nep
+    alpha3_code_b: 
+  new: !ruby/object:UncleKryon::Language
+    name: Nepal Bhasa
+    names: Nepal Bhasa;Newari
+    code: new
+    codes: new
+    alpha2_code: 
+    alpha3_code: new
+    alpha3_code_b: 
+  nia: !ruby/object:UncleKryon::Language
+    name: Nias
+    names: Nias
+    code: nia
+    codes: nia
+    alpha2_code: 
+    alpha3_code: nia
+    alpha3_code_b: 
+  nic: !ruby/object:UncleKryon::Language
+    name: Niger-Kordofanian languages
+    names: Niger-Kordofanian languages
+    code: nic
+    codes: nic
+    alpha2_code: 
+    alpha3_code: nic
+    alpha3_code_b: 
+  niu: !ruby/object:UncleKryon::Language
+    name: Niuean
+    names: Niuean
+    code: niu
+    codes: niu
+    alpha2_code: 
+    alpha3_code: niu
+    alpha3_code_b: 
+  nld: !ruby/object:UncleKryon::Language
+    name: Dutch
+    names: Dutch;Flemish
+    code: nld
+    codes: nld;dut;nl
+    alpha2_code: nl
+    alpha3_code: nld
+    alpha3_code_b: dut
+  nno: !ruby/object:UncleKryon::Language
+    name: Norwegian Nynorsk
+    names: Norwegian Nynorsk;Norwegian Nynorsk
+    code: nno
+    codes: nno;nn
+    alpha2_code: nn
+    alpha3_code: nno
+    alpha3_code_b: 
+  nob: !ruby/object:UncleKryon::Language
+    name: Norwegian Bokmål
+    names: Norwegian Bokmål;Norwegian Bokmål
+    code: nob
+    codes: nob;nb
+    alpha2_code: nb
+    alpha3_code: nob
+    alpha3_code_b: 
+  nog: !ruby/object:UncleKryon::Language
+    name: Nogai
+    names: Nogai
+    code: nog
+    codes: nog
+    alpha2_code: 
+    alpha3_code: nog
+    alpha3_code_b: 
+  non: !ruby/object:UncleKryon::Language
+    name: Old Norse
+    names: Old Norse
+    code: non
+    codes: non
+    alpha2_code: 
+    alpha3_code: non
+    alpha3_code_b: 
+  nor: !ruby/object:UncleKryon::Language
+    name: Norwegian
+    names: Norwegian
+    code: nor
+    codes: nor;no
+    alpha2_code: 'no'
+    alpha3_code: nor
+    alpha3_code_b: 
+  nqo: !ruby/object:UncleKryon::Language
+    name: N'Ko
+    names: N'Ko
+    code: nqo
+    codes: nqo
+    alpha2_code: 
+    alpha3_code: nqo
+    alpha3_code_b: 
+  nso: !ruby/object:UncleKryon::Language
+    name: Pedi
+    names: Pedi;Sepedi;Northern Sotho
+    code: nso
+    codes: nso
+    alpha2_code: 
+    alpha3_code: nso
+    alpha3_code_b: 
+  nub: !ruby/object:UncleKryon::Language
+    name: Nubian languages
+    names: Nubian languages
+    code: nub
+    codes: nub
+    alpha2_code: 
+    alpha3_code: nub
+    alpha3_code_b: 
+  nwc: !ruby/object:UncleKryon::Language
+    name: Classical Newari
+    names: Classical Newari;Old Newari;Classical Nepal Bhasa
+    code: nwc
+    codes: nwc
+    alpha2_code: 
+    alpha3_code: nwc
+    alpha3_code_b: 
+  nya: !ruby/object:UncleKryon::Language
+    name: Chichewa
+    names: Chichewa;Chewa;Nyanja
+    code: nya
+    codes: nya;ny
+    alpha2_code: ny
+    alpha3_code: nya
+    alpha3_code_b: 
+  nym: !ruby/object:UncleKryon::Language
+    name: Nyamwezi
+    names: Nyamwezi
+    code: nym
+    codes: nym
+    alpha2_code: 
+    alpha3_code: nym
+    alpha3_code_b: 
+  nyn: !ruby/object:UncleKryon::Language
+    name: Nyankole
+    names: Nyankole
+    code: nyn
+    codes: nyn
+    alpha2_code: 
+    alpha3_code: nyn
+    alpha3_code_b: 
+  nyo: !ruby/object:UncleKryon::Language
+    name: Nyoro
+    names: Nyoro
+    code: nyo
+    codes: nyo
+    alpha2_code: 
+    alpha3_code: nyo
+    alpha3_code_b: 
+  nzi: !ruby/object:UncleKryon::Language
+    name: Nzima
+    names: Nzima
+    code: nzi
+    codes: nzi
+    alpha2_code: 
+    alpha3_code: nzi
+    alpha3_code_b: 
+  oci: !ruby/object:UncleKryon::Language
+    name: Occitan
+    names: Occitan
+    code: oci
+    codes: oci;oc
+    alpha2_code: oc
+    alpha3_code: oci
+    alpha3_code_b: 
+  oji: !ruby/object:UncleKryon::Language
+    name: Ojibwa
+    names: Ojibwa
+    code: oji
+    codes: oji;oj
+    alpha2_code: oj
+    alpha3_code: oji
+    alpha3_code_b: 
+  ori: !ruby/object:UncleKryon::Language
+    name: Oriya
+    names: Oriya
+    code: ori
+    codes: ori;or
+    alpha2_code: or
+    alpha3_code: ori
+    alpha3_code_b: 
+  orm: !ruby/object:UncleKryon::Language
+    name: Oromo
+    names: Oromo
+    code: orm
+    codes: orm;om
+    alpha2_code: om
+    alpha3_code: orm
+    alpha3_code_b: 
+  osa: !ruby/object:UncleKryon::Language
+    name: Osage
+    names: Osage
+    code: osa
+    codes: osa
+    alpha2_code: 
+    alpha3_code: osa
+    alpha3_code_b: 
+  oss: !ruby/object:UncleKryon::Language
+    name: Ossetian
+    names: Ossetian;Ossetic
+    code: oss
+    codes: oss;os
+    alpha2_code: os
+    alpha3_code: oss
+    alpha3_code_b: 
+  ota: !ruby/object:UncleKryon::Language
+    name: Ottoman Turkish
+    names: Ottoman Turkish
+    code: ota
+    codes: ota
+    alpha2_code: 
+    alpha3_code: ota
+    alpha3_code_b: 
+  oto: !ruby/object:UncleKryon::Language
+    name: Otomian languages
+    names: Otomian languages
+    code: oto
+    codes: oto
+    alpha2_code: 
+    alpha3_code: oto
+    alpha3_code_b: 
+  paa: !ruby/object:UncleKryon::Language
+    name: Papuan languages
+    names: Papuan languages
+    code: paa
+    codes: paa
+    alpha2_code: 
+    alpha3_code: paa
+    alpha3_code_b: 
+  pag: !ruby/object:UncleKryon::Language
+    name: Pangasinan
+    names: Pangasinan
+    code: pag
+    codes: pag
+    alpha2_code: 
+    alpha3_code: pag
+    alpha3_code_b: 
+  pal: !ruby/object:UncleKryon::Language
+    name: Pahlavi
+    names: Pahlavi
+    code: pal
+    codes: pal
+    alpha2_code: 
+    alpha3_code: pal
+    alpha3_code_b: 
+  pam: !ruby/object:UncleKryon::Language
+    name: Pampanga
+    names: Pampanga;Kapampangan
+    code: pam
+    codes: pam
+    alpha2_code: 
+    alpha3_code: pam
+    alpha3_code_b: 
+  pan: !ruby/object:UncleKryon::Language
+    name: Panjabi
+    names: Panjabi;Punjabi
+    code: pan
+    codes: pan;pa
+    alpha2_code: pa
+    alpha3_code: pan
+    alpha3_code_b: 
+  pap: !ruby/object:UncleKryon::Language
+    name: Papiamento
+    names: Papiamento
+    code: pap
+    codes: pap
+    alpha2_code: 
+    alpha3_code: pap
+    alpha3_code_b: 
+  pau: !ruby/object:UncleKryon::Language
+    name: Palauan
+    names: Palauan
+    code: pau
+    codes: pau
+    alpha2_code: 
+    alpha3_code: pau
+    alpha3_code_b: 
+  peo: !ruby/object:UncleKryon::Language
+    name: Old Persian
+    names: Old Persian
+    code: peo
+    codes: peo
+    alpha2_code: 
+    alpha3_code: peo
+    alpha3_code_b: 
+  phi: !ruby/object:UncleKryon::Language
+    name: Philippine languages
+    names: Philippine languages
+    code: phi
+    codes: phi
+    alpha2_code: 
+    alpha3_code: phi
+    alpha3_code_b: 
+  phn: !ruby/object:UncleKryon::Language
+    name: Phoenician
+    names: Phoenician
+    code: phn
+    codes: phn
+    alpha2_code: 
+    alpha3_code: phn
+    alpha3_code_b: 
+  pli: !ruby/object:UncleKryon::Language
+    name: Pali
+    names: Pali
+    code: pli
+    codes: pli;pi
+    alpha2_code: pi
+    alpha3_code: pli
+    alpha3_code_b: 
+  pol: !ruby/object:UncleKryon::Language
+    name: Polish
+    names: Polish
+    code: pol
+    codes: pol;pl
+    alpha2_code: pl
+    alpha3_code: pol
+    alpha3_code_b: 
+  pon: !ruby/object:UncleKryon::Language
+    name: Pohnpeian
+    names: Pohnpeian
+    code: pon
+    codes: pon
+    alpha2_code: 
+    alpha3_code: pon
+    alpha3_code_b: 
+  por: !ruby/object:UncleKryon::Language
+    name: Portuguese
+    names: Portuguese
+    code: por
+    codes: por;pt
+    alpha2_code: pt
+    alpha3_code: por
+    alpha3_code_b: 
+  pra: !ruby/object:UncleKryon::Language
+    name: Prakrit languages
+    names: Prakrit languages
+    code: pra
+    codes: pra
+    alpha2_code: 
+    alpha3_code: pra
+    alpha3_code_b: 
+  pro: !ruby/object:UncleKryon::Language
+    name: Old Provençal
+    names: Old Provençal;Old Occitan
+    code: pro
+    codes: pro
+    alpha2_code: 
+    alpha3_code: pro
+    alpha3_code_b: 
+  pus: !ruby/object:UncleKryon::Language
+    name: Pushto
+    names: Pushto;Pashto
+    code: pus
+    codes: pus;ps
+    alpha2_code: ps
+    alpha3_code: pus
+    alpha3_code_b: 
+  qaa-qtz: !ruby/object:UncleKryon::Language
+    name: Reserved for local use
+    names: Reserved for local use
+    code: qaa-qtz
+    codes: qaa-qtz
+    alpha2_code: 
+    alpha3_code: qaa-qtz
+    alpha3_code_b: 
+  que: !ruby/object:UncleKryon::Language
+    name: Quechua
+    names: Quechua
+    code: que
+    codes: que;qu
+    alpha2_code: qu
+    alpha3_code: que
+    alpha3_code_b: 
+  raj: !ruby/object:UncleKryon::Language
+    name: Rajasthani
+    names: Rajasthani
+    code: raj
+    codes: raj
+    alpha2_code: 
+    alpha3_code: raj
+    alpha3_code_b: 
+  rap: !ruby/object:UncleKryon::Language
+    name: Rapanui
+    names: Rapanui
+    code: rap
+    codes: rap
+    alpha2_code: 
+    alpha3_code: rap
+    alpha3_code_b: 
+  rar: !ruby/object:UncleKryon::Language
+    name: Rarotongan
+    names: Rarotongan;Cook Islands Maori
+    code: rar
+    codes: rar
+    alpha2_code: 
+    alpha3_code: rar
+    alpha3_code_b: 
+  roa: !ruby/object:UncleKryon::Language
+    name: Romance languages
+    names: Romance languages
+    code: roa
+    codes: roa
+    alpha2_code: 
+    alpha3_code: roa
+    alpha3_code_b: 
+  roh: !ruby/object:UncleKryon::Language
+    name: Romansh
+    names: Romansh
+    code: roh
+    codes: roh;rm
+    alpha2_code: rm
+    alpha3_code: roh
+    alpha3_code_b: 
+  rom: !ruby/object:UncleKryon::Language
+    name: Romany
+    names: Romany
+    code: rom
+    codes: rom
+    alpha2_code: 
+    alpha3_code: rom
+    alpha3_code_b: 
+  ron: !ruby/object:UncleKryon::Language
+    name: Romanian
+    names: Romanian;Moldavian;Moldovan
+    code: ron
+    codes: ron;rum;ro
+    alpha2_code: ro
+    alpha3_code: ron
+    alpha3_code_b: rum
+  run: !ruby/object:UncleKryon::Language
+    name: Rundi
+    names: Rundi
+    code: run
+    codes: run;rn
+    alpha2_code: rn
+    alpha3_code: run
+    alpha3_code_b: 
+  rup: !ruby/object:UncleKryon::Language
+    name: Aromanian
+    names: Aromanian;Arumanian;Macedo-Romanian
+    code: rup
+    codes: rup
+    alpha2_code: 
+    alpha3_code: rup
+    alpha3_code_b: 
+  rus: !ruby/object:UncleKryon::Language
+    name: Russian
+    names: Russian
+    code: rus
+    codes: rus;ru
+    alpha2_code: ru
+    alpha3_code: rus
+    alpha3_code_b: 
+  sad: !ruby/object:UncleKryon::Language
+    name: Sandawe
+    names: Sandawe
+    code: sad
+    codes: sad
+    alpha2_code: 
+    alpha3_code: sad
+    alpha3_code_b: 
+  sag: !ruby/object:UncleKryon::Language
+    name: Sango
+    names: Sango
+    code: sag
+    codes: sag;sg
+    alpha2_code: sg
+    alpha3_code: sag
+    alpha3_code_b: 
+  sah: !ruby/object:UncleKryon::Language
+    name: Yakut
+    names: Yakut
+    code: sah
+    codes: sah
+    alpha2_code: 
+    alpha3_code: sah
+    alpha3_code_b: 
+  sai: !ruby/object:UncleKryon::Language
+    name: South American Indian languages
+    names: South American Indian languages
+    code: sai
+    codes: sai
+    alpha2_code: 
+    alpha3_code: sai
+    alpha3_code_b: 
+  sal: !ruby/object:UncleKryon::Language
+    name: Salishan languages
+    names: Salishan languages
+    code: sal
+    codes: sal
+    alpha2_code: 
+    alpha3_code: sal
+    alpha3_code_b: 
+  sam: !ruby/object:UncleKryon::Language
+    name: Samaritan Aramaic
+    names: Samaritan Aramaic
+    code: sam
+    codes: sam
+    alpha2_code: 
+    alpha3_code: sam
+    alpha3_code_b: 
+  san: !ruby/object:UncleKryon::Language
+    name: Sanskrit
+    names: Sanskrit
+    code: san
+    codes: san;sa
+    alpha2_code: sa
+    alpha3_code: san
+    alpha3_code_b: 
+  sas: !ruby/object:UncleKryon::Language
+    name: Sasak
+    names: Sasak
+    code: sas
+    codes: sas
+    alpha2_code: 
+    alpha3_code: sas
+    alpha3_code_b: 
+  sat: !ruby/object:UncleKryon::Language
+    name: Santali
+    names: Santali
+    code: sat
+    codes: sat
+    alpha2_code: 
+    alpha3_code: sat
+    alpha3_code_b: 
+  scn: !ruby/object:UncleKryon::Language
+    name: Sicilian
+    names: Sicilian
+    code: scn
+    codes: scn
+    alpha2_code: 
+    alpha3_code: scn
+    alpha3_code_b: 
+  sco: !ruby/object:UncleKryon::Language
+    name: Scots
+    names: Scots
+    code: sco
+    codes: sco
+    alpha2_code: 
+    alpha3_code: sco
+    alpha3_code_b: 
+  sel: !ruby/object:UncleKryon::Language
+    name: Selkup
+    names: Selkup
+    code: sel
+    codes: sel
+    alpha2_code: 
+    alpha3_code: sel
+    alpha3_code_b: 
+  sem: !ruby/object:UncleKryon::Language
+    name: Semitic languages
+    names: Semitic languages
+    code: sem
+    codes: sem
+    alpha2_code: 
+    alpha3_code: sem
+    alpha3_code_b: 
+  sga: !ruby/object:UncleKryon::Language
+    name: Old Irish
+    names: Old Irish
+    code: sga
+    codes: sga
+    alpha2_code: 
+    alpha3_code: sga
+    alpha3_code_b: 
+  sgn: !ruby/object:UncleKryon::Language
+    name: Sign Languages
+    names: Sign Languages
+    code: sgn
+    codes: sgn
+    alpha2_code: 
+    alpha3_code: sgn
+    alpha3_code_b: 
+  shn: !ruby/object:UncleKryon::Language
+    name: Shan
+    names: Shan
+    code: shn
+    codes: shn
+    alpha2_code: 
+    alpha3_code: shn
+    alpha3_code_b: 
+  sid: !ruby/object:UncleKryon::Language
+    name: Sidamo
+    names: Sidamo
+    code: sid
+    codes: sid
+    alpha2_code: 
+    alpha3_code: sid
+    alpha3_code_b: 
+  sin: !ruby/object:UncleKryon::Language
+    name: Sinhala
+    names: Sinhala;Sinhalese
+    code: sin
+    codes: sin;si
+    alpha2_code: si
+    alpha3_code: sin
+    alpha3_code_b: 
+  sio: !ruby/object:UncleKryon::Language
+    name: Siouan languages
+    names: Siouan languages
+    code: sio
+    codes: sio
+    alpha2_code: 
+    alpha3_code: sio
+    alpha3_code_b: 
+  sit: !ruby/object:UncleKryon::Language
+    name: Sino-Tibetan languages
+    names: Sino-Tibetan languages
+    code: sit
+    codes: sit
+    alpha2_code: 
+    alpha3_code: sit
+    alpha3_code_b: 
+  sla: !ruby/object:UncleKryon::Language
+    name: Slavic languages
+    names: Slavic languages
+    code: sla
+    codes: sla
+    alpha2_code: 
+    alpha3_code: sla
+    alpha3_code_b: 
+  slk: !ruby/object:UncleKryon::Language
+    name: Slovak
+    names: Slovak
+    code: slk
+    codes: slk;slo;sk
+    alpha2_code: sk
+    alpha3_code: slk
+    alpha3_code_b: slo
+  slv: !ruby/object:UncleKryon::Language
+    name: Slovenian
+    names: Slovenian
+    code: slv
+    codes: slv;sl
+    alpha2_code: sl
+    alpha3_code: slv
+    alpha3_code_b: 
+  sma: !ruby/object:UncleKryon::Language
+    name: Southern Sami
+    names: Southern Sami
+    code: sma
+    codes: sma
+    alpha2_code: 
+    alpha3_code: sma
+    alpha3_code_b: 
+  sme: !ruby/object:UncleKryon::Language
+    name: Northern Sami
+    names: Northern Sami
+    code: sme
+    codes: sme;se
+    alpha2_code: se
+    alpha3_code: sme
+    alpha3_code_b: 
+  smi: !ruby/object:UncleKryon::Language
+    name: Sami languages
+    names: Sami languages
+    code: smi
+    codes: smi
+    alpha2_code: 
+    alpha3_code: smi
+    alpha3_code_b: 
+  smj: !ruby/object:UncleKryon::Language
+    name: Lule Sami
+    names: Lule Sami
+    code: smj
+    codes: smj
+    alpha2_code: 
+    alpha3_code: smj
+    alpha3_code_b: 
+  smn: !ruby/object:UncleKryon::Language
+    name: Inari Sami
+    names: Inari Sami
+    code: smn
+    codes: smn
+    alpha2_code: 
+    alpha3_code: smn
+    alpha3_code_b: 
+  smo: !ruby/object:UncleKryon::Language
+    name: Samoan
+    names: Samoan
+    code: smo
+    codes: smo;sm
+    alpha2_code: sm
+    alpha3_code: smo
+    alpha3_code_b: 
+  sms: !ruby/object:UncleKryon::Language
+    name: Skolt Sami
+    names: Skolt Sami
+    code: sms
+    codes: sms
+    alpha2_code: 
+    alpha3_code: sms
+    alpha3_code_b: 
+  sna: !ruby/object:UncleKryon::Language
+    name: Shona
+    names: Shona
+    code: sna
+    codes: sna;sn
+    alpha2_code: sn
+    alpha3_code: sna
+    alpha3_code_b: 
+  snd: !ruby/object:UncleKryon::Language
+    name: Sindhi
+    names: Sindhi
+    code: snd
+    codes: snd;sd
+    alpha2_code: sd
+    alpha3_code: snd
+    alpha3_code_b: 
+  snk: !ruby/object:UncleKryon::Language
+    name: Soninke
+    names: Soninke
+    code: snk
+    codes: snk
+    alpha2_code: 
+    alpha3_code: snk
+    alpha3_code_b: 
+  sog: !ruby/object:UncleKryon::Language
+    name: Sogdian
+    names: Sogdian
+    code: sog
+    codes: sog
+    alpha2_code: 
+    alpha3_code: sog
+    alpha3_code_b: 
+  som: !ruby/object:UncleKryon::Language
+    name: Somali
+    names: Somali
+    code: som
+    codes: som;so
+    alpha2_code: so
+    alpha3_code: som
+    alpha3_code_b: 
+  son: !ruby/object:UncleKryon::Language
+    name: Songhai languages
+    names: Songhai languages
+    code: son
+    codes: son
+    alpha2_code: 
+    alpha3_code: son
+    alpha3_code_b: 
+  sot: !ruby/object:UncleKryon::Language
+    name: Southern Sotho
+    names: Southern Sotho
+    code: sot
+    codes: sot;st
+    alpha2_code: st
+    alpha3_code: sot
+    alpha3_code_b: 
+  spa: !ruby/object:UncleKryon::Language
+    name: Spanish
+    names: Spanish;Castilian
+    code: spa
+    codes: spa;es
+    alpha2_code: es
+    alpha3_code: spa
+    alpha3_code_b: 
+  sqi: !ruby/object:UncleKryon::Language
+    name: Albanian
+    names: Albanian
+    code: sqi
+    codes: sqi;alb;sq
+    alpha2_code: sq
+    alpha3_code: sqi
+    alpha3_code_b: alb
+  srd: !ruby/object:UncleKryon::Language
+    name: Sardinian
+    names: Sardinian
+    code: srd
+    codes: srd;sc
+    alpha2_code: sc
+    alpha3_code: srd
+    alpha3_code_b: 
+  srn: !ruby/object:UncleKryon::Language
+    name: Sranan Tongo
+    names: Sranan Tongo
+    code: srn
+    codes: srn
+    alpha2_code: 
+    alpha3_code: srn
+    alpha3_code_b: 
+  srp: !ruby/object:UncleKryon::Language
+    name: Serbian
+    names: Serbian
+    code: srp
+    codes: srp;sr
+    alpha2_code: sr
+    alpha3_code: srp
+    alpha3_code_b: 
+  srr: !ruby/object:UncleKryon::Language
+    name: Serer
+    names: Serer
+    code: srr
+    codes: srr
+    alpha2_code: 
+    alpha3_code: srr
+    alpha3_code_b: 
+  ssa: !ruby/object:UncleKryon::Language
+    name: Nilo-Saharan languages
+    names: Nilo-Saharan languages
+    code: ssa
+    codes: ssa
+    alpha2_code: 
+    alpha3_code: ssa
+    alpha3_code_b: 
+  ssw: !ruby/object:UncleKryon::Language
+    name: Swati
+    names: Swati
+    code: ssw
+    codes: ssw;ss
+    alpha2_code: ss
+    alpha3_code: ssw
+    alpha3_code_b: 
+  suk: !ruby/object:UncleKryon::Language
+    name: Sukuma
+    names: Sukuma
+    code: suk
+    codes: suk
+    alpha2_code: 
+    alpha3_code: suk
+    alpha3_code_b: 
+  sun: !ruby/object:UncleKryon::Language
+    name: Sundanese
+    names: Sundanese
+    code: sun
+    codes: sun;su
+    alpha2_code: su
+    alpha3_code: sun
+    alpha3_code_b: 
+  sus: !ruby/object:UncleKryon::Language
+    name: Susu
+    names: Susu
+    code: sus
+    codes: sus
+    alpha2_code: 
+    alpha3_code: sus
+    alpha3_code_b: 
+  sux: !ruby/object:UncleKryon::Language
+    name: Sumerian
+    names: Sumerian
+    code: sux
+    codes: sux
+    alpha2_code: 
+    alpha3_code: sux
+    alpha3_code_b: 
+  swa: !ruby/object:UncleKryon::Language
+    name: Swahili
+    names: Swahili
+    code: swa
+    codes: swa;sw
+    alpha2_code: sw
+    alpha3_code: swa
+    alpha3_code_b: 
+  swe: !ruby/object:UncleKryon::Language
+    name: Swedish
+    names: Swedish
+    code: swe
+    codes: swe;sv
+    alpha2_code: sv
+    alpha3_code: swe
+    alpha3_code_b: 
+  syc: !ruby/object:UncleKryon::Language
+    name: Classical Syriac
+    names: Classical Syriac
+    code: syc
+    codes: syc
+    alpha2_code: 
+    alpha3_code: syc
+    alpha3_code_b: 
+  syr: !ruby/object:UncleKryon::Language
+    name: Syriac
+    names: Syriac
+    code: syr
+    codes: syr
+    alpha2_code: 
+    alpha3_code: syr
+    alpha3_code_b: 
+  tah: !ruby/object:UncleKryon::Language
+    name: Tahitian
+    names: Tahitian
+    code: tah
+    codes: tah;ty
+    alpha2_code: ty
+    alpha3_code: tah
+    alpha3_code_b: 
+  tai: !ruby/object:UncleKryon::Language
+    name: Tai languages
+    names: Tai languages
+    code: tai
+    codes: tai
+    alpha2_code: 
+    alpha3_code: tai
+    alpha3_code_b: 
+  tam: !ruby/object:UncleKryon::Language
+    name: Tamil
+    names: Tamil
+    code: tam
+    codes: tam;ta
+    alpha2_code: ta
+    alpha3_code: tam
+    alpha3_code_b: 
+  tat: !ruby/object:UncleKryon::Language
+    name: Tatar
+    names: Tatar
+    code: tat
+    codes: tat;tt
+    alpha2_code: tt
+    alpha3_code: tat
+    alpha3_code_b: 
+  tel: !ruby/object:UncleKryon::Language
+    name: Telugu
+    names: Telugu
+    code: tel
+    codes: tel;te
+    alpha2_code: te
+    alpha3_code: tel
+    alpha3_code_b: 
+  tem: !ruby/object:UncleKryon::Language
+    name: Timne
+    names: Timne
+    code: tem
+    codes: tem
+    alpha2_code: 
+    alpha3_code: tem
+    alpha3_code_b: 
+  ter: !ruby/object:UncleKryon::Language
+    name: Tereno
+    names: Tereno
+    code: ter
+    codes: ter
+    alpha2_code: 
+    alpha3_code: ter
+    alpha3_code_b: 
+  tet: !ruby/object:UncleKryon::Language
+    name: Tetum
+    names: Tetum
+    code: tet
+    codes: tet
+    alpha2_code: 
+    alpha3_code: tet
+    alpha3_code_b: 
+  tgk: !ruby/object:UncleKryon::Language
+    name: Tajik
+    names: Tajik
+    code: tgk
+    codes: tgk;tg
+    alpha2_code: tg
+    alpha3_code: tgk
+    alpha3_code_b: 
+  tgl: !ruby/object:UncleKryon::Language
+    name: Tagalog
+    names: Tagalog
+    code: tgl
+    codes: tgl;tl
+    alpha2_code: tl
+    alpha3_code: tgl
+    alpha3_code_b: 
+  tha: !ruby/object:UncleKryon::Language
+    name: Thai
+    names: Thai
+    code: tha
+    codes: tha;th
+    alpha2_code: th
+    alpha3_code: tha
+    alpha3_code_b: 
+  tig: !ruby/object:UncleKryon::Language
+    name: Tigre
+    names: Tigre
+    code: tig
+    codes: tig
+    alpha2_code: 
+    alpha3_code: tig
+    alpha3_code_b: 
+  tir: !ruby/object:UncleKryon::Language
+    name: Tigrinya
+    names: Tigrinya
+    code: tir
+    codes: tir;ti
+    alpha2_code: ti
+    alpha3_code: tir
+    alpha3_code_b: 
+  tiv: !ruby/object:UncleKryon::Language
+    name: Tiv
+    names: Tiv
+    code: tiv
+    codes: tiv
+    alpha2_code: 
+    alpha3_code: tiv
+    alpha3_code_b: 
+  tkl: !ruby/object:UncleKryon::Language
+    name: Tokelau
+    names: Tokelau
+    code: tkl
+    codes: tkl
+    alpha2_code: 
+    alpha3_code: tkl
+    alpha3_code_b: 
+  tlh: !ruby/object:UncleKryon::Language
+    name: Klingon
+    names: Klingon;tlhIngan-Hol
+    code: tlh
+    codes: tlh
+    alpha2_code: 
+    alpha3_code: tlh
+    alpha3_code_b: 
+  tli: !ruby/object:UncleKryon::Language
+    name: Tlingit
+    names: Tlingit
+    code: tli
+    codes: tli
+    alpha2_code: 
+    alpha3_code: tli
+    alpha3_code_b: 
+  tmh: !ruby/object:UncleKryon::Language
+    name: Tamashek
+    names: Tamashek
+    code: tmh
+    codes: tmh
+    alpha2_code: 
+    alpha3_code: tmh
+    alpha3_code_b: 
+  tog: !ruby/object:UncleKryon::Language
+    name: Tonga (Nyasa)
+    names: Tonga (Nyasa)
+    code: tog
+    codes: tog
+    alpha2_code: 
+    alpha3_code: tog
+    alpha3_code_b: 
+  ton: !ruby/object:UncleKryon::Language
+    name: Tonga (Tonga Islands)
+    names: Tonga (Tonga Islands)
+    code: ton
+    codes: ton;to
+    alpha2_code: to
+    alpha3_code: ton
+    alpha3_code_b: 
+  tpi: !ruby/object:UncleKryon::Language
+    name: Tok Pisin
+    names: Tok Pisin
+    code: tpi
+    codes: tpi
+    alpha2_code: 
+    alpha3_code: tpi
+    alpha3_code_b: 
+  tsi: !ruby/object:UncleKryon::Language
+    name: Tsimshian
+    names: Tsimshian
+    code: tsi
+    codes: tsi
+    alpha2_code: 
+    alpha3_code: tsi
+    alpha3_code_b: 
+  tsn: !ruby/object:UncleKryon::Language
+    name: Tswana
+    names: Tswana
+    code: tsn
+    codes: tsn;tn
+    alpha2_code: tn
+    alpha3_code: tsn
+    alpha3_code_b: 
+  tso: !ruby/object:UncleKryon::Language
+    name: Tsonga
+    names: Tsonga
+    code: tso
+    codes: tso;ts
+    alpha2_code: ts
+    alpha3_code: tso
+    alpha3_code_b: 
+  tuk: !ruby/object:UncleKryon::Language
+    name: Turkmen
+    names: Turkmen
+    code: tuk
+    codes: tuk;tk
+    alpha2_code: tk
+    alpha3_code: tuk
+    alpha3_code_b: 
+  tum: !ruby/object:UncleKryon::Language
+    name: Tumbuka
+    names: Tumbuka
+    code: tum
+    codes: tum
+    alpha2_code: 
+    alpha3_code: tum
+    alpha3_code_b: 
+  tup: !ruby/object:UncleKryon::Language
+    name: Tupi languages
+    names: Tupi languages
+    code: tup
+    codes: tup
+    alpha2_code: 
+    alpha3_code: tup
+    alpha3_code_b: 
+  tur: !ruby/object:UncleKryon::Language
+    name: Turkish
+    names: Turkish
+    code: tur
+    codes: tur;tr
+    alpha2_code: tr
+    alpha3_code: tur
+    alpha3_code_b: 
+  tut: !ruby/object:UncleKryon::Language
+    name: Altaic languages
+    names: Altaic languages
+    code: tut
+    codes: tut
+    alpha2_code: 
+    alpha3_code: tut
+    alpha3_code_b: 
+  tvl: !ruby/object:UncleKryon::Language
+    name: Tuvalu
+    names: Tuvalu
+    code: tvl
+    codes: tvl
+    alpha2_code: 
+    alpha3_code: tvl
+    alpha3_code_b: 
+  twi: !ruby/object:UncleKryon::Language
+    name: Twi
+    names: Twi
+    code: twi
+    codes: twi;tw
+    alpha2_code: tw
+    alpha3_code: twi
+    alpha3_code_b: 
+  tyv: !ruby/object:UncleKryon::Language
+    name: Tuvinian
+    names: Tuvinian
+    code: tyv
+    codes: tyv
+    alpha2_code: 
+    alpha3_code: tyv
+    alpha3_code_b: 
+  udm: !ruby/object:UncleKryon::Language
+    name: Udmurt
+    names: Udmurt
+    code: udm
+    codes: udm
+    alpha2_code: 
+    alpha3_code: udm
+    alpha3_code_b: 
+  uga: !ruby/object:UncleKryon::Language
+    name: Ugaritic
+    names: Ugaritic
+    code: uga
+    codes: uga
+    alpha2_code: 
+    alpha3_code: uga
+    alpha3_code_b: 
+  uig: !ruby/object:UncleKryon::Language
+    name: Uighur
+    names: Uighur;Uyghur
+    code: uig
+    codes: uig;ug
+    alpha2_code: ug
+    alpha3_code: uig
+    alpha3_code_b: 
+  ukr: !ruby/object:UncleKryon::Language
+    name: Ukrainian
+    names: Ukrainian
+    code: ukr
+    codes: ukr;uk
+    alpha2_code: uk
+    alpha3_code: ukr
+    alpha3_code_b: 
+  umb: !ruby/object:UncleKryon::Language
+    name: Umbundu
+    names: Umbundu
+    code: umb
+    codes: umb
+    alpha2_code: 
+    alpha3_code: umb
+    alpha3_code_b: 
+  und: !ruby/object:UncleKryon::Language
+    name: Undetermined
+    names: Undetermined
+    code: und
+    codes: und
+    alpha2_code: 
+    alpha3_code: und
+    alpha3_code_b: 
+  urd: !ruby/object:UncleKryon::Language
+    name: Urdu
+    names: Urdu
+    code: urd
+    codes: urd;ur
+    alpha2_code: ur
+    alpha3_code: urd
+    alpha3_code_b: 
+  uzb: !ruby/object:UncleKryon::Language
+    name: Uzbek
+    names: Uzbek
+    code: uzb
+    codes: uzb;uz
+    alpha2_code: uz
+    alpha3_code: uzb
+    alpha3_code_b: 
+  vai: !ruby/object:UncleKryon::Language
+    name: Vai
+    names: Vai
+    code: vai
+    codes: vai
+    alpha2_code: 
+    alpha3_code: vai
+    alpha3_code_b: 
+  ven: !ruby/object:UncleKryon::Language
+    name: Venda
+    names: Venda
+    code: ven
+    codes: ven;ve
+    alpha2_code: ve
+    alpha3_code: ven
+    alpha3_code_b: 
+  vie: !ruby/object:UncleKryon::Language
+    name: Vietnamese
+    names: Vietnamese
+    code: vie
+    codes: vie;vi
+    alpha2_code: vi
+    alpha3_code: vie
+    alpha3_code_b: 
+  vol: !ruby/object:UncleKryon::Language
+    name: Volapük
+    names: Volapük
+    code: vol
+    codes: vol;vo
+    alpha2_code: vo
+    alpha3_code: vol
+    alpha3_code_b: 
+  vot: !ruby/object:UncleKryon::Language
+    name: Votic
+    names: Votic
+    code: vot
+    codes: vot
+    alpha2_code: 
+    alpha3_code: vot
+    alpha3_code_b: 
+  wak: !ruby/object:UncleKryon::Language
+    name: Wakashan languages
+    names: Wakashan languages
+    code: wak
+    codes: wak
+    alpha2_code: 
+    alpha3_code: wak
+    alpha3_code_b: 
+  wal: !ruby/object:UncleKryon::Language
+    name: Wolaitta
+    names: Wolaitta;Wolaytta
+    code: wal
+    codes: wal
+    alpha2_code: 
+    alpha3_code: wal
+    alpha3_code_b: 
+  war: !ruby/object:UncleKryon::Language
+    name: Waray
+    names: Waray
+    code: war
+    codes: war
+    alpha2_code: 
+    alpha3_code: war
+    alpha3_code_b: 
+  was: !ruby/object:UncleKryon::Language
+    name: Washo
+    names: Washo
+    code: was
+    codes: was
+    alpha2_code: 
+    alpha3_code: was
+    alpha3_code_b: 
+  wen: !ruby/object:UncleKryon::Language
+    name: Sorbian languages
+    names: Sorbian languages
+    code: wen
+    codes: wen
+    alpha2_code: 
+    alpha3_code: wen
+    alpha3_code_b: 
+  wln: !ruby/object:UncleKryon::Language
+    name: Walloon
+    names: Walloon
+    code: wln
+    codes: wln;wa
+    alpha2_code: wa
+    alpha3_code: wln
+    alpha3_code_b: 
+  wol: !ruby/object:UncleKryon::Language
+    name: Wolof
+    names: Wolof
+    code: wol
+    codes: wol;wo
+    alpha2_code: wo
+    alpha3_code: wol
+    alpha3_code_b: 
+  xal: !ruby/object:UncleKryon::Language
+    name: Kalmyk
+    names: Kalmyk;Oirat
+    code: xal
+    codes: xal
+    alpha2_code: 
+    alpha3_code: xal
+    alpha3_code_b: 
+  xho: !ruby/object:UncleKryon::Language
+    name: Xhosa
+    names: Xhosa
+    code: xho
+    codes: xho;xh
+    alpha2_code: xh
+    alpha3_code: xho
+    alpha3_code_b: 
+  yao: !ruby/object:UncleKryon::Language
+    name: Yao
+    names: Yao
+    code: yao
+    codes: yao
+    alpha2_code: 
+    alpha3_code: yao
+    alpha3_code_b: 
+  yap: !ruby/object:UncleKryon::Language
+    name: Yapese
+    names: Yapese
+    code: yap
+    codes: yap
+    alpha2_code: 
+    alpha3_code: yap
+    alpha3_code_b: 
+  yid: !ruby/object:UncleKryon::Language
+    name: Yiddish
+    names: Yiddish
+    code: yid
+    codes: yid;yi
+    alpha2_code: yi
+    alpha3_code: yid
+    alpha3_code_b: 
+  yor: !ruby/object:UncleKryon::Language
+    name: Yoruba
+    names: Yoruba
+    code: yor
+    codes: yor;yo
+    alpha2_code: yo
+    alpha3_code: yor
+    alpha3_code_b: 
+  ypk: !ruby/object:UncleKryon::Language
+    name: Yupik languages
+    names: Yupik languages
+    code: ypk
+    codes: ypk
+    alpha2_code: 
+    alpha3_code: ypk
+    alpha3_code_b: 
+  zap: !ruby/object:UncleKryon::Language
+    name: Zapotec
+    names: Zapotec
+    code: zap
+    codes: zap
+    alpha2_code: 
+    alpha3_code: zap
+    alpha3_code_b: 
+  zbl: !ruby/object:UncleKryon::Language
+    name: Blissymbols
+    names: Blissymbols;Blissymbolics;Bliss
+    code: zbl
+    codes: zbl
+    alpha2_code: 
+    alpha3_code: zbl
+    alpha3_code_b: 
+  zen: !ruby/object:UncleKryon::Language
+    name: Zenaga
+    names: Zenaga
+    code: zen
+    codes: zen
+    alpha2_code: 
+    alpha3_code: zen
+    alpha3_code_b: 
+  zgh: !ruby/object:UncleKryon::Language
+    name: Standard Moroccan Tamazight
+    names: Standard Moroccan Tamazight
+    code: zgh
+    codes: zgh
+    alpha2_code: 
+    alpha3_code: zgh
+    alpha3_code_b: 
+  zha: !ruby/object:UncleKryon::Language
+    name: Zhuang
+    names: Zhuang;Chuang
+    code: zha
+    codes: zha;za
+    alpha2_code: za
+    alpha3_code: zha
+    alpha3_code_b: 
+  zho: !ruby/object:UncleKryon::Language
+    name: Chinese
+    names: Chinese
+    code: zho
+    codes: zho;chi;zh
+    alpha2_code: zh
+    alpha3_code: zho
+    alpha3_code_b: chi
+  znd: !ruby/object:UncleKryon::Language
+    name: Zande languages
+    names: Zande languages
+    code: znd
+    codes: znd
+    alpha2_code: 
+    alpha3_code: znd
+    alpha3_code_b: 
+  zul: !ruby/object:UncleKryon::Language
+    name: Zulu
+    names: Zulu
+    code: zul
+    codes: zul;zu
+    alpha2_code: zu
+    alpha3_code: zul
+    alpha3_code_b: 
+  zun: !ruby/object:UncleKryon::Language
+    name: Zuni
+    names: Zuni
+    code: zun
+    codes: zun
+    alpha2_code: 
+    alpha3_code: zun
+    alpha3_code_b: 
+  zxx: !ruby/object:UncleKryon::Language
+    name: No linguistic content
+    names: No linguistic content;Not applicable
+    code: zxx
+    codes: zxx
+    alpha2_code: 
+    alpha3_code: zxx
+    alpha3_code_b: 
+  zza: !ruby/object:UncleKryon::Language
+    name: Zaza
+    names: Zaza;Dimili;Dimli;Kirdki;Kirmanjki;Zazaki
+    code: zza
+    codes: zza
+    alpha2_code: 
+    alpha3_code: zza
+    alpha3_code_b: 

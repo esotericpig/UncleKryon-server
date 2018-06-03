@@ -18,6 +18,8 @@
 # along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
+require 'yaml'
+
 module UncleKryon
   class IsoBase
     DEFAULT_DIR = 'iso'
@@ -26,6 +28,15 @@ module UncleKryon
     
     def initialize()
       @values = {}
+    end
+    
+    def self.fix_name(name)
+      return self.flip_word_order(self.simplify_name(name))
+    end
+    
+    def self.flip_word_order(word)
+      # e.g., change 'English, Old' to 'Old English'
+      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip()
     end
     
     def load_file(filepath,id=self.class.get_class_name(self))
