@@ -263,6 +263,8 @@ module UncleKryon
                         album.mini_desc << ' | ' if !album.mini_desc.empty?()
                         album.mini_desc << p
                       end
+                    when 'ignore'
+                      log.warn("Excluding mini desc content: #{p}")
                     end
                   end
                 end
@@ -302,6 +304,7 @@ module UncleKryon
               when 'aum_filename'
                 add_to_dump = false
               when 'ignore'
+                log.warn("Excluding content: #{Util.clean_data(par)}")
                 add_to_dump = false
               end
             end

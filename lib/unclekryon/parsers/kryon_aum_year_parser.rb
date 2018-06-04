@@ -54,10 +54,10 @@ module UncleKryon
       
       # Not used anymore
       #@trainers['aum_year_topic'] = Trainer.new({
-      #    't'=>'Topic',
-      #    'i'=>'Ignore',
-      #    'us'=>'USA'
-      #    'no'=>'Non-USA'
+      #    't'=>'topic',
+      #    'i'=>'ignore',
+      #    'us'=>'usa'
+      #    'no'=>'non_usa'
       #  })
     end
     
@@ -83,7 +83,7 @@ module UncleKryon
       doc = Nokogiri::HTML(open(@release.url),nil,'utf-8') # Force utf-8 encoding
       rows = doc.css('table tr tr')
       
-      rows.each do |row|
+      rows.each() do |row|
         next if row.nil?
         next if (cells = row.css('td')).nil?
         
@@ -91,7 +91,18 @@ module UncleKryon
         @exclude_album = false
         
         # There is always a year cell
-        next if !parse_year_cell(cells,album)
+        if !parse_year_cell(cells,album)
+          # Try to get the topic
+          if cells.length >= 3
+            if !(t = cells[2]).nil?()
+              if !(t = t.content).nil?()
+                log.warn("Excluding year: #{t}")
+              end
+            end
+          end
+          
+          next
+        end
         
         # Sometimes there is not a topic, location, or language cell, but not all 3!
         # - Put next_row last because of short-circuit &&!
@@ -100,7 +111,12 @@ module UncleKryon
         next_row = !parse_location_cell(cells,album) && next_row
         next_row = !parse_language_cell(cells,album) && next_row
         
-        next if @exclude_album || next_row
+        next if @exclude_album
+        if next_row
+          log.warn("Excluding album: #{album.r_year_begin},#{album.r_year_end},#{album.r_topic}," <<
+            "#{album.r_location},#{album.r_language}")
+          next
+        end
         
         album.fill_empty_data()
         @artist.albums[album.id] = album
