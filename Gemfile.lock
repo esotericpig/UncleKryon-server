@@ -8,14 +8,12 @@ PATH
   remote: .
   specs:
     unclekryon (0.3.3)
-      iso-639 (>= 0.2.8)
       nbayes (>= 0.1.2)
       nokogiri (>= 1.8.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    iso-639 (0.2.8)
     mini_portile2 (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)

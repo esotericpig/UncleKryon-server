@@ -35,11 +35,10 @@ Gem::Specification.new do |spec|
   spec.description            = 'UncleKryon server (& hacker) for the UncleKryon Android app'
   spec.homepage               = 'https://github.com/esotericpig/UncleKryon-server'
   
-  spec.files                  = Dir.glob("{bin,lib}/**/*") + %w(
+  spec.files                  = Dir.glob("{bin,hax,iso,lib,train}/**/*") + %w(
                                     Gemfile
                                     Gemfile.lock
                                     LICENSE
-                                    Rakefile
                                     README.md
                                     unclekryon.gemspec
                                   )
@@ -49,10 +48,11 @@ Gem::Specification.new do |spec|
   spec.post_install_message   = 'You can now use "unclekryon" on the command-line.'
   
   spec.required_ruby_version  = '>= 2.4.0'
-  spec.requirements          << 'Fedora:   dnf install gcc ruby-devel zlib-devel'
   spec.requirements          << 'nokogiri: http://www.nokogiri.org/tutorials/installing_nokogiri.html'
+  spec.requirements          << '- Fedora:   sudo dnf install gcc ruby-devel zlib-devel'
+  spec.requirements          << '- Ubuntu:   sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev'
   
-  spec.add_runtime_dependency 'iso-639' ,'>= 0.2.8' # For language codes
+  #spec.add_runtime_dependency 'iso-639' ,'>= 0.2.8' # For language codes
   spec.add_runtime_dependency 'nbayes'  ,'>= 0.1.2' # For training type of text (machine learning)
   spec.add_runtime_dependency 'nokogiri','>= 1.8.1' # For hacking html
   
