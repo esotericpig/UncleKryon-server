@@ -20,8 +20,12 @@
 
 require 'yaml'
 
+require 'unclekryon/log'
+
 module UncleKryon
   class IsoBase
+    include Logging
+    
     DEFAULT_DIR = 'iso'
     
     attr_reader :values
@@ -30,8 +34,64 @@ module UncleKryon
       @values = {}
     end
     
+    def find(text)
+      lang = find_by_name(text)
+      return lang unless lang.nil?()
+      
+      lang = find_by_code(text)
+      return lang
+    end
+    
+    def find_by_code(code)
+      code = code.gsub(/[[:space:]]+/,'').downcase()
+      
+      @values.each() do |k,v|
+        codes = nil
+        
+        if v.respond_to?(:codes)
+          codes = v.codes()
+        elsif v.respond_to?(:code)
+          codes = v.code()
+        else
+          raise "No codes() or code() method for class #{v.class.name}"
+        end
+        
+        codes.split(';').each() do |c|
+          next if c.nil?()
+          c = c.gsub(/[[:space:]]+/,'').downcase()
+          return v if c == code
+        end
+      end
+      
+      return nil
+    end
+    
+    def find_by_name(name)
+      name = name.gsub(/[[:space:]]+/,'').downcase()
+      
+      @values.each() do |k,v|
+        names = nil
+        
+        if v.respond_to?(:names)
+          names = v.names()
+        elsif v.respond_to?(:name)
+          names = v.name()
+        else
+          raise "No names() or name() method for class #{v.class.name}"
+        end
+        
+        names.split(';').each() do |n|
+          next if n.nil?()
+          n = n.gsub(/[[:space:]]+/,'').downcase()
+          return v if n == name
+        end
+      end
+      
+      return nil
+    end
+    
     def self.fix_name(name)
-      return self.flip_word_order(self.simplify_name(name))
+      return self.class.flip_word_order(self.class.simplify_name(name))
     end
     
     def self.flip_word_order(word)

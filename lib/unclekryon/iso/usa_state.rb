@@ -26,8 +26,6 @@ require 'yaml'
 
 require 'unclekryon/iso/iso_base'
 
-# TODO: add find() methods on name/code/etc. as needed
-
 ##
 # @see https://en.wikipedia.org/wiki/ISO_3166-2:US
 # @see https://www.iso.org/obp/ui/#iso:code:3166:US

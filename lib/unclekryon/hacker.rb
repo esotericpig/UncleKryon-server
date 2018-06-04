@@ -43,26 +43,16 @@ module UncleKryon
     attr_accessor :hax_dirname
     attr_accessor :hax_kryon_filename
     attr_accessor :no_clobber
-    attr_accessor :overwrite
-    attr_accessor :replace
-    attr_accessor :slow
     attr_accessor :train_dirname
     attr_accessor :train_kryon_filename
     
     alias_method :no_clobber?,:no_clobber
-    alias_method :overwrite?,:overwrite
-    alias_method :replace?,:replace
-    alias_method :slow?,:slow
     
     def initialize(hax_dirname: HAX_DIRNAME,hax_kryon_filename: HAX_KRYON_FILENAME,no_clobber: false,
-          overwrite: false,replace: true,slow: true,train_dirname: TRAIN_DIRNAME,
-          train_kryon_filename: TRAIN_KRYON_FILENAME,**options)
+          train_dirname: TRAIN_DIRNAME,train_kryon_filename: TRAIN_KRYON_FILENAME,**options)
       @hax_dirname = hax_dirname
       @hax_kryon_filename = hax_kryon_filename
       @no_clobber = no_clobber
-      @overwrite = overwrite
-      @replace = replace
-      @slow = slow
       @train_dirname = train_dirname
       @train_kryon_filename = train_kryon_filename
     end
@@ -116,7 +106,6 @@ module UncleKryon
       album_parser = KryonAumYearAlbumParser.new(artist,album.url)
       
       album_parser.album = album
-      album_parser.slow = @slow
       album_parser.trainers.filepath = get_train_kryon_filepath()
       
       return album_parser
@@ -170,8 +159,7 @@ module UncleKryon
       if @no_clobber
         puts release.to_s(year_parser.artist)
       else
-        Util.save_artist_yaml(year_parser.artist,get_hax_kryon_filepath(year),replace: @replace,
-          who: :kryon_aum_year,overwrite: @overwrite)
+        Util.save_artist_yaml(year_parser.artist,get_hax_kryon_filepath(year))
       end
     end
     
@@ -186,8 +174,7 @@ module UncleKryon
       if @no_clobber
         puts album_parser.album.to_s(album_parser.artist)
       else
-        Util.save_artist_yaml(album_parser.artist,get_hax_kryon_filepath(year),replace: @replace,
-          who: :kryon_aum_year_album,overwrite: @overwrite)
+        Util.save_artist_yaml(album_parser.artist,get_hax_kryon_filepath(year))
       end
     end
     
@@ -209,14 +196,13 @@ module UncleKryon
       release.album_ids.each do |album_id|
         album = artist.albums[album_id]
         log.info("Hacking album[#{album.r_year_begin},#{album.r_year_end},#{album.r_topic}]")
-        album = album_parser.parse_site(artist,album.url,slow: @slow)
+        album = album_parser.parse_site(artist,album.url)
       end
       
       if @no_clobber
         puts release.to_s(artist)
       else
-        Util.save_artist_yaml(artist,get_hax_kryon_filepath(year),replace: @replace,
-          who: :kryon_aum_year_album,overwrite: @overwrite)
+        Util.save_artist_yaml(artist,get_hax_kryon_filepath(year))
       end
     end
     

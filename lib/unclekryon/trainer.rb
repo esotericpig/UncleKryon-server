@@ -22,6 +22,7 @@ require 'bundler/setup'
 
 require 'nbayes'
 
+require 'unclekryon/log'
 require 'unclekryon/util'
 
 module UncleKryon
@@ -82,8 +83,8 @@ module UncleKryon
       puts '-----------------'
       print 'What is it? '
       
-      # Use "-d" or "--debug" in the terminal
-      if $DEBUG
+      # Use -t/--test option
+      if Log.instance.test?()
         puts (tag_id = @tags.keys.sample()) # For testing purposes
       else
         tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args

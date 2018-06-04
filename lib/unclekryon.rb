@@ -30,14 +30,18 @@ require 'unclekryon/version'
 # TODO: make command-line program for hacker, server, uploader
 #
 # hax kryon scroll main, hax lems aum main, hax ssb scroll year
+# lems = lemurian sisters; ssb = saytha sai baba
 #
 # unclekryon srv (uses site dir and current year) (default is just help)
-# unclekryon srv --every 10min
-# unclekryon srv --once
+# unclekryon srv --every 10min/--once (save to kryon_<release>.yaml & to DB using config file for user/pass)
 #
 # unclekryon up --dir x --file x kryon/lems/ssb (upload kryon.yaml to database)
+# -l/-g take in arg of kryon/lems/ssb
+# unclekryon up --local /-l kryon (save to DB file for Android app)
+# unclekryon up --global/-g kryon (save to DB network; use config file for user/pass)
 #
 # for bash completion, have "--bash-completion" option output bash completion options and use in file
+# --install-bash-completion to write/copy file for bash completion to work (maybe need to use sudo/su?)
 
 module UncleKryon
   class Main
@@ -65,10 +69,16 @@ module UncleKryon
           Options:
         EOS
         
+        op.on('-d','--dev','Raise errors on missing data, etc.') do
+          Log.instance.dev = true
+        end
         op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console') do
           @options[:no_clobber] = true
         end
         op.on('-h','--help','Print help to console')
+        op.on('-t','--test','Fill in training data with random values, etc. for fast testing') do
+          Log.instance.test = true
+        end
         op.on('-v','--version','Print version to console')
       end
       
@@ -92,18 +102,16 @@ module UncleKryon
             Examples:
             |    <hax>:
             |    # Train the data 1st before haxing (if there is no training data)
-            |    $ #{parser.program_name} hax -t kryon aum year -t 2017
+            |    $ #{parser.program_name} hax -t kryon aum year -t 2017 -s
             |    $ #{parser.program_name} hax -t kryon aum year -t 2017 -a 2.2
             |    
             |    # Hax the data (even though --title is not required, it is recommended)
-            |    $ #{parser.program_name} -n hax kryon aum year -t 2017
-            |    $ #{parser.program_name} hax -d ./db -o kryon -f k.yaml aum year -t 2017
-            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -s
-            |    $ #{parser.program_name} hax -r kryon aum year -a 2017.9.29
-            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 10.9
+            |    $ #{parser.program_name} hax kryon aum year -t 2017 -s
+            |    $ #{parser.program_name} hax kryon aum year -t 2017 -a 10.9
+            |    $ #{parser.program_name} hax kryon aum year -a 2017.9.29
             |    
             |    # Hax the 2nd "6.4" album (if there are 2)
-            |    $ #{parser.program_name} hax -r kryon aum year -t 2017 -a 6.4:2
+            |    $ #{parser.program_name} hax kryon aum year -t 2017 -a 6.4:2
           EOS
           puts s.gsub(/^\|/,'')
         end
@@ -123,11 +131,6 @@ module UncleKryon
         op.on('-d','--dir <dir>',"Directory to save the hax data to (default: #{Hacker::HAX_DIRNAME})") do |dir|
           @options[:hax_dirname] = dir
         end
-        op.on('-f','--fast','Hax it fast at the expense of losing data, ONLY for debugging') do
-          @options[:slow] = false
-        end
-        op.on('-r','--replace',"Replace the new hax data loaded, but don't overwrite non-loaded data")
-        op.on('-o','--overwrite','Overwrite all hax data, even non-loaded data; overrides --replace')
         op.on('-t','--train','Train the data using machine learning')
         op.on('-i','--train-dir <dir>',"Directory to save the training data to (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
           @options[:train_dirname] = dir

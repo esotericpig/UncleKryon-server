@@ -56,6 +56,17 @@ module UncleKryon
   # Global for non-class use
   class Log < UncleKryonLogger
     include Singleton
+    
+    attr_accessor :dev
+    attr_accessor :test
+    
+    alias_method :dev?,:dev
+    alias_method :test?,:test
+    
+    def initialize()
+      @dev = false
+      @test = false
+    end
   end
   
   # Mixin for class use

@@ -26,9 +26,6 @@ require 'yaml'
 
 require 'unclekryon/iso/iso_base'
 
-# TODO: make countries reflect countries listed on kryon site during each year parsing
-# TODO: add find() methods on name/code/etc. as needed
-
 ##
 # @see https://en.wikipedia.org/wiki/ISO_3166
 # @see https://en.wikipedia.org/wiki/ISO_3166-1

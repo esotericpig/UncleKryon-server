@@ -21,7 +21,6 @@
 require 'date'
 require 'digest'
 require 'fileutils'
-require 'iso-639'
 require 'uri'
 require 'yaml'
 
@@ -129,26 +128,6 @@ module UncleKryon
       #return Digest::MD5.base64digest(url)
     end
     
-    def self.get_kryon_lang_codes(lang)
-      ls = lang.split('/')
-      r = []
-      
-      ls.each do |l|
-        # See 2017 "Boulder Colorao w/Marilyn & Prageet (6)"
-        fl = l.gsub(/\A[[:space:]]*ENG[[:space:]]*\z/i,'English')
-        e = self.get_lang_entry(fl)
-        
-        if !e.nil?
-          r.push(e.alpha3_bibliographic)
-        else
-          Log.instance.warn("Invalid language[#{l},#{fl}] from #{lang}")
-          r.push(l)
-        end
-      end
-      
-      return r
-    end
-    
     def self.get_kryon_year_url(year)
       if year == '2002-2005'
         url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
@@ -157,25 +136,6 @@ module UncleKryon
       end
       
       return url
-    end
-    
-    def self.get_lang_entry(lang)
-      lang = lang.gsub(/[[:space:]]+/,'')
-      lang = lang.downcase
-      
-      ISO_639::ISO_639_2.each do |e|
-        ls = e.english_name
-        ls = ls.split(';')
-        
-        ls.each do |l|
-          l = l.gsub(/[[:space:]]+/,'')
-          l = l.downcase
-          
-          return e if l == lang
-        end
-      end
-      
-      return nil
     end
     
     def self.get_top_link(url)
@@ -302,18 +262,6 @@ module UncleKryon
       return r
     end
     
-    def self.parse_kryon_location(loc)
-      loc = self.clean_data(loc)
-      a = loc.split(/([[:space:]]+)|(\,)|(\-)|(\/)/)
-      
-      a.map! do |l|
-        # If 2 chars, probably a state abbreviation
-        l = (l.length > 2) ? l.capitalize : l
-      end
-      
-      return a.join.split('/')
-    end
-    
     def self.parse_url_filename(url)
       uri = URI.parse(url)
       r = File.basename(uri.path)
@@ -321,6 +269,23 @@ module UncleKryon
       return r
     end
     
+    def self.save_artist_yaml(artist,filepath,**options)
+      raise "Empty filepath[#{filepath}]" if filepath.nil?() || (filepath = filepath.strip()).empty?()
+      
+      filedata = {'Artist'=>{}}
+      filedata['Artist']['Releases'] = artist.releases
+      filedata['Artist']['Albums'] = artist.albums
+      filedata['Artist']['Aums'] = artist.aums
+      filedata['Artist']['Pics'] = artist.pics
+      
+      mk_dirs_from_filepath(filepath)
+      File.open(filepath,'w') do |f|
+        YAML.dump(filedata,f)
+      end
+    end
+    
+=begin
+    # Old way where you can replace/overwrite; new way just always overwrites to make it simple
     def self.save_artist_yaml(artist,filepath,replace: false,who: nil,overwrite: false,**options)
       raise "Empty filepath[#{filepath}]" if filepath.nil?() || (filepath = filepath.strip()).empty?()
       
@@ -399,5 +364,6 @@ module UncleKryon
         YAML.dump(filedata,f)
       end
     end
+=end
   end
 end

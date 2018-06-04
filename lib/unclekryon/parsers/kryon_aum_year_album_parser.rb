@@ -21,6 +21,8 @@
 require 'nokogiri'
 require 'open-uri'
 
+require 'unclekryon/iso'
+require 'unclekryon/log'
 require 'unclekryon/trainer'
 require 'unclekryon/util'
 
@@ -31,22 +33,21 @@ require 'unclekryon/data/time_data'
 
 module UncleKryon
   class KryonAumYearAlbumParser
+    include Logging
+    
     attr_accessor :album
     attr_accessor :artist
     attr_accessor :options
-    attr_accessor :slow
     attr_accessor :trainers
     attr_accessor :training
     attr_accessor :url
     
-    alias_method :slow?,:slow
     alias_method :training?,:training
     
-    def initialize(artist=nil,url=nil,album: nil,slow: true,training: false,train_filepath: nil,**options)
+    def initialize(artist=nil,url=nil,album: nil,training: false,train_filepath: nil,**options)
       @album = album
       @artist = artist
       @options = options
-      @slow = slow
       @url = url
       
       @trainers = Trainers.new(train_filepath)
@@ -59,7 +60,7 @@ module UncleKryon
           'almi'=>'album_mini_desc',
           'alma'=>'album_main_desc',
           'aust'=>'aum_subtitle',
-          'ausl'=>'aum_subtitle_language', # See 2018 "Montreal QB w/Robert Coxon (3)" "FRENCH"
+          'aulg'=>'aum_language', # See 2018 "Montreal QB w/Robert Coxon (3)" aums' subtitles "FRENCH"
           'autt'=>'aum_title',
           'autm'=>'aum_time',
           'ausz'=>'aum_size',
@@ -142,7 +143,8 @@ module UncleKryon
         aum.id = Util.gen_id(aum.url)
         aum.filename = Util.parse_url_filename(aum.url)
         
-        if @slow
+        if !Log.instance.test?()
+          # Getting header data is slow
           r = Util.get_url_header_data(aum.url)
           aum.size = r['content-length']
           aum.size = aum.size[0] if aum.size.is_a?(Array)
@@ -198,7 +200,10 @@ module UncleKryon
         c = Util.clean_data(orig_c)
         
         next if c.empty?
-        next if c =~ exclude_content_regex
+        if c =~ exclude_content_regex
+          log.warn("Excluding content: #{c}")
+          next
+        end
         
         add_to_dump = true
         
@@ -279,9 +284,9 @@ module UncleKryon
               when 'aum_subtitle'
                 @local_dump[:aum_subtitle].push(Util.clean_data(par))
                 add_to_dump = false
-              when 'aum_subtitle_language'
+              when 'aum_language'
                 p = Util.clean_data(par)
-                @local_dump[:aum_language].push(p)
+                @local_dump[:aum_language].push(Iso.languages.find_by_kryon(p))
                 @local_dump[:aum_subtitle].push(p)
                 add_to_dump = false
               when 'aum_title'
@@ -335,7 +340,10 @@ module UncleKryon
         src = img['src']
         
         next if src.nil? || src.empty?
-        next if src =~ exclude_imgs
+        if src =~ exclude_imgs
+          log.warn("Excluding image: #{src}")
+          next
+        end
         
         pic = PicData.new
         pic.url = Util.clean_link(url,src)

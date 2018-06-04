@@ -24,6 +24,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
+require 'unclekryon/log'
+
 require 'unclekryon/iso/iso_base'
 
 ##
@@ -118,6 +120,39 @@ module UncleKryon
     
     def initialize()
       super()
+    end
+    
+    def find_by_kryon(text,add_english: false,**options)
+      langs = []
+      
+      # Multiple languages are separated by '/'
+      text.split(/[[:space:]]*\/[[:space:]]*/).each() do |t|
+        # Fix misspellings and/or weird shortenings
+        t = t.gsub(/\AFRENC\z/i,'French')
+        t = t.gsub(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
+        
+        lang = find(t)
+        
+        if lang.nil?()
+          msg = "No language found for: #{t}"
+          
+          if Log.instance.dev?()
+            raise msg
+          else
+            log.warn(msg)
+          end
+        else
+          langs.push(lang.code)
+        end
+      end
+      
+      eng_code = find_by_code('eng').code
+      
+      if add_english && !langs.include?(eng_code)
+        langs.push(eng_code)
+      end
+      
+      return langs.empty?() ? nil : langs.join(';')
     end
     
     def self.load_file(filepath=DEFAULT_FILEPATH)

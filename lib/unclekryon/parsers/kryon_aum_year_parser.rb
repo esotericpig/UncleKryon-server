@@ -21,6 +21,8 @@
 require 'nokogiri'
 require 'open-uri'
 
+require 'unclekryon/iso'
+require 'unclekryon/log'
 require 'unclekryon/trainer'
 require 'unclekryon/util'
 
@@ -30,7 +32,10 @@ require 'unclekryon/data/release_data'
 
 module UncleKryon
   class KryonAumYearParser
+    include Logging
+    
     attr_accessor :artist
+    attr_accessor :exclude_album
     attr_accessor :release
     attr_accessor :title
     attr_accessor :trainers
@@ -41,15 +46,19 @@ module UncleKryon
     
     def initialize(title=nil,url=nil,artist=ArtistData.new(),training: false,train_filepath: nil,**options)
       @artist = artist
+      @exclude_album = false
       @title = title
       @trainers = Trainers.new(train_filepath)
       @training = training
       @url = url
       
-      @trainers['aum_year'] = Trainer.new({
-          'us'=>'USA',
-          'no'=>'Non-USA'
-        })
+      # Not used anymore
+      #@trainers['aum_year_topic'] = Trainer.new({
+      #    't'=>'Topic',
+      #    'i'=>'Ignore',
+      #    'us'=>'USA'
+      #    'no'=>'Non-USA'
+      #  })
     end
     
     def parse_site(title=nil,url=nil,artist=nil)
@@ -79,6 +88,7 @@ module UncleKryon
         next if (cells = row.css('td')).nil?
         
         album = KryonAumAlbumData.new
+        @exclude_album = false
         
         # There is always a year cell
         next if !parse_year_cell(cells,album)
@@ -89,7 +99,8 @@ module UncleKryon
         next_row = !parse_topic_cell(cells,album)
         next_row = !parse_location_cell(cells,album) && next_row
         next_row = !parse_language_cell(cells,album) && next_row
-        next if next_row
+        
+        next if @exclude_album || next_row
         
         album.fill_empty_data()
         @artist.albums[album.id] = album
@@ -128,9 +139,10 @@ module UncleKryon
       return false if (cell = cell.content).nil?
       
       cell = Util.clean_data(cell)
-      album.r_language = Util.get_kryon_lang_codes(cell)
+      # For the official site, they always have English, so add it if not present
+      album.r_language = Iso.languages.find_by_kryon(cell,add_english: true)
       
-      return false if album.r_language.empty?
+      return false if album.r_language.nil?()
       return true
     end
     
@@ -139,20 +151,21 @@ module UncleKryon
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
       
-      album.r_location = Util.parse_kryon_location(cell)
+      album.r_location = Iso.find_kryon_locations(cell)
       
-      return false if album.r_location.empty?
+      return false if album.r_location.nil?()
       
-      album.r_location.each_with_index() do |l,i|
-        if @training
-          @trainers['aum_year'].train(l)
-        else
-          case @trainers['aum_year'].tag(l)
-          when 'USA'
-            album.r_location[i] << ', USA'
-          end
-        end
-      end
+      # Not used anymore
+      #album.r_location.each_with_index() do |l,i|
+      #  if @training
+      #    @trainers['aum_year'].train(l)
+      #  else
+      #    case @trainers['aum_year'].tag(l)
+      #    when 'USA'
+      #      album.r_location[i] << ', USA'
+      #    end
+      #  end
+      #end
       
       return true
     end
@@ -169,10 +182,28 @@ module UncleKryon
       return false if cell.nil?
       return false if (cell = cell.content).nil?
       
-      # For 2018 "Kryon Seminar in Longmont - (PLEASE READ)"
-      return false if cell =~ /PLEASE[[:space:]]+READ/i
-      
       album.r_topic = Util.fix_shortwith_text(Util.clean_data(cell))
+      
+      exclude_topics = /
+        GROUP[[:space:]]+PHOTO|
+        PLEASE[[:space:]]+READ
+      /ix
+      
+      if album.r_topic =~ exclude_topics
+        log.warn("Excluding topic: #{album.r_topic}")
+        @exclude_album = true
+        return false
+      end
+      
+      # Not used, as there are just a few exclude cases
+      #if @training
+      #  @trainers['aum_year_topic'].train(album.r_topic)
+      #else
+      #  case @trainers['aum_year_topic'].tag(album.r_topic)
+      #  when 'Ignore'
+      #    return false
+      #  end
+      #end
       
       return false if album.r_topic.empty?
       return true
