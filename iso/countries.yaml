@@ -1192,7 +1192,7 @@ Countries:
     alpha3_code: NIU
   NLD: !ruby/object:UncleKryon::Country
     name: Netherlands
-    names: Netherlands
+    names: Netherlands;Holland
     code: NLD
     codes: NLD;NL
     alpha2_code: NL
