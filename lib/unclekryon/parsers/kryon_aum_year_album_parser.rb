@@ -301,6 +301,9 @@ module UncleKryon
                 
                 album.main_desc = album.main_desc.strip() # Remove last newline
                 add_to_dump = false
+              when 'ignore'
+                log.warn("Excluding content: #{Util.clean_data(par)}")
+                add_to_dump = false
               else
                 if !has_header
                   log.warn("No header yet so ignoring: #{Util.clean_data(par)}")
@@ -325,9 +328,6 @@ module UncleKryon
                     
                     add_to_dump = false
                   when 'aum_filename'
-                    add_to_dump = false
-                  when 'ignore'
-                    log.warn("Excluding content: #{Util.clean_data(par)}")
                     add_to_dump = false
                   end
                 end
