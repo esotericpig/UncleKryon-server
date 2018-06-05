@@ -66,6 +66,7 @@ module UncleKryon
     end
     
     def train(text)
+      guess_tag = self.tag(text) # Try and guess
       tokens = self.class.to_tokens(text)
       
       puts '#################'
@@ -73,10 +74,10 @@ module UncleKryon
       puts '#################'
       
       tf = '%%%is = %%%is' % [@max_tag_id_length,@max_tag_length]
-      
       @tags.each do |id,tag|
         puts tf % [id,tag]
       end
+      puts "<Enter> = Guess: #{guess_tag}"
       
       puts '-----------------'
       puts text
@@ -91,8 +92,13 @@ module UncleKryon
       end
       puts
       
-      raise "Invalid tag ID[#{tag_id}]" if !@tags.include?(tag_id)
-      tag = @tags[tag_id]
+      if tag_id.empty?()
+        raise "Invalid guess tag[#{guess_tag}]" if !@tags.value?(guess_tag)
+        tag = guess_tag
+      else
+        raise "Invalid tag ID[#{tag_id}]" if !@tags.include?(tag_id)
+        tag = @tags[tag_id]
+      end
       
       @trainer.train(tokens,tag)
       
