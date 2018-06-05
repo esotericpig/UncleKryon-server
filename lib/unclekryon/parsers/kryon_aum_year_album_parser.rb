@@ -92,6 +92,7 @@ module UncleKryon
           :album_location=>false,
           :album_mini_desc=>false,
           :album_main_desc=>false,
+          :aums=>0,
           :aum_subtitle=>[],
           :aum_language=>[],
           :aum_title=>[],
@@ -136,10 +137,11 @@ module UncleKryon
       links.each do |link|
         next if link.nil?
         
+        audio_file_regex = /\.mp3/i
         href = link['href']
         
         next if href.nil? || href.empty?
-        next if href !~ /\.mp3/i
+        next if href !~ audio_file_regex
         
         aum = KryonAumData.new
         aum.url = Util.clean_data(href)
@@ -159,7 +161,14 @@ module UncleKryon
           aum.title = @local_dump[:aum_title][i]
         else
           # Set title to something at least
-          aum.title = aum.subtitle
+          if !(afn = aum.filename).nil?() && !afn.strip().empty?()
+            # More descriptive than subtitle
+            aum.title = afn.gsub(audio_file_regex,'').strip()
+            log.warn("Using filename as title: #{aum.title}")
+          else
+            aum.title = aum.subtitle
+            log.warn("Using subtitle as title: #{aum.title}")
+          end
         end
         aum.time = @local_dump[:aum_time][i] if i < @local_dump[:aum_time].length
         
@@ -235,6 +244,7 @@ module UncleKryon
           
           add_to_dump = false
         elsif c =~ filename_regex
+          @local_dump[:aums] += 1
           add_to_dump = false
         else
           # Paragraphs
