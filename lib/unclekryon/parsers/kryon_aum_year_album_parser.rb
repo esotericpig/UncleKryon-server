@@ -197,7 +197,7 @@ module UncleKryon
         # Size, if not set
         if (aum.size.nil?() || aum.size.strip().empty?) && i < @local_dump[:aum_size].length
           aum.size = @local_dump[:aum_size][i]
-          log.warn("Using local dump size: #{aum.size}"
+          log.warn("Using local dump size: #{aum.size}")
         end
         
         i += 1
