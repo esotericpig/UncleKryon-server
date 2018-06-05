@@ -148,15 +148,25 @@ module UncleKryon
         aum.id = Util.gen_id(aum.url)
         aum.filename = Util.parse_url_filename(aum.url)
         
+        # Size
         if !Log.instance.test?()
-          # Getting header data is slow
+          # Getting header data is slow, so only do it in production
           r = Util.get_url_header_data(aum.url)
           aum.size = r['content-length']
           aum.size = aum.size[0] if aum.size.is_a?(Array)
         end
         
-        aum.subtitle = @local_dump[:aum_subtitle][i] if i < @local_dump[:aum_subtitle].length
+        # Subtitle
+        if i < @local_dump[:aum_subtitle].length
+          aum.subtitle = @local_dump[:aum_subtitle][i]
+        else
+          log.warn("No subtitle for: #{aum.filename},#{aum.url}")
+        end
+        
+        # Language
         aum.language = @local_dump[:aum_language][i] if i < @local_dump[:aum_language].length
+        
+        # Title
         if i < @local_dump[:aum_title].length
           aum.title = @local_dump[:aum_title][i]
         else
@@ -170,10 +180,24 @@ module UncleKryon
             log.warn("Using subtitle as title: #{aum.title}")
           end
         end
-        aum.time = @local_dump[:aum_time][i] if i < @local_dump[:aum_time].length
         
-        if (aum.size.nil?() || aum.size.empty?) && i < @local_dump[:aum_size].length
+        # Time
+        if i < @local_dump[:aum_time].length
+          aum.time = @local_dump[:aum_time][i]
+        else
+          msg = "No time for: #{aum.title},#{aum.subtitle},#{aum.filename},#{aum.url}"
+          
+          if Log.instance.dev?()
+            raise msg
+          else
+            log.warn(msg)
+          end
+        end
+        
+        # Size, if not set
+        if (aum.size.nil?() || aum.size.strip().empty?) && i < @local_dump[:aum_size].length
           aum.size = @local_dump[:aum_size][i]
+          log.warn("Using local dump size: #{aum.size}"
         end
         
         i += 1
