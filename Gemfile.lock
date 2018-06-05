@@ -8,8 +8,8 @@ PATH
   remote: .
   specs:
     unclekryon (0.3.3)
-      nbayes (>= 0.1.2)
-      nokogiri (>= 1.8.1)
+      nbayes (~> 0.1.2)
+      nokogiri (~> 1.8.2)
 
 GEM
   remote: https://rubygems.org/
@@ -22,7 +22,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (>= 1.15)
+  bundler (>= 1.16)
   nbayes!
   unclekryon!
 
