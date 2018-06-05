@@ -87,8 +87,11 @@ module UncleKryon
       
       # Album data (flags are okay) should never go in this, only for aums, pics, etc.
       @local_dump = {
-          :album_mini_desc=>true,
-          :album_main_desc=>true,
+          :album_title=>false,
+          :album_dates=>false,
+          :album_location=>false,
+          :album_mini_desc=>false,
+          :album_main_desc=>false,
           :aum_subtitle=>[],
           :aum_language=>[],
           :aum_title=>[],
@@ -173,10 +176,9 @@ module UncleKryon
       return if tds.nil?
       
       # Unfortunately, some things just have to be excluded the old fashioned way
-      exclude_content_regex = /
-        \A[[:space:]]*KRYON[[:space:]]+EGYPT[[:space:]]+TOUR[[:space:]]+1[[:space:]]*\z|
-        \A[[:space:]]*KRYON[[:space:]]*IN[[:space:]]*PETRA[[:space:]]*,[[:space:]]*JORDAN[[:space:]]*\z
-      /x
+      # - Try to solve with 'has_header' var below
+      #exclude_content_regex = /
+      #/x
       
       filename_regex = /\.mp3[[:space:]]*\z/i
       # 2017 "Petra, Jordan (5)" has a ":" in the megabytes cell
@@ -201,10 +203,10 @@ module UncleKryon
         c = Util.clean_data(orig_c)
         
         next if c.empty?
-        if c =~ exclude_content_regex
-          log.warn("Excluding content: #{c}")
-          next
-        end
+        #if c =~ exclude_content_regex
+        #  log.warn("Excluding content: #{c}")
+        #  next
+        #end
         
         add_to_dump = true
         
@@ -247,9 +249,23 @@ module UncleKryon
                 end
               end
             else
+              has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
+                @local_dump[:album_location] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
               tag = @trainers['aum_year_album'].tag(par)
               
               case tag
+              when 'album_title'
+                if !@local_dump[:album_title]
+                  @local_dump[:album_title] = true
+                end
+              when 'album_dates'
+                if !@local_dump[:album_dates]
+                  @local_dump[:album_dates] = true
+                end
+              when 'album_location'
+                if !@local_dump[:album_location]
+                  @local_dump[:album_location] = true
+                end
               when 'album_mini_desc'
                 par.split(/\n+/).each() do |p|
                   p = Util.clean_data(p)
@@ -257,11 +273,11 @@ module UncleKryon
                   if !p.empty?()
                     case @trainers['aum_year_album_mini_desc'].tag(p)
                     when 'desc'
-                      if @local_dump[:album_mini_desc]
-                        @local_dump[:album_mini_desc] = false
+                      if !@local_dump[:album_mini_desc]
+                        @local_dump[:album_mini_desc] = true
                         album.mini_desc = p
                       else
-                        album.mini_desc << ' | ' if !album.mini_desc.empty?()
+                        album.mini_desc << ' | ' if !album.mini_desc.strip().empty?()
                         album.mini_desc << p
                       end
                     when 'ignore'
@@ -272,8 +288,8 @@ module UncleKryon
                 
                 add_to_dump = false
               when 'album_main_desc'
-                if @local_dump[:album_main_desc]
-                  @local_dump[:album_main_desc] = false
+                if !@local_dump[:album_main_desc]
+                  @local_dump[:album_main_desc] = true
                   album.main_desc = ''
                 else
                   album.main_desc << "\n\n" if !album.main_desc.strip().empty?()
@@ -285,29 +301,36 @@ module UncleKryon
                 
                 album.main_desc = album.main_desc.strip() # Remove last newline
                 add_to_dump = false
-              when 'aum_subtitle'
-                @local_dump[:aum_subtitle].push(Util.clean_data(par))
-                add_to_dump = false
-              when 'aum_language'
-                p = Util.clean_data(par)
-                @local_dump[:aum_language].push(Iso.languages.find_by_kryon(p))
-                @local_dump[:aum_subtitle].push(p)
-                add_to_dump = false
-              when 'aum_title'
-                @local_dump[:aum_title].push(Util.clean_data(par))
-                
-                # Special case for 2017 "LISBON, PORTUGAL (Fatima Tour) (3)"
-                if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/
-                  @local_dump[:aum_title].push('Lisbon Channeling 2');
-                  @local_dump[:aum_title].push('Lisbon Channeling 3');
+              else
+                if !has_header
+                  log.warn("No header yet so ignoring: #{Util.clean_data(par)}")
+                else
+                  case tag
+                  when 'aum_subtitle'
+                    @local_dump[:aum_subtitle].push(Util.clean_data(par))
+                    add_to_dump = false
+                  when 'aum_language'
+                    p = Util.clean_data(par)
+                    @local_dump[:aum_language].push(Iso.languages.find_by_kryon(p))
+                    @local_dump[:aum_subtitle].push(p)
+                    add_to_dump = false
+                  when 'aum_title'
+                    @local_dump[:aum_title].push(Util.clean_data(par))
+                    
+                    # Special case for 2017 "LISBON, PORTUGAL (Fatima Tour) (3)"
+                    if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/
+                      @local_dump[:aum_title].push('Lisbon Channeling 2');
+                      @local_dump[:aum_title].push('Lisbon Channeling 3');
+                    end
+                    
+                    add_to_dump = false
+                  when 'aum_filename'
+                    add_to_dump = false
+                  when 'ignore'
+                    log.warn("Excluding content: #{Util.clean_data(par)}")
+                    add_to_dump = false
+                  end
                 end
-                
-                add_to_dump = false
-              when 'aum_filename'
-                add_to_dump = false
-              when 'ignore'
-                log.warn("Excluding content: #{Util.clean_data(par)}")
-                add_to_dump = false
               end
             end
           end
