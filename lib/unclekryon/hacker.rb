@@ -57,8 +57,8 @@ module UncleKryon
       @train_kryon_filename = train_kryon_filename
     end
     
-    def create_kryon_aum_year_album_parser(date,year=nil)
-      pd = parse_date(date,year)
+    def create_kryon_aum_year_album_parser(date,year=nil,index=nil)
+      pd = parse_date(date,year,index)
       date = pd[:date]
       index = pd[:index]
       year = pd[:year]
@@ -163,12 +163,13 @@ module UncleKryon
       end
     end
     
-    def parse_kryon_aum_year_album(date,year=nil)
-      pd = parse_date(date,year)
+    def parse_kryon_aum_year_album(date,year=nil,index=nil)
+      pd = parse_date(date,year,index)
       date = pd[:date]
+      index = pd[:index]
       year = pd[:year]
       
-      album_parser = create_kryon_aum_year_album_parser(date,year)
+      album_parser = create_kryon_aum_year_album_parser(date,year,index)
       album = album_parser.parse_site()
       
       if @no_clobber
@@ -218,8 +219,8 @@ module UncleKryon
       end
     end
     
-    def train_kryon_aum_year_album(date,year=nil)
-      album_parser = create_kryon_aum_year_album_parser(date,year)
+    def train_kryon_aum_year_album(date,year=nil,index=nil)
+      album_parser = create_kryon_aum_year_album_parser(date,year,index)
       album_parser.training = true
       album = album_parser.parse_site()
       
