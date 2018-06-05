@@ -155,7 +155,12 @@ module UncleKryon
         
         aum.subtitle = @local_dump[:aum_subtitle][i] if i < @local_dump[:aum_subtitle].length
         aum.language = @local_dump[:aum_language][i] if i < @local_dump[:aum_language].length
-        aum.title = @local_dump[:aum_title][i] if i < @local_dump[:aum_title].length
+        if i < @local_dump[:aum_title].length
+          aum.title = @local_dump[:aum_title][i]
+        else
+          # Set title to something at least
+          aum.title = aum.subtitle
+        end
         aum.time = @local_dump[:aum_time][i] if i < @local_dump[:aum_time].length
         
         if (aum.size.nil?() || aum.size.empty?) && i < @local_dump[:aum_size].length
