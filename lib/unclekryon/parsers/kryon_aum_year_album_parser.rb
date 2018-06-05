@@ -174,7 +174,8 @@ module UncleKryon
       
       # Unfortunately, some things just have to be excluded the old fashioned way
       exclude_content_regex = /
-        \A[[:space:]]*KRYON[[:space:]]+EGYPT[[:space:]]+TOUR[[:space:]]+1[[:space:]]*\z
+        \A[[:space:]]*KRYON[[:space:]]+EGYPT[[:space:]]+TOUR[[:space:]]+1[[:space:]]*\z|
+        \A[[:space:]]*KRYON[[:space:]]*IN[[:space:]]*PETRA[[:space:]]*,[[:space:]]*JORDAN[[:space:]]*\z
       /x
       
       filename_regex = /\.mp3[[:space:]]*\z/i
@@ -275,13 +276,14 @@ module UncleKryon
                   @local_dump[:album_main_desc] = false
                   album.main_desc = ''
                 else
-                  album.main_desc << "\n" if !album.main_desc.empty?()
+                  album.main_desc << "\n\n" if !album.main_desc.strip().empty?()
                 end
                 
                 par.split(/\n+/).each() do |p|
                   album.main_desc << Util.clean_data(p) << "\n"
                 end
                 
+                album.main_desc = album.main_desc.strip() # Remove last newline
                 add_to_dump = false
               when 'aum_subtitle'
                 @local_dump[:aum_subtitle].push(Util.clean_data(par))
