@@ -213,11 +213,6 @@ module UncleKryon
       
       return if tds.nil?
       
-      # Unfortunately, some things just have to be excluded the old fashioned way
-      # - Try to solve with 'has_header' var below
-      #exclude_content_regex = /
-      #/x
-      
       filename_regex = /\.mp3[[:space:]]*\z/i
       # 2017 "Petra, Jordan (5)" has a ":" in the megabytes cell
       size_regex = /\A[[:space:]]*[[:digit:]]+(\.|\:|[[:digit:]]|[[:space:]])*megabytes[[:space:]]*\z/i
@@ -292,6 +287,12 @@ module UncleKryon
                 @local_dump[:album_location] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
               tag = @trainers['aum_year_album'].tag(par)
               
+              # For 2017 "RETURN TO LEMURIA (7)"
+              if par =~ /\A[[:space:]]*MEDITATION[[:space:]]+-[[:space:]]+Kalei[[:space:]]+-[[:space:]]+John[[:space:]]+-[[:space:]]+Amber[[:space:]]*\z/i
+                tag = 'aum_title'
+                log.warn("Changing tag to aum_title: #{Util.clean_data(par)}")
+              end
+              
               case tag
               when 'album_title'
                 if !@local_dump[:album_title]
@@ -360,9 +361,15 @@ module UncleKryon
                     @local_dump[:aum_title].push(Util.clean_data(par))
                     
                     # Special case for 2017 "LISBON, PORTUGAL (Fatima Tour) (3)"
-                    if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/
+                    if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/i
                       @local_dump[:aum_title].push('Lisbon Channeling 2');
                       @local_dump[:aum_title].push('Lisbon Channeling 3');
+                      log.warn("Adding aum_titles for: #{Util.clean_data(par)}")
+                    end
+                    # For 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" & "KRYON INDIA-NEPAL TOUR PART 2 (8)"
+                    if par =~ /\A[[:space:]]*PAGE[[:space:]]*(ONE|TWO)[[:space:]]*\z/i
+                      p = @local_dump[:aum_title].pop()
+                      log.warn("Ignoring aum title: #{p}")
                     end
                     
                     add_to_dump = false
