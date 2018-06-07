@@ -1,0 +1,41 @@
+---
+CAN States:
+  AB: !ruby/object:UncleKryon::CanState
+    name: Alberta
+    code: AB
+  BC: !ruby/object:UncleKryon::CanState
+    name: British Columbia
+    code: BC
+  MB: !ruby/object:UncleKryon::CanState
+    name: Manitoba
+    code: MB
+  NB: !ruby/object:UncleKryon::CanState
+    name: New Brunswick
+    code: NB
+  NL: !ruby/object:UncleKryon::CanState
+    name: Newfoundland and Labrador
+    code: NL
+  NS: !ruby/object:UncleKryon::CanState
+    name: Nova Scotia
+    code: NS
+  NT: !ruby/object:UncleKryon::CanState
+    name: Northwest Territories
+    code: NT
+  NU: !ruby/object:UncleKryon::CanState
+    name: Nunavut
+    code: NU
+  'ON': !ruby/object:UncleKryon::CanState
+    name: Ontario
+    code: 'ON'
+  PE: !ruby/object:UncleKryon::CanState
+    name: Prince Edward Island
+    code: PE
+  QC: !ruby/object:UncleKryon::CanState
+    name: Quebec
+    code: QC
+  SK: !ruby/object:UncleKryon::CanState
+    name: Saskatchewan
+    code: SK
+  YT: !ruby/object:UncleKryon::CanState
+    name: Yukon
+    code: YT

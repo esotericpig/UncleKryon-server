@@ -22,15 +22,24 @@ require 'bundler/setup'
 
 require 'unclekryon/log'
 
+require 'unclekryon/iso/can_state'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
 require 'unclekryon/iso/usa_state'
 
 module UncleKryon
   module Iso
+    @@can_states = nil
     @@countries = nil
     @@languages = nil
     @@usa_states = nil
+    
+    def self.can_states()
+      if !@@can_states
+        @@can_states = CanStates.load_file()
+      end
+      return @@can_states
+    end
     
     def self.countries()
       if !@@countries
@@ -69,23 +78,31 @@ module UncleKryon
           end
           
           if state.nil?()
-            # Try country again
-            country = countries().find_by_code(last) # Try by code; e.g., CAN for Canada
+            # CAN state
+            state = can_states().find(last)
             
-            if country.nil?()
-              msg = %Q(No country/state: "#{text}","#{t}","#{last}")
+            if state.nil?()
+              # Try country again
+              country = countries().find_by_code(last) # Try by code; e.g., CAN for Canada
               
-              if Log.instance.dev?()
-                raise msg
+              if country.nil?()
+                msg = %Q(No country/state: "#{text}","#{t}","#{last}")
+                
+                if Log.instance.dev?()
+                  raise msg
+                else
+                  log.warn(msg)
+                end
               else
-                log.warn(msg)
+                parse_country = true
               end
             else
-              parse_country = true
+              state = state.code
+              country = countries().find_by_code('CAN').code
             end
           else
             state = state.code
-            country = countries().find_by_code('usa').code
+            country = countries().find_by_code('USA').code
           end
         end
         
@@ -139,6 +156,7 @@ module UncleKryon
 end
 
 if $0 == __FILE__
+  puts UncleKryon::Iso.can_states['ON']
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.usa_states['AL']
