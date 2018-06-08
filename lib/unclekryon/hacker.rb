@@ -231,6 +231,38 @@ module UncleKryon
       end
     end
     
+    def train_kryon_aum_year_albums(year)
+      # Try the yaml file
+      artist = Util.load_artist_yaml(get_hax_kryon_filepath(year))
+      release = artist.releases[year]
+      
+      if release.nil?()
+        # Try manually from the site
+        year_parser = create_kryon_aum_year_parser(year)
+        artist = year_parser.artist
+        release = year_parser.parse_site()
+        raise "Release[#{year}] does not exist" if release.nil?()
+      end
+      
+      release.album_ids.each do |album_id|
+        album = artist.albums[album_id]
+        
+        album_parser = KryonAumYearAlbumParser.new
+        album_parser.album = album
+        album_parser.trainers.filepath = get_train_kryon_filepath()
+        album_parser.training = true
+        
+        log.info("Training album[#{album.r_year_begin},#{album.r_year_end},#{album.r_topic}]")
+        album = album_parser.parse_site(artist,album.url)
+        
+        if @no_clobber
+          puts album_parser.trainers.to_s()
+        else
+          album_parser.trainers.save_file()
+        end
+      end
+    end
+    
     def get_hax_kryon_filepath(release)
       raise "Release (year) arg is nil" if release.nil?()
       return File.join(@hax_dirname,@hax_kryon_filename.gsub('<release>',release.to_s()))

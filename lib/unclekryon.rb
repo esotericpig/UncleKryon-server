@@ -200,7 +200,12 @@ module UncleKryon
           hacker.train_kryon_aum_year_album(@options[:album],@options[:title])
           @did_cmd = true
         elsif @options[:title]
-          hacker.train_kryon_aum_year(@options[:title])
+          if @options[:albums]
+            hacker.train_kryon_aum_year_albums(@options[:title])
+          else
+            hacker.train_kryon_aum_year(@options[:title])
+          end
+          
           @did_cmd = true
         end
       else
