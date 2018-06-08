@@ -32,6 +32,7 @@ module UncleKryon
     # Non-release album data
     attr_accessor :id
     attr_accessor :url
+    attr_accessor :mirrors
     attr_accessor :title
     attr_accessor :date_begin
     attr_accessor :date_end
@@ -54,6 +55,7 @@ module UncleKryon
       
       @id = 0
       @url = ''
+      @mirrors = {}
       @title = ''
       @date_begin = ''
       @date_end = ''

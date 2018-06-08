@@ -24,10 +24,12 @@ module UncleKryon
   class PicData
     attr_accessor :id
     attr_accessor :url
+    attr_accessor :mirrors
     
     def initialize
       @id = 0
       @url = ''
+      @mirrors = {}
     end
     
     def to_s(artist=nil)

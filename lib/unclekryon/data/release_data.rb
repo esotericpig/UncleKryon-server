@@ -24,11 +24,13 @@ module UncleKryon
   class ReleaseData
     attr_accessor :title
     attr_accessor :url
+    attr_accessor :mirrors
     attr_accessor :album_ids
     
     def initialize
       @title = ''
       @url = ''
+      @mirrors = {}
       @album_ids = []
     end
     

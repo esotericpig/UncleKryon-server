@@ -29,6 +29,7 @@ module UncleKryon
     attr_accessor :size
     attr_accessor :filename
     attr_accessor :url
+    attr_accessor :mirrors
     attr_accessor :language
     
     def initialize
@@ -39,6 +40,7 @@ module UncleKryon
       @size = ''
       @filename = ''
       @url = ''
+      @mirrors = {}
       @language = ''
     end
     
