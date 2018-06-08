@@ -218,7 +218,7 @@ module UncleKryon
       return (date && !date.empty?) ? Date.strptime(date,DATE_FORMAT) : nil
     end
     
-    def self.parse_kryon_date(date)
+    def self.parse_kryon_date(date,year=nil)
       date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
       date.gsub!(/SEPT[[:space:]]+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
       date.gsub!(/Septembe[[:space:]]+/i,'September ') # "Septembe 4, 2016"
@@ -235,8 +235,19 @@ module UncleKryon
           else
             # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
             date = date.gsub(/[[:space:]]+\-[[:space:]]+/,'-')
-            # "MAY 15-16-17, 2017" and "January 7-8, 2017"
-            r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+            
+            # "June 7-9-16-17" & "June 9-10-11-12"
+            if date =~ /\A[[:space:]]*[[:alpha:]]+[[:space:]]*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+[[:space:]]*\z/
+              r1f = "%B %d-%d-%d-%d"
+              
+              if !year.nil?()
+                date += ", #{year}"
+                r1f << ", %Y"
+              end
+            else
+              # "MAY 15-16-17, 2017" and "January 7-8, 2017"
+              r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+            end
           end
           
           r[1] = Date.strptime(date,r1f)

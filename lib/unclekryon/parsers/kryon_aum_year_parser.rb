@@ -137,7 +137,7 @@ module UncleKryon
       return false if cell.content.nil?
       return false if cell['href'].nil?
       
-      r_year = Util.parse_kryon_date(Util.clean_data(cell.content))
+      r_year = Util.parse_kryon_date(Util.clean_data(cell.content),@title)
       album.r_year_begin = r_year[0]
       album.r_year_end = r_year[1]
       album.url = Util.clean_link(@release.url,cell['href'])
