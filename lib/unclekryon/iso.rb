@@ -23,6 +23,7 @@ require 'bundler/setup'
 require 'unclekryon/log'
 
 require 'unclekryon/iso/can_state'
+require 'unclekryon/iso/continent'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
 require 'unclekryon/iso/usa_state'
@@ -30,6 +31,7 @@ require 'unclekryon/iso/usa_state'
 module UncleKryon
   module Iso
     @@can_states = nil
+    @@continents = nil
     @@countries = nil
     @@languages = nil
     @@usa_states = nil
@@ -39,6 +41,13 @@ module UncleKryon
         @@can_states = CanStates.load_file()
       end
       return @@can_states
+    end
+    
+    def self.continents()
+      if !@@continents
+        @@continents = Continents.load_file()
+      end
+      return @@continents
     end
     
     def self.countries()
@@ -56,45 +65,67 @@ module UncleKryon
         # Fix misspellings and/or weird shortenings
         t = t.gsub(/Kansas[[:space:]]*\,[[:space:]]*City/i,'Kansas City')
         t = t.gsub(/[\+\*]+/,'') # Means more countries, but won't worry about it (since not listed)
+        t = t.gsub(/Berkeley[[:space:]]+Spings/i,'Berkeley Springs, WV')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last
+        last2 = (parts.length() >= 2) ? (parts[-2] + last) : nil
         
         city = nil
         state = nil
         country = countries().find_by_name(last) # By name because e.g. code CO is Colorado and Colombia
+        continent = nil
         
         parse_country = true
         state_i = parts.length() - 1
         
-        # USA state
+        # USA state?
         if country.nil?()
           parse_country = false
           state = usa_states().find(last)
           
-          if state.nil?() && parts.length() >= 2
-            state = usa_states().find(parts[-2] + last)
+          if state.nil?() && !last2.nil?()
+            state = usa_states().find_by_name(last2)
             state_i = parts.length() - 2 unless state.nil?()
           end
           
           if state.nil?()
-            # CAN state
+            # CAN state?
             state = can_states().find(last)
             
+            if state.nil?() && !last2.nil?()
+              state = can_states().find_by_name(last2)
+              state_i = parts.length() - 2 unless state.nil?()
+            end
+            
             if state.nil?()
-              # Try country again
+              # Try country code
               country = countries().find_by_code(last) # Try by code; e.g., CAN for Canada
               
               if country.nil?()
-                msg = %Q(No country/state: "#{text}","#{t}","#{last}")
+                country = countries().find_by_name(t)
+                state_i = 0 unless country.nil?()
+              end
+              
+              if country.nil?()
+                # Continent?
+                continent = continents().find_by_name(t)
                 
-                if Log.instance.dev?()
-                  raise msg
+                if continent.nil?()
+                  msg = %Q(No state/country/continent: "#{text}","#{t}","#{last}")
+                  
+                  if Log.instance.dev?()
+                    raise msg
+                  else
+                    log.warn(msg)
+                  end
                 else
-                  log.warn(msg)
+                  continent = continent.code
+                  state_i = 0
                 end
               else
-                parse_country = true
+                country = country.code
+                parse_country = true unless state_i == 0
               end
             else
               state = state.code
@@ -104,36 +135,38 @@ module UncleKryon
             state = state.code
             country = countries().find_by_code('USA').code
           end
+        else
+          country = country.code
         end
         
-        # Not USA
-        if parse_country
-          country = country.code
-          
-          if parts.length() >= 2
-            state = parts[-2].gsub(/[[:space:]]+/,' ').strip()
-            
-            if state.length() == 2
-              state = state.upcase()
-              state_i = parts.length() - 2
-            else
-              state = nil
+        if continent.nil?()
+          # Not USA
+          if parse_country
+            if parts.length() >= 2
+              state = parts[-2].gsub(/[[:space:]]+/,' ').strip()
+              
+              if state.length() == 2
+                state = state.upcase()
+                state_i = parts.length() - 2
+              else
+                state = nil
+              end
             end
           end
+          
+          # City
+          city = []
+          for i in 0...state_i
+            c = parts[i].gsub(/[[:space:]]+/,' ').strip()
+            city.push(c) unless c.empty?()
+          end
+          city = city.compact()
+          city = city.empty?() ? nil : city.map(&:capitalize).join(' ')
         end
-        
-        # City
-        city = []
-        for i in 0...state_i
-          c = parts[i].gsub(/[[:space:]]+/,' ').strip()
-          city.push(c) unless c.empty?()
-        end
-        city = city.compact()
-        city = city.empty?() ? nil : city.map(&:capitalize).join(' ')
         
         # Location
-        loc = [city,state,country].compact()
-        locs.push(loc.join(', ')) unless loc.empty?()
+        loc = [city,state,country,continent] # Don't do compact(); we won't all 4 ','
+        locs.push(loc.join(',')) unless loc.compact().empty?()
       end
       
       return locs.empty?() ? nil : locs.join(';')
@@ -157,6 +190,7 @@ end
 
 if $0 == __FILE__
   puts UncleKryon::Iso.can_states['ON']
+  puts UncleKryon::Iso.continents['South America']
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.usa_states['AL']
