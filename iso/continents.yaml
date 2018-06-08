@@ -1,0 +1,23 @@
+---
+Continents:
+  Africa: !ruby/object:UncleKryon::Continent
+    name: Africa
+    code: Africa
+  Antarctica: !ruby/object:UncleKryon::Continent
+    name: Antarctica
+    code: Antarctica
+  Asia: !ruby/object:UncleKryon::Continent
+    name: Asia
+    code: Asia
+  Australia: !ruby/object:UncleKryon::Continent
+    name: Australia
+    code: Australia
+  Europe: !ruby/object:UncleKryon::Continent
+    name: Europe
+    code: Europe
+  North America: !ruby/object:UncleKryon::Continent
+    name: North America
+    code: North America
+  South America: !ruby/object:UncleKryon::Continent
+    name: South America
+    code: South America
