@@ -124,26 +124,43 @@ module UncleKryon
     
     def find_by_kryon(text,add_english: false,**options)
       langs = []
+      regexes = [
+          /[[:space:]]*\/[[:space:]]*/, # Multiple languages are usually separated by '/'
+          /[[:space:]]+/                # Sometimes separated by space/newline
+        ]
       
-      # Multiple languages are separated by '/'
-      text.split(/[[:space:]]*\/[[:space:]]*/).each() do |t|
-        # Fix misspellings and/or weird shortenings
-        t = t.gsub(/\AFRENC\z/i,'French')
-        t = t.gsub(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
-        
-        lang = find(t)
-        
-        if lang.nil?()
-          msg = "No language found for: #{t}"
+      regexes.each_with_index() do |regex,i|
+        text.split(regex).each() do |t|
+          # Fix misspellings and/or weird shortenings
+          t = t.gsub(/\AFRENC\z/i,'French')
+          t = t.gsub(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
+          t = t.gsub(/\ASPAN\z/i,'Spanish')
           
-          if Log.instance.dev?()
-            raise msg
+          lang = find(t)
+          
+          if lang.nil?()
+            if i >= (regexes.length() - 1)
+              msg = "No language found for: #{t}"
+              
+              if Log.instance.dev?()
+                raise msg
+              else
+                log.warn(msg)
+              end
+            else
+              log.warn("Not a language; trying next regex: #{t}")
+              
+              # Try next regex
+              langs.clear()
+              next
+            end
           else
-            log.warn(msg)
+            langs.push(lang.code)
           end
-        else
-          langs.push(lang.code)
         end
+        
+        # No problem with this regex, so bail out
+        break
       end
       
       eng_code = find_by_code('eng').code
