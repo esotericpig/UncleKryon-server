@@ -52,7 +52,6 @@ Gem::Specification.new do |spec|
   spec.requirements          << '- Fedora:   sudo dnf install gcc ruby-devel zlib-devel'
   spec.requirements          << '- Ubuntu:   sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev'
   
-  #spec.add_runtime_dependency 'iso-639' ,'~> 0.2.8' # For language codes
   spec.add_runtime_dependency 'nbayes'  ,'~> 0.1.2' # For training type of text (machine learning)
   spec.add_runtime_dependency 'nokogiri','~> 1.8.2' # For hacking html
   
