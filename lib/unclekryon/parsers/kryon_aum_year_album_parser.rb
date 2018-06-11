@@ -21,6 +21,7 @@
 require 'nokogiri'
 require 'open-uri'
 
+require 'unclekryon/dev_opts'
 require 'unclekryon/iso'
 require 'unclekryon/log'
 require 'unclekryon/trainer'
@@ -29,7 +30,7 @@ require 'unclekryon/util'
 require 'unclekryon/data/kryon_aum_album_data'
 require 'unclekryon/data/kryon_aum_data'
 require 'unclekryon/data/pic_data'
-require 'unclekryon/data/time_data'
+require 'unclekryon/data/timespan_data'
 
 module UncleKryon
   class KryonAumYearAlbumParser
@@ -40,30 +41,33 @@ module UncleKryon
     attr_accessor :options
     attr_accessor :trainers
     attr_accessor :training
+    attr_accessor :updated_on
     attr_accessor :url
     
     alias_method :training?,:training
     
-    def initialize(artist=nil,url=nil,album: nil,training: false,train_filepath: nil,**options)
+    def initialize(artist=nil,url=nil,album: nil,training: false,train_filepath: nil,updated_on: nil,
+          **options)
       @album = album
       @artist = artist
       @options = options
+      @updated_on = Util.format_datetime(DateTime.now()) if Util.empty_s?(updated_on)
       @url = url
       
       @trainers = Trainers.new(train_filepath)
       @training = training
       
       @trainers['aum_year_album'] = Trainer.new({
-          'altt'=>'album_title',
           'alds'=>'album_dates',
-          'allo'=>'album_location',
+          'altt'=>'album_title',
+          'allo'=>'album_locations',
           'almi'=>'album_mini_desc',
           'alma'=>'album_main_desc',
           'aust'=>'aum_subtitle',
-          'aulg'=>'aum_language', # See 2018 "Montreal QB w/Robert Coxon (3)" aums' subtitles "FRENCH"
+          'aulg'=>'aum_languages', # See 2018 "Montreal QB w/Robert Coxon (3)" aums' subtitles "FRENCH"
           'autt'=>'aum_title',
-          'autm'=>'aum_time',
-          'ausz'=>'aum_size',
+          'autm'=>'aum_timespan',
+          'ausz'=>'aum_filesize',
           'aufn'=>'aum_filename',
           'audu'=>'dump',
           'i'   =>'ignore'
@@ -87,32 +91,32 @@ module UncleKryon
       
       # Album data (flags are okay) should never go in this, only for aums, pics, etc.
       @local_dump = {
-          :album_title=>false,
           :album_dates=>false,
-          :album_location=>false,
+          :album_title=>false,
+          :album_locations=>false,
           :album_mini_desc=>false,
           :album_main_desc=>false,
           :aums=>0,
           :aum_subtitle=>[],
-          :aum_language=>[],
+          :aum_languages=>[],
           :aum_title=>[],
-          :aum_time=>[],
-          :aum_size=>[],
+          :aum_timespan=>[],
+          :aum_filesize=>[],
           :aum_filename=>[]
         }
       
       # Force 'utf-8' (see charset "X-MAC-ROMAN" in 2017 "The Discovery Series")
       doc = Nokogiri::HTML(open(@url),nil,'utf-8')
       
-      id = Util.gen_id(@url)
-      @album = @artist.albums[id]
+      old_album = @artist.albums[@url]
       
-      if @album.nil?
-        @album = KryonAumAlbumData.new()
-        @album.id = id
-        @album.url = @url
-        
-        @artist.albums[id] = @album
+      @album = old_album.clone()
+      @album.updated_on = @updated_on
+      @album.url = @url
+      
+      if old_album.nil?()
+        @artist.albums[@url] = @album
+        @artist.updated_on = @updated_on
       end
       
       parse_dump(doc,@album) # Must be first because other methods rely on @local_dump
@@ -122,7 +126,13 @@ module UncleKryon
       parse_pics(doc,@album)
       parse_aums(doc,@album)
       
-      @album.fill_empty_data()
+      if @album == old_album
+        @album.updated_on = old_album.updated_on
+      else
+        @artist.updated_on = @updated_on
+      end
+      
+      @artist.albums[@url] = @album
       
       return @album
     end
@@ -145,15 +155,15 @@ module UncleKryon
         
         aum = KryonAumData.new
         aum.url = Util.clean_data(href)
-        aum.id = Util.gen_id(aum.url)
         aum.filename = Util.parse_url_filename(aum.url)
+        aum.updated_on = @updated_on
         
-        # Size
-        if !Log.instance.test?()
+        # Filesize
+        if !DevOpts.instance.test?()
           # Getting header data is slow, so only do it in production
           r = Util.get_url_header_data(aum.url)
-          aum.size = r['content-length']
-          aum.size = aum.size[0] if aum.size.is_a?(Array)
+          aum.filesize = r['content-length']
+          aum.filesize = aum.filesize[0] if aum.filesize.is_a?(Array)
         end
         
         # Subtitle
@@ -163,8 +173,8 @@ module UncleKryon
           log.warn("No subtitle for: #{aum.filename},#{aum.url}")
         end
         
-        # Language
-        aum.language = @local_dump[:aum_language][i] if i < @local_dump[:aum_language].length
+        # Languages
+        aum.languages = @local_dump[:aum_languages][i] if i < @local_dump[:aum_languages].length
         
         # Title
         if i < @local_dump[:aum_title].length
@@ -181,29 +191,42 @@ module UncleKryon
           end
         end
         
-        # Time
-        if i < @local_dump[:aum_time].length
-          aum.time = @local_dump[:aum_time][i]
+        # Timespan
+        if i < @local_dump[:aum_timespan].length
+          aum.timespan = @local_dump[:aum_timespan][i]
         else
-          msg = "No time for: #{aum.title},#{aum.subtitle},#{aum.filename},#{aum.url}"
+          msg = "No timespan for: #{aum.title},#{aum.subtitle},#{aum.filename},#{aum.url}"
           
-          if Log.instance.dev?()
+          if DevOpts.instance.dev?()
             raise msg
           else
             log.warn(msg)
           end
         end
         
-        # Size, if not set
-        if (aum.size.nil?() || aum.size.strip().empty?) && i < @local_dump[:aum_size].length
-          aum.size = @local_dump[:aum_size][i]
-          log.warn("Using local dump size: #{aum.size}")
+        # Filesize, if not set
+        if (aum.filesize.nil?() || aum.filesize.strip().empty?) && i < @local_dump[:aum_filesize].length
+          aum.filesize = @local_dump[:aum_filesize][i]
+          log.warn("Using local dump filesize: #{aum.filesize}")
         end
         
         i += 1
         
-        album.aum_ids.push(aum.id) if !album.aum_ids.include?(aum.id)
-        @artist.aums[aum.id] = aum
+        # Is it actually new?
+        if @artist.aums.key?(aum.url) && aum == @artist.aums[aum.url]
+          aum.updated_on = @artist.aums[aum.url].updated_on
+        else
+          @artist.updated_on = @updated_on
+        end
+        
+        @artist.aums[aum.url] = aum
+        
+        if !album.aums.include?(aum.url)
+          album.aums.push(aum.url)
+          album.updated_on = @updated_on
+          
+          @artist.updated_on = @updated_on
+        end
       end
     end
     
@@ -244,20 +267,20 @@ module UncleKryon
         add_to_dump = true
         
         if c =~ time_regex
-          @local_dump[:aum_time].push(TimeData.new(c).to_s())
+          @local_dump[:aum_timespan].push(TimespanData.new(c).to_s())
           add_to_dump = false
           time_count += 1
         elsif c =~ size_regex
-          @local_dump[:aum_size].push(c)
+          @local_dump[:aum_filesize].push(c)
           add_to_dump = false
           size_count += 1
         elsif c =~ time_or_size_regex
           # Time is usually before size
           if time_count == size_count
-            @local_dump[:aum_time].push(TimeData.new(c).to_s())
+            @local_dump[:aum_timespan].push(TimespanData.new(c).to_s())
             time_count += 1
           else
-            @local_dump[:aum_size].push(c)
+            @local_dump[:aum_filesize].push(c)
             size_count += 1
           end
           
@@ -284,7 +307,7 @@ module UncleKryon
               end
             else
               has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
-                @local_dump[:album_location] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
+                @local_dump[:album_locations] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
               tag = @trainers['aum_year_album'].tag(par)
               
               # For 2017 "RETURN TO LEMURIA (7)"
@@ -302,9 +325,9 @@ module UncleKryon
                 if !@local_dump[:album_dates]
                   @local_dump[:album_dates] = true
                 end
-              when 'album_location'
-                if !@local_dump[:album_location]
-                  @local_dump[:album_location] = true
+              when 'album_locations'
+                if !@local_dump[:album_locations]
+                  @local_dump[:album_locations] = true
                 end
               when 'album_mini_desc'
                 par.split(/\n+/).each() do |p|
@@ -352,9 +375,9 @@ module UncleKryon
                   when 'aum_subtitle'
                     @local_dump[:aum_subtitle].push(Util.clean_data(par))
                     add_to_dump = false
-                  when 'aum_language'
+                  when 'aum_languages'
                     p = Util.clean_data(par)
-                    @local_dump[:aum_language].push(Iso.languages.find_by_kryon(p))
+                    @local_dump[:aum_languages].push(Iso.languages.find_by_kryon(p))
                     @local_dump[:aum_subtitle].push(p)
                     add_to_dump = false
                   when 'aum_title'
@@ -419,12 +442,27 @@ module UncleKryon
           next
         end
         
-        pic = PicData.new
+        pic = PicData.new()
         pic.url = Util.clean_link(url,src)
-        pic.id = Util.gen_id(pic.url)
+        pic.filename = Util.parse_url_filename(pic.url)
+        pic.name = File.basename(pic.filename,File.extname(pic.filename))
+        pic.updated_on = @updated_on
         
-        album.pic_ids.push(pic.id) if !album.pic_ids.include?(pic.id)
-        @artist.pics[pic.id] = pic
+        # Is it actually new?
+        if @artist.pics.key?(pic.url) && pic == @artist.pics[pic.url]
+          pic.updated_on = @artist.pics[pic.url].updated_on
+        else
+          @artist.updated_on = @updated_on
+        end
+        
+        @artist.pics[pic.url] = pic
+        
+        if !album.pics.include?(pic.url)
+          album.pics.push(pic.url)
+          album.updated_on = @updated_on
+          
+          @artist.updated_on = @updated_on
+        end
       end
     end
   end

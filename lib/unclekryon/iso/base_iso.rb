@@ -21,16 +21,62 @@
 require 'yaml'
 
 require 'unclekryon/log'
+require 'unclekryon/util'
+
+require 'unclekryon/data/base_data'
 
 module UncleKryon
-  class IsoBase
+  class BaseIso < BaseData
+    attr_reader :name
+    attr_reader :code
+    
+    def initialize()
+      super()
+      
+      @name = nil
+      @code = nil
+    end
+    
+    def self.fix_name(name)
+      return self.flip_word_order(self.simplify_name(name))
+    end
+    
+    def self.flip_word_order(word)
+      # e.g., change 'English, Old' to 'Old English'
+      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip()
+    end
+    
+    def self.simplify_code(code)
+      # e.g., remove 'US-' from 'US-AL'
+      return code.gsub(/[[:alnum:][:space:]]+\-[[:space:]]*/,'').strip()
+    end
+    
+    def self.simplify_name(name)
+      # e.g., remove '(the)' from 'United States of America (the)'
+      return name.gsub(/[[:space:]]*\([^\)]*\)[[:space:]]*/,'').strip()
+    end
+    
+    def ==(y)
+      return @name == y.name && @code == y.code
+    end
+    
+    def to_s()
+      return %Q(["#{@name}",#{@code}])
+    end
+  end
+  
+  class BaseIsos
     include Logging
     
     DEFAULT_DIR = 'iso'
     
+    attr_reader :id
     attr_reader :values
     
     def initialize()
+      super()
+      
+      @id = self.class.get_class_name(self)
       @values = {}
     end
     
@@ -51,12 +97,12 @@ module UncleKryon
         if v.respond_to?(:codes)
           codes = v.codes()
         elsif v.respond_to?(:code)
-          codes = v.code()
+          codes = [v.code()]
         else
-          raise "No codes() or code() method for class #{v.class.name}"
+          raise "No codes()/code() method for class #{v.class.name}"
         end
         
-        codes.split(';').each() do |c|
+        codes.each() do |c|
           next if c.nil?()
           c = c.gsub(/[[:space:]]+/,'').downcase()
           return v if c == code
@@ -75,12 +121,12 @@ module UncleKryon
         if v.respond_to?(:names)
           names = v.names()
         elsif v.respond_to?(:name)
-          names = v.name()
+          names = [v.name()]
         else
-          raise "No names() or name() method for class #{v.class.name}"
+          raise "No names()/name() method for class #{v.class.name}"
         end
         
-        names.split(';').each() do |n|
+        names.each() do |n|
           next if n.nil?()
           n = n.gsub(/[[:space:]]+/,'').downcase()
           return v if n == name
@@ -90,38 +136,19 @@ module UncleKryon
       return nil
     end
     
-    def self.fix_name(name)
-      return self.class.flip_word_order(self.class.simplify_name(name))
-    end
-    
-    def self.flip_word_order(word)
-      # e.g., change 'English, Old' to 'Old English'
-      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip()
-    end
-    
-    def load_file(filepath,id=self.class.get_class_name(self))
+    def load_file(filepath)
       y = YAML.load_file(filepath)
-      @values.merge!(y[id])
+      @values.merge!(y[@id])
       
       return self
     end
     
-    def save_file(filepath,id=self.class.get_class_name(self))
+    def save_to_file(filepath)
       File.open(filepath,'w') do |f|
         v = {}
-        v[id] = @values
+        v[@id] = @values
         YAML.dump(v,f)
       end
-    end
-    
-    def self.simplify_code(code)
-      # e.g., remove 'US-' from 'US-AL'
-      return code.gsub(/[[:alnum:][:space:]]+\-[[:space:]]*/,'').strip()
-    end
-    
-    def self.simplify_name(name)
-      # e.g., remove '(the)' from 'United States of America (the)'
-      return name.gsub(/[[:space:]]*\([^\)]*\)[[:space:]]*/,'').strip()
     end
     
     def sort_keys!()

@@ -1,1773 +1,2795 @@
 ---
 Countries:
   ABW: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Aruba
-    names: Aruba
+    names:
+    - Aruba
     code: ABW
-    codes: ABW;AW
+    codes:
+    - ABW
+    - AW
     alpha2_code: AW
     alpha3_code: ABW
   AFG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Afghanistan
-    names: Afghanistan
+    names:
+    - Afghanistan
     code: AFG
-    codes: AFG;AF
+    codes:
+    - AFG
+    - AF
     alpha2_code: AF
     alpha3_code: AFG
   AGO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Angola
-    names: Angola
+    names:
+    - Angola
     code: AGO
-    codes: AGO;AO
+    codes:
+    - AGO
+    - AO
     alpha2_code: AO
     alpha3_code: AGO
   AIA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Anguilla
-    names: Anguilla
+    names:
+    - Anguilla
     code: AIA
-    codes: AIA;AI
+    codes:
+    - AIA
+    - AI
     alpha2_code: AI
     alpha3_code: AIA
   ALA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Åland Islands
-    names: Åland Islands
+    names:
+    - Åland Islands
     code: ALA
-    codes: ALA;AX
+    codes:
+    - ALA
+    - AX
     alpha2_code: AX
     alpha3_code: ALA
   ALB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Albania
-    names: Albania
+    names:
+    - Albania
     code: ALB
-    codes: ALB;AL
+    codes:
+    - ALB
+    - AL
     alpha2_code: AL
     alpha3_code: ALB
   AND: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Andorra
-    names: Andorra
+    names:
+    - Andorra
     code: AND
-    codes: AND;AD
+    codes:
+    - AND
+    - AD
     alpha2_code: AD
     alpha3_code: AND
   ARE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: United Arab Emirates
-    names: United Arab Emirates
+    names:
+    - United Arab Emirates
     code: ARE
-    codes: ARE;AE
+    codes:
+    - ARE
+    - AE
     alpha2_code: AE
     alpha3_code: ARE
   ARG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Argentina
-    names: Argentina
+    names:
+    - Argentina
     code: ARG
-    codes: ARG;AR
+    codes:
+    - ARG
+    - AR
     alpha2_code: AR
     alpha3_code: ARG
   ARM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Armenia
-    names: Armenia
+    names:
+    - Armenia
     code: ARM
-    codes: ARM;AM
+    codes:
+    - ARM
+    - AM
     alpha2_code: AM
     alpha3_code: ARM
   ASM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: American Samoa
-    names: American Samoa
+    names:
+    - American Samoa
     code: ASM
-    codes: ASM;AS
+    codes:
+    - ASM
+    - AS
     alpha2_code: AS
     alpha3_code: ASM
   ATA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Antarctica
-    names: Antarctica
+    names:
+    - Antarctica
     code: ATA
-    codes: ATA;AQ
+    codes:
+    - ATA
+    - AQ
     alpha2_code: AQ
     alpha3_code: ATA
   ATF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: French Southern Territories
-    names: French Southern Territories
+    names:
+    - French Southern Territories
     code: ATF
-    codes: ATF;TF
+    codes:
+    - ATF
+    - TF
     alpha2_code: TF
     alpha3_code: ATF
   ATG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Antigua and Barbuda
-    names: Antigua and Barbuda
+    names:
+    - Antigua and Barbuda
     code: ATG
-    codes: ATG;AG
+    codes:
+    - ATG
+    - AG
     alpha2_code: AG
     alpha3_code: ATG
   AUS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Australia
-    names: Australia
+    names:
+    - Australia
     code: AUS
-    codes: AUS;AU
+    codes:
+    - AUS
+    - AU
     alpha2_code: AU
     alpha3_code: AUS
   AUT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Austria
-    names: Austria
+    names:
+    - Austria
     code: AUT
-    codes: AUT;AT
+    codes:
+    - AUT
+    - AT
     alpha2_code: AT
     alpha3_code: AUT
   AZE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Azerbaijan
-    names: Azerbaijan
+    names:
+    - Azerbaijan
     code: AZE
-    codes: AZE;AZ
+    codes:
+    - AZE
+    - AZ
     alpha2_code: AZ
     alpha3_code: AZE
   BDI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Burundi
-    names: Burundi
+    names:
+    - Burundi
     code: BDI
-    codes: BDI;BI
+    codes:
+    - BDI
+    - BI
     alpha2_code: BI
     alpha3_code: BDI
   BEL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Belgium
-    names: Belgium
+    names:
+    - Belgium
     code: BEL
-    codes: BEL;BE
+    codes:
+    - BEL
+    - BE
     alpha2_code: BE
     alpha3_code: BEL
   BEN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Benin
-    names: Benin
+    names:
+    - Benin
     code: BEN
-    codes: BEN;BJ
+    codes:
+    - BEN
+    - BJ
     alpha2_code: BJ
     alpha3_code: BEN
   BES: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bonaire, Sint Eustatius and Saba
-    names: Bonaire, Sint Eustatius and Saba
+    names:
+    - Bonaire, Sint Eustatius and Saba
     code: BES
-    codes: BES;BQ
+    codes:
+    - BES
+    - BQ
     alpha2_code: BQ
     alpha3_code: BES
   BFA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Burkina Faso
-    names: Burkina Faso
+    names:
+    - Burkina Faso
     code: BFA
-    codes: BFA;BF
+    codes:
+    - BFA
+    - BF
     alpha2_code: BF
     alpha3_code: BFA
   BGD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bangladesh
-    names: Bangladesh
+    names:
+    - Bangladesh
     code: BGD
-    codes: BGD;BD
+    codes:
+    - BGD
+    - BD
     alpha2_code: BD
     alpha3_code: BGD
   BGR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bulgaria
-    names: Bulgaria
+    names:
+    - Bulgaria
     code: BGR
-    codes: BGR;BG
+    codes:
+    - BGR
+    - BG
     alpha2_code: BG
     alpha3_code: BGR
   BHR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bahrain
-    names: Bahrain
+    names:
+    - Bahrain
     code: BHR
-    codes: BHR;BH
+    codes:
+    - BHR
+    - BH
     alpha2_code: BH
     alpha3_code: BHR
   BHS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bahamas
-    names: Bahamas
+    names:
+    - Bahamas
     code: BHS
-    codes: BHS;BS
+    codes:
+    - BHS
+    - BS
     alpha2_code: BS
     alpha3_code: BHS
   BIH: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bosnia and Herzegovina
-    names: Bosnia and Herzegovina
+    names:
+    - Bosnia and Herzegovina
     code: BIH
-    codes: BIH;BA
+    codes:
+    - BIH
+    - BA
     alpha2_code: BA
     alpha3_code: BIH
   BLM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Barthélemy
-    names: Saint Barthélemy
+    names:
+    - Saint Barthélemy
     code: BLM
-    codes: BLM;BL
+    codes:
+    - BLM
+    - BL
     alpha2_code: BL
     alpha3_code: BLM
   BLR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Belarus
-    names: Belarus
+    names:
+    - Belarus
     code: BLR
-    codes: BLR;BY
+    codes:
+    - BLR
+    - BY
     alpha2_code: BY
     alpha3_code: BLR
   BLZ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Belize
-    names: Belize
+    names:
+    - Belize
     code: BLZ
-    codes: BLZ;BZ
+    codes:
+    - BLZ
+    - BZ
     alpha2_code: BZ
     alpha3_code: BLZ
   BMU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bermuda
-    names: Bermuda
+    names:
+    - Bermuda
     code: BMU
-    codes: BMU;BM
+    codes:
+    - BMU
+    - BM
     alpha2_code: BM
     alpha3_code: BMU
   BOL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bolivia
-    names: Bolivia
+    names:
+    - Bolivia
     code: BOL
-    codes: BOL;BO
+    codes:
+    - BOL
+    - BO
     alpha2_code: BO
     alpha3_code: BOL
   BRA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Brazil
-    names: Brazil
+    names:
+    - Brazil
     code: BRA
-    codes: BRA;BR
+    codes:
+    - BRA
+    - BR
     alpha2_code: BR
     alpha3_code: BRA
   BRB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Barbados
-    names: Barbados
+    names:
+    - Barbados
     code: BRB
-    codes: BRB;BB
+    codes:
+    - BRB
+    - BB
     alpha2_code: BB
     alpha3_code: BRB
   BRN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Brunei Darussalam
-    names: Brunei Darussalam
+    names:
+    - Brunei Darussalam
     code: BRN
-    codes: BRN;BN
+    codes:
+    - BRN
+    - BN
     alpha2_code: BN
     alpha3_code: BRN
   BTN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bhutan
-    names: Bhutan
+    names:
+    - Bhutan
     code: BTN
-    codes: BTN;BT
+    codes:
+    - BTN
+    - BT
     alpha2_code: BT
     alpha3_code: BTN
   BVT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Bouvet Island
-    names: Bouvet Island
+    names:
+    - Bouvet Island
     code: BVT
-    codes: BVT;BV
+    codes:
+    - BVT
+    - BV
     alpha2_code: BV
     alpha3_code: BVT
   BWA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Botswana
-    names: Botswana
+    names:
+    - Botswana
     code: BWA
-    codes: BWA;BW
+    codes:
+    - BWA
+    - BW
     alpha2_code: BW
     alpha3_code: BWA
   CAF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Central African Republic
-    names: Central African Republic
+    names:
+    - Central African Republic
     code: CAF
-    codes: CAF;CF
+    codes:
+    - CAF
+    - CF
     alpha2_code: CF
     alpha3_code: CAF
   CAN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Canada
-    names: Canada
+    names:
+    - Canada
     code: CAN
-    codes: CAN;CA
+    codes:
+    - CAN
+    - CA
     alpha2_code: CA
     alpha3_code: CAN
   CCK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cocos Islands
-    names: Cocos Islands
+    names:
+    - Cocos Islands
     code: CCK
-    codes: CCK;CC
+    codes:
+    - CCK
+    - CC
     alpha2_code: CC
     alpha3_code: CCK
   CHE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Switzerland
-    names: Switzerland
+    names:
+    - Switzerland
     code: CHE
-    codes: CHE;CH
+    codes:
+    - CHE
+    - CH
     alpha2_code: CH
     alpha3_code: CHE
   CHL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Chile
-    names: Chile
+    names:
+    - Chile
     code: CHL
-    codes: CHL;CL
+    codes:
+    - CHL
+    - CL
     alpha2_code: CL
     alpha3_code: CHL
   CHN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: China
-    names: China
+    names:
+    - China
     code: CHN
-    codes: CHN;CN
+    codes:
+    - CHN
+    - CN
     alpha2_code: CN
     alpha3_code: CHN
   CIV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Côte d'Ivoire
-    names: Côte d'Ivoire
+    names:
+    - Côte d'Ivoire
     code: CIV
-    codes: CIV;CI
+    codes:
+    - CIV
+    - CI
     alpha2_code: CI
     alpha3_code: CIV
   CMR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cameroon
-    names: Cameroon
+    names:
+    - Cameroon
     code: CMR
-    codes: CMR;CM
+    codes:
+    - CMR
+    - CM
     alpha2_code: CM
     alpha3_code: CMR
   COD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: DR Congo
-    names: DR Congo
+    names:
+    - DR Congo
     code: COD
-    codes: COD;CD
+    codes:
+    - COD
+    - CD
     alpha2_code: CD
     alpha3_code: COD
   COG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Congo
-    names: Congo
+    names:
+    - Congo
     code: COG
-    codes: COG;CG
+    codes:
+    - COG
+    - CG
     alpha2_code: CG
     alpha3_code: COG
   COK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cook Islands
-    names: Cook Islands
+    names:
+    - Cook Islands
     code: COK
-    codes: COK;CK
+    codes:
+    - COK
+    - CK
     alpha2_code: CK
     alpha3_code: COK
   COL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Colombia
-    names: Colombia
+    names:
+    - Colombia
     code: COL
-    codes: COL;CO
+    codes:
+    - COL
+    - CO
     alpha2_code: CO
     alpha3_code: COL
   COM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Comoros
-    names: Comoros
+    names:
+    - Comoros
     code: COM
-    codes: COM;KM
+    codes:
+    - COM
+    - KM
     alpha2_code: KM
     alpha3_code: COM
   CPV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cabo Verde
-    names: Cabo Verde
+    names:
+    - Cabo Verde
     code: CPV
-    codes: CPV;CV
+    codes:
+    - CPV
+    - CV
     alpha2_code: CV
     alpha3_code: CPV
   CRI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Costa Rica
-    names: Costa Rica
+    names:
+    - Costa Rica
     code: CRI
-    codes: CRI;CR
+    codes:
+    - CRI
+    - CR
     alpha2_code: CR
     alpha3_code: CRI
   CUB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cuba
-    names: Cuba
+    names:
+    - Cuba
     code: CUB
-    codes: CUB;CU
+    codes:
+    - CUB
+    - CU
     alpha2_code: CU
     alpha3_code: CUB
   CUW: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Curaçao
-    names: Curaçao
+    names:
+    - Curaçao
     code: CUW
-    codes: CUW;CW
+    codes:
+    - CUW
+    - CW
     alpha2_code: CW
     alpha3_code: CUW
   CXR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Christmas Island
-    names: Christmas Island
+    names:
+    - Christmas Island
     code: CXR
-    codes: CXR;CX
+    codes:
+    - CXR
+    - CX
     alpha2_code: CX
     alpha3_code: CXR
   CYM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cayman Islands
-    names: Cayman Islands
+    names:
+    - Cayman Islands
     code: CYM
-    codes: CYM;KY
+    codes:
+    - CYM
+    - KY
     alpha2_code: KY
     alpha3_code: CYM
   CYP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cyprus
-    names: Cyprus
+    names:
+    - Cyprus
     code: CYP
-    codes: CYP;CY
+    codes:
+    - CYP
+    - CY
     alpha2_code: CY
     alpha3_code: CYP
   CZE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Czechia
-    names: Czechia
+    names:
+    - Czechia
     code: CZE
-    codes: CZE;CZ
+    codes:
+    - CZE
+    - CZ
     alpha2_code: CZ
     alpha3_code: CZE
   DEU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Germany
-    names: Germany
+    names:
+    - Germany
     code: DEU
-    codes: DEU;DE
+    codes:
+    - DEU
+    - DE
     alpha2_code: DE
     alpha3_code: DEU
   DJI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Djibouti
-    names: Djibouti
+    names:
+    - Djibouti
     code: DJI
-    codes: DJI;DJ
+    codes:
+    - DJI
+    - DJ
     alpha2_code: DJ
     alpha3_code: DJI
   DMA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Dominica
-    names: Dominica
+    names:
+    - Dominica
     code: DMA
-    codes: DMA;DM
+    codes:
+    - DMA
+    - DM
     alpha2_code: DM
     alpha3_code: DMA
   DNK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Denmark
-    names: Denmark
+    names:
+    - Denmark
     code: DNK
-    codes: DNK;DK
+    codes:
+    - DNK
+    - DK
     alpha2_code: DK
     alpha3_code: DNK
   DOM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Dominican Republic
-    names: Dominican Republic
+    names:
+    - Dominican Republic
     code: DOM
-    codes: DOM;DO
+    codes:
+    - DOM
+    - DO
     alpha2_code: DO
     alpha3_code: DOM
   DZA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Algeria
-    names: Algeria
+    names:
+    - Algeria
     code: DZA
-    codes: DZA;DZ
+    codes:
+    - DZA
+    - DZ
     alpha2_code: DZ
     alpha3_code: DZA
   ECU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Ecuador
-    names: Ecuador
+    names:
+    - Ecuador
     code: ECU
-    codes: ECU;EC
+    codes:
+    - ECU
+    - EC
     alpha2_code: EC
     alpha3_code: ECU
   EGY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Egypt
-    names: Egypt
+    names:
+    - Egypt
     code: EGY
-    codes: EGY;EG
+    codes:
+    - EGY
+    - EG
     alpha2_code: EG
     alpha3_code: EGY
   ERI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Eritrea
-    names: Eritrea
+    names:
+    - Eritrea
     code: ERI
-    codes: ERI;ER
+    codes:
+    - ERI
+    - ER
     alpha2_code: ER
     alpha3_code: ERI
   ESH: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Western Sahara*
-    names: Western Sahara*
+    names:
+    - Western Sahara*
     code: ESH
-    codes: ESH;EH
+    codes:
+    - ESH
+    - EH
     alpha2_code: EH
     alpha3_code: ESH
   ESP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Spain
-    names: Spain
+    names:
+    - Spain
     code: ESP
-    codes: ESP;ES
+    codes:
+    - ESP
+    - ES
     alpha2_code: ES
     alpha3_code: ESP
   EST: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Estonia
-    names: Estonia
+    names:
+    - Estonia
     code: EST
-    codes: EST;EE
+    codes:
+    - EST
+    - EE
     alpha2_code: EE
     alpha3_code: EST
   ETH: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Ethiopia
-    names: Ethiopia
+    names:
+    - Ethiopia
     code: ETH
-    codes: ETH;ET
+    codes:
+    - ETH
+    - ET
     alpha2_code: ET
     alpha3_code: ETH
   FIN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Finland
-    names: Finland
+    names:
+    - Finland
     code: FIN
-    codes: FIN;FI
+    codes:
+    - FIN
+    - FI
     alpha2_code: FI
     alpha3_code: FIN
   FJI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Fiji
-    names: Fiji
+    names:
+    - Fiji
     code: FJI
-    codes: FJI;FJ
+    codes:
+    - FJI
+    - FJ
     alpha2_code: FJ
     alpha3_code: FJI
   FLK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Falkland Islands
-    names: Falkland Islands;Malvinas
+    names:
+    - Falkland Islands
+    - Malvinas
     code: FLK
-    codes: FLK;FK
+    codes:
+    - FLK
+    - FK
     alpha2_code: FK
     alpha3_code: FLK
   FRA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: France
-    names: France
+    names:
+    - France
     code: FRA
-    codes: FRA;FR
+    codes:
+    - FRA
+    - FR
     alpha2_code: FR
     alpha3_code: FRA
   FRO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Faroe Islands
-    names: Faroe Islands
+    names:
+    - Faroe Islands
     code: FRO
-    codes: FRO;FO
+    codes:
+    - FRO
+    - FO
     alpha2_code: FO
     alpha3_code: FRO
   FSM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Micronesia
-    names: Micronesia
+    names:
+    - Micronesia
     code: FSM
-    codes: FSM;FM
+    codes:
+    - FSM
+    - FM
     alpha2_code: FM
     alpha3_code: FSM
   GAB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Gabon
-    names: Gabon
+    names:
+    - Gabon
     code: GAB
-    codes: GAB;GA
+    codes:
+    - GAB
+    - GA
     alpha2_code: GA
     alpha3_code: GAB
   GB-ENG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: England
-    names: England
+    names:
+    - England
     code: GB-ENG
-    codes: ENG;GB-ENG;EN
+    codes:
+    - ENG
+    - GB-ENG
+    - EN
     alpha2_code: EN
     alpha3_code: ENG
   GB-NIR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Northern Ireland
-    names: Northern Ireland
+    names:
+    - Northern Ireland
     code: GB-NIR
-    codes: NIR;GB-NIR;NI
+    codes:
+    - NIR
+    - GB-NIR
+    - NI
     alpha2_code: NI
     alpha3_code: NIR
   GB-SCT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Scotland
-    names: Scotland
+    names:
+    - Scotland
     code: GB-SCT
-    codes: SCT;GB-SCT;SC
+    codes:
+    - SCT
+    - GB-SCT
+    - SC
     alpha2_code: SC
     alpha3_code: SCT
   GB-WLS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Wales
-    names: Wales
+    names:
+    - Wales
     code: GB-WLS
-    codes: WLS;GB-WLS;WL
+    codes:
+    - WLS
+    - GB-WLS
+    - WL
     alpha2_code: WL
     alpha3_code: WLS
   GBR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: UK
-    names: UK;United Kingdom;Great Britain
+    names:
+    - UK
+    - United Kingdom
+    - Great Britain
     code: GBR
-    codes: UK;GBR;GB
+    codes:
+    - UK
+    - GBR
+    - GB
     alpha2_code: GB
     alpha3_code: GBR
   GEO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Georgia
-    names: Georgia
+    names:
+    - Georgia
     code: GEO
-    codes: GEO;GE
+    codes:
+    - GEO
+    - GE
     alpha2_code: GE
     alpha3_code: GEO
   GGY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guernsey
-    names: Guernsey
+    names:
+    - Guernsey
     code: GGY
-    codes: GGY;GG
+    codes:
+    - GGY
+    - GG
     alpha2_code: GG
     alpha3_code: GGY
   GHA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Ghana
-    names: Ghana
+    names:
+    - Ghana
     code: GHA
-    codes: GHA;GH
+    codes:
+    - GHA
+    - GH
     alpha2_code: GH
     alpha3_code: GHA
   GIB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Gibraltar
-    names: Gibraltar
+    names:
+    - Gibraltar
     code: GIB
-    codes: GIB;GI
+    codes:
+    - GIB
+    - GI
     alpha2_code: GI
     alpha3_code: GIB
   GIN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guinea
-    names: Guinea
+    names:
+    - Guinea
     code: GIN
-    codes: GIN;GN
+    codes:
+    - GIN
+    - GN
     alpha2_code: GN
     alpha3_code: GIN
   GLP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guadeloupe
-    names: Guadeloupe
+    names:
+    - Guadeloupe
     code: GLP
-    codes: GLP;GP
+    codes:
+    - GLP
+    - GP
     alpha2_code: GP
     alpha3_code: GLP
   GMB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Gambia
-    names: Gambia
+    names:
+    - Gambia
     code: GMB
-    codes: GMB;GM
+    codes:
+    - GMB
+    - GM
     alpha2_code: GM
     alpha3_code: GMB
   GNB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guinea-Bissau
-    names: Guinea-Bissau
+    names:
+    - Guinea-Bissau
     code: GNB
-    codes: GNB;GW
+    codes:
+    - GNB
+    - GW
     alpha2_code: GW
     alpha3_code: GNB
   GNQ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Equatorial Guinea
-    names: Equatorial Guinea
+    names:
+    - Equatorial Guinea
     code: GNQ
-    codes: GNQ;GQ
+    codes:
+    - GNQ
+    - GQ
     alpha2_code: GQ
     alpha3_code: GNQ
   GRC: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Greece
-    names: Greece
+    names:
+    - Greece
     code: GRC
-    codes: GRC;GR
+    codes:
+    - GRC
+    - GR
     alpha2_code: GR
     alpha3_code: GRC
   GRD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Grenada
-    names: Grenada
+    names:
+    - Grenada
     code: GRD
-    codes: GRD;GD
+    codes:
+    - GRD
+    - GD
     alpha2_code: GD
     alpha3_code: GRD
   GRL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Greenland
-    names: Greenland
+    names:
+    - Greenland
     code: GRL
-    codes: GRL;GL
+    codes:
+    - GRL
+    - GL
     alpha2_code: GL
     alpha3_code: GRL
   GTM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guatemala
-    names: Guatemala
+    names:
+    - Guatemala
     code: GTM
-    codes: GTM;GT
+    codes:
+    - GTM
+    - GT
     alpha2_code: GT
     alpha3_code: GTM
   GUF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: French Guiana
-    names: French Guiana
+    names:
+    - French Guiana
     code: GUF
-    codes: GUF;GF
+    codes:
+    - GUF
+    - GF
     alpha2_code: GF
     alpha3_code: GUF
   GUM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guam
-    names: Guam
+    names:
+    - Guam
     code: GUM
-    codes: GUM;GU
+    codes:
+    - GUM
+    - GU
     alpha2_code: GU
     alpha3_code: GUM
   GUY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Guyana
-    names: Guyana
+    names:
+    - Guyana
     code: GUY
-    codes: GUY;GY
+    codes:
+    - GUY
+    - GY
     alpha2_code: GY
     alpha3_code: GUY
   HKG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Hong Kong
-    names: Hong Kong
+    names:
+    - Hong Kong
     code: HKG
-    codes: HKG;HK
+    codes:
+    - HKG
+    - HK
     alpha2_code: HK
     alpha3_code: HKG
   HMD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Heard Island and McDonald Islands
-    names: Heard Island and McDonald Islands
+    names:
+    - Heard Island and McDonald Islands
     code: HMD
-    codes: HMD;HM
+    codes:
+    - HMD
+    - HM
     alpha2_code: HM
     alpha3_code: HMD
   HND: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Honduras
-    names: Honduras
+    names:
+    - Honduras
     code: HND
-    codes: HND;HN
+    codes:
+    - HND
+    - HN
     alpha2_code: HN
     alpha3_code: HND
   HRV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Croatia
-    names: Croatia
+    names:
+    - Croatia
     code: HRV
-    codes: HRV;HR
+    codes:
+    - HRV
+    - HR
     alpha2_code: HR
     alpha3_code: HRV
   HTI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Haiti
-    names: Haiti
+    names:
+    - Haiti
     code: HTI
-    codes: HTI;HT
+    codes:
+    - HTI
+    - HT
     alpha2_code: HT
     alpha3_code: HTI
   HUN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Hungary
-    names: Hungary
+    names:
+    - Hungary
     code: HUN
-    codes: HUN;HU
+    codes:
+    - HUN
+    - HU
     alpha2_code: HU
     alpha3_code: HUN
   IDN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Indonesia
-    names: Indonesia
+    names:
+    - Indonesia
     code: IDN
-    codes: IDN;ID
+    codes:
+    - IDN
+    - ID
     alpha2_code: ID
     alpha3_code: IDN
   IMN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Isle of Man
-    names: Isle of Man
+    names:
+    - Isle of Man
     code: IMN
-    codes: IMN;IM
+    codes:
+    - IMN
+    - IM
     alpha2_code: IM
     alpha3_code: IMN
   IND: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: India
-    names: India
+    names:
+    - India
     code: IND
-    codes: IND;IN
+    codes:
+    - IND
+    - IN
     alpha2_code: IN
     alpha3_code: IND
   IOT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: British Indian Ocean Territory
-    names: British Indian Ocean Territory
+    names:
+    - British Indian Ocean Territory
     code: IOT
-    codes: IOT;IO
+    codes:
+    - IOT
+    - IO
     alpha2_code: IO
     alpha3_code: IOT
   IRL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Ireland
-    names: Ireland
+    names:
+    - Ireland
     code: IRL
-    codes: IRL;IE
+    codes:
+    - IRL
+    - IE
     alpha2_code: IE
     alpha3_code: IRL
   IRN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Iran
-    names: Iran
+    names:
+    - Iran
     code: IRN
-    codes: IRN;IR
+    codes:
+    - IRN
+    - IR
     alpha2_code: IR
     alpha3_code: IRN
   IRQ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Iraq
-    names: Iraq
+    names:
+    - Iraq
     code: IRQ
-    codes: IRQ;IQ
+    codes:
+    - IRQ
+    - IQ
     alpha2_code: IQ
     alpha3_code: IRQ
   ISL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Iceland
-    names: Iceland
+    names:
+    - Iceland
     code: ISL
-    codes: ISL;IS
+    codes:
+    - ISL
+    - IS
     alpha2_code: IS
     alpha3_code: ISL
   ISR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Israel
-    names: Israel
+    names:
+    - Israel
     code: ISR
-    codes: ISR;IL
+    codes:
+    - ISR
+    - IL
     alpha2_code: IL
     alpha3_code: ISR
   ITA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Italy
-    names: Italy
+    names:
+    - Italy
     code: ITA
-    codes: ITA;IT
+    codes:
+    - ITA
+    - IT
     alpha2_code: IT
     alpha3_code: ITA
   JAM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Jamaica
-    names: Jamaica
+    names:
+    - Jamaica
     code: JAM
-    codes: JAM;JM
+    codes:
+    - JAM
+    - JM
     alpha2_code: JM
     alpha3_code: JAM
   JEY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Jersey
-    names: Jersey
+    names:
+    - Jersey
     code: JEY
-    codes: JEY;JE
+    codes:
+    - JEY
+    - JE
     alpha2_code: JE
     alpha3_code: JEY
   JOR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Jordan
-    names: Jordan
+    names:
+    - Jordan
     code: JOR
-    codes: JOR;JO
+    codes:
+    - JOR
+    - JO
     alpha2_code: JO
     alpha3_code: JOR
   JPN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Japan
-    names: Japan
+    names:
+    - Japan
     code: JPN
-    codes: JPN;JP
+    codes:
+    - JPN
+    - JP
     alpha2_code: JP
     alpha3_code: JPN
   KAZ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Kazakhstan
-    names: Kazakhstan
+    names:
+    - Kazakhstan
     code: KAZ
-    codes: KAZ;KZ
+    codes:
+    - KAZ
+    - KZ
     alpha2_code: KZ
     alpha3_code: KAZ
   KEN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Kenya
-    names: Kenya
+    names:
+    - Kenya
     code: KEN
-    codes: KEN;KE
+    codes:
+    - KEN
+    - KE
     alpha2_code: KE
     alpha3_code: KEN
   KGZ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Kyrgyzstan
-    names: Kyrgyzstan
+    names:
+    - Kyrgyzstan
     code: KGZ
-    codes: KGZ;KG
+    codes:
+    - KGZ
+    - KG
     alpha2_code: KG
     alpha3_code: KGZ
   KHM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Cambodia
-    names: Cambodia
+    names:
+    - Cambodia
     code: KHM
-    codes: KHM;KH
+    codes:
+    - KHM
+    - KH
     alpha2_code: KH
     alpha3_code: KHM
   KIR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Kiribati
-    names: Kiribati
+    names:
+    - Kiribati
     code: KIR
-    codes: KIR;KI
+    codes:
+    - KIR
+    - KI
     alpha2_code: KI
     alpha3_code: KIR
   KNA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Kitts and Nevis
-    names: Saint Kitts and Nevis
+    names:
+    - Saint Kitts and Nevis
     code: KNA
-    codes: KNA;KN
+    codes:
+    - KNA
+    - KN
     alpha2_code: KN
     alpha3_code: KNA
   KOR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: South Korea
-    names: South Korea
+    names:
+    - South Korea
     code: KOR
-    codes: KOR;KR
+    codes:
+    - KOR
+    - KR
     alpha2_code: KR
     alpha3_code: KOR
   KWT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Kuwait
-    names: Kuwait
+    names:
+    - Kuwait
     code: KWT
-    codes: KWT;KW
+    codes:
+    - KWT
+    - KW
     alpha2_code: KW
     alpha3_code: KWT
   LAO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Lao People's Democratic Republic
-    names: Lao People's Democratic Republic
+    names:
+    - Lao People's Democratic Republic
     code: LAO
-    codes: LAO;LA
+    codes:
+    - LAO
+    - LA
     alpha2_code: LA
     alpha3_code: LAO
   LBN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Lebanon
-    names: Lebanon
+    names:
+    - Lebanon
     code: LBN
-    codes: LBN;LB
+    codes:
+    - LBN
+    - LB
     alpha2_code: LB
     alpha3_code: LBN
   LBR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Liberia
-    names: Liberia
+    names:
+    - Liberia
     code: LBR
-    codes: LBR;LR
+    codes:
+    - LBR
+    - LR
     alpha2_code: LR
     alpha3_code: LBR
   LBY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Libya
-    names: Libya
+    names:
+    - Libya
     code: LBY
-    codes: LBY;LY
+    codes:
+    - LBY
+    - LY
     alpha2_code: LY
     alpha3_code: LBY
   LCA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Lucia
-    names: Saint Lucia
+    names:
+    - Saint Lucia
     code: LCA
-    codes: LCA;LC
+    codes:
+    - LCA
+    - LC
     alpha2_code: LC
     alpha3_code: LCA
   LIE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Liechtenstein
-    names: Liechtenstein
+    names:
+    - Liechtenstein
     code: LIE
-    codes: LIE;LI
+    codes:
+    - LIE
+    - LI
     alpha2_code: LI
     alpha3_code: LIE
   LKA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sri Lanka
-    names: Sri Lanka
+    names:
+    - Sri Lanka
     code: LKA
-    codes: LKA;LK
+    codes:
+    - LKA
+    - LK
     alpha2_code: LK
     alpha3_code: LKA
   LSO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Lesotho
-    names: Lesotho
+    names:
+    - Lesotho
     code: LSO
-    codes: LSO;LS
+    codes:
+    - LSO
+    - LS
     alpha2_code: LS
     alpha3_code: LSO
   LTU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Lithuania
-    names: Lithuania
+    names:
+    - Lithuania
     code: LTU
-    codes: LTU;LT
+    codes:
+    - LTU
+    - LT
     alpha2_code: LT
     alpha3_code: LTU
   LUX: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Luxembourg
-    names: Luxembourg
+    names:
+    - Luxembourg
     code: LUX
-    codes: LUX;LU
+    codes:
+    - LUX
+    - LU
     alpha2_code: LU
     alpha3_code: LUX
   LVA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Latvia
-    names: Latvia
+    names:
+    - Latvia
     code: LVA
-    codes: LVA;LV
+    codes:
+    - LVA
+    - LV
     alpha2_code: LV
     alpha3_code: LVA
   MAC: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Macao
-    names: Macao
+    names:
+    - Macao
     code: MAC
-    codes: MAC;MO
+    codes:
+    - MAC
+    - MO
     alpha2_code: MO
     alpha3_code: MAC
   MAF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Martin
-    names: Saint Martin
+    names:
+    - Saint Martin
     code: MAF
-    codes: MAF;MF
+    codes:
+    - MAF
+    - MF
     alpha2_code: MF
     alpha3_code: MAF
   MAR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Morocco
-    names: Morocco
+    names:
+    - Morocco
     code: MAR
-    codes: MAR;MA
+    codes:
+    - MAR
+    - MA
     alpha2_code: MA
     alpha3_code: MAR
   MCO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Monaco
-    names: Monaco
+    names:
+    - Monaco
     code: MCO
-    codes: MCO;MC
+    codes:
+    - MCO
+    - MC
     alpha2_code: MC
     alpha3_code: MCO
   MDA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Moldova
-    names: Moldova
+    names:
+    - Moldova
     code: MDA
-    codes: MDA;MD
+    codes:
+    - MDA
+    - MD
     alpha2_code: MD
     alpha3_code: MDA
   MDG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Madagascar
-    names: Madagascar
+    names:
+    - Madagascar
     code: MDG
-    codes: MDG;MG
+    codes:
+    - MDG
+    - MG
     alpha2_code: MG
     alpha3_code: MDG
   MDV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Maldives
-    names: Maldives
+    names:
+    - Maldives
     code: MDV
-    codes: MDV;MV
+    codes:
+    - MDV
+    - MV
     alpha2_code: MV
     alpha3_code: MDV
   MEX: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mexico
-    names: Mexico
+    names:
+    - Mexico
     code: MEX
-    codes: MEX;MX
+    codes:
+    - MEX
+    - MX
     alpha2_code: MX
     alpha3_code: MEX
   MHL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Marshall Islands
-    names: Marshall Islands
+    names:
+    - Marshall Islands
     code: MHL
-    codes: MHL;MH
+    codes:
+    - MHL
+    - MH
     alpha2_code: MH
     alpha3_code: MHL
   MKD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Macedonia
-    names: Macedonia
+    names:
+    - Macedonia
     code: MKD
-    codes: MKD;MK
+    codes:
+    - MKD
+    - MK
     alpha2_code: MK
     alpha3_code: MKD
   MLI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mali
-    names: Mali
+    names:
+    - Mali
     code: MLI
-    codes: MLI;ML
+    codes:
+    - MLI
+    - ML
     alpha2_code: ML
     alpha3_code: MLI
   MLT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Malta
-    names: Malta
+    names:
+    - Malta
     code: MLT
-    codes: MLT;MT
+    codes:
+    - MLT
+    - MT
     alpha2_code: MT
     alpha3_code: MLT
   MMR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Myanmar
-    names: Myanmar
+    names:
+    - Myanmar
     code: MMR
-    codes: MMR;MM
+    codes:
+    - MMR
+    - MM
     alpha2_code: MM
     alpha3_code: MMR
   MNE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Montenegro
-    names: Montenegro
+    names:
+    - Montenegro
     code: MNE
-    codes: MNE;ME
+    codes:
+    - MNE
+    - ME
     alpha2_code: ME
     alpha3_code: MNE
   MNG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mongolia
-    names: Mongolia
+    names:
+    - Mongolia
     code: MNG
-    codes: MNG;MN
+    codes:
+    - MNG
+    - MN
     alpha2_code: MN
     alpha3_code: MNG
   MNP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Northern Mariana Islands
-    names: Northern Mariana Islands
+    names:
+    - Northern Mariana Islands
     code: MNP
-    codes: MNP;MP
+    codes:
+    - MNP
+    - MP
     alpha2_code: MP
     alpha3_code: MNP
   MOZ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mozambique
-    names: Mozambique
+    names:
+    - Mozambique
     code: MOZ
-    codes: MOZ;MZ
+    codes:
+    - MOZ
+    - MZ
     alpha2_code: MZ
     alpha3_code: MOZ
   MRT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mauritania
-    names: Mauritania
+    names:
+    - Mauritania
     code: MRT
-    codes: MRT;MR
+    codes:
+    - MRT
+    - MR
     alpha2_code: MR
     alpha3_code: MRT
   MSR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Montserrat
-    names: Montserrat
+    names:
+    - Montserrat
     code: MSR
-    codes: MSR;MS
+    codes:
+    - MSR
+    - MS
     alpha2_code: MS
     alpha3_code: MSR
   MTQ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Martinique
-    names: Martinique
+    names:
+    - Martinique
     code: MTQ
-    codes: MTQ;MQ
+    codes:
+    - MTQ
+    - MQ
     alpha2_code: MQ
     alpha3_code: MTQ
   MUS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mauritius
-    names: Mauritius
+    names:
+    - Mauritius
     code: MUS
-    codes: MUS;MU
+    codes:
+    - MUS
+    - MU
     alpha2_code: MU
     alpha3_code: MUS
   MWI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Malawi
-    names: Malawi
+    names:
+    - Malawi
     code: MWI
-    codes: MWI;MW
+    codes:
+    - MWI
+    - MW
     alpha2_code: MW
     alpha3_code: MWI
   MYS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Malaysia
-    names: Malaysia
+    names:
+    - Malaysia
     code: MYS
-    codes: MYS;MY
+    codes:
+    - MYS
+    - MY
     alpha2_code: MY
     alpha3_code: MYS
   MYT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Mayotte
-    names: Mayotte
+    names:
+    - Mayotte
     code: MYT
-    codes: MYT;YT
+    codes:
+    - MYT
+    - YT
     alpha2_code: YT
     alpha3_code: MYT
   NAM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Namibia
-    names: Namibia
+    names:
+    - Namibia
     code: NAM
-    codes: NAM;NA
+    codes:
+    - NAM
+    - NA
     alpha2_code: NA
     alpha3_code: NAM
   NCL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: New Caledonia
-    names: New Caledonia
+    names:
+    - New Caledonia
     code: NCL
-    codes: NCL;NC
+    codes:
+    - NCL
+    - NC
     alpha2_code: NC
     alpha3_code: NCL
   NER: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Niger
-    names: Niger
+    names:
+    - Niger
     code: NER
-    codes: NER;NE
+    codes:
+    - NER
+    - NE
     alpha2_code: NE
     alpha3_code: NER
   NFK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Norfolk Island
-    names: Norfolk Island
+    names:
+    - Norfolk Island
     code: NFK
-    codes: NFK;NF
+    codes:
+    - NFK
+    - NF
     alpha2_code: NF
     alpha3_code: NFK
   NGA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Nigeria
-    names: Nigeria
+    names:
+    - Nigeria
     code: NGA
-    codes: NGA;NG
+    codes:
+    - NGA
+    - NG
     alpha2_code: NG
     alpha3_code: NGA
   NIC: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Nicaragua
-    names: Nicaragua
+    names:
+    - Nicaragua
     code: NIC
-    codes: NIC;NI
+    codes:
+    - NIC
+    - NI
     alpha2_code: NI
     alpha3_code: NIC
   NIU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Niue
-    names: Niue
+    names:
+    - Niue
     code: NIU
-    codes: NIU;NU
+    codes:
+    - NIU
+    - NU
     alpha2_code: NU
     alpha3_code: NIU
   NLD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Netherlands
-    names: Netherlands;Holland
+    names:
+    - Netherlands
+    - Holland
     code: NLD
-    codes: NLD;NL
+    codes:
+    - NLD
+    - NL
     alpha2_code: NL
     alpha3_code: NLD
   NOR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Norway
-    names: Norway
+    names:
+    - Norway
     code: NOR
-    codes: NOR;NO
+    codes:
+    - NOR
+    - 'NO'
     alpha2_code: 'NO'
     alpha3_code: NOR
   NPL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Nepal
-    names: Nepal
+    names:
+    - Nepal
     code: NPL
-    codes: NPL;NP
+    codes:
+    - NPL
+    - NP
     alpha2_code: NP
     alpha3_code: NPL
   NRU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Nauru
-    names: Nauru
+    names:
+    - Nauru
     code: NRU
-    codes: NRU;NR
+    codes:
+    - NRU
+    - NR
     alpha2_code: NR
     alpha3_code: NRU
   NZL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: New Zealand
-    names: New Zealand
+    names:
+    - New Zealand
     code: NZL
-    codes: NZL;NZ
+    codes:
+    - NZL
+    - NZ
     alpha2_code: NZ
     alpha3_code: NZL
   OMN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Oman
-    names: Oman
+    names:
+    - Oman
     code: OMN
-    codes: OMN;OM
+    codes:
+    - OMN
+    - OM
     alpha2_code: OM
     alpha3_code: OMN
   PAK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Pakistan
-    names: Pakistan
+    names:
+    - Pakistan
     code: PAK
-    codes: PAK;PK
+    codes:
+    - PAK
+    - PK
     alpha2_code: PK
     alpha3_code: PAK
   PAN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Panama
-    names: Panama
+    names:
+    - Panama
     code: PAN
-    codes: PAN;PA
+    codes:
+    - PAN
+    - PA
     alpha2_code: PA
     alpha3_code: PAN
   PCN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Pitcairn
-    names: Pitcairn
+    names:
+    - Pitcairn
     code: PCN
-    codes: PCN;PN
+    codes:
+    - PCN
+    - PN
     alpha2_code: PN
     alpha3_code: PCN
   PER: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Peru
-    names: Peru
+    names:
+    - Peru
     code: PER
-    codes: PER;PE
+    codes:
+    - PER
+    - PE
     alpha2_code: PE
     alpha3_code: PER
   PHL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Philippines
-    names: Philippines
+    names:
+    - Philippines
     code: PHL
-    codes: PHL;PH
+    codes:
+    - PHL
+    - PH
     alpha2_code: PH
     alpha3_code: PHL
   PLW: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Palau
-    names: Palau
+    names:
+    - Palau
     code: PLW
-    codes: PLW;PW
+    codes:
+    - PLW
+    - PW
     alpha2_code: PW
     alpha3_code: PLW
   PNG: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Papua New Guinea
-    names: Papua New Guinea
+    names:
+    - Papua New Guinea
     code: PNG
-    codes: PNG;PG
+    codes:
+    - PNG
+    - PG
     alpha2_code: PG
     alpha3_code: PNG
   POL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Poland
-    names: Poland
+    names:
+    - Poland
     code: POL
-    codes: POL;PL
+    codes:
+    - POL
+    - PL
     alpha2_code: PL
     alpha3_code: POL
   PRI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Puerto Rico
-    names: Puerto Rico
+    names:
+    - Puerto Rico
     code: PRI
-    codes: PRI;PR
+    codes:
+    - PRI
+    - PR
     alpha2_code: PR
     alpha3_code: PRI
   PRK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: North Korea
-    names: North Korea
+    names:
+    - North Korea
     code: PRK
-    codes: PRK;KP
+    codes:
+    - PRK
+    - KP
     alpha2_code: KP
     alpha3_code: PRK
   PRT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Portugal
-    names: Portugal
+    names:
+    - Portugal
     code: PRT
-    codes: PRT;PT
+    codes:
+    - PRT
+    - PT
     alpha2_code: PT
     alpha3_code: PRT
   PRY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Paraguay
-    names: Paraguay
+    names:
+    - Paraguay
     code: PRY
-    codes: PRY;PY
+    codes:
+    - PRY
+    - PY
     alpha2_code: PY
     alpha3_code: PRY
   PSE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Palestine, State of
-    names: Palestine, State of
+    names:
+    - Palestine, State of
     code: PSE
-    codes: PSE;PS
+    codes:
+    - PSE
+    - PS
     alpha2_code: PS
     alpha3_code: PSE
   PYF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: French Polynesia
-    names: French Polynesia
+    names:
+    - French Polynesia
     code: PYF
-    codes: PYF;PF
+    codes:
+    - PYF
+    - PF
     alpha2_code: PF
     alpha3_code: PYF
   QAT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Qatar
-    names: Qatar
+    names:
+    - Qatar
     code: QAT
-    codes: QAT;QA
+    codes:
+    - QAT
+    - QA
     alpha2_code: QA
     alpha3_code: QAT
   REU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Réunion
-    names: Réunion
+    names:
+    - Réunion
     code: REU
-    codes: REU;RE
+    codes:
+    - REU
+    - RE
     alpha2_code: RE
     alpha3_code: REU
   ROU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Romania
-    names: Romania
+    names:
+    - Romania
     code: ROU
-    codes: ROU;RO
+    codes:
+    - ROU
+    - RO
     alpha2_code: RO
     alpha3_code: ROU
   RUS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Russian Federation
-    names: Russian Federation
+    names:
+    - Russian Federation
     code: RUS
-    codes: RUS;RU
+    codes:
+    - RUS
+    - RU
     alpha2_code: RU
     alpha3_code: RUS
   RWA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Rwanda
-    names: Rwanda
+    names:
+    - Rwanda
     code: RWA
-    codes: RWA;RW
+    codes:
+    - RWA
+    - RW
     alpha2_code: RW
     alpha3_code: RWA
   SAU: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saudi Arabia
-    names: Saudi Arabia
+    names:
+    - Saudi Arabia
     code: SAU
-    codes: SAU;SA
+    codes:
+    - SAU
+    - SA
     alpha2_code: SA
     alpha3_code: SAU
   SDN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sudan
-    names: Sudan
+    names:
+    - Sudan
     code: SDN
-    codes: SDN;SD
+    codes:
+    - SDN
+    - SD
     alpha2_code: SD
     alpha3_code: SDN
   SEN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Senegal
-    names: Senegal
+    names:
+    - Senegal
     code: SEN
-    codes: SEN;SN
+    codes:
+    - SEN
+    - SN
     alpha2_code: SN
     alpha3_code: SEN
   SGP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Singapore
-    names: Singapore
+    names:
+    - Singapore
     code: SGP
-    codes: SGP;SG
+    codes:
+    - SGP
+    - SG
     alpha2_code: SG
     alpha3_code: SGP
   SGS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: South Georgia and the South Sandwich Islands
-    names: South Georgia and the South Sandwich Islands
+    names:
+    - South Georgia and the South Sandwich Islands
     code: SGS
-    codes: SGS;GS
+    codes:
+    - SGS
+    - GS
     alpha2_code: GS
     alpha3_code: SGS
   SHN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Helena, Ascension and Tristan da Cunha
-    names: Saint Helena, Ascension and Tristan da Cunha
+    names:
+    - Saint Helena, Ascension and Tristan da Cunha
     code: SHN
-    codes: SHN;SH
+    codes:
+    - SHN
+    - SH
     alpha2_code: SH
     alpha3_code: SHN
   SJM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Svalbard and Jan Mayen
-    names: Svalbard and Jan Mayen
+    names:
+    - Svalbard and Jan Mayen
     code: SJM
-    codes: SJM;SJ
+    codes:
+    - SJM
+    - SJ
     alpha2_code: SJ
     alpha3_code: SJM
   SLB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Solomon Islands
-    names: Solomon Islands
+    names:
+    - Solomon Islands
     code: SLB
-    codes: SLB;SB
+    codes:
+    - SLB
+    - SB
     alpha2_code: SB
     alpha3_code: SLB
   SLE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sierra Leone
-    names: Sierra Leone
+    names:
+    - Sierra Leone
     code: SLE
-    codes: SLE;SL
+    codes:
+    - SLE
+    - SL
     alpha2_code: SL
     alpha3_code: SLE
   SLV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: El Salvador
-    names: El Salvador
+    names:
+    - El Salvador
     code: SLV
-    codes: SLV;SV
+    codes:
+    - SLV
+    - SV
     alpha2_code: SV
     alpha3_code: SLV
   SMR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: San Marino
-    names: San Marino
+    names:
+    - San Marino
     code: SMR
-    codes: SMR;SM
+    codes:
+    - SMR
+    - SM
     alpha2_code: SM
     alpha3_code: SMR
   SOM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Somalia
-    names: Somalia
+    names:
+    - Somalia
     code: SOM
-    codes: SOM;SO
+    codes:
+    - SOM
+    - SO
     alpha2_code: SO
     alpha3_code: SOM
   SPM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Pierre and Miquelon
-    names: Saint Pierre and Miquelon
+    names:
+    - Saint Pierre and Miquelon
     code: SPM
-    codes: SPM;PM
+    codes:
+    - SPM
+    - PM
     alpha2_code: PM
     alpha3_code: SPM
   SRB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Serbia
-    names: Serbia
+    names:
+    - Serbia
     code: SRB
-    codes: SRB;RS
+    codes:
+    - SRB
+    - RS
     alpha2_code: RS
     alpha3_code: SRB
   SSD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: South Sudan
-    names: South Sudan
+    names:
+    - South Sudan
     code: SSD
-    codes: SSD;SS
+    codes:
+    - SSD
+    - SS
     alpha2_code: SS
     alpha3_code: SSD
   STP: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sao Tome and Principe
-    names: Sao Tome and Principe
+    names:
+    - Sao Tome and Principe
     code: STP
-    codes: STP;ST
+    codes:
+    - STP
+    - ST
     alpha2_code: ST
     alpha3_code: STP
   SUR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Suriname
-    names: Suriname
+    names:
+    - Suriname
     code: SUR
-    codes: SUR;SR
+    codes:
+    - SUR
+    - SR
     alpha2_code: SR
     alpha3_code: SUR
   SVK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Slovakia
-    names: Slovakia
+    names:
+    - Slovakia
     code: SVK
-    codes: SVK;SK
+    codes:
+    - SVK
+    - SK
     alpha2_code: SK
     alpha3_code: SVK
   SVN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Slovenia
-    names: Slovenia
+    names:
+    - Slovenia
     code: SVN
-    codes: SVN;SI
+    codes:
+    - SVN
+    - SI
     alpha2_code: SI
     alpha3_code: SVN
   SWE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sweden
-    names: Sweden
+    names:
+    - Sweden
     code: SWE
-    codes: SWE;SE
+    codes:
+    - SWE
+    - SE
     alpha2_code: SE
     alpha3_code: SWE
   SWZ: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Swaziland
-    names: Swaziland
+    names:
+    - Swaziland
     code: SWZ
-    codes: SWZ;SZ
+    codes:
+    - SWZ
+    - SZ
     alpha2_code: SZ
     alpha3_code: SWZ
   SXM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Sint Maarten
-    names: Sint Maarten
+    names:
+    - Sint Maarten
     code: SXM
-    codes: SXM;SX
+    codes:
+    - SXM
+    - SX
     alpha2_code: SX
     alpha3_code: SXM
   SYC: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Seychelles
-    names: Seychelles
+    names:
+    - Seychelles
     code: SYC
-    codes: SYC;SC
+    codes:
+    - SYC
+    - SC
     alpha2_code: SC
     alpha3_code: SYC
   SYR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Syrian Arab Republic
-    names: Syrian Arab Republic
+    names:
+    - Syrian Arab Republic
     code: SYR
-    codes: SYR;SY
+    codes:
+    - SYR
+    - SY
     alpha2_code: SY
     alpha3_code: SYR
   TCA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Turks and Caicos Islands
-    names: Turks and Caicos Islands
+    names:
+    - Turks and Caicos Islands
     code: TCA
-    codes: TCA;TC
+    codes:
+    - TCA
+    - TC
     alpha2_code: TC
     alpha3_code: TCA
   TCD: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Chad
-    names: Chad
+    names:
+    - Chad
     code: TCD
-    codes: TCD;TD
+    codes:
+    - TCD
+    - TD
     alpha2_code: TD
     alpha3_code: TCD
   TGO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Togo
-    names: Togo
+    names:
+    - Togo
     code: TGO
-    codes: TGO;TG
+    codes:
+    - TGO
+    - TG
     alpha2_code: TG
     alpha3_code: TGO
   THA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Thailand
-    names: Thailand
+    names:
+    - Thailand
     code: THA
-    codes: THA;TH
+    codes:
+    - THA
+    - TH
     alpha2_code: TH
     alpha3_code: THA
   TJK: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tajikistan
-    names: Tajikistan
+    names:
+    - Tajikistan
     code: TJK
-    codes: TJK;TJ
+    codes:
+    - TJK
+    - TJ
     alpha2_code: TJ
     alpha3_code: TJK
   TKL: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tokelau
-    names: Tokelau
+    names:
+    - Tokelau
     code: TKL
-    codes: TKL;TK
+    codes:
+    - TKL
+    - TK
     alpha2_code: TK
     alpha3_code: TKL
   TKM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Turkmenistan
-    names: Turkmenistan
+    names:
+    - Turkmenistan
     code: TKM
-    codes: TKM;TM
+    codes:
+    - TKM
+    - TM
     alpha2_code: TM
     alpha3_code: TKM
   TLS: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Timor-Leste
-    names: Timor-Leste
+    names:
+    - Timor-Leste
     code: TLS
-    codes: TLS;TL
+    codes:
+    - TLS
+    - TL
     alpha2_code: TL
     alpha3_code: TLS
   TON: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tonga
-    names: Tonga
+    names:
+    - Tonga
     code: TON
-    codes: TON;TO
+    codes:
+    - TON
+    - TO
     alpha2_code: TO
     alpha3_code: TON
   TTO: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Trinidad and Tobago
-    names: Trinidad and Tobago
+    names:
+    - Trinidad and Tobago
     code: TTO
-    codes: TTO;TT
+    codes:
+    - TTO
+    - TT
     alpha2_code: TT
     alpha3_code: TTO
   TUN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tunisia
-    names: Tunisia
+    names:
+    - Tunisia
     code: TUN
-    codes: TUN;TN
+    codes:
+    - TUN
+    - TN
     alpha2_code: TN
     alpha3_code: TUN
   TUR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Turkey
-    names: Turkey
+    names:
+    - Turkey
     code: TUR
-    codes: TUR;TR
+    codes:
+    - TUR
+    - TR
     alpha2_code: TR
     alpha3_code: TUR
   TUV: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tuvalu
-    names: Tuvalu
+    names:
+    - Tuvalu
     code: TUV
-    codes: TUV;TV
+    codes:
+    - TUV
+    - TV
     alpha2_code: TV
     alpha3_code: TUV
   TWN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Taiwan
-    names: Taiwan
+    names:
+    - Taiwan
     code: TWN
-    codes: TWN;TW
+    codes:
+    - TWN
+    - TW
     alpha2_code: TW
     alpha3_code: TWN
   TZA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Tanzania, United Republic of
-    names: Tanzania, United Republic of
+    names:
+    - Tanzania, United Republic of
     code: TZA
-    codes: TZA;TZ
+    codes:
+    - TZA
+    - TZ
     alpha2_code: TZ
     alpha3_code: TZA
   UGA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Uganda
-    names: Uganda
+    names:
+    - Uganda
     code: UGA
-    codes: UGA;UG
+    codes:
+    - UGA
+    - UG
     alpha2_code: UG
     alpha3_code: UGA
   UKR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Ukraine
-    names: Ukraine
+    names:
+    - Ukraine
     code: UKR
-    codes: UKR;UA
+    codes:
+    - UKR
+    - UA
     alpha2_code: UA
     alpha3_code: UKR
   UMI: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: United States Minor Outlying Islands
-    names: United States Minor Outlying Islands
+    names:
+    - United States Minor Outlying Islands
     code: UMI
-    codes: UMI;UM
+    codes:
+    - UMI
+    - UM
     alpha2_code: UM
     alpha3_code: UMI
   URY: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Uruguay
-    names: Uruguay
+    names:
+    - Uruguay
     code: URY
-    codes: URY;UY
+    codes:
+    - URY
+    - UY
     alpha2_code: UY
     alpha3_code: URY
   USA: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: USA
-    names: USA;United States of America
+    names:
+    - USA
+    - United States of America
     code: USA
-    codes: USA;US
+    codes:
+    - USA
+    - US
     alpha2_code: US
     alpha3_code: USA
   UZB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Uzbekistan
-    names: Uzbekistan
+    names:
+    - Uzbekistan
     code: UZB
-    codes: UZB;UZ
+    codes:
+    - UZB
+    - UZ
     alpha2_code: UZ
     alpha3_code: UZB
   VAT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Holy See
-    names: Holy See
+    names:
+    - Holy See
     code: VAT
-    codes: VAT;VA
+    codes:
+    - VAT
+    - VA
     alpha2_code: VA
     alpha3_code: VAT
   VCT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Saint Vincent and the Grenadines
-    names: Saint Vincent and the Grenadines
+    names:
+    - Saint Vincent and the Grenadines
     code: VCT
-    codes: VCT;VC
+    codes:
+    - VCT
+    - VC
     alpha2_code: VC
     alpha3_code: VCT
   VEN: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Venezuela
-    names: Venezuela
+    names:
+    - Venezuela
     code: VEN
-    codes: VEN;VE
+    codes:
+    - VEN
+    - VE
     alpha2_code: VE
     alpha3_code: VEN
   VGB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Virgin Islands (British)
-    names: Virgin Islands (British)
+    names:
+    - Virgin Islands (British)
     code: VGB
-    codes: VGB;VG
+    codes:
+    - VGB
+    - VG
     alpha2_code: VG
     alpha3_code: VGB
   VIR: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Virgin Islands (US)
-    names: Virgin Islands (US)
+    names:
+    - Virgin Islands (US)
     code: VIR
-    codes: VIR;VI
+    codes:
+    - VIR
+    - VI
     alpha2_code: VI
     alpha3_code: VIR
   VNM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Viet Nam
-    names: Viet Nam
+    names:
+    - Viet Nam
     code: VNM
-    codes: VNM;VN
+    codes:
+    - VNM
+    - VN
     alpha2_code: VN
     alpha3_code: VNM
   VUT: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Vanuatu
-    names: Vanuatu
+    names:
+    - Vanuatu
     code: VUT
-    codes: VUT;VU
+    codes:
+    - VUT
+    - VU
     alpha2_code: VU
     alpha3_code: VUT
   WLF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Wallis and Futuna
-    names: Wallis and Futuna
+    names:
+    - Wallis and Futuna
     code: WLF
-    codes: WLF;WF
+    codes:
+    - WLF
+    - WF
     alpha2_code: WF
     alpha3_code: WLF
   WSM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Samoa
-    names: Samoa
+    names:
+    - Samoa
     code: WSM
-    codes: WSM;WS
+    codes:
+    - WSM
+    - WS
     alpha2_code: WS
     alpha3_code: WSM
   YEM: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Yemen
-    names: Yemen
+    names:
+    - Yemen
     code: YEM
-    codes: YEM;YE
+    codes:
+    - YEM
+    - YE
     alpha2_code: YE
     alpha3_code: YEM
   ZAF: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: South Africa
-    names: South Africa
+    names:
+    - South Africa
     code: ZAF
-    codes: ZAF;ZA
+    codes:
+    - ZAF
+    - ZA
     alpha2_code: ZA
     alpha3_code: ZAF
   ZMB: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Zambia
-    names: Zambia
+    names:
+    - Zambia
     code: ZMB
-    codes: ZMB;ZM
+    codes:
+    - ZMB
+    - ZM
     alpha2_code: ZM
     alpha3_code: ZMB
   ZWE: !ruby/object:UncleKryon::Country
+    updated_on: '2018-06-11 17:41:10'
     name: Zimbabwe
-    names: Zimbabwe
+    names:
+    - Zimbabwe
     code: ZWE
-    codes: ZWE;ZW
+    codes:
+    - ZWE
+    - ZW
     alpha2_code: ZW
     alpha3_code: ZWE

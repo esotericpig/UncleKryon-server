@@ -19,25 +19,17 @@
 ###
 
 require 'date'
-require 'digest'
 require 'fileutils'
 require 'uri'
-require 'yaml'
 
 require 'net/http'
 
 require 'unclekryon/log'
 
-require 'unclekryon/data/artist_data'
-require 'unclekryon/data/kryon_aum_album_data'
-require 'unclekryon/data/kryon_aum_data'
-require 'unclekryon/data/pic_data'
-require 'unclekryon/data/release_data'
-require 'unclekryon/data/time_data'
-
 module UncleKryon
   module Util
     DATE_FORMAT = '%F'
+    DATETIME_FORMAT = '%F %T'
     
     def self.add_trail_slash(url)
       url = url + '/' if url !~ /\/\z/
@@ -47,9 +39,9 @@ module UncleKryon
     def self.clean_data(str)
       # Have to use "[[:space:]]" for "&nbsp;" and "<br/>"
       # This is necessary for "<br />\s+" (see 2015 "KRYON IN LIMA, PERU (2)")
-      str = str.gsub(/[[:space:]]+/,' ') # Replace all spaces with one space
-      str = str.strip()
-      
+      str = str.clone()
+      str.gsub!(/[[:space:]]+/,' ') # Replace all spaces with one space
+      str.strip!()
       return str
     end
     
@@ -64,8 +56,8 @@ module UncleKryon
       slash_regex = /\A(\/+\.*\/*)+/
       
       if link =~ slash_regex
-        link = ling.gsub(slash_regex,'')
-        link = get_top_link(url) + link # #get_top_link(...) adds a slash
+        link = link.gsub(slash_regex,'')
+        link = get_top_link(url) + link # get_top_link(...) adds a slash
         
         return link # Already handles "../" or "./" in the regex
       end
@@ -105,6 +97,10 @@ module UncleKryon
       return link
     end
     
+    def self.empty_s?(str)
+      return str.nil?() || str.strip().empty?()
+    end
+    
     def self.fix_shortwith_text(text)
       if text =~ /w\/[[:alnum:]]/i
         # I think it looks better with a space, personally.
@@ -117,35 +113,20 @@ module UncleKryon
     end
     
     def self.format_date(date)
-      return (!date.nil?) ? date.strftime(DATE_FORMAT) : nil
+      return date.nil?() ? nil : date.strftime(DATE_FORMAT)
     end
     
-    def self.gen_id(url)
-      # Just use the URL to ensure 100% unique
-      return url
-      
-      # base64 is shorter than hex
-      #return Digest::MD5.base64digest(url)
-    end
-    
-    def self.get_kryon_year_url(year)
-      if year == '2002-2005'
-        url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
-      else
-        url = "http://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
-      end
-      
-      return url
+    def self.format_datetime(datetime)
+      return datetime.nil?() ? nil : datetime.strftime(DATETIME_FORMAT)
     end
     
     def self.get_top_link(url)
-      http_regex = /\A(http\:)|(\.)/i # Check '.' to prevent infinite loop
+      http_regex = /\A(http\s?\:)|(\.)/i # Check '.' to prevent infinite loop
       prev_link = url
       
-      i = 100 # Prevent infinite loop (maybe raise an exception instead?)
+      i = 100 # Prevent infinite loop (maybe raise an exception?)
       
-      while (next_link = File.dirname(prev_link)) !~ http_regex &&
-          (i = i - 1) >= 0
+      while (next_link = File.dirname(prev_link)) !~ http_regex && (i -= 1) >= 0
         prev_link = next_link
       end
       
@@ -158,7 +139,7 @@ module UncleKryon
       
       Net::HTTP.start(uri.host,uri.port) do |http|
         resp = http.request_head(uri)
-        r = resp.to_hash
+        r = resp.to_hash()
       end
       
       return r
@@ -171,7 +152,7 @@ module UncleKryon
         v = v[keys[i]]
       end
       
-      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?
+      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?()
       return v[keys[keys.length-1]]
     end
     
@@ -179,122 +160,46 @@ module UncleKryon
       v = hash
       
       for i in 0..keys.length-2
-        if v[keys[i]].nil?
+        if v[keys[i]].nil?()
           v[keys[i]] = {}
           v = v[keys[i]]
         end
       end
       
-      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?
+      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?()
       return v[keys[keys.length-1]]
-    end
-    
-    def self.load_artist_yaml(filepath)
-      filedata = YAML.load_file(filepath) if File.exist?(filepath)
-      filedata = {} if !filedata
-      
-      artist = ArtistData.new
-      
-      self.hash_def(filedata,['Artist'],{})
-      artist.releases = self.hash_def(filedata,['Artist','Releases'],artist.releases)
-      artist.albums = self.hash_def(filedata,['Artist','Albums'],artist.albums)
-      artist.aums = self.hash_def(filedata,['Artist','Aums'],artist.aums)
-      artist.pics = self.hash_def(filedata,['Artist','Pics'],artist.pics)
-      
-      return artist
     end
     
     def self.mk_dirs_from_filepath(filepath)
       dirname = File.dirname(filepath)
       
-      if !dirname.nil?() && !dirname.empty?() && !Dir.exist?(dirname)
-        raise "Spaces in dirname[#{dirname}]" if dirname != dirname.strip()
-        Log.instance.info("Making dirs[#{dirname}]...")
-        FileUtils.mkdir_p(dirname)
-      end
-    end
-    
-    def self.parse_date(date)
-      return (date && !date.empty?) ? Date.strptime(date,DATE_FORMAT) : nil
-    end
-    
-    def self.parse_kryon_date(date,year=nil)
-      date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
-      date.gsub!(/SEPT[[:space:]]+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
-      date.gsub!(/Septembe[[:space:]]+/i,'September ') # "Septembe 4, 2016"
-      
-      # "May 6 2017"
-      comma = date.include?(',') ? ',' : ''
-      r = [2]
-      
-      begin
-        if date.include?('-')
-          # "SEPT 29 - OCT 9, 2017"
-          if date =~ /[[:alpha:]]+[[:space:]]+[[:digit:]]+[[:space:]]+\-[[:space:]]+[[:alpha:]]+[[:space:]]+[[:digit:]]+/
-            r1f = "%B %d - %B %d#{comma} %Y"
-          else
-            # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
-            date = date.gsub(/[[:space:]]+\-[[:space:]]+/,'-')
-            
-            # "June 7-9-16-17" & "June 9-10-11-12"
-            if date =~ /\A[[:space:]]*[[:alpha:]]+[[:space:]]*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+[[:space:]]*\z/
-              r1f = "%B %d-%d-%d-%d"
-              
-              if !year.nil?()
-                date += ", #{year}"
-                r1f << ", %Y"
-              end
-            else
-              # "MAY 15-16-17, 2017" and "January 7-8, 2017"
-              r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
-            end
-          end
-          
-          r[1] = Date.strptime(date,r1f)
-          r[0] = Date.strptime(date,'%B %d')
-          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
-        elsif date.include?('/')
-          # "JULY/AUG 2017"
-          r[1] = Date.strptime(date,'%b/%b %Y')
-          r[0] = Date.strptime(date,'%b')
-          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
-        else
-          r[0] = Date.strptime(date,"%B %d#{comma} %Y")
-          r[1] = nil
+      if !dirname.nil?()
+        raise "Spaces around dirname: '#{dirname}'" if dirname != dirname.strip()
+        
+        if !Dir.exist?(dirname)
+          Log.instance.info("Making dirs: '#{dirname}'...")
+          FileUtils.mkdir_p(dirname)
         end
-      rescue ArgumentError => e
-        Log.instance.fatal("Invalid Date: '#{date}'",e)
-        raise
       end
-      
-      r[0] = (!r[0].nil?) ? self.format_date(r[0]) : ''
-      r[1] = (!r[1].nil?) ? self.format_date(r[1]) : ''
-      
-      return r
+    end
+    
+    def self.parse_date_s(str)
+      return self.empty_s?(str) ? nil : Date.strptime(str,DATE_FORMAT)
+    end
+    
+    def self.parse_datetime_s(str)
+      return self.empty_s?(str) ? nil : DateTime.strptime(str,DATETIME_FORMAT)
     end
     
     def self.parse_url_filename(url)
       uri = URI.parse(url)
       r = File.basename(uri.path)
       r = URI.unescape(r)
-      return r
+      return r.strip()
     end
-    
-    def self.save_artist_yaml(artist,filepath,**options)
-      raise "Empty filepath[#{filepath}]" if filepath.nil?() || (filepath = filepath.strip()).empty?()
-      
-      filedata = {'Artist'=>{}}
-      filedata['Artist']['Releases'] = artist.releases
-      filedata['Artist']['Albums'] = artist.albums
-      filedata['Artist']['Aums'] = artist.aums
-      filedata['Artist']['Pics'] = artist.pics
-      
-      mk_dirs_from_filepath(filepath)
-      File.open(filepath,'w') do |f|
-        YAML.dump(filedata,f)
-      end
-    end
-    
+  end
+end
+
 =begin
     # Old way where you can replace/overwrite; new way just always overwrites to make it simple
     def self.save_artist_yaml(artist,filepath,replace: false,who: nil,overwrite: false,**options)
@@ -376,5 +281,3 @@ module UncleKryon
       end
     end
 =end
-  end
-end

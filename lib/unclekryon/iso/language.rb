@@ -24,9 +24,10 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
+require 'unclekryon/dev_opts'
 require 'unclekryon/log'
 
-require 'unclekryon/iso/iso_base'
+require 'unclekryon/iso/base_iso'
 
 ##
 # @see https://en.wikipedia.org/wiki/ISO_639
@@ -34,26 +35,24 @@ require 'unclekryon/iso/iso_base'
 # @see http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
 ##
 module UncleKryon
-  class Language
-    attr_reader :name
+  class Language < BaseIso
     attr_reader :names
-    attr_reader :code
     attr_reader :codes
     attr_reader :alpha2_code
     attr_reader :alpha3_code
     attr_reader :alpha3_code_b
     
     def initialize(row=nil)
-      @name = nil
+      super()
+      
       @names = nil
-      @code = nil
       @codes = nil
       @alpha2_code = nil
       @alpha3_code = nil
       @alpha3_code_b = nil
       
       if row.is_a?(Array)
-        @names = row[2].split(';').compact().uniq().map(&IsoBase.method(:fix_name))
+        @names = row[2].split(';').compact().uniq().map(&self.class.method(:fix_name))
         @alpha2_code = row[1].empty?() ? nil : row[1]
         @alpha3_code = row[0].split(/[[:space:]]*[\(\)][[:space:]]*/)
         
@@ -73,8 +72,10 @@ module UncleKryon
               
               case c_up
               when 'B'
+                raise "Multiple alpha3_code_b: #{@alpha3_code}" unless @alpha3_code_b.nil?()
                 @alpha3_code_b = @alpha3_code[i - 1]
               when 'T'
+                raise "Multiple alpha3_code (T): #{@alpha3_code}" unless @alpha3_code.is_a?(Array)
                 @alpha3_code = @alpha3_code[i - 1]
               end
               
@@ -91,23 +92,26 @@ module UncleKryon
         end
         
         @name = @names[0]
-        @names = @names.join(';')
+        @names = @names
         @code = @alpha3_code
-        @codes = [@alpha3_code,@alpha3_code_b,@alpha2_code].compact().uniq().join(';')
+        @codes = [@alpha3_code,@alpha3_code_b,@alpha2_code].compact().uniq()
       end
     end
     
-    # @see Languages.parse_and_save_filepath(...)
+    # @see Languages.parse_and_save_to_file(...)
     def ==(lang)
-      return @name == lang.name && @names == lang.names && @code == lang.code && @codes == lang.codes &&
-        @alpha2_code == lang.alpha2_code && @alpha3_code == lang.alpha3_code &&
+      return super(lang) &&
+        @names == lang.names &&
+        @codes == lang.codes &&
+        @alpha2_code == lang.alpha2_code &&
+        @alpha3_code == lang.alpha3_code &&
         @alpha3_code_b == lang.alpha3_code_b
     end
     
     def to_s()
       s = '['
-      s << %Q("#{@name}","#{@names}",)
-      s << %Q(#{@code},"#{@codes}",)
+      s << %Q("#{@name}","#{@names.join(';')}",)
+      s << %Q(#{@code},"#{@codes.join(';')}",)
       s << %Q(#{@alpha2_code},#{@alpha3_code},#{@alpha3_code_b})
       s << ']'
       
@@ -115,7 +119,7 @@ module UncleKryon
     end
   end
   
-  class Languages < IsoBase
+  class Languages < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/languages.yaml"
     
     def initialize()
@@ -132,9 +136,10 @@ module UncleKryon
       regexes.each_with_index() do |regex,i|
         text.split(regex).each() do |t|
           # Fix misspellings and/or weird shortenings
-          t = t.gsub(/\AFRENC\z/i,'French')
-          t = t.gsub(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
-          t = t.gsub(/\ASPAN\z/i,'Spanish')
+          t = t.clone()
+          t.gsub!(/\AFRENC\z/i,'French')
+          t.gsub!(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
+          t.gsub!(/\ASPAN\z/i,'Spanish')
           
           lang = find(t)
           
@@ -142,7 +147,7 @@ module UncleKryon
             if i >= (regexes.length() - 1)
               msg = "No language found for: #{t}"
               
-              if Log.instance.dev?()
+              if DevOpts.instance.dev?()
                 raise msg
               else
                 log.warn(msg)
@@ -169,7 +174,7 @@ module UncleKryon
         langs.push(eng_code)
       end
       
-      return langs.empty?() ? nil : langs.join(';')
+      return langs.empty?() ? nil : langs
     end
     
     def self.load_file(filepath=DEFAULT_FILEPATH)
@@ -179,7 +184,7 @@ module UncleKryon
     # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   http://www.loc.gov/standards/iso639-2/php/code_list.php
-    def self.parse_and_save_filepath(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
       tds = doc.css('td')
       
@@ -216,7 +221,7 @@ module UncleKryon
       end
       
       langs.sort_keys!()
-      langs.save_file(save_filepath)
+      langs.save_to_file(save_filepath)
     end
   end
 end
@@ -225,7 +230,7 @@ if $0 == __FILE__
   if ARGV.length < 1
     puts UncleKryon::Languages.load_file().to_s()
   else
-    UncleKryon::Languages.parse_and_save_filepath(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
+    UncleKryon::Languages.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
       UncleKryon::Languages::DEFAULT_FILEPATH)
   end
 end

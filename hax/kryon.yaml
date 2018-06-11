@@ -1,0 +1,21 @@
+---
+Artist: !ruby/object:UncleKryon::ArtistData
+  updated_on: '2018-06-12 02:33:24'
+  updated_aums_on: '2018-06-12 02:33:24'
+  
+  id: 'kryon'
+  name: 'Kryon'
+  long_name: 'Kryon - Lee Carroll'
+  
+  url: 'http://www.kryon.com'
+  mirrors: {}
+  
+  facebook: !ruby/object:UncleKryon::SocialData
+    username: 'KryonLeeCarroll'
+    url: 'https://www.facebook.com/KryonLeeCarroll/'
+  twitter: !ruby/object:UncleKryon::SocialData
+    username: 'KryonLeeCarroll'
+    url: 'https://twitter.com/kryonleecarroll'
+  youtube: !ruby/object:UncleKryon::SocialData
+    username: 'Kryon-Official Posting Lee Carroll'
+    url: 'https://www.youtube.com/channel/UCMiuw8FLujKn06dnlxpbWGQ'

@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,37 +18,21 @@
 # along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
-require 'unclekryon/data/base_data'
+require 'singleton'
 
 module UncleKryon
-  class ReleaseData < BaseData
-    attr_accessor :title
+  class DevOpts
+    include Singleton
     
-    attr_accessor :url
-    attr_accessor :mirrors
+    attr_accessor :dev
+    attr_accessor :test
     
-    attr_accessor :albums
+    alias_method :dev?,:dev
+    alias_method :test?,:test
     
     def initialize()
-      super()
-      
-      @title = ''
-      
-      @url = ''
-      @mirrors = {}
-      
-      @albums = []
-    end
-    
-    def to_mini_s()
-      return to_s(true)
-    end
-    
-    def to_s(mini=false)
-      s = ''
-      s << ('%-10s' % [@title])
-      s << (mini ? (' | %3d' % [@albums.length()]) : ("\n- " << @albums.join("\n- ")))
-      return s
+      @dev = false
+      @test = false
     end
   end
 end

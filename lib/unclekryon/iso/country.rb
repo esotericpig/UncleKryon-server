@@ -24,7 +24,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
-require 'unclekryon/iso/iso_base'
+require 'unclekryon/iso/base_iso'
 
 ##
 # @see https://en.wikipedia.org/wiki/ISO_3166
@@ -33,44 +33,42 @@ require 'unclekryon/iso/iso_base'
 # @see https://www.iso.org/obp/ui/#search/code/
 ##
 module UncleKryon
-  class Country
-    attr_reader :name
+  class Country < BaseIso
     attr_reader :names
-    attr_reader :code
     attr_reader :codes
     attr_reader :alpha2_code
     attr_reader :alpha3_code
     
     def initialize(row=nil)
-      @name = nil
+      super()
+      
       @names = nil
-      @code = nil
       @codes = nil
       @alpha2_code = nil
       @alpha3_code = nil
       
       if row.is_a?(Array)
-        @name = IsoBase.simplify_name(row[0])
+        @name = self.class.simplify_name(row[0])
         @alpha2_code = row[2]
         @alpha3_code = row[3]
         
         @names = @name
         @code = @alpha3_code
-        @codes = [@alpha3_code,@alpha2_code].compact().uniq().join(';')
+        @codes = [@alpha3_code,@alpha2_code].compact().uniq()
       end
     end
     
     def to_s()
       s = '['
-      s << %Q("#{@name}","#{@names}",)
-      s << %Q(#{@code},"#{@codes}",#{@alpha2_code},#{@alpha3_code})
+      s << %Q("#{@name}","#{@names.join(';')}",)
+      s << %Q(#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
       s << ']'
       
       return s
     end
   end
   
-  class Countries < IsoBase
+  class Countries < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/countries.yaml"
     
     def initialize()
@@ -84,7 +82,7 @@ module UncleKryon
     # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#search/code/
-    def self.parse_and_save_filepath(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
       tds = doc.css('td')
       
@@ -114,7 +112,7 @@ module UncleKryon
       end
       
       countries.sort_keys!()
-      countries.save_file(save_filepath)
+      countries.save_to_file(save_filepath)
     end
   end
 end
@@ -123,7 +121,7 @@ if $0 == __FILE__
   if ARGV.length < 1
     puts UncleKryon::Countries.load_file().to_s()
   else
-    UncleKryon::Countries.parse_and_save_filepath(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
+    UncleKryon::Countries.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
       UncleKryon::Countries::DEFAULT_FILEPATH)
   end
 end

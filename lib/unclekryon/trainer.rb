@@ -22,6 +22,7 @@ require 'bundler/setup'
 
 require 'nbayes'
 
+require 'unclekryon/dev_opts'
 require 'unclekryon/log'
 require 'unclekryon/util'
 
@@ -85,7 +86,7 @@ module UncleKryon
       print 'What is it? '
       
       # Use -t/--test option
-      if Log.instance.test?()
+      if DevOpts.instance.test?()
         puts (tag_id = @tags.keys.sample()) # For testing purposes
       else
         tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args
@@ -150,7 +151,7 @@ module UncleKryon
       end
     end
     
-    def save_file()
+    def save_to_file()
       if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
         raise ArgumentError,'Training filepath cannot be empty'
       end
@@ -221,6 +222,6 @@ if $0 == __FILE__
       ts['tea'].train(v)
     end
     
-    ts.save_file()
+    ts.save_to_file()
   end
 end

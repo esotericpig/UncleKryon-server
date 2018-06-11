@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,45 +18,19 @@
 # along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
-require 'unclekryon/data/base_data'
-
+##
+# This should NOT extend BaseData/etc. It is basically just a container/struct.
+##
 module UncleKryon
-  class PicData < BaseData
-    attr_accessor :name
-    attr_accessor :filename
-    
+  class SocialData
+    attr_accessor :username
     attr_accessor :url
-    attr_accessor :mirrors
     
     def initialize()
       super()
       
-      @name = ''
-      @filename = ''
-      
+      @username = ''
       @url = ''
-      @mirrors = {}
-    end
-    
-    # Excludes @updated_on
-    def ==(y)
-      return @name == y.name &&
-             @filename == y.filename &&
-             @url == y.url &&
-             @mirrors == y.mirrors
-    end
-    
-    def to_s()
-      s = ''
-      
-      if @name.empty?() || @name.strip().empty?()
-        s << ('%-100s' % [@url])
-      else
-        s << ('%-30s' % [@name])
-        s << (' | %30s' % [@filename]) unless @name == @filename
-      end
-      
-      return s
     end
   end
 end

@@ -18,6 +18,7 @@
 # along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
+require 'date'
 require 'nokogiri'
 require 'open-uri'
 
@@ -26,7 +27,7 @@ require 'unclekryon/log'
 require 'unclekryon/trainer'
 require 'unclekryon/util'
 
-require 'unclekryon/data/artist_data'
+require 'unclekryon/data/artist_aums_data'
 require 'unclekryon/data/kryon_aum_album_data'
 require 'unclekryon/data/release_data'
 
@@ -40,44 +41,102 @@ module UncleKryon
     attr_accessor :title
     attr_accessor :trainers
     attr_accessor :training
+    attr_reader   :updated_on
     attr_accessor :url
     
     alias_method :training?,:training
     
-    def initialize(title=nil,url=nil,artist=ArtistData.new(),training: false,train_filepath: nil,**options)
+    def initialize(title=nil,url=nil,artist=ArtistAumsData.new(),training: false,train_filepath: nil,
+          updated_on: nil,**options)
       @artist = artist
       @exclude_album = false
       @title = title
       @trainers = Trainers.new(train_filepath)
       @training = training
-      @url = url
+      @updated_on = Util.format_datetime(DateTime.now()) if Util.empty_s?(updated_on)
+      @url = Util.empty_s?(url) ? self.class.get_kryon_year_url(title) : url
+    end
+    
+    def self.parse_kryon_date(date,year=nil)
+      # Don't modify args and clean them up so can use /\s/ instead of /[[:space:]]/
+      date = Util.clean_data(date.clone())
+      year = Util.clean_data(year.clone())
       
-      # Not used anymore
-      #@trainers['aum_year_topic'] = Trainer.new({
-      #    't'=>'topic',
-      #    'i'=>'ignore',
-      #    'us'=>'usa'
-      #    'no'=>'non_usa'
-      #  })
+      # Fix misspellings and/or weird shortenings
+      date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
+      date.gsub!(/SEPT\s+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
+      date.gsub!(/Septembe\s+/i,'September ') # "Septembe 4, 2016"
+      
+      comma = date.include?(',') ? ',' : '' # "May 6 2017"
+      r = Array.new(2)
+      
+      begin
+        if date.include?('-')
+          # "SEPT 29 - OCT 9, 2017"
+          if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s+\-\s+[[:alpha:]]+\s+[[:digit:]]+/
+            r1f = "%B %d - %B %d#{comma} %Y"
+          else
+            # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
+            date.gsub!(/\s+\-\s+/,'-')
+            
+            # "June 7-9-16-17" & "June 9-10-11-12"
+            if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\z/
+              r1f = "%B %d-%d-%d-%d"
+              
+              if !year.nil?()
+                date << ", #{year}"
+                r1f << ", %Y"
+              end
+            else
+              # "MAY 15-16-17, 2017" and "January 7-8, 2017"
+              r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+            end
+          end
+          
+          r[1] = Date.strptime(date,r1f)
+          r[0] = Date.strptime(date,'%B %d')
+          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+        elsif date.include?('/')
+          # "JULY/AUG 2017"
+          r[1] = Date.strptime(date,'%b/%b %Y')
+          r[0] = Date.strptime(date,'%b')
+          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+        else
+          r[0] = Date.strptime(date,"%B %d#{comma} %Y")
+          r[1] = nil
+        end
+      rescue ArgumentError => e
+        Log.instance.fatal("Invalid Date: '#{date}'",e)
+        raise
+      end
+      
+      r[0] = (!r[0].nil?) ? Util.format_date(r[0]) : ''
+      r[1] = (!r[1].nil?) ? Util.format_date(r[1]) : ''
+      
+      return r
     end
     
     def parse_site(title=nil,url=nil,artist=nil)
       @artist = artist unless artist.nil?()
       @title = title unless title.nil?()
-      @url = url unless url.nil?()
       
-      @release = @artist.releases[@title]
-      @trainers.load_file()
+      @url = Util.empty_s?(url) ? self.class.get_kryon_year_url(@title) : url
       
       raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
       raise ArgumentError,"Title cannot be empty" if @title.nil?() || (@title = @title.strip()).empty?()
       raise ArgumentError,"URL cannot be empty" if @url.nil?() || (@url = @url.strip()).empty?()
       
+      @release = @artist.releases[@title]
+      @trainers.load_file()
+      
       if @release.nil?
         @release = ReleaseData.new
         @release.title = @title
+        @release.updated_on = @updated_on
         @release.url = @url
+        
         @artist.releases[@title] = @release
+        @artist.updated_on = @updated_on
       end
       
       doc = Nokogiri::HTML(open(@release.url),nil,'utf-8') # Force utf-8 encoding
@@ -88,11 +147,12 @@ module UncleKryon
         next if (cells = row.css('td')).nil?
         
         album = KryonAumAlbumData.new
+        album.updated_on = @updated_on
         @exclude_album = false
         
         # There is always a year cell
         if !parse_year_cell(cells,album)
-          # Try to get the topic
+          # Try to get the topic for log
           if cells.length >= 3
             if !(t = cells[2]).nil?()
               if !(t = t.content).nil?()
@@ -113,14 +173,24 @@ module UncleKryon
         
         next if @exclude_album
         if next_row
-          log.warn("Excluding album: #{album.r_year_begin},#{album.r_year_end},#{album.r_topic}," <<
-            "#{album.r_location},#{album.r_language}")
+          log.warn("Excluding album: #{album.date_begin},#{album.date_end},#{album.title}," <<
+            "#{album.locations},#{album.languages}")
           next
         end
         
-        album.fill_empty_data()
-        @artist.albums[album.id] = album
-        @release.album_ids.push(album.id) if !@release.album_ids.include?(album.id)
+        # Is it actually new?
+        if @artist.albums.key?(album.url) && album == @artist.albums[album.url]
+          album.updated_on = @artist.albums[album.url].updated_on
+        else
+          @artist.updated_on = @updated_on
+        end
+        
+        @artist.albums[album.url] = album
+        
+        if !@release.albums.include?(album.url)
+          @release.albums.push(album.url)
+          @artist.updated_on = @updated_on
+        end
       end
       
       return @release
@@ -137,15 +207,12 @@ module UncleKryon
       return false if cell.content.nil?
       return false if cell['href'].nil?
       
-      r_year = Util.parse_kryon_date(Util.clean_data(cell.content),@title)
-      album.r_year_begin = r_year[0]
-      album.r_year_end = r_year[1]
+      r_year = self.class.parse_kryon_date(Util.clean_data(cell.content),@title)
+      album.date_begin = r_year[0]
+      album.date_end = r_year[1]
       album.url = Util.clean_link(@release.url,cell['href'])
       
-      return false if (album.r_year_begin.empty? || album.url.empty?)
-      
-      album.id = Util.gen_id(album.url)
-      
+      return false if (album.date_begin.empty? || album.url.empty?)
       return true
     end
     
@@ -156,9 +223,9 @@ module UncleKryon
       
       cell = Util.clean_data(cell)
       # For the official site, they always have English, so add it if not present
-      album.r_language = Iso.languages.find_by_kryon(cell,add_english: true)
+      album.languages = Iso.languages.find_by_kryon(cell,add_english: true)
       
-      return false if album.r_language.nil?()
+      return false if album.languages.nil?() || album.languages.empty?()
       return true
     end
     
@@ -167,21 +234,9 @@ module UncleKryon
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
       
-      album.r_location = Iso.find_kryon_locations(cell)
+      album.locations = Iso.find_kryon_locations(cell)
       
-      return false if album.r_location.nil?()
-      
-      # Not used anymore
-      #album.r_location.each_with_index() do |l,i|
-      #  if @training
-      #    @trainers['aum_year'].train(l)
-      #  else
-      #    case @trainers['aum_year'].tag(l)
-      #    when 'USA'
-      #      album.r_location[i] << ', USA'
-      #    end
-      #  end
-      #end
+      return false if album.locations.nil?() || album.locations.empty?()
       
       return true
     end
@@ -198,31 +253,41 @@ module UncleKryon
       return false if cell.nil?
       return false if (cell = cell.content).nil?
       
-      album.r_topic = Util.fix_shortwith_text(Util.clean_data(cell))
+      album.title = Util.fix_shortwith_text(Util.clean_data(cell))
       
       exclude_topics = /
         GROUP[[:space:]]+PHOTO|
         PLEASE[[:space:]]+READ
       /ix
       
-      if album.r_topic =~ exclude_topics
-        log.warn("Excluding topic: #{album.r_topic}")
+      if album.title =~ exclude_topics
+        log.warn("Excluding topic: #{album.title}")
         @exclude_album = true
         return false
       end
       
       # Not used, as there are just a few exclude cases
       #if @training
-      #  @trainers['aum_year_topic'].train(album.r_topic)
+      #  @trainers['aum_year_topic'].train(album.title)
       #else
-      #  case @trainers['aum_year_topic'].tag(album.r_topic)
+      #  case @trainers['aum_year_topic'].tag(album.title)
       #  when 'Ignore'
       #    return false
       #  end
       #end
       
-      return false if album.r_topic.empty?
+      return false if album.title.empty?
       return true
+    end
+    
+    def self.get_kryon_year_url(year)
+      if year == '2002-2005'
+        url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
+      else
+        url = "http://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
+      end
+      
+      return url
     end
   end
 end

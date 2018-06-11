@@ -1,41 +1,54 @@
 ---
 CAN States:
   AB: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Alberta
     code: AB
   BC: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: British Columbia
     code: BC
   MB: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Manitoba
     code: MB
   NB: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: New Brunswick
     code: NB
   NL: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Newfoundland and Labrador
     code: NL
   NS: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Nova Scotia
     code: NS
   NT: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Northwest Territories
     code: NT
   NU: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Nunavut
     code: NU
   'ON': !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Ontario
     code: 'ON'
   PE: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Prince Edward Island
     code: PE
   QC: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Quebec
     code: QC
   SK: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Saskatchewan
     code: SK
   YT: !ruby/object:UncleKryon::CanState
+    updated_on: '2018-06-11 17:29:04'
     name: Yukon
     code: YT

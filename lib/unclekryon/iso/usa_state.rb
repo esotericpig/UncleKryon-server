@@ -24,48 +24,41 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
-require 'unclekryon/iso/iso_base'
+require 'unclekryon/iso/base_iso'
 
 ##
 # @see https://en.wikipedia.org/wiki/ISO_3166-2:US
 # @see https://www.iso.org/obp/ui/#iso:code:3166:US
 ##
 module UncleKryon
-  class UsaState
-    attr_reader :name
-    attr_reader :code
-    
+  class UsaState < BaseIso
     def initialize(row=nil)
-      @name = nil
-      @code = nil
+      super()
       
       if row.is_a?(Array)
-        @name = IsoBase.simplify_name(row[2])
-        @code = IsoBase.simplify_code(row[1])
+        @name = self.class.simplify_name(row[2])
+        @code = self.class.simplify_code(row[1])
       end
-    end
-    
-    def to_s()
-      return "[\"#{@name}\",#{@code}]"
     end
   end
   
-  class UsaStates < IsoBase
+  class UsaStates < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/usa_states.yaml"
-    DEFAULT_ID = 'USA States'
     
     def initialize()
       super()
+      
+      @id = 'USA States'
     end
     
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return UsaStates.new().load_file(filepath,DEFAULT_ID)
+      return UsaStates.new().load_file(filepath)
     end
     
     # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#iso:code:3166:US
-    def self.parse_and_save_filepath(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
       tds = doc.css('td')
       
@@ -95,7 +88,7 @@ module UncleKryon
       end
       
       states.sort_keys!()
-      states.save_file(save_filepath,DEFAULT_ID)
+      states.save_to_file(save_filepath)
     end
   end
 end
@@ -104,7 +97,7 @@ if $0 == __FILE__
   if ARGV.length < 1
     puts UncleKryon::UsaStates.load_file().to_s()
   else
-    UncleKryon::UsaStates.parse_and_save_filepath(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
+    UncleKryon::UsaStates.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
       UncleKryon::UsaStates::DEFAULT_FILEPATH)
   end
 end

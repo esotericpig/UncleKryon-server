@@ -1,173 +1,230 @@
 ---
 USA States:
   AK: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Alaska
     code: AK
   AL: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Alabama
     code: AL
   AR: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Arkansas
     code: AR
   AS: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: American Samoa
     code: AS
   AZ: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Arizona
     code: AZ
   CA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: California
     code: CA
   CO: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Colorado
     code: CO
   CT: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Connecticut
     code: CT
   DC: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: District of Columbia
     code: DC
   DE: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Delaware
     code: DE
   FL: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Florida
     code: FL
   GA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Georgia
     code: GA
   GU: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Guam
     code: GU
   HI: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Hawaii
     code: HI
   IA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Iowa
     code: IA
   ID: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Idaho
     code: ID
   IL: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Illinois
     code: IL
   IN: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Indiana
     code: IN
   KS: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Kansas
     code: KS
   KY: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Kentucky
     code: KY
   LA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Louisiana
     code: LA
   MA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Massachusetts
     code: MA
   MD: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Maryland
     code: MD
   ME: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Maine
     code: ME
   MI: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Michigan
     code: MI
   MN: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Minnesota
     code: MN
   MO: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Missouri
     code: MO
   MP: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Northern Mariana Islands
     code: MP
   MS: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Mississippi
     code: MS
   MT: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Montana
     code: MT
   NC: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: North Carolina
     code: NC
   ND: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: North Dakota
     code: ND
   NE: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Nebraska
     code: NE
   NH: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: New Hampshire
     code: NH
   NJ: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: New Jersey
     code: NJ
   NM: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: New Mexico
     code: NM
   NV: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Nevada
     code: NV
   NY: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: New York
     code: NY
   OH: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Ohio
     code: OH
   OK: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Oklahoma
     code: OK
   OR: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Oregon
     code: OR
   PA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Pennsylvania
     code: PA
   PR: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Puerto Rico
     code: PR
   RI: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Rhode Island
     code: RI
   SC: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: South Carolina
     code: SC
   SD: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: South Dakota
     code: SD
   TN: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Tennessee
     code: TN
   TX: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Texas
     code: TX
   UM: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: United States Minor Outlying Islands
     code: UM
   UT: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Utah
     code: UT
   VA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Virginia
     code: VA
   VI: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Virgin Islands, U.S.
     code: VI
   VT: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Vermont
     code: VT
   WA: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Washington
     code: WA
   WI: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Wisconsin
     code: WI
   WV: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: West Virginia
     code: WV
   WY: !ruby/object:UncleKryon::UsaState
+    updated_on: '2018-06-11 17:31:44'
     name: Wyoming
     code: WY

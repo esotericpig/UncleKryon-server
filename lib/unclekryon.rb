@@ -22,6 +22,7 @@ require 'bundler/setup'
 
 require 'optparse'
 
+require 'unclekryon/dev_opts'
 require 'unclekryon/hacker'
 require 'unclekryon/log'
 require 'unclekryon/server'
@@ -70,14 +71,14 @@ module UncleKryon
         EOS
         
         op.on('-d','--dev','Raise errors on missing data, etc.') do
-          Log.instance.dev = true
+          DevOpts.instance.dev = true
         end
         op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console') do
           @options[:no_clobber] = true
         end
         op.on('-h','--help','Print help to console')
         op.on('-t','--test','Fill in training data with random values, etc. for fast testing') do
-          Log.instance.test = true
+          DevOpts.instance.test = true
         end
         op.on('-v','--version','Print version to console')
       end

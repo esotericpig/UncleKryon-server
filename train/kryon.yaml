@@ -3,16 +3,16 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
   max_tag_id_length: 6
   max_tag_length: -15
   tags:
-    altt: album_title
     alds: album_dates
-    allo: album_location
+    altt: album_title
+    allo: album_locations
     almi: album_mini_desc
     alma: album_main_desc
     aust: aum_subtitle
-    aulg: aum_language
+    aulg: aum_languages
     autt: aum_title
-    autm: aum_time
-    ausz: aum_size
+    autm: aum_timespan
+    ausz: aum_filesize
     aufn: aum_filename
     audu: dump
     i: ignore

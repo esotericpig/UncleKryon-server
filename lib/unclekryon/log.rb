@@ -57,16 +57,7 @@ module UncleKryon
   class Log < UncleKryonLogger
     include Singleton
     
-    attr_accessor :dev
-    attr_accessor :test
-    
-    alias_method :dev?,:dev
-    alias_method :test?,:test
-    
-    def initialize()
-      @dev = false
-      @test = false
-    end
+    # Do NOT define vars here; had problems with @dev/@test breaking this class
   end
   
   # Mixin for class use

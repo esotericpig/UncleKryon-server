@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,45 +18,27 @@
 # along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
-require 'unclekryon/data/base_data'
+require 'date'
+
+require 'unclekryon/util'
 
 module UncleKryon
-  class PicData < BaseData
-    attr_accessor :name
-    attr_accessor :filename
-    
-    attr_accessor :url
-    attr_accessor :mirrors
+  class BaseData
+    attr_accessor :updated_on
     
     def initialize()
-      super()
-      
-      @name = ''
-      @filename = ''
-      
-      @url = ''
-      @mirrors = {}
+      update()
     end
     
-    # Excludes @updated_on
-    def ==(y)
-      return @name == y.name &&
-             @filename == y.filename &&
-             @url == y.url &&
-             @mirrors == y.mirrors
+    def initialize_copy(original)
+      super(original)
+      
+      @updated_on = @updated_on.clone()
     end
     
-    def to_s()
-      s = ''
-      
-      if @name.empty?() || @name.strip().empty?()
-        s << ('%-100s' % [@url])
-      else
-        s << ('%-30s' % [@name])
-        s << (' | %30s' % [@filename]) unless @name == @filename
-      end
-      
-      return s
+    def update()
+      @updated_on = Util.format_datetime(DateTime.now())
+      return @updated_on
     end
   end
 end

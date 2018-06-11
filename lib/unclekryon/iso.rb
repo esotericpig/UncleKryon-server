@@ -20,8 +20,13 @@
 
 require 'bundler/setup'
 
-require 'unclekryon/log'
+require 'yaml'
 
+require 'unclekryon/dev_opts'
+require 'unclekryon/log'
+require 'unclekryon/util'
+
+require 'unclekryon/iso/base_iso'
 require 'unclekryon/iso/can_state'
 require 'unclekryon/iso/continent'
 require 'unclekryon/iso/country'
@@ -29,12 +34,28 @@ require 'unclekryon/iso/language'
 require 'unclekryon/iso/usa_state'
 
 module UncleKryon
-  module Iso
+  class Iso
+    DEFAULT_FILEPATH = "#{BaseIsos::DEFAULT_DIR}/iso.yaml"
+    DEFAULT_ID = 'ISO'
+    
     @@can_states = nil
     @@continents = nil
     @@countries = nil
+    @@iso = nil
     @@languages = nil
     @@usa_states = nil
+    
+    attr_accessor :updated_can_states_on
+    attr_accessor :updated_continents_on
+    attr_accessor :updated_countries_on
+    attr_accessor :updated_languages_on
+    attr_accessor :updated_usa_states_on
+    
+    def initialize()
+      super()
+      
+      update_all()
+    end
     
     def self.can_states()
       if !@@can_states
@@ -76,12 +97,12 @@ module UncleKryon
         country = countries().find_by_name(last) # By name because e.g. code CO is Colorado and Colombia
         continent = nil
         
-        parse_country = true
+        parse_state = true
         state_i = parts.length() - 1
         
         # USA state?
         if country.nil?()
-          parse_country = false
+          parse_state = false
           state = usa_states().find(last)
           
           if state.nil?() && !last2.nil?()
@@ -114,7 +135,7 @@ module UncleKryon
                 if continent.nil?()
                   msg = %Q(No state/country/continent: "#{text}","#{t}","#{last}")
                   
-                  if Log.instance.dev?()
+                  if DevOpts.instance.dev?()
                     raise msg
                   else
                     log.warn(msg)
@@ -125,7 +146,7 @@ module UncleKryon
                 end
               else
                 country = country.code
-                parse_country = true unless state_i == 0
+                parse_state = true unless state_i == 0
               end
             else
               state = state.code
@@ -141,15 +162,30 @@ module UncleKryon
         
         if continent.nil?()
           # Not USA
-          if parse_country
+          if parse_state
             if parts.length() >= 2
               state = parts[-2].gsub(/[[:space:]]+/,' ').strip()
               
-              if state.length() == 2
-                state = state.upcase()
-                state_i = parts.length() - 2
+              # CAN state?
+              if country == countries().find_by_code('CAN').code
+                state = can_states().find(state)
+                
+                if state.nil?()
+                  if parts.length() >= 3
+                    state = can_states().find_by_name(parts[-3] + parts[-2])
+                    state_i = parts.length() - 3 unless state.nil?()
+                  end
+                else
+                  state = state.code
+                  state_i = parts.length() - 2
+                end
               else
-                state = nil
+                if state.length() == 2
+                  state = state.upcase()
+                  state_i = parts.length() - 2
+                else
+                  state = nil
+                end
               end
             end
           end
@@ -169,7 +205,14 @@ module UncleKryon
         locs.push(loc.join(',')) unless loc.compact().empty?()
       end
       
-      return locs.empty?() ? nil : locs.join(';')
+      return locs.empty?() ? nil : locs
+    end
+    
+    def self.iso()
+      if !@@iso
+        @@iso = Iso.load_file()
+      end
+      return @@iso
     end
     
     def self.languages()
@@ -179,11 +222,51 @@ module UncleKryon
       return @@languages
     end
     
+    def self.load_file(filepath=DEFAULT_FILEPATH)
+      y = YAML.load_file(filepath)
+      iso = y[DEFAULT_ID]
+      return iso
+    end
+    
+    def save_to_file(filepath=DEFAULT_FILEPATH)
+      File.open(filepath,'w') do |f|
+        iso = {DEFAULT_ID=>self}
+        YAML.dump(iso,f)
+      end
+    end
+    
+    def update(isos)
+      max = nil
+      isos.values.each() do |k,v|
+        vuo = Util.parse_datetime_s(v.updated_on)
+        max = vuo if max.nil?() || vuo > max
+      end
+      return Util.format_datetime(max)
+    end
+    
+    def update_all()
+      @updated_can_states_on = update(self.class.can_states)
+      @updated_continents_on = update(self.class.continents)
+      @updated_countries_on = update(self.class.countries)
+      @updated_languages_on = update(self.class.languages)
+      @updated_usa_states_on = update(self.class.usa_states)
+    end
+    
     def self.usa_states()
       if !@@usa_states
         @@usa_states = UsaStates.load_file()
       end
       return @@usa_states
+    end
+    
+    def to_s()
+      s = 'Updated On:'
+      s << "\n- CAN States: #{@updated_can_states_on}"
+      s << "\n- Continents: #{@updated_continents_on}"
+      s << "\n- Countries:  #{@updated_countries_on}"
+      s << "\n- Languages:  #{@updated_languages_on}"
+      s << "\n- USA States: #{@updated_usa_states_on}"
+      return s
     end
   end
 end
@@ -194,4 +277,5 @@ if $0 == __FILE__
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.usa_states['AL']
+  puts UncleKryon::Iso.iso
 end

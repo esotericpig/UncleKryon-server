@@ -20,27 +20,19 @@
 
 require 'bundler/setup'
 
-require 'unclekryon/iso/iso_base'
+require 'unclekryon/iso/base_iso'
 
 ##
 # @see https://en.wikipedia.org/wiki/Continent
 ##
 module UncleKryon
-  class Continent
-    attr_reader :name
-    attr_reader :code
-    
+  class Continent < BaseIso
     def initialize()
-      @name = nil
-      @code = nil
-    end
-    
-    def to_s()
-      return %Q(["#{@name}",#{@code}])
+      super()
     end
   end
   
-  class Continents < IsoBase
+  class Continents < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/continents.yaml"
     
     def initialize()
