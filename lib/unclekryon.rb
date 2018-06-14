@@ -103,16 +103,16 @@ module UncleKryon
             Examples:
             |    <hax>:
             |    # Train the data 1st before haxing (if there is no training data)
-            |    $ #{parser.program_name} hax -t kryon aum year -t 2017 -s
-            |    $ #{parser.program_name} hax -t kryon aum year -t 2017 -a 2.2
+            |    $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -s
+            |    $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -a 2.2
             |    
             |    # Hax the data (even though --title is not required, it is recommended)
-            |    $ #{parser.program_name} hax kryon aum year -t 2017 -s
-            |    $ #{parser.program_name} hax kryon aum year -t 2017 -a 10.9
-            |    $ #{parser.program_name} hax kryon aum year -a 2017.9.29
+            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -s
+            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 10.9
+            |    $ #{parser.program_name} -d hax kryon aum year -a 2017.9.29
             |    
             |    # Hax the 2nd "6.4" album (if there are 2)
-            |    $ #{parser.program_name} hax kryon aum year -t 2017 -a 6.4:2
+            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 6.4:2
           EOS
           puts s.gsub(/^\|/,'')
         end
