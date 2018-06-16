@@ -12,7 +12,7 @@ Artist: !ruby/object:UncleKryon::ArtistData
   
   facebook: !ruby/object:UncleKryon::SocialData
     username: 'KryonLeeCarroll'
-    url: 'https://www.facebook.com/KryonLeeCarroll/'
+    url: 'https://www.facebook.com/KryonLeeCarroll'
   twitter: !ruby/object:UncleKryon::SocialData
     username: 'KryonLeeCarroll'
     url: 'https://twitter.com/kryonleecarroll'
