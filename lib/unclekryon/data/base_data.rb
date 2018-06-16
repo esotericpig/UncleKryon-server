@@ -40,5 +40,22 @@ module UncleKryon
       @updated_on = Util.format_datetime(DateTime.now())
       return @updated_on
     end
+    
+    def self.max_updated_on(data)
+      max = nil
+      
+      if data.is_a?(Hash)
+        data.each() do |k,v|
+          vuo = Util.parse_datetime_s(v.updated_on)
+          max = vuo if max.nil?() || vuo > max
+        end
+      end
+      
+      return max
+    end
+    
+    def self.max_updated_on_s(data)
+      return Util.format_datetime(max_updated_on(data))
+    end
   end
 end

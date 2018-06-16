@@ -197,6 +197,10 @@ module UncleKryon
       r = URI.unescape(r)
       return r.strip()
     end
+    
+    def self.safe_max(a,b)
+      return a.nil?() ? b : (b.nil?() ? a : ((a > b) ? a : b))
+    end
   end
 end
 

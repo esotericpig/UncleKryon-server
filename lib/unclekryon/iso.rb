@@ -26,6 +26,8 @@ require 'unclekryon/dev_opts'
 require 'unclekryon/log'
 require 'unclekryon/util'
 
+require 'unclekryon/data/base_data'
+
 require 'unclekryon/iso/base_iso'
 require 'unclekryon/iso/can_state'
 require 'unclekryon/iso/continent'
@@ -235,21 +237,12 @@ module UncleKryon
       end
     end
     
-    def update(isos)
-      max = nil
-      isos.values.each() do |k,v|
-        vuo = Util.parse_datetime_s(v.updated_on)
-        max = vuo if max.nil?() || vuo > max
-      end
-      return Util.format_datetime(max)
-    end
-    
     def update_all()
-      @updated_can_states_on = update(self.class.can_states)
-      @updated_continents_on = update(self.class.continents)
-      @updated_countries_on = update(self.class.countries)
-      @updated_languages_on = update(self.class.languages)
-      @updated_usa_states_on = update(self.class.usa_states)
+      @updated_can_states_on = BaseData.max_updated_on_s(self.class.can_states.values)
+      @updated_continents_on = BaseData.max_updated_on_s(self.class.continents.values)
+      @updated_countries_on = BaseData.max_updated_on_s(self.class.countries.values)
+      @updated_languages_on = BaseData.max_updated_on_s(self.class.languages.values)
+      @updated_usa_states_on = BaseData.max_updated_on_s(self.class.usa_states.values)
     end
     
     def self.usa_states()

@@ -1,6 +1,5 @@
 ---
 ArtistAums:
-  updated_on: '2018-06-12 02:33:24'
   Releases:
     '2017': !ruby/object:UncleKryon::ReleaseData
       updated_on: '2018-06-12 02:33:24'

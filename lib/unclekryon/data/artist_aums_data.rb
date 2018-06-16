@@ -28,8 +28,11 @@ require 'unclekryon/data/kryon_aum_data'
 require 'unclekryon/data/pic_data'
 require 'unclekryon/data/release_data'
 
+###
+# Don't extend BaseData, as updated_aums_on is stored in ArtistData.
+###
 module UncleKryon
-  class ArtistAumsData < BaseData
+  class ArtistAumsData
     attr_accessor :releases
     attr_accessor :albums
     attr_accessor :aums
@@ -50,7 +53,6 @@ module UncleKryon
       
       artist_aums = ArtistAumsData.new()
       Util.hash_def(filedata,['ArtistAums'],{})
-      artist_aums.updated_on = Util.hash_def(filedata,['ArtistAums','updated_on'],artist_aums.updated_on)
       artist_aums.releases = Util.hash_def(filedata,['ArtistAums','Releases'],artist_aums.releases)
       artist_aums.albums = Util.hash_def(filedata,['ArtistAums','Albums'],artist_aums.albums)
       artist_aums.aums = Util.hash_def(filedata,['ArtistAums','Aums'],artist_aums.aums)
@@ -63,7 +65,6 @@ module UncleKryon
       raise "Empty filepath: #{filepath}" if filepath.nil?() || (filepath = filepath.strip()).empty?()
       
       filedata = {'ArtistAums'=>{}}
-      filedata['ArtistAums']['updated_on'] = @updated_on
       filedata['ArtistAums']['Releases'] = @releases
       filedata['ArtistAums']['Albums'] = @albums
       filedata['ArtistAums']['Aums'] = @aums
@@ -76,24 +77,11 @@ module UncleKryon
     end
     
     def max_updated_on()
-      max = Util.parse_datetime_s(@updated_on)
-      
-      @releases.each() do |k,v|
-        vuo = Util.parse_datetime_s(v.updated_on)
-        max = vuo if vuo > max
-      end
-      @albums.each() do |k,v|
-        vuo = Util.parse_datetime_s(v.updated_on)
-        max = vuo if vuo > max
-      end
-      @aums.each() do |k,v|
-        vuo = Util.parse_datetime_s(v.updated_on)
-        max = vuo if vuo > max
-      end
-      @pics.each() do |k,v|
-        vuo = Util.parse_datetime_s(v.updated_on)
-        max = vuo if vuo > max
-      end
+      max = nil
+      max = Util.safe_max(max,BaseData.max_updated_on(@releases))
+      max = Util.safe_max(max,BaseData.max_updated_on(@albums))
+      max = Util.safe_max(max,BaseData.max_updated_on(@aums))
+      max = Util.safe_max(max,BaseData.max_updated_on(@pics))
       
       return Util.format_datetime(max)
     end
@@ -109,17 +97,14 @@ module UncleKryon
       @releases.each() do |k,v|
         s << "  - " << v.to_s(mini).gsub("\n","\n    ") << "\n"
       end
-      
       s << "- Albums:\n"
       @albums.each() do |k,v|
         s << "  - " << v.to_s(mini).gsub("\n","\n    ") << "\n"
       end
-      
       s << "- Aums:\n"
       @aums.each() do |k,v|
         s << "  - #{v.to_s()}\n"
       end
-      
       s << "- Pics:\n"
       @pics.each() do |k,v|
         s << "  - #{v.to_s()}\n"
