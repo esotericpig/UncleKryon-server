@@ -136,10 +136,10 @@ module UncleKryon
         @release.url = @url
         
         @artist.releases[@title] = @release
-        @artist.updated_on = @updated_on
       end
       
       doc = Nokogiri::HTML(open(@release.url),nil,'utf-8') # Force utf-8 encoding
+      row_pos = 1
       rows = doc.css('table tr tr')
       
       rows.each() do |row|
@@ -150,53 +150,47 @@ module UncleKryon
         album.updated_on = @updated_on
         @exclude_album = false
         
-        # There is always a year cell
-        if !parse_year_cell(cells,album)
-          # Try to get the topic for log
-          if cells.length >= 3
-            if !(t = cells[2]).nil?()
-              if !(t = t.content).nil?()
-                log.warn("Excluding year: #{t}")
-              end
-            end
+        # There is always a date cell
+        has_date_cell = parse_date_cell(cells,album)
+        
+        # Sometimes there is not a topic, location, or language cell, but not all 3!
+        # - Put || last because of short-circuit ||!
+        # - For some reason, "or" does not work (even though it is supposed to be non-short-circuit)
+        has_other_cell = parse_topic_cell(cells,album)
+        has_other_cell = parse_location_cell(cells,album) || has_other_cell
+        has_other_cell = parse_language_cell(cells,album) || has_other_cell
+        
+        if !has_date_cell || !has_other_cell || @exclude_album
+          # - If it doesn't have any cells, it is probably javascript or something else, so don't log it
+          # - If @exclude_album, then it has already been logged, so don't log it
+          if (!has_date_cell && has_other_cell) || (has_date_cell && !@exclude_album)
+            log.warn("Excluding album: #{row_pos},#{album.date_begin},#{album.date_end},#{album.title}," <<
+              "#{album.locations},#{album.languages}")
+            row_pos += 1
           end
           
           next
         end
         
-        # Sometimes there is not a topic, location, or language cell, but not all 3!
-        # - Put next_row last because of short-circuit &&!
-        # - For some reason, "and" does not work (even though it is supposed to be non-short-circuit)
-        next_row = !parse_topic_cell(cells,album)
-        next_row = !parse_location_cell(cells,album) && next_row
-        next_row = !parse_language_cell(cells,album) && next_row
-        
-        next if @exclude_album
-        if next_row
-          log.warn("Excluding album: #{album.date_begin},#{album.date_end},#{album.title}," <<
-            "#{album.locations},#{album.languages}")
-          next
-        end
-        
-        # Is it actually new?
+        # Is it actually old or new?
         if @artist.albums.key?(album.url) && album == @artist.albums[album.url]
           album.updated_on = @artist.albums[album.url].updated_on
-        else
-          @artist.updated_on = @updated_on
         end
         
         @artist.albums[album.url] = album
         
         if !@release.albums.include?(album.url)
           @release.albums.push(album.url)
-          @artist.updated_on = @updated_on
+          @release.updated_on = @updated_on
         end
+        
+        row_pos += 1
       end
       
       return @release
     end
     
-    def parse_year_cell(cells,album)
+    def parse_date_cell(cells,album)
       # Get url from date because sometimes there is not a topic
       
       return false if cells.length <= 1
@@ -207,9 +201,9 @@ module UncleKryon
       return false if cell.content.nil?
       return false if cell['href'].nil?
       
-      r_year = self.class.parse_kryon_date(Util.clean_data(cell.content),@title)
-      album.date_begin = r_year[0]
-      album.date_end = r_year[1]
+      r_date = self.class.parse_kryon_date(Util.clean_data(cell.content),@title)
+      album.date_begin = r_date[0]
+      album.date_end = r_date[1]
       album.url = Util.clean_link(@release.url,cell['href'])
       
       return false if (album.date_begin.empty? || album.url.empty?)
@@ -251,9 +245,9 @@ module UncleKryon
       cell = (cell.length <= 1) ? cell.first : cell.pop
       
       return false if cell.nil?
-      return false if (cell = cell.content).nil?
+      return false if cell.content.nil?
       
-      album.title = Util.fix_shortwith_text(Util.clean_data(cell))
+      album.title = Util.fix_shortwith_text(Util.clean_data(cell.content))
       
       exclude_topics = /
         GROUP[[:space:]]+PHOTO|
@@ -261,20 +255,33 @@ module UncleKryon
       /ix
       
       if album.title =~ exclude_topics
-        log.warn("Excluding topic: #{album.title}")
+        log.warn("Excluding album: Topic[#{album.title}]")
         @exclude_album = true
         return false
       end
       
-      # Not used, as there are just a few exclude cases
-      #if @training
-      #  @trainers['aum_year_topic'].train(album.title)
-      #else
-      #  case @trainers['aum_year_topic'].tag(album.title)
-      #  when 'Ignore'
-      #    return false
-      #  end
-      #end
+      # See 2016 'Las Vegas, NV - "Numerology" - (3)' where the date cell's href is an image
+      good_urls = /
+        \.html?[[:space:]]*\z
+      /ix
+      
+      if album.url !~ good_urls
+        bad_url = album.url
+        album.url = Util.clean_link(@release.url,cell['href'])
+        log.warn("Using topic cell's href for URL: #{bad_url}=>#{album.url}")
+        
+        if Util.empty_s?(album.url)
+          msg = "Date and topic cells' hrefs are empty: Topic[#{album.title}]"
+          
+          if DevOpts.dev?()
+            raise msg
+          else
+            log.warn(msg)
+          end
+          
+          return false
+        end
+      end
       
       return false if album.title.empty?
       return true
