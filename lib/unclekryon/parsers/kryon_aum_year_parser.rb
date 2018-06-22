@@ -268,12 +268,12 @@ module UncleKryon
       if album.url !~ good_urls
         bad_url = album.url
         album.url = Util.clean_link(@release.url,cell['href'])
-        log.warn("Using topic cell's href for URL: #{bad_url}=>#{album.url}")
+        log.warn("Using topic cell's href for URL: #{File.basename(bad_url)}=>#{File.basename(album.url)}")
         
         if Util.empty_s?(album.url)
           msg = "Date and topic cells' hrefs are empty: Topic[#{album.title}]"
           
-          if DevOpts.dev?()
+          if DevOpts.instance.dev?()
             raise msg
           else
             log.warn(msg)

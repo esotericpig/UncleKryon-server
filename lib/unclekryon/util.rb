@@ -24,6 +24,7 @@ require 'uri'
 
 require 'net/http'
 
+require 'unclekryon/dev_opts'
 require 'unclekryon/log'
 
 module UncleKryon
@@ -90,7 +91,7 @@ module UncleKryon
       end
       
       # 4th, handle no path
-      if link !~ /#{url}/i
+      if link !~ /#{get_top_link(url)}/i
         link = url + link
       end
       
@@ -121,16 +122,17 @@ module UncleKryon
     end
     
     def self.get_top_link(url)
-      http_regex = /\A(http\s?\:)|(\.)/i # Check '.' to prevent infinite loop
-      prev_link = url
+      raise "No top link: #{url}" if DevOpts.instance.dev?() && url !~ /\Ahttps?\:/i
       
-      i = 100 # Prevent infinite loop (maybe raise an exception?)
+      http_regex = /\Ahttps?\:|\A\./i # Check '.' to prevent infinite loop
       
-      while (next_link = File.dirname(prev_link)) !~ http_regex && (i -= 1) >= 0
-        prev_link = next_link
+      while File.basename(File.dirname(url)) !~ http_regex
+        url = File.dirname(url).strip()
+        
+        break if url == '.' || url.empty?()
       end
       
-      return add_trail_slash(prev_link)
+      return add_trail_slash(url)
     end
     
     def self.get_url_header_data(url)
