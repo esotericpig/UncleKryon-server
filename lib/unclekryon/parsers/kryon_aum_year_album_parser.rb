@@ -116,7 +116,6 @@ module UncleKryon
       
       if old_album.nil?()
         @artist.albums[@url] = @album
-        @artist.updated_on = @updated_on
       end
       
       parse_dump(doc,@album) # Must be first because other methods rely on @local_dump
@@ -128,8 +127,6 @@ module UncleKryon
       
       if @album == old_album
         @album.updated_on = old_album.updated_on
-      else
-        @artist.updated_on = @updated_on
       end
       
       @artist.albums[@url] = @album
@@ -215,8 +212,6 @@ module UncleKryon
         # Is it actually new?
         if @artist.aums.key?(aum.url) && aum == @artist.aums[aum.url]
           aum.updated_on = @artist.aums[aum.url].updated_on
-        else
-          @artist.updated_on = @updated_on
         end
         
         @artist.aums[aum.url] = aum
@@ -224,8 +219,6 @@ module UncleKryon
         if !album.aums.include?(aum.url)
           album.aums.push(aum.url)
           album.updated_on = @updated_on
-          
-          @artist.updated_on = @updated_on
         end
       end
     end
@@ -451,8 +444,6 @@ module UncleKryon
         # Is it actually new?
         if @artist.pics.key?(pic.url) && pic == @artist.pics[pic.url]
           pic.updated_on = @artist.pics[pic.url].updated_on
-        else
-          @artist.updated_on = @updated_on
         end
         
         @artist.pics[pic.url] = pic
@@ -460,8 +451,6 @@ module UncleKryon
         if !album.pics.include?(pic.url)
           album.pics.push(pic.url)
           album.updated_on = @updated_on
-          
-          @artist.updated_on = @updated_on
         end
       end
     end
