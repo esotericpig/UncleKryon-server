@@ -38,7 +38,7 @@ require 'unclekryon/iso/usa_state'
 module UncleKryon
   class Iso
     DEFAULT_FILEPATH = "#{BaseIsos::DEFAULT_DIR}/iso.yaml"
-    DEFAULT_ID = 'ISO'
+    ID = 'ISO'
     
     @@can_states = nil
     @@continents = nil
@@ -226,13 +226,13 @@ module UncleKryon
     
     def self.load_file(filepath=DEFAULT_FILEPATH)
       y = YAML.load_file(filepath)
-      iso = y[DEFAULT_ID]
+      iso = y[ID]
       return iso
     end
     
     def save_to_file(filepath=DEFAULT_FILEPATH)
       File.open(filepath,'w') do |f|
-        iso = {DEFAULT_ID=>self}
+        iso = {ID=>self}
         YAML.dump(iso,f)
       end
     end

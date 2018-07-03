@@ -1,5 +1,5 @@
 ---
-ArtistAums:
+ArtistData:
   Releases:
     '2017': !ruby/object:UncleKryon::ReleaseData
       updated_on: '2018-06-12 02:33:24'
@@ -79,6 +79,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Boulder-mini-SUN-17.mp3
       - http://audio.kryon.com/en/Boulder-dual-SUN-17.mp3
       - http://audio.kryon.com/en/Boulder-main-SUN-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - BOULDER COLORADO 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_San%20Jose_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -100,6 +102,8 @@ ArtistAums:
       - http://audio.kryon.com/en/San%20Jose-Sat-Mini.mp3
       - http://audio.kryon.com/en/San%20Jose-Sat-Main-17.mp3
       - http://audio.kryon.com/en/San%20Jose-Sunday%20main-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - San Jose, California
     http://www.kryon.com/cartprodimages/2017%20downloads/download_saltlake_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -120,6 +124,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20mini.mp3
       - http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20main.mp3
+      scrolls: []
+      visions: []
       dump:
       - SALT LAKE CITY, UTAH
     http://www.kryon.com/cartprodimages/2017%20downloads/download_egypt_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -175,6 +181,8 @@ ArtistAums:
       - http://audio.kryon.com/en/15.EGYPT-Sphinx.mp3
       - http://audio.kryon.com/en/16.EGYPT-Kings%20chamber.mp3
       - http://audio.kryon.com/en/17.EGYPT-Closing.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_petra_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -201,6 +209,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Petra-03.mp3
       - http://audio.kryon.com/en/Petra-04.mp3
       - http://audio.kryon.com/en/Petra-05.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Tucson_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -221,6 +231,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Tucson-17-mini.mp3
       - http://audio.kryon.com/en/Tucson-17-main.mp3
       - http://audio.kryon.com/en/Tucson-17-Sunday.mp3
+      scrolls: []
+      visions: []
       dump:
       - Tucson, Arizona
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Boston_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -243,6 +255,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Boston-17-mini.mp3
       - http://audio.kryon.com/en/Boston-17-Main.mp3
       - http://audio.kryon.com/en/Boston-17-Day%202.mp3
+      scrolls: []
+      visions: []
       dump:
       - Boston, Massachusetts
     http://www.kryon.com/cartprodimages/2017%20downloads/download_vancouver_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -266,6 +280,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Vancouver-17-Dual%20Channelling.mp3
       - http://audio.kryon.com/en/Vancouver-17-Unexpected%20Change.mp3
       - http://audio.kryon.com/en/Vancouver-17-Story%20of%20baby%20Lyla.mp3
+      scrolls: []
+      visions: []
       dump:
       - Vancouver, BC, Canada
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Kansas_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -288,6 +304,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Kansas-UNITY-17-mini.mp3
       - http://audio.kryon.com/en/Kansas-UNITY-17-Dual.mp3
       - http://audio.kryon.com/en/Kansas-UNITY-17-Sunday.mp3
+      scrolls: []
+      visions: []
       dump:
       - Unity Village - [Kansas City], Missouri
     http://www.kryon.com/cartprodimages/2017%20downloads/download_regina_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -309,6 +327,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Regina-mini-2017.mp3
       - http://audio.kryon.com/en/Regina-notready-17.mp3
       - http://audio.kryon.com/en/Regina-thecelebrity-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - Regina, SK, Canada
     http://www.kryon.com/cartprodimages/2017%20downloads/download_mv_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -354,6 +374,8 @@ ArtistAums:
       - http://audio.kryon.com/en/MV-9.mp3
       - http://audio.kryon.com/en/MV-10.mp3
       - http://audio.kryon.com/en/MV-11.mp3
+      scrolls: []
+      visions: []
       dump:
       - MONUMENT VALLEY
     http://www.kryon.com/cartprodimages/2017%20downloads/download_ireland_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -392,6 +414,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Ireland%2009.mp3
       - http://audio.kryon.com/en/Ireland%2010.mp3
       - http://audio.kryon.com/en/Ireland%2011.mp3
+      scrolls: []
+      visions: []
       dump:
       - KRYON IRELAND TOUR 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_dublin_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -412,6 +436,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Dublin-1.mp3
       - http://audio.kryon.com/en/Dublin-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - DUBLIN - IRELAND
     http://www.kryon.com/cartprodimages/2017%20downloads/download_glendalough_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -432,6 +458,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Excursion-1.mp3
       - http://audio.kryon.com/en/Excursion-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - GLENDALOUGH - IRELAND
     http://www.kryon.com/cartprodimages/2017%20downloads/download_amsterdam-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -455,6 +483,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Holland%20Chan%202.mp3
       - http://audio.kryon.com/en/Holland%20Chan%203.mp3
       - http://audio.kryon.com/en/Holland%20Chan%204.mp3
+      scrolls: []
+      visions: []
       dump:
       - AMSTERDAM, HOLLAND
     http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-seminar-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -481,6 +511,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Italy-conference-1.mp3
       - http://audio.kryon.com/en/Italy-conference-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - PISA ITALY
     http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-excursion_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -505,6 +537,8 @@ ArtistAums:
       - http://audio.kryon.com/en/ITALY%20-%20EXCURSION%201.mp3
       - http://audio.kryon.com/en/ITALY%20-%20EXCURSION%202.mp3
       - http://audio.kryon.com/en/ITALY%20-%20EXCURSION%204.mp3
+      scrolls: []
+      visions: []
       dump:
       - Tuscany, Italy - EXCURSION
     http://www.kryon.com/cartprodimages/2017%20downloads/download_israel-1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -529,6 +563,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Israel-opera-2.mp3
       - http://audio.kryon.com/en/Habima-1(saved).mp3
       - http://audio.kryon.com/en/Habima-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - TEL AVIV - ISRAEL
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Geneva-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -558,6 +594,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Geneva3.mp3
       - http://audio.kryon.com/en/Geneva4.mp3
       - http://audio.kryon.com/en/Geneva5.mp3
+      scrolls: []
+      visions: []
       dump:
       - GENEVA - SWITZERLAND
     http://www.kryon.com/cartprodimages/2017%20downloads/download_chamonixchoir-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -581,6 +619,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/CHOIR%20PART%20ONE.mp3
       - http://audio.kryon.com/en/CHOIR%20PART%20TWO.mp3
+      scrolls: []
+      visions: []
       dump:
       - QUANTUM CHOIR CHANNELLING
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Chamonix-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -603,6 +643,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/CHAMONIX1.mp3
       - http://audio.kryon.com/en/CHAMONIX2.mp3
+      scrolls: []
+      visions: []
       dump:
       - CHAMONIX FRANCE
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Blanc-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -626,6 +668,8 @@ ArtistAums:
       - http://www.kryon.com/cartprodimages/2017%20downloads/chamonixgraphics/image7.jpg
       aums:
       - http://audio.kryon.com/en/BLANC.mp3
+      scrolls: []
+      visions: []
       dump:
       - MOUNT BLANC EXCURSION
     http://www.kryon.com/cartprodimages/2017%20downloads/download_SLC-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -658,6 +702,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20trio(MPK).mp3
       - http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20end.mp3
       - http://audio.kryon.com/en/Channellingworkshop.mp3
+      scrolls: []
+      visions: []
       dump:
       - BIG SKY MONTANA & YELLOWSTONE
     http://www.kryon.com/cartprodimages/2017%20downloads/download_panel-SLC_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -681,6 +727,8 @@ ArtistAums:
       - http://www.kryon.com/cartprodimages/2017%20downloads/Yellowstone%20graphics/Panel.jpg
       aums:
       - http://audio.kryon.com/en/Yellowstone%20panel.mp3
+      scrolls: []
+      visions: []
       dump:
       - 20th Kryon Summer Light Conference Panel of speakers
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville-ex-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -705,6 +753,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Asheville17-Excursion-one.mp3
       - http://audio.kryon.com/en/Asheville17-Excursion-two.mp3
+      scrolls: []
+      visions: []
       dump:
       - ASHEVILLE, NC EXCURSION
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -726,6 +776,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Asheville17-Saturday-mini.mp3
       - http://audio.kryon.com/en/Asheville17-Saturday-main.mp3
       - http://audio.kryon.com/en/Asheville17-Sunday-main.mp3
+      scrolls: []
+      visions: []
       dump:
       - Asheville, North Carolina
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Buffalo_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -747,6 +799,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Saturday-buff-17-mini.mp3
       - http://audio.kryon.com/en/Saturday-buff-17-Main.mp3
       - http://audio.kryon.com/en/Sunday-buff-17-Main.mp3
+      scrolls: []
+      visions: []
       dump:
       - Buffalo, New York
     http://www.kryon.com/cartprodimages/2017%20downloads/download_laguna_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -767,6 +821,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Saturday-laguna-17.mp3
       - http://audio.kryon.com/en/Sunday-laguna-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - LAGUNA HILLS, CALIFORNIA
     http://www.kryon.com/cartprodimages/2017%20downloads/download_minneapolis_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -788,6 +844,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Minnesota-SAT-dual.mp3
       - http://audio.kryon.com/en/Minnesota-SAT-main.mp3
       - http://audio.kryon.com/en/Minnesota-SUN-main.mp3
+      scrolls: []
+      visions: []
       dump:
       - Minneapolis, Minnesota
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Alaska-Cruise-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -812,6 +870,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Alaska%20Cruise%2004.mp3
       - http://audio.kryon.com/en/Alaska%20Cruise%2005.mp3
       - http://audio.kryon.com/en/Alaska%20Cruise%2006.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Stamford_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -833,6 +893,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Stamford-2017-day%20one%20dual.mp3
       - http://audio.kryon.com/en/Stamford-2017-day%20one%20main.mp3
       - http://audio.kryon.com/en/Stamford-2017-Day%20two.mp3
+      scrolls: []
+      visions: []
       dump:
       - Stamford, Connecticut
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Discovery-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -859,6 +921,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Discovery%20channelling%204.mp3
       - http://audio.kryon.com/en/Discovery%20channelling%205.mp3
       - http://audio.kryon.com/en/Discovery(footwashing)6.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_germany-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -885,6 +949,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Male-isle-eng.mp3
       - http://audio.kryon.com/en/Female-isle-eng.mp3
       - http://audio.kryon.com/en/Boat-4-eng.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_lisbon-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -906,6 +972,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Lisbon-1.mp3
       - http://audio.kryon.com/en/Lisbon-2.mp3
       - http://audio.kryon.com/en/Lisbon-3.mp3
+      scrolls: []
+      visions: []
       dump:
       - LISBON, PORTUGAL 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_fatima-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -928,6 +996,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Fatima-1.mp3
       - http://audio.kryon.com/en/Fatima-2.mp3
+      scrolls: []
+      visions: []
       dump: []
     http://www.kryon.com/cartprodimages/2017%20downloads/download_porto1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
       updated_on: '2018-06-12 02:33:24'
@@ -947,6 +1017,8 @@ ArtistAums:
       - http://www.kryon.com/cartprodimages/2017%20downloads/porto-end.jpg
       aums:
       - http://audio.kryon.com/en/Porto-1.mp3
+      scrolls: []
+      visions: []
       dump:
       - PORTO, PORTUGAL 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_porto2-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -969,6 +1041,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Porto%202-1.mp3
       - http://audio.kryon.com/en/Porto%202-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - PORTO, PORTUGAL 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_madrid-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -990,6 +1064,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Madrid-1.mp3
       - http://audio.kryon.com/en/Madrid-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - MADRID SPAIN 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1029,6 +1105,8 @@ ArtistAums:
       - http://audio.kryon.com/en/INDIA%20-%20Delhi3.mp3
       - http://audio.kryon.com/en/INDIA%20-%20Dharamshala1.mp3
       - http://audio.kryon.com/en/INDIA%20-%20Dharamshala2.mp3
+      scrolls: []
+      visions: []
       dump:
       - KRYON INDIA & NEPAL TOUR
     http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-2-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1062,6 +1140,8 @@ ArtistAums:
       - http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort.mp3
       - http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort2.mp3
       - http://audio.kryon.com/en/INDIA-Final-channelling.mp3
+      scrolls: []
+      visions: []
       dump:
       - KRYON INDIA & NEPAL TOUR
     http://www.kryon.com/cartprodimages/2017%20downloads/download_ARGENTINA-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1089,6 +1169,8 @@ ArtistAums:
       - http://audio.kryon.com/en/ARGENTINA-SAT-2.mp3
       - http://audio.kryon.com/en/ARGENTINA-SUN-1.mp3
       - http://audio.kryon.com/en/ARGENTINA-SUN-2.mp3
+      scrolls: []
+      visions: []
       dump:
       - KRYON IN ARGENTINA 2017
     http://www.kryon.com/cartprodimages/2017%20downloads/download_montreal_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1108,6 +1190,8 @@ ArtistAums:
       - http://www.kryon.com/cartprodimages/2017%20downloads/monreal.jpg
       aums:
       - http://audio.kryon.com/en/KRYON-MONTREAL.mp3
+      scrolls: []
+      visions: []
       dump:
       - Montreal - QC - Canada
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Philadelphia_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1130,6 +1214,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Philadelphia-17-Sat-dual.mp3
       - http://audio.kryon.com/en/Philadelphia-17-Sat-main.mp3
       - http://audio.kryon.com/en/Philadelphia-17-Sun-main.mp3
+      scrolls: []
+      visions: []
       dump:
       - Philadelphia, Pennsylvania
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Calgary_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1151,6 +1237,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Calgary-17-SAT-mini.mp3
       - http://audio.kryon.com/en/Calgary-17-SAT-Main.mp3
       - http://audio.kryon.com/en/Calgary-17-SUN.mp3
+      scrolls: []
+      visions: []
       dump:
       - Calgary, AB Canada
     http://www.kryon.com/cartprodimages/2017%20downloads/download_lagunaxmas-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1171,6 +1259,8 @@ ArtistAums:
       aums:
       - http://audio.kryon.com/en/Laguna1-17.mp3
       - http://audio.kryon.com/en/Laguna2-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - LAGUNA HILLS, CALIFORNIA
     http://www.kryon.com/cartprodimages/2017%20downloads/download_Seattle_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1192,6 +1282,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Seattle-17-Saturday-mini.mp3
       - http://audio.kryon.com/en/Seattle-17-Saturday-%20final.mp3
       - http://audio.kryon.com/en/Seattle-17-Sunday%20-%20maiin.mp3
+      scrolls: []
+      visions: []
       dump:
       - Seattle, Washington
     http://www.kryon.com/cartprodimages/2017%20downloads/download_hawaii-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
@@ -1223,6 +1315,8 @@ ArtistAums:
       - http://audio.kryon.com/en/Channel-4-At%20the%20Volcano-17.mp3
       - http://audio.kryon.com/en/Channel-5-RTL-Tri-channeling-17.mp3
       - http://audio.kryon.com/en/Channel-6-RTL-17.mp3
+      scrolls: []
+      visions: []
       dump:
       - RETURN TO LEMURIA
   Aums:
@@ -3136,6 +3230,8 @@ ArtistAums:
       filename: Channel-6-RTL-17.mp3
       url: http://audio.kryon.com/en/Channel-6-RTL-17.mp3
       mirrors: {}
+  Scrolls: {}
+  Visions: {}
   Pics:
     http://www.kryon.com/cartprodimages/2017%20downloads/Boulder-17.jpg: !ruby/object:UncleKryon::PicData
       updated_on: '2018-06-12 02:33:24'

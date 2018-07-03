@@ -23,7 +23,7 @@ require 'unclekryon/util'
 require 'unclekryon/data/base_data'
 
 module UncleKryon
-  class KryonAumAlbumData < BaseData
+  class AlbumData < BaseData
     attr_accessor :date_begin
     attr_accessor :date_end
     attr_accessor :title
@@ -38,6 +38,8 @@ module UncleKryon
     
     attr_accessor :pics
     attr_accessor :aums
+    attr_accessor :scrolls
+    attr_accessor :visions
     
     attr_accessor :dump
     
@@ -58,6 +60,8 @@ module UncleKryon
       
       @pics = []
       @aums = []
+      @scrolls = []
+      @visions = []
       
       @dump = []
     end
@@ -79,6 +83,8 @@ module UncleKryon
       
       @pics = @pics.clone()
       @aums = @aums.clone()
+      @scrolls = @scrolls.clone()
+      @visions = @visions.clone()
       
       @dump = @dump.clone()
     end
@@ -95,6 +101,8 @@ module UncleKryon
       
       @pics |= album.pics unless album.pics.nil?()
       @aums |= album.aums unless album.aums.nil?()
+      @scrolls |= album.scrolls unless album.scrolls.nil?()
+      @visions |= album.visions unless album.visions.nil?()
       
       @dump |= album.dump unless album.dump.nil?()
     end
@@ -112,6 +120,8 @@ module UncleKryon
              @main_desc == y.main_desc &&
              @pics == y.pics &&
              @aums == y.aums
+             @scrolls == y.scrolls
+             @visions == y.visions
     end
     
     def to_mini_s()
@@ -128,8 +138,10 @@ module UncleKryon
       s << "\n- #{@mini_desc}" unless mini
       s << "\n- #{@main_desc}" unless mini
       
-      s << (mini ? (' | pics:%3d' % [@pics.length()]) : ("\n- Pics:\n  - " << @pics.join("\n  - ")))
-      s << (mini ? (' | aums:%3d' % [@aums.length()]) : ("\n- Aums:\n  - " << @aums.join("\n  - ")))
+      s << (mini ? (' | pics:%3d'    % [@pics.length()])    : ("\n- Pics:\n  - "   << @pics.join("\n  - ")))
+      s << (mini ? (' | aums:%3d'    % [@aums.length()])    : ("\n- Aums:\n  - "   << @aums.join("\n  - ")))
+      s << (mini ? (' | scrolls:%3d' % [@scrolls.length()]) : ("\n- Scrolls:\n - " << @scrolls.join("\n  - ")))
+      s << (mini ? (' | visions:%3d' % [@visions.length()]) : ("\n- Visions:\n - " << @visions.join("\n  - ")))
       
       s << (mini ? (' | dump:%3d' % [@dump.length()]) : ("\n- Dump:\n  - " << @dump.join("\n  - ")))
       return s

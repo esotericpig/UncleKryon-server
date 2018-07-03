@@ -25,7 +25,7 @@ require 'date'
 require 'unclekryon/log'
 require 'unclekryon/util'
 
-require 'unclekryon/data/artist_aums_data'
+require 'unclekryon/data/artist_data_data'
 
 require 'unclekryon/parsers/kryon_aum_year_album_parser'
 require 'unclekryon/parsers/kryon_aum_year_parser'
@@ -64,7 +64,7 @@ module UncleKryon
       year = pd[:year]
       
       # Try the yaml file
-      artist = ArtistAumsData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
       
       if release.nil?()
@@ -177,7 +177,7 @@ module UncleKryon
     
     def parse_kryon_aum_year_albums(year)
       # Try the yaml file
-      artist = ArtistAumsData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
       updated_on = nil
       
@@ -233,7 +233,7 @@ module UncleKryon
     
     def train_kryon_aum_year_albums(year)
       # Try the yaml file
-      artist = ArtistAumsData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
       
       if release.nil?()

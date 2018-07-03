@@ -27,8 +27,8 @@ require 'unclekryon/log'
 require 'unclekryon/trainer'
 require 'unclekryon/util'
 
-require 'unclekryon/data/artist_aums_data'
-require 'unclekryon/data/kryon_aum_album_data'
+require 'unclekryon/data/album_data'
+require 'unclekryon/data/artist_data_data'
 require 'unclekryon/data/release_data'
 
 module UncleKryon
@@ -46,7 +46,7 @@ module UncleKryon
     
     alias_method :training?,:training
     
-    def initialize(title=nil,url=nil,artist=ArtistAumsData.new(),training: false,train_filepath: nil,
+    def initialize(title=nil,url=nil,artist=ArtistDataData.new(),training: false,train_filepath: nil,
           updated_on: nil,**options)
       @artist = artist
       @exclude_album = false
@@ -146,7 +146,7 @@ module UncleKryon
         next if row.nil?
         next if (cells = row.css('td')).nil?
         
-        album = KryonAumAlbumData.new
+        album = AlbumData.new
         album.updated_on = @updated_on
         @exclude_album = false
         

@@ -21,7 +21,7 @@
 require 'unclekryon/data/base_data'
 
 module UncleKryon
-  class KryonAumData < BaseData
+  class AumData < BaseData
     attr_accessor :title
     attr_accessor :subtitle
     attr_accessor :languages

@@ -27,9 +27,14 @@ require 'unclekryon/data/social_data'
 
 module UncleKryon
   class ArtistData < BaseData
-    DEFAULT_ID = 'Artist'
+    ID = 'Artist'
     
+    attr_accessor :updated_releases_on
+    attr_accessor :updated_albums_on
     attr_accessor :updated_aums_on
+    attr_accessor :updated_scrolls_on
+    attr_accessor :updated_visions_on
+    attr_accessor :updated_pics_on
     
     attr_accessor :id
     attr_accessor :name
@@ -45,7 +50,12 @@ module UncleKryon
     def initialize()
       super()
       
+      @updated_releases_on = ''
+      @updated_albums_on = ''
       @updated_aums_on = ''
+      @updated_scrolls_on = ''
+      @updated_visions_on = ''
+      @updated_pics_on = ''
       
       @id = ''
       @name = ''
@@ -61,7 +71,7 @@ module UncleKryon
     
     def self.load_file(filepath)
       y = YAML.load_file(filepath)
-      artist = y[DEFAULT_ID]
+      artist = y[ID]
       return artist
     end
     
@@ -70,7 +80,7 @@ module UncleKryon
       
       Util.mk_dirs_from_filepath(filepath)
       File.open(filepath,'w') do |f|
-        artist = {DEFAULT_ID=>self}
+        artist = {ID=>self}
         YAML.dump(artist,f)
       end
     end

@@ -22,9 +22,9 @@ require 'yaml'
 
 require 'unclekryon/util'
 
+require 'unclekryon/data/album_data'
+require 'unclekryon/data/aum_data'
 require 'unclekryon/data/base_data'
-require 'unclekryon/data/kryon_aum_album_data'
-require 'unclekryon/data/kryon_aum_data'
 require 'unclekryon/data/pic_data'
 require 'unclekryon/data/release_data'
 
@@ -32,10 +32,20 @@ require 'unclekryon/data/release_data'
 # Don't extend BaseData, as updated_aums_on is stored in ArtistData.
 ###
 module UncleKryon
-  class ArtistAumsData
+  class ArtistDataData
+    ID = 'ArtistData'
+    RELEASES_ID = 'Releases'
+    ALBUMS_ID = 'Albums'
+    AUMS_ID = 'Aums'
+    SCROLLS_ID = 'Scrolls'
+    VISIONS_ID = 'Visions'
+    PICS_ID = 'Pics'
+    
     attr_accessor :releases
     attr_accessor :albums
     attr_accessor :aums
+    attr_accessor :scrolls
+    attr_accessor :visions
     attr_accessor :pics
     
     def initialize()
@@ -44,6 +54,8 @@ module UncleKryon
       @releases = {}
       @albums = {}
       @aums = {}
+      @scrolls = {}
+      @visions = {}
       @pics = {}
     end
     
@@ -51,24 +63,28 @@ module UncleKryon
       filedata = YAML.load_file(filepath) if File.exist?(filepath)
       filedata = {} if !filedata
       
-      artist_aums = ArtistAumsData.new()
-      Util.hash_def(filedata,['ArtistAums'],{})
-      artist_aums.releases = Util.hash_def(filedata,['ArtistAums','Releases'],artist_aums.releases)
-      artist_aums.albums = Util.hash_def(filedata,['ArtistAums','Albums'],artist_aums.albums)
-      artist_aums.aums = Util.hash_def(filedata,['ArtistAums','Aums'],artist_aums.aums)
-      artist_aums.pics = Util.hash_def(filedata,['ArtistAums','Pics'],artist_aums.pics)
+      artist = ArtistDataData.new()
+      Util.hash_def(filedata,[ID],{})
+      artist.releases = Util.hash_def(filedata,[ID,RELEASES_ID],artist.releases)
+      artist.albums = Util.hash_def(filedata,[ID,ALBUMS_ID],artist.albums)
+      artist.aums = Util.hash_def(filedata,[ID,AUMS_ID],artist.aums)
+      artist.scrolls = Util.hash_def(filedata,[ID,SCROLLS_ID],artist.scrolls)
+      artist.visions = Util.hash_def(filedata,[ID,VISIONS_ID],artist.visions)
+      artist.pics = Util.hash_def(filedata,[ID,PICS_ID],artist.pics)
       
-      return artist_aums
+      return artist
     end
     
     def save_to_file(filepath,**options)
       raise "Empty filepath: #{filepath}" if filepath.nil?() || (filepath = filepath.strip()).empty?()
       
-      filedata = {'ArtistAums'=>{}}
-      filedata['ArtistAums']['Releases'] = @releases
-      filedata['ArtistAums']['Albums'] = @albums
-      filedata['ArtistAums']['Aums'] = @aums
-      filedata['ArtistAums']['Pics'] = @pics
+      filedata = {ID=>{}}
+      filedata[ID][RELEASES_ID] = @releases
+      filedata[ID][ALBUMS_ID] = @albums
+      filedata[ID][AUMS_ID] = @aums
+      filedata[ID][SCROLLS_ID] = @scrolls
+      filedata[ID][VISIONS_ID] = @visions
+      filedata[ID][PICS_ID] = @pics
       
       Util.mk_dirs_from_filepath(filepath)
       File.open(filepath,'w') do |f|
@@ -81,6 +97,8 @@ module UncleKryon
       max = Util.safe_max(max,BaseData.max_updated_on(@releases))
       max = Util.safe_max(max,BaseData.max_updated_on(@albums))
       max = Util.safe_max(max,BaseData.max_updated_on(@aums))
+      max = Util.safe_max(max,BaseData.max_updated_on(@scrolls))
+      max = Util.safe_max(max,BaseData.max_updated_on(@visions))
       max = Util.safe_max(max,BaseData.max_updated_on(@pics))
       
       return Util.format_datetime(max)
@@ -103,6 +121,14 @@ module UncleKryon
       end
       s << "- Aums:\n"
       @aums.each() do |k,v|
+        s << "  - #{v.to_s()}\n"
+      end
+      s << "- Scrolls:\n"
+      @scrolls.each() do |k,v|
+        s << "  - #{v.to_s()}\n"
+      end
+      s << "- Visions:\n"
+      @visions.each() do |k,v|
         s << "  - #{v.to_s()}\n"
       end
       s << "- Pics:\n"

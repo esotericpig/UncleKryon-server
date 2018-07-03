@@ -41,6 +41,17 @@ module UncleKryon
       return @updated_on
     end
     
+    def max_updated_on()
+      max = nil
+      
+      instance_variables.each do |iv|
+        vuo = Util.parse_datetime_s(instance_variable_get(iv)) if iv.to_s() =~ /\A@updated_.+_on\z/
+        max = vuo if max.nil?() || vuo > max
+      end
+      
+      return max
+    end
+    
     def self.max_updated_on(data)
       max = nil
       
@@ -52,6 +63,10 @@ module UncleKryon
       end
       
       return max
+    end
+    
+    def max_updated_on_s()
+      return Util.format_datetime(max_updated_on())
     end
     
     def self.max_updated_on_s(data)

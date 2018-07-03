@@ -27,8 +27,8 @@ require 'unclekryon/log'
 require 'unclekryon/trainer'
 require 'unclekryon/util'
 
-require 'unclekryon/data/kryon_aum_album_data'
-require 'unclekryon/data/kryon_aum_data'
+require 'unclekryon/data/album_data'
+require 'unclekryon/data/aum_data'
 require 'unclekryon/data/pic_data'
 require 'unclekryon/data/timespan_data'
 
@@ -150,7 +150,7 @@ module UncleKryon
         next if href.nil? || href.empty?
         next if href !~ audio_file_regex
         
-        aum = KryonAumData.new
+        aum = AumData.new
         aum.url = Util.clean_data(href)
         aum.filename = Util.parse_url_filename(aum.url)
         aum.updated_on = @updated_on
