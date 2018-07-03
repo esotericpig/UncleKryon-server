@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
