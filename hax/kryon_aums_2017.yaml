@@ -55,7 +55,7 @@ ArtistData:
       - http://www.kryon.com/cartprodimages/2017%20downloads/download_Seattle_17.html
       - http://www.kryon.com/cartprodimages/2017%20downloads/download_hawaii-17.html
   Albums:
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_boulder-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_boulder-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-01-07'
       date_end: '2017-01-08'
@@ -83,7 +83,7 @@ ArtistData:
       visions: []
       dump:
       - BOULDER COLORADO 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_San%20Jose_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_San%20Jose_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-01-14'
       date_end: '2017-01-15'
@@ -106,7 +106,7 @@ ArtistData:
       visions: []
       dump:
       - San Jose, California
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_saltlake_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_saltlake_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-01-21'
       date_end: ''
@@ -128,7 +128,7 @@ ArtistData:
       visions: []
       dump:
       - SALT LAKE CITY, UTAH
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_egypt_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_egypt_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-02-02'
       date_end: '2017-02-13'
@@ -184,7 +184,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_petra_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_petra_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-02-14'
       date_end: '2017-02-16'
@@ -212,7 +212,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Tucson_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Tucson_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-02-25'
       date_end: '2017-02-26'
@@ -235,7 +235,7 @@ ArtistData:
       visions: []
       dump:
       - Tucson, Arizona
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Boston_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Boston_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-03-11'
       date_end: '2017-03-12'
@@ -259,7 +259,7 @@ ArtistData:
       visions: []
       dump:
       - Boston, Massachusetts
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_vancouver_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_vancouver_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-03-18'
       date_end: '2017-03-19'
@@ -284,7 +284,7 @@ ArtistData:
       visions: []
       dump:
       - Vancouver, BC, Canada
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Kansas_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Kansas_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-03-25'
       date_end: '2017-03-26'
@@ -308,7 +308,7 @@ ArtistData:
       visions: []
       dump:
       - Unity Village - [Kansas City], Missouri
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_regina_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_regina_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-04-01'
       date_end: '2017-04-02'
@@ -331,7 +331,7 @@ ArtistData:
       visions: []
       dump:
       - Regina, SK, Canada
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_mv_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_mv_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-04-12'
       date_end: '2017-04-18'
@@ -378,7 +378,7 @@ ArtistData:
       visions: []
       dump:
       - MONUMENT VALLEY
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_ireland_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_ireland_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-04-21'
       date_end: '2017-04-29'
@@ -418,7 +418,7 @@ ArtistData:
       visions: []
       dump:
       - KRYON IRELAND TOUR 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_dublin_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_dublin_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-04-30'
       date_end: ''
@@ -440,7 +440,7 @@ ArtistData:
       visions: []
       dump:
       - DUBLIN - IRELAND
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_glendalough_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_glendalough_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-01'
       date_end: ''
@@ -462,7 +462,7 @@ ArtistData:
       visions: []
       dump:
       - GLENDALOUGH - IRELAND
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_amsterdam-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_amsterdam-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-03'
       date_end: ''
@@ -487,7 +487,7 @@ ArtistData:
       visions: []
       dump:
       - AMSTERDAM, HOLLAND
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-seminar-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-seminar-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-06'
       date_end: ''
@@ -515,7 +515,7 @@ ArtistData:
       visions: []
       dump:
       - PISA ITALY
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-excursion_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-excursion_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-07'
       date_end: '2017-05-08'
@@ -541,7 +541,7 @@ ArtistData:
       visions: []
       dump:
       - Tuscany, Italy - EXCURSION
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_israel-1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_israel-1-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-13'
       date_end: '2017-05-14'
@@ -567,7 +567,7 @@ ArtistData:
       visions: []
       dump:
       - TEL AVIV - ISRAEL
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Geneva-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Geneva-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-15'
       date_end: '2017-05-17'
@@ -598,7 +598,7 @@ ArtistData:
       visions: []
       dump:
       - GENEVA - SWITZERLAND
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_chamonixchoir-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_chamonixchoir-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-21'
       date_end: ''
@@ -623,7 +623,7 @@ ArtistData:
       visions: []
       dump:
       - QUANTUM CHOIR CHANNELLING
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Chamonix-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Chamonix-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-22'
       date_end: ''
@@ -647,7 +647,7 @@ ArtistData:
       visions: []
       dump:
       - CHAMONIX FRANCE
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Blanc-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Blanc-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-05-23'
       date_end: ''
@@ -672,7 +672,7 @@ ArtistData:
       visions: []
       dump:
       - MOUNT BLANC EXCURSION
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_SLC-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_SLC-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-06-02'
       date_end: '2017-06-04'
@@ -706,7 +706,7 @@ ArtistData:
       visions: []
       dump:
       - BIG SKY MONTANA & YELLOWSTONE
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_panel-SLC_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_panel-SLC_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-06-04'
       date_end: ''
@@ -731,7 +731,7 @@ ArtistData:
       visions: []
       dump:
       - 20th Kryon Summer Light Conference Panel of speakers
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville-ex-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville-ex-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-06-16'
       date_end: ''
@@ -757,7 +757,7 @@ ArtistData:
       visions: []
       dump:
       - ASHEVILLE, NC EXCURSION
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-06-17'
       date_end: '2017-06-18'
@@ -780,7 +780,7 @@ ArtistData:
       visions: []
       dump:
       - Asheville, North Carolina
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Buffalo_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Buffalo_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-06-24'
       date_end: '2017-06-25'
@@ -803,7 +803,7 @@ ArtistData:
       visions: []
       dump:
       - Buffalo, New York
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_laguna_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_laguna_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-07-01'
       date_end: '2017-07-02'
@@ -825,7 +825,7 @@ ArtistData:
       visions: []
       dump:
       - LAGUNA HILLS, CALIFORNIA
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_minneapolis_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_minneapolis_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-07-22'
       date_end: '2017-07-23'
@@ -848,7 +848,7 @@ ArtistData:
       visions: []
       dump:
       - Minneapolis, Minnesota
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Alaska-Cruise-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Alaska-Cruise-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-07-29'
       date_end: '2017-08-05'
@@ -873,7 +873,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Stamford_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Stamford_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-08-12'
       date_end: '2017-08-13'
@@ -897,7 +897,7 @@ ArtistData:
       visions: []
       dump:
       - Stamford, Connecticut
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Discovery-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Discovery-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-08-24'
       date_end: '2017-08-27'
@@ -924,7 +924,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_germany-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_germany-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-09'
       date_end: '2017-09-10'
@@ -952,7 +952,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_lisbon-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_lisbon-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-13'
       date_end: ''
@@ -976,7 +976,7 @@ ArtistData:
       visions: []
       dump:
       - LISBON, PORTUGAL 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_fatima-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_fatima-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-14'
       date_end: ''
@@ -999,7 +999,7 @@ ArtistData:
       scrolls: []
       visions: []
       dump: []
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_porto1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_porto1-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-15'
       date_end: ''
@@ -1021,7 +1021,7 @@ ArtistData:
       visions: []
       dump:
       - PORTO, PORTUGAL 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_porto2-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_porto2-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-16'
       date_end: ''
@@ -1045,7 +1045,7 @@ ArtistData:
       visions: []
       dump:
       - PORTO, PORTUGAL 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_madrid-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_madrid-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-17'
       date_end: ''
@@ -1068,7 +1068,7 @@ ArtistData:
       visions: []
       dump:
       - MADRID SPAIN 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-1-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-1-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-09-29'
       date_end: '2017-10-09'
@@ -1109,7 +1109,7 @@ ArtistData:
       visions: []
       dump:
       - KRYON INDIA & NEPAL TOUR
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-2-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-2-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-10-10'
       date_end: '2017-10-20'
@@ -1144,7 +1144,7 @@ ArtistData:
       visions: []
       dump:
       - KRYON INDIA & NEPAL TOUR
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_ARGENTINA-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_ARGENTINA-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-10-27'
       date_end: '2017-10-29'
@@ -1173,7 +1173,7 @@ ArtistData:
       visions: []
       dump:
       - KRYON IN ARGENTINA 2017
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_montreal_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_montreal_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-11-11'
       date_end: ''
@@ -1194,7 +1194,7 @@ ArtistData:
       visions: []
       dump:
       - Montreal - QC - Canada
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Philadelphia_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Philadelphia_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-11-18'
       date_end: '2017-11-19'
@@ -1218,7 +1218,7 @@ ArtistData:
       visions: []
       dump:
       - Philadelphia, Pennsylvania
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Calgary_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Calgary_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-11-25'
       date_end: '2017-11-26'
@@ -1241,7 +1241,7 @@ ArtistData:
       visions: []
       dump:
       - Calgary, AB Canada
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_lagunaxmas-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_lagunaxmas-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-12-03'
       date_end: ''
@@ -1263,7 +1263,7 @@ ArtistData:
       visions: []
       dump:
       - LAGUNA HILLS, CALIFORNIA
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_Seattle_17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_Seattle_17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-12-09'
       date_end: '2017-12-10'
@@ -1286,7 +1286,7 @@ ArtistData:
       visions: []
       dump:
       - Seattle, Washington
-    http://www.kryon.com/cartprodimages/2017%20downloads/download_hawaii-17.html: !ruby/object:UncleKryon::KryonAumAlbumData
+    http://www.kryon.com/cartprodimages/2017%20downloads/download_hawaii-17.html: !ruby/object:UncleKryon::AlbumData
       updated_on: '2018-06-12 02:33:24'
       date_begin: '2017-12-20'
       date_end: '2017-12-22'
@@ -1320,7 +1320,7 @@ ArtistData:
       dump:
       - RETURN TO LEMURIA
   Aums:
-    http://audio.kryon.com/en/Boulder-mini-SAT-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-mini-SAT-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY MINI
       subtitle: KRYON CHANNELLING
@@ -1330,7 +1330,7 @@ ArtistData:
       filename: Boulder-mini-SAT-17.mp3
       url: http://audio.kryon.com/en/Boulder-mini-SAT-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boulder-dual-SAT-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-dual-SAT-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY DUAL - ADIRONNDA & KRYON
       subtitle: KRYON CHANNELLING
@@ -1340,7 +1340,7 @@ ArtistData:
       filename: Boulder-dual-SAT-17.mp3
       url: http://audio.kryon.com/en/Boulder-dual-SAT-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boulder-main-SAT-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-main-SAT-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY MAIN
       subtitle: KRYON CHANNELLING
@@ -1350,7 +1350,7 @@ ArtistData:
       filename: Boulder-main-SAT-17.mp3
       url: http://audio.kryon.com/en/Boulder-main-SAT-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boulder-mini-SUN-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-mini-SUN-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY MINI
       subtitle: KRYON CHANNELLING
@@ -1360,7 +1360,7 @@ ArtistData:
       filename: Boulder-mini-SUN-17.mp3
       url: http://audio.kryon.com/en/Boulder-mini-SUN-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boulder-dual-SUN-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-dual-SUN-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY DUAL - ALCAZAR & KRYON
       subtitle: KRYON CHANNELLING
@@ -1370,7 +1370,7 @@ ArtistData:
       filename: Boulder-dual-SUN-17.mp3
       url: http://audio.kryon.com/en/Boulder-dual-SUN-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boulder-main-SUN-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boulder-main-SUN-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY MAIN
       subtitle: KRYON CHANNELLING
@@ -1380,7 +1380,7 @@ ArtistData:
       filename: Boulder-main-SUN-17.mp3
       url: http://audio.kryon.com/en/Boulder-main-SUN-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/San%20Jose-Sat-Mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/San%20Jose-Sat-Mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling
       subtitle: KRYON CHANNELLING
@@ -1390,7 +1390,7 @@ ArtistData:
       filename: San Jose-Sat-Mini.mp3
       url: http://audio.kryon.com/en/San%20Jose-Sat-Mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/San%20Jose-Sat-Main-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/San%20Jose-Sat-Main-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Change"'
       subtitle: KRYON CHANNELLING
@@ -1400,7 +1400,7 @@ ArtistData:
       filename: San Jose-Sat-Main-17.mp3
       url: http://audio.kryon.com/en/San%20Jose-Sat-Main-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/San%20Jose-Sunday%20main-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/San%20Jose-Sunday%20main-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday "Enhanced Innate"
       subtitle: KRYON CHANNELLING
@@ -1410,7 +1410,7 @@ ArtistData:
       filename: San Jose-Sunday main-17.mp3
       url: http://audio.kryon.com/en/San%20Jose-Sunday%20main-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Mini Channelling"'
       subtitle: KRYON CHANNELLING
@@ -1420,7 +1420,7 @@ ArtistData:
       filename: Salt Lake -17 - mini.mp3
       url: http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"5 Deceptions of the Old Energy"'
       subtitle: KRYON CHANNELLING
@@ -1430,7 +1430,7 @@ ArtistData:
       filename: Salt Lake -17 - main.mp3
       url: http://audio.kryon.com/en/Salt%20Lake%20-17%20-%20main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/01.EGYPT-Welcome.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/01.EGYPT-Welcome.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: WELCOME MEETING
       subtitle: KRYON CHANNELLING
@@ -1440,7 +1440,7 @@ ArtistData:
       filename: 01.EGYPT-Welcome.mp3
       url: http://audio.kryon.com/en/01.EGYPT-Welcome.mp3
       mirrors: {}
-    http://audio.kryon.com/en/02.EGYPT-Elephantine.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/02.EGYPT-Elephantine.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: ELEPHANTINE ISLAND
       subtitle: KRYON CHANNELLING
@@ -1450,7 +1450,7 @@ ArtistData:
       filename: 02.EGYPT-Elephantine.mp3
       url: http://audio.kryon.com/en/02.EGYPT-Elephantine.mp3
       mirrors: {}
-    http://audio.kryon.com/en/03.EGYPT-Isis.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/03.EGYPT-Isis.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: TEMPLE OF ISIS w/ MARILYN HARPER
       subtitle: KRYON & THE COUNCIL
@@ -1460,7 +1460,7 @@ ArtistData:
       filename: 03.EGYPT-Isis.mp3
       url: http://audio.kryon.com/en/03.EGYPT-Isis.mp3
       mirrors: {}
-    http://audio.kryon.com/en/04.EGYPT-kom%20Ombo.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/04.EGYPT-kom%20Ombo.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: TEMPLE OF KOM OMBO
       subtitle: KRYON CHANNELLING
@@ -1470,7 +1470,7 @@ ArtistData:
       filename: 04.EGYPT-kom Ombo.mp3
       url: http://audio.kryon.com/en/04.EGYPT-kom%20Ombo.mp3
       mirrors: {}
-    http://audio.kryon.com/en/05.EGYPT-edfu.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/05.EGYPT-edfu.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: TEMPLE OF EDFU
       subtitle: KRYON CHANNELLING
@@ -1480,7 +1480,7 @@ ArtistData:
       filename: 05.EGYPT-edfu.mp3
       url: http://audio.kryon.com/en/05.EGYPT-edfu.mp3
       mirrors: {}
-    http://audio.kryon.com/en/06.EGYPT-Queen%20Hatshepsut.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/06.EGYPT-Queen%20Hatshepsut.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: QUEEN HATSHEPSUT TEMPLE
       subtitle: KRYON CHANNELLING
@@ -1490,7 +1490,7 @@ ArtistData:
       filename: 06.EGYPT-Queen Hatshepsut.mp3
       url: http://audio.kryon.com/en/06.EGYPT-Queen%20Hatshepsut.mp3
       mirrors: {}
-    http://audio.kryon.com/en/07.EGYPT-Luxor%20City.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/07.EGYPT-Luxor%20City.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: LUXOR CITY
       subtitle: KRYON CHANNELLING
@@ -1500,7 +1500,7 @@ ArtistData:
       filename: 07.EGYPT-Luxor City.mp3
       url: http://audio.kryon.com/en/07.EGYPT-Luxor%20City.mp3
       mirrors: {}
-    http://audio.kryon.com/en/08.EGYPT-Karnak.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/08.EGYPT-Karnak.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: KARNAK TEMPLE
       subtitle: KRYON CHANNELLING
@@ -1510,7 +1510,7 @@ ArtistData:
       filename: '08.EGYPT-Karnak.mp3'
       url: http://audio.kryon.com/en/08.EGYPT-Karnak.mp3
       mirrors: {}
-    http://audio.kryon.com/en/09.EGYPT-Hawthors.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/09.EGYPT-Hawthors.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: TEMPLE OF HATHOR
       subtitle: KRYON CHANNELLING
@@ -1520,7 +1520,7 @@ ArtistData:
       filename: '09.EGYPT-Hawthors.mp3'
       url: http://audio.kryon.com/en/09.EGYPT-Hawthors.mp3
       mirrors: {}
-    http://audio.kryon.com/en/10.EGYPT-Abedos.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/10.EGYPT-Abedos.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: TEMPLE OF SETI IN ABYDOS
       subtitle: KRYON CHANNELLING
@@ -1530,7 +1530,7 @@ ArtistData:
       filename: 10.EGYPT-Abedos.mp3
       url: http://audio.kryon.com/en/10.EGYPT-Abedos.mp3
       mirrors: {}
-    http://audio.kryon.com/en/11.EGYPT-Nile%20Farewell.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/11.EGYPT-Nile%20Farewell.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: NILE FAREWELL w/ MARILYN HARPER
       subtitle: KRYON & THE COUNCIL
@@ -1540,7 +1540,7 @@ ArtistData:
       filename: 11.EGYPT-Nile Farewell.mp3
       url: http://audio.kryon.com/en/11.EGYPT-Nile%20Farewell.mp3
       mirrors: {}
-    http://audio.kryon.com/en/12.EGYPT-Mena%20House.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/12.EGYPT-Mena%20House.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: MENA HOUSE HOTEL
       subtitle: KRYON CHANNELLING
@@ -1550,7 +1550,7 @@ ArtistData:
       filename: 12.EGYPT-Mena House.mp3
       url: http://audio.kryon.com/en/12.EGYPT-Mena%20House.mp3
       mirrors: {}
-    http://audio.kryon.com/en/13.EGYPT-Sakkara.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/13.EGYPT-Sakkara.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SAKKARA
       subtitle: KRYON CHANNELLING
@@ -1560,7 +1560,7 @@ ArtistData:
       filename: 13.EGYPT-Sakkara.mp3
       url: http://audio.kryon.com/en/13.EGYPT-Sakkara.mp3
       mirrors: {}
-    http://audio.kryon.com/en/14.EGYPT-Serapeum.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/14.EGYPT-Serapeum.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SERAPEUM OF SAQQARA
       subtitle: KRYON CHANNELLING
@@ -1570,7 +1570,7 @@ ArtistData:
       filename: 14.EGYPT-Serapeum.mp3
       url: http://audio.kryon.com/en/14.EGYPT-Serapeum.mp3
       mirrors: {}
-    http://audio.kryon.com/en/15.EGYPT-Sphinx.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/15.EGYPT-Sphinx.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SPHINX PRIVATE TIME
       subtitle: KRYON CHANNELLING
@@ -1580,7 +1580,7 @@ ArtistData:
       filename: 15.EGYPT-Sphinx.mp3
       url: http://audio.kryon.com/en/15.EGYPT-Sphinx.mp3
       mirrors: {}
-    http://audio.kryon.com/en/16.EGYPT-Kings%20chamber.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/16.EGYPT-Kings%20chamber.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: KING'S CHAMBER - GREAT PYRAMID
       subtitle: KRYON CHANNELLING
@@ -1590,7 +1590,7 @@ ArtistData:
       filename: 16.EGYPT-Kings chamber.mp3
       url: http://audio.kryon.com/en/16.EGYPT-Kings%20chamber.mp3
       mirrors: {}
-    http://audio.kryon.com/en/17.EGYPT-Closing.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/17.EGYPT-Closing.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: FAREWELL DINNER
       subtitle: KRYON CHANNELLING
@@ -1600,7 +1600,7 @@ ArtistData:
       filename: 17.EGYPT-Closing.mp3
       url: http://audio.kryon.com/en/17.EGYPT-Closing.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Petra-01.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Petra-01.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: WELCOME MEETING w/ MARILYN HARPER
       subtitle: KRYON & THE COUNCIL
@@ -1610,7 +1610,7 @@ ArtistData:
       filename: Petra-01.mp3
       url: http://audio.kryon.com/en/Petra-01.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Petra-02.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Petra-02.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: ANCIENT CITY OF PETRA
       subtitle: KRYON CHANNELLING
@@ -1620,7 +1620,7 @@ ArtistData:
       filename: Petra-02.mp3
       url: http://audio.kryon.com/en/Petra-02.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Petra-03.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Petra-03.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: EVENING MEETING w/ MARILYN HARPER
       subtitle: KRYON & THE COUNCIL
@@ -1630,7 +1630,7 @@ ArtistData:
       filename: Petra-03.mp3
       url: http://audio.kryon.com/en/Petra-03.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Petra-04.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Petra-04.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: LAST EVENING MEETING
       subtitle: KRYON CHANNELLING
@@ -1640,7 +1640,7 @@ ArtistData:
       filename: Petra-04.mp3
       url: http://audio.kryon.com/en/Petra-04.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Petra-05.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Petra-05.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: LAST MEETING - MARILYN HARPER
       subtitle: THE COUNCIL - Marilyn Harper
@@ -1650,7 +1650,7 @@ ArtistData:
       filename: Petra-05.mp3
       url: http://audio.kryon.com/en/Petra-05.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Tucson-17-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Tucson-17-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling
       subtitle: KRYON CHANNELLING
@@ -1660,7 +1660,7 @@ ArtistData:
       filename: Tucson-17-mini.mp3
       url: http://audio.kryon.com/en/Tucson-17-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Tucson-17-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Tucson-17-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Things that go BUMP in the night"'
       subtitle: KRYON CHANNELLING
@@ -1670,7 +1670,7 @@ ArtistData:
       filename: Tucson-17-main.mp3
       url: http://audio.kryon.com/en/Tucson-17-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Tucson-17-Sunday.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Tucson-17-Sunday.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday "Who is God?"
       subtitle: KRYON CHANNELLING
@@ -1680,7 +1680,7 @@ ArtistData:
       filename: Tucson-17-Sunday.mp3
       url: http://audio.kryon.com/en/Tucson-17-Sunday.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boston-17-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boston-17-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling
       subtitle: KRYON CHANNELLING
@@ -1690,7 +1690,7 @@ ArtistData:
       filename: Boston-17-mini.mp3
       url: http://audio.kryon.com/en/Boston-17-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boston-17-Main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boston-17-Main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"The Great Escape"'
       subtitle: KRYON CHANNELLING
@@ -1700,7 +1700,7 @@ ArtistData:
       filename: Boston-17-Main.mp3
       url: http://audio.kryon.com/en/Boston-17-Main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boston-17-Day%202.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boston-17-Day%202.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday "Escape from Self"
       subtitle: KRYON CHANNELLING
@@ -1710,7 +1710,7 @@ ArtistData:
       filename: Boston-17-Day 2.mp3
       url: http://audio.kryon.com/en/Boston-17-Day%202.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Vancouver-17-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Vancouver-17-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling
       subtitle: KRYON CHANNELLING
@@ -1720,7 +1720,7 @@ ArtistData:
       filename: Vancouver-17-mini.mp3
       url: http://audio.kryon.com/en/Vancouver-17-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Vancouver-17-Dual%20Channelling.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Vancouver-17-Dual%20Channelling.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Dual Channelling"'
       subtitle: KRYON CHANNELLING
@@ -1730,7 +1730,7 @@ ArtistData:
       filename: Vancouver-17-Dual Channelling.mp3
       url: http://audio.kryon.com/en/Vancouver-17-Dual%20Channelling.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Vancouver-17-Unexpected%20Change.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Vancouver-17-Unexpected%20Change.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday "Unexpected Change"
       subtitle: KRYON CHANNELLING
@@ -1740,7 +1740,7 @@ ArtistData:
       filename: Vancouver-17-Unexpected Change.mp3
       url: http://audio.kryon.com/en/Vancouver-17-Unexpected%20Change.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Vancouver-17-Story%20of%20baby%20Lyla.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Vancouver-17-Story%20of%20baby%20Lyla.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: STORY OF BABY LYLA
       subtitle: Sunday MARCH 19
@@ -1750,7 +1750,7 @@ ArtistData:
       filename: Vancouver-17-Story of baby Lyla.mp3
       url: http://audio.kryon.com/en/Vancouver-17-Story%20of%20baby%20Lyla.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Kansas-UNITY-17-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Kansas-UNITY-17-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling "Unity"
       subtitle: KRYON CHANNELLING
@@ -1760,7 +1760,7 @@ ArtistData:
       filename: Kansas-UNITY-17-mini.mp3
       url: http://audio.kryon.com/en/Kansas-UNITY-17-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Kansas-UNITY-17-Dual.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Kansas-UNITY-17-Dual.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Dual Channellng"'
       subtitle: KRYON CHANNELLING
@@ -1770,7 +1770,7 @@ ArtistData:
       filename: Kansas-UNITY-17-Dual.mp3
       url: http://audio.kryon.com/en/Kansas-UNITY-17-Dual.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Kansas-UNITY-17-Sunday.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Kansas-UNITY-17-Sunday.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday "Enhanced Gifts"
       subtitle: KRYON CHANNELLING
@@ -1780,7 +1780,7 @@ ArtistData:
       filename: Kansas-UNITY-17-Sunday.mp3
       url: http://audio.kryon.com/en/Kansas-UNITY-17-Sunday.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Regina-mini-2017.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Regina-mini-2017.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Regina - Mini Channelling
       subtitle: KRYON CHANNELLING
@@ -1790,7 +1790,7 @@ ArtistData:
       filename: Regina-mini-2017.mp3
       url: http://audio.kryon.com/en/Regina-mini-2017.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Regina-notready-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Regina-notready-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Regina - "Not Ready"
       subtitle: KRYON CHANNELLING
@@ -1800,7 +1800,7 @@ ArtistData:
       filename: Regina-notready-17.mp3
       url: http://audio.kryon.com/en/Regina-notready-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Regina-thecelebrity-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Regina-thecelebrity-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Regina - "The Celebrity"
       subtitle: KRYON CHANNELLING
@@ -1810,7 +1810,7 @@ ArtistData:
       filename: Regina-thecelebrity-17.mp3
       url: http://audio.kryon.com/en/Regina-thecelebrity-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING ONE
       subtitle: KRYON CHANNELLING
@@ -1820,7 +1820,7 @@ ArtistData:
       filename: MV-1.mp3
       url: http://audio.kryon.com/en/MV-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING TWO
       subtitle: KRYON CHANNELLING
@@ -1830,7 +1830,7 @@ ArtistData:
       filename: MV-2.mp3
       url: http://audio.kryon.com/en/MV-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-3.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-3.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING THREE
       subtitle: KRYON CHANNELLING
@@ -1840,7 +1840,7 @@ ArtistData:
       filename: MV-3.mp3
       url: http://audio.kryon.com/en/MV-3.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-4.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-4.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING FOUR
       subtitle: KRYON CHANNELLING
@@ -1850,7 +1850,7 @@ ArtistData:
       filename: MV-4.mp3
       url: http://audio.kryon.com/en/MV-4.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-5.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-5.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING FIVE
       subtitle: KRYON CHANNELLING
@@ -1860,7 +1860,7 @@ ArtistData:
       filename: MV-5.mp3
       url: http://audio.kryon.com/en/MV-5.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-6.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-6.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING SIX
       subtitle: KRYON CHANNELLING
@@ -1870,7 +1870,7 @@ ArtistData:
       filename: MV-6.mp3
       url: http://audio.kryon.com/en/MV-6.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-7.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-7.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING SEVEN
       subtitle: KRYON CHANNELLING
@@ -1880,7 +1880,7 @@ ArtistData:
       filename: MV-7.mp3
       url: http://audio.kryon.com/en/MV-7.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-8.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-8.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING EIGHT
       subtitle: KRYON CHANNELLING
@@ -1890,7 +1890,7 @@ ArtistData:
       filename: MV-8.mp3
       url: http://audio.kryon.com/en/MV-8.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-9.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-9.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING NINE
       subtitle: KRYON CHANNELLING
@@ -1900,7 +1900,7 @@ ArtistData:
       filename: MV-9.mp3
       url: http://audio.kryon.com/en/MV-9.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-10.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-10.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING TEN
       subtitle: KRYON CHANNELLING
@@ -1910,7 +1910,7 @@ ArtistData:
       filename: MV-10.mp3
       url: http://audio.kryon.com/en/MV-10.mp3
       mirrors: {}
-    http://audio.kryon.com/en/MV-11.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/MV-11.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNELLING ELEVEN
       subtitle: KRYON CHANNELLING
@@ -1920,7 +1920,7 @@ ArtistData:
       filename: MV-11.mp3
       url: http://audio.kryon.com/en/MV-11.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2001.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2001.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DANNY MANN - WELCOME DINNER
       subtitle: KRYON CHANNELLING
@@ -1930,7 +1930,7 @@ ArtistData:
       filename: Ireland 01.mp3
       url: http://audio.kryon.com/en/Ireland%2001.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2002.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2002.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: BLARNEY CASTLE
       subtitle: KRYON CHANNELLING
@@ -1940,7 +1940,7 @@ ArtistData:
       filename: Ireland 02.mp3
       url: http://audio.kryon.com/en/Ireland%2002.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2003.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2003.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: KENMARE STONE CIRCLE
       subtitle: KRYON CHANNELLING
@@ -1950,7 +1950,7 @@ ArtistData:
       filename: Ireland 03.mp3
       url: http://audio.kryon.com/en/Ireland%2003.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2004.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2004.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INNISFALLEN ISLAND
       subtitle: KRYON CHANNELLING
@@ -1960,7 +1960,7 @@ ArtistData:
       filename: Ireland 04.mp3
       url: http://audio.kryon.com/en/Ireland%2004.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2005.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2005.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: MUCKROSS ABBEY
       subtitle: KRYON CHANNELLING
@@ -1970,7 +1970,7 @@ ArtistData:
       filename: Ireland 05.mp3
       url: http://audio.kryon.com/en/Ireland%2005.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2006.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2006.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INCH BEACH - DINGLE PENISULA
       subtitle: KRYON CHANNELLING
@@ -1980,7 +1980,7 @@ ArtistData:
       filename: Ireland 06.mp3
       url: http://audio.kryon.com/en/Ireland%2006.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2007.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2007.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: BEE HIVE - DINGLE PENISULA
       subtitle: KRYON CHANNELLING
@@ -1990,7 +1990,7 @@ ArtistData:
       filename: Ireland 07.mp3
       url: http://audio.kryon.com/en/Ireland%2007.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2008.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2008.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Grange Stone Circle
       subtitle: KRYON CHANNELLING
@@ -2000,7 +2000,7 @@ ArtistData:
       filename: Ireland 08.mp3
       url: http://audio.kryon.com/en/Ireland%2008.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2009.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2009.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Spanish Point - Atlantic Ocean
       subtitle: KRYON CHANNELLING
@@ -2010,7 +2010,7 @@ ArtistData:
       filename: Ireland 09.mp3
       url: http://audio.kryon.com/en/Ireland%2009.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2010.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2010.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: St. Bridget's Well
       subtitle: KRYON CHANNELLING
@@ -2020,7 +2020,7 @@ ArtistData:
       filename: Ireland 10.mp3
       url: http://audio.kryon.com/en/Ireland%2010.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Ireland%2011.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Ireland%2011.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Dublin Farewell Dinner
       subtitle: KRYON CHANNELLING
@@ -2030,7 +2030,7 @@ ArtistData:
       filename: Ireland 11.mp3
       url: http://audio.kryon.com/en/Ireland%2011.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Dublin-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Dublin-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Mini Channelling"'
       subtitle: KRYON CHANNELLING
@@ -2040,7 +2040,7 @@ ArtistData:
       filename: Dublin-1.mp3
       url: http://audio.kryon.com/en/Dublin-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Dublin-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Dublin-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"How Spirit really communicates"'
       subtitle: KRYON & ALCAZAR
@@ -2050,7 +2050,7 @@ ArtistData:
       filename: Dublin-2.mp3
       url: http://audio.kryon.com/en/Dublin-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Excursion-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Excursion-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Glendalough one"'
       subtitle: KRYON CHANNELLING
@@ -2060,7 +2060,7 @@ ArtistData:
       filename: Excursion-1.mp3
       url: http://audio.kryon.com/en/Excursion-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Excursion-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Excursion-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Glendalough two"'
       subtitle: KRYON CHANNELLING
@@ -2070,7 +2070,7 @@ ArtistData:
       filename: Excursion-2.mp3
       url: http://audio.kryon.com/en/Excursion-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Holland%20Chan%201.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Holland%20Chan%201.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: AMSTERDAM CHANNELLING 1
       subtitle: KRYON CHANNELLING
@@ -2080,7 +2080,7 @@ ArtistData:
       filename: Holland Chan 1.mp3
       url: http://audio.kryon.com/en/Holland%20Chan%201.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Holland%20Chan%202.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Holland%20Chan%202.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: AMSTERDAM CHANNELLING 2
       subtitle: KRYON CHANNELLING
@@ -2090,7 +2090,7 @@ ArtistData:
       filename: Holland Chan 2.mp3
       url: http://audio.kryon.com/en/Holland%20Chan%202.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Holland%20Chan%203.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Holland%20Chan%203.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: AMSTERDAM CHANNELLING 3
       subtitle: KRYON CHANNELLING
@@ -2100,7 +2100,7 @@ ArtistData:
       filename: Holland Chan 3.mp3
       url: http://audio.kryon.com/en/Holland%20Chan%203.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Holland%20Chan%204.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Holland%20Chan%204.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: AMSTERDAM CHANNELLING 4
       subtitle: KRYON CHANNELLING
@@ -2110,7 +2110,7 @@ ArtistData:
       filename: Holland Chan 4.mp3
       url: http://audio.kryon.com/en/Holland%20Chan%204.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Italy-conference-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Italy-conference-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"PISA one"'
       subtitle: KRYON CHANNELLING
@@ -2120,7 +2120,7 @@ ArtistData:
       filename: Italy-conference-1.mp3
       url: http://audio.kryon.com/en/Italy-conference-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Italy-conference-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Italy-conference-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"PISA two"'
       subtitle: KRYON CHANNELLING
@@ -2130,7 +2130,7 @@ ArtistData:
       filename: Italy-conference-2.mp3
       url: http://audio.kryon.com/en/Italy-conference-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%201.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%201.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Abbey of San Galgano
       subtitle: KRYON CHANNELLING
@@ -2140,7 +2140,7 @@ ArtistData:
       filename: ITALY - EXCURSION 1.mp3
       url: http://audio.kryon.com/en/ITALY%20-%20EXCURSION%201.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%202.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%202.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Town of Assisi
       subtitle: KRYON CHANNELLING
@@ -2150,7 +2150,7 @@ ArtistData:
       filename: ITALY - EXCURSION 2.mp3
       url: http://audio.kryon.com/en/ITALY%20-%20EXCURSION%202.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%204.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ITALY%20-%20EXCURSION%204.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Church of Santa Maria Maggiore
       subtitle: KRYON CHANNELLING
@@ -2160,7 +2160,7 @@ ArtistData:
       filename: ITALY - EXCURSION 4.mp3
       url: http://audio.kryon.com/en/ITALY%20-%20EXCURSION%204.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Israel-opera-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Israel-opera-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: OPERA HOUSE 1
       subtitle: KRYON CHANNELLING
@@ -2170,7 +2170,7 @@ ArtistData:
       filename: Israel-opera-1.mp3
       url: http://audio.kryon.com/en/Israel-opera-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Israel-opera-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Israel-opera-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: OPERA HOUSE 2
       subtitle: KRYON CHANNELLING
@@ -2180,7 +2180,7 @@ ArtistData:
       filename: Israel-opera-2.mp3
       url: http://audio.kryon.com/en/Israel-opera-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Habima-1(saved).mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Habima-1(saved).mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: HABIMA THEATRE 1 - (Backup used)
       subtitle: KRYON CHANNELLING
@@ -2190,7 +2190,7 @@ ArtistData:
       filename: Habima-1(saved).mp3
       url: http://audio.kryon.com/en/Habima-1(saved).mp3
       mirrors: {}
-    http://audio.kryon.com/en/Habima-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Habima-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: HABIMA THEATRE 2
       subtitle: KRYON CHANNELLING
@@ -2200,7 +2200,7 @@ ArtistData:
       filename: Habima-2.mp3
       url: http://audio.kryon.com/en/Habima-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Geneva1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Geneva1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GENEVA 1
       subtitle: KRYON CHANNELLING
@@ -2210,7 +2210,7 @@ ArtistData:
       filename: Geneva1.mp3
       url: http://audio.kryon.com/en/Geneva1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Geneva2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Geneva2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GENEVA 2
       subtitle: KRYON CHANNELLING
@@ -2220,7 +2220,7 @@ ArtistData:
       filename: Geneva2.mp3
       url: http://audio.kryon.com/en/Geneva2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Geneva3.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Geneva3.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GENEVA 3
       subtitle: KRYON CHANNELLING
@@ -2230,7 +2230,7 @@ ArtistData:
       filename: Geneva3.mp3
       url: http://audio.kryon.com/en/Geneva3.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Geneva4.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Geneva4.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GENEVA 4
       subtitle: KRYON CHANNELLING
@@ -2240,7 +2240,7 @@ ArtistData:
       filename: Geneva4.mp3
       url: http://audio.kryon.com/en/Geneva4.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Geneva5.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Geneva5.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GENEVA 5
       subtitle: KRYON CHANNELLING
@@ -2250,7 +2250,7 @@ ArtistData:
       filename: Geneva5.mp3
       url: http://audio.kryon.com/en/Geneva5.mp3
       mirrors: {}
-    http://audio.kryon.com/en/CHOIR%20PART%20ONE.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/CHOIR%20PART%20ONE.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Part one w/ historic preface
       subtitle: KRYON CHANNELLING
@@ -2260,7 +2260,7 @@ ArtistData:
       filename: CHOIR PART ONE.mp3
       url: http://audio.kryon.com/en/CHOIR%20PART%20ONE.mp3
       mirrors: {}
-    http://audio.kryon.com/en/CHOIR%20PART%20TWO.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/CHOIR%20PART%20TWO.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Part two"'
       subtitle: KRYON CHANNELLING
@@ -2270,7 +2270,7 @@ ArtistData:
       filename: CHOIR PART TWO.mp3
       url: http://audio.kryon.com/en/CHOIR%20PART%20TWO.mp3
       mirrors: {}
-    http://audio.kryon.com/en/CHAMONIX1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/CHAMONIX1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHAMONIX FRANCE 1
       subtitle: KRYON CHANNELLING
@@ -2280,7 +2280,7 @@ ArtistData:
       filename: CHAMONIX1.mp3
       url: http://audio.kryon.com/en/CHAMONIX1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/CHAMONIX2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/CHAMONIX2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHAMONIX FRANCE 2
       subtitle: KRYON CHANNELLING
@@ -2290,7 +2290,7 @@ ArtistData:
       filename: CHAMONIX2.mp3
       url: http://audio.kryon.com/en/CHAMONIX2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/BLANC.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/BLANC.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: On the mountain
       subtitle: KRYON CHANNELLING
@@ -2300,7 +2300,7 @@ ArtistData:
       filename: BLANC.mp3
       url: http://audio.kryon.com/en/BLANC.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: FRIDAY - MINI
       subtitle: KRYON CHANNELLING
@@ -2310,7 +2310,7 @@ ArtistData:
       filename: Yellowstone - Day one - mini.mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20end%20K%26P.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20end%20K%26P.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: FRIDAY DUAL - ALCAZAR & KRYON
       subtitle: KRYON DUAL CHANNELLING
@@ -2320,7 +2320,7 @@ ArtistData:
       filename: Yellowstone - Day one - end K&P.mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20one%20-%20end%20K%26P.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY - MINI
       subtitle: KRYON CHANNELLING
@@ -2330,7 +2330,7 @@ ArtistData:
       filename: Yellowstone - Day two - mini.mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20end%20K%26M.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20end%20K%26M.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY - ADIRONNDA - KRYON
       subtitle: KRYON DUAL CHANNELLING
@@ -2340,7 +2340,7 @@ ArtistData:
       filename: Yellowstone - Day two - end K&M.mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20two%20-%20end%20K%26M.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20trio(MPK).mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20trio(MPK).mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY - ADIRONNDA - ALCAZAR - KRYON
       subtitle: KRYON TRIO CHANNELLING
@@ -2350,7 +2350,7 @@ ArtistData:
       filename: Yellowstone - Day three - trio(MPK).mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20trio(MPK).mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20end.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20end.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY MAIN
       subtitle: KRYON CHANNELLING
@@ -2360,7 +2360,7 @@ ArtistData:
       filename: Yellowstone - Day three - end.mp3
       url: http://audio.kryon.com/en/Yellowstone%20-%20Day%20three%20-%20end.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channellingworkshop.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channellingworkshop.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: MONDAY CHANNELLING WORKSHOP
       subtitle: KRYON CHANNELLING
@@ -2370,7 +2370,7 @@ ArtistData:
       filename: Channellingworkshop.mp3
       url: http://audio.kryon.com/en/Channellingworkshop.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Yellowstone%20panel.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Yellowstone%20panel.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: ENTIRE PANEL RECORDING
       subtitle: Moderated by Elan Cohen
@@ -2380,7 +2380,7 @@ ArtistData:
       filename: Yellowstone panel.mp3
       url: http://audio.kryon.com/en/Yellowstone%20panel.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Asheville17-Excursion-one.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Asheville17-Excursion-one.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Tripple Falls - DuPont State Forest
       subtitle: KRYON CHANNELLING-1
@@ -2390,7 +2390,7 @@ ArtistData:
       filename: Asheville17-Excursion-one.mp3
       url: http://audio.kryon.com/en/Asheville17-Excursion-one.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Asheville17-Excursion-two.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Asheville17-Excursion-two.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mount Pisgua
       subtitle: KRYON CHANNELLING-2
@@ -2400,7 +2400,7 @@ ArtistData:
       filename: Asheville17-Excursion-two.mp3
       url: http://audio.kryon.com/en/Asheville17-Excursion-two.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Asheville17-Saturday-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Asheville17-Saturday-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling -SAT
       subtitle: KRYON CHANNELLING
@@ -2410,7 +2410,7 @@ ArtistData:
       filename: Asheville17-Saturday-mini.mp3
       url: http://audio.kryon.com/en/Asheville17-Saturday-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Asheville17-Saturday-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Asheville17-Saturday-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Three Paradigm Shifts" - SAT'
       subtitle: KRYON CHANNELLING
@@ -2420,7 +2420,7 @@ ArtistData:
       filename: Asheville17-Saturday-main.mp3
       url: http://audio.kryon.com/en/Asheville17-Saturday-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Asheville17-Sunday-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Asheville17-Sunday-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday Channelling
       subtitle: KRYON CHANNELLING
@@ -2430,7 +2430,7 @@ ArtistData:
       filename: Asheville17-Sunday-main.mp3
       url: http://audio.kryon.com/en/Asheville17-Sunday-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Saturday-buff-17-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Saturday-buff-17-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini Channelling -SAT
       subtitle: KRYON CHANNELLING
@@ -2440,7 +2440,7 @@ ArtistData:
       filename: Saturday-buff-17-mini.mp3
       url: http://audio.kryon.com/en/Saturday-buff-17-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Saturday-buff-17-Main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Saturday-buff-17-Main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"From Dark to Light" - SAT'
       subtitle: KRYON CHANNELLING
@@ -2450,7 +2450,7 @@ ArtistData:
       filename: Saturday-buff-17-Main.mp3
       url: http://audio.kryon.com/en/Saturday-buff-17-Main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Sunday-buff-17-Main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Sunday-buff-17-Main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday Channelling - "Discovery"
       subtitle: KRYON CHANNELLING
@@ -2460,7 +2460,7 @@ ArtistData:
       filename: Sunday-buff-17-Main.mp3
       url: http://audio.kryon.com/en/Sunday-buff-17-Main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Saturday-laguna-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Saturday-laguna-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SATURDAY
       subtitle: KRYON CHANNELLING
@@ -2470,7 +2470,7 @@ ArtistData:
       filename: Saturday-laguna-17.mp3
       url: http://audio.kryon.com/en/Saturday-laguna-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Sunday-laguna-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Sunday-laguna-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: SUNDAY
       subtitle: KRYON CHANNELLING
@@ -2480,7 +2480,7 @@ ArtistData:
       filename: Sunday-laguna-17.mp3
       url: http://audio.kryon.com/en/Sunday-laguna-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Minnesota-SAT-dual.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Minnesota-SAT-dual.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Marilyn Harper & Lee Carroll
       subtitle: DUAL CHANNELLING
@@ -2490,7 +2490,7 @@ ArtistData:
       filename: Minnesota-SAT-dual.mp3
       url: http://audio.kryon.com/en/Minnesota-SAT-dual.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Minnesota-SAT-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Minnesota-SAT-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"New Paradigms" - SAT'
       subtitle: KRYON CHANNELLING
@@ -2500,7 +2500,7 @@ ArtistData:
       filename: Minnesota-SAT-main.mp3
       url: http://audio.kryon.com/en/Minnesota-SAT-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Minnesota-SUN-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Minnesota-SUN-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: The new Akashic Remebrance - SUN
       subtitle: KRYON CHANNELLING
@@ -2510,7 +2510,7 @@ ArtistData:
       filename: Minnesota-SUN-main.mp3
       url: http://audio.kryon.com/en/Minnesota-SUN-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2001.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2001.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY ONE - OPENING
       subtitle: KRYON CHANNELLING
@@ -2520,7 +2520,7 @@ ArtistData:
       filename: Alaska Cruise 01.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2001.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2002.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2002.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY TWO - FIRE
       subtitle: KRYON CHANNELLING
@@ -2530,7 +2530,7 @@ ArtistData:
       filename: Alaska Cruise 02.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2002.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2003.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2003.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY THREE - EARTH
       subtitle: KRYON CHANNELLING
@@ -2540,7 +2540,7 @@ ArtistData:
       filename: Alaska Cruise 03.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2003.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2004.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2004.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY FOUR - WATER
       subtitle: KRYON CHANNELLING
@@ -2550,7 +2550,7 @@ ArtistData:
       filename: Alaska Cruise 04.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2004.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2005.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2005.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY FIVE - AIR
       subtitle: KRYON CHANNELLING
@@ -2560,7 +2560,7 @@ ArtistData:
       filename: Alaska Cruise 05.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2005.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Alaska%20Cruise%2006.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Alaska%20Cruise%2006.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DAY SIX - FAREWELL
       subtitle: KRYON CHANNELLING
@@ -2570,7 +2570,7 @@ ArtistData:
       filename: Alaska Cruise 06.mp3
       url: http://audio.kryon.com/en/Alaska%20Cruise%2006.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Stamford-2017-day%20one%20dual.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Stamford-2017-day%20one%20dual.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Dual Channelling - SAT
       subtitle: KRYON CHANNELLING
@@ -2580,7 +2580,7 @@ ArtistData:
       filename: Stamford-2017-day one dual.mp3
       url: http://audio.kryon.com/en/Stamford-2017-day%20one%20dual.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Stamford-2017-day%20one%20main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Stamford-2017-day%20one%20main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"The Addictive Old Energy" - SAT'
       subtitle: KRYON CHANNELLING
@@ -2590,7 +2590,7 @@ ArtistData:
       filename: Stamford-2017-day one main.mp3
       url: http://audio.kryon.com/en/Stamford-2017-day%20one%20main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Stamford-2017-Day%20two.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Stamford-2017-Day%20two.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Sunday Channelling - "Timing"
       subtitle: KRYON CHANNELLING
@@ -2600,7 +2600,7 @@ ArtistData:
       filename: Stamford-2017-Day two.mp3
       url: http://audio.kryon.com/en/Stamford-2017-Day%20two.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery(mini)1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery(mini)1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#1 - THURSDAY - MINI"
       subtitle: KRYON CHANNELLING
@@ -2610,7 +2610,7 @@ ArtistData:
       filename: Discovery(mini)1.mp3
       url: http://audio.kryon.com/en/Discovery(mini)1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery%20channelling%204.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery%20channelling%204.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#4 - FRIDAY - MAIN"
       subtitle: KRYON CHANNELLING
@@ -2620,7 +2620,7 @@ ArtistData:
       filename: Discovery channelling 4.mp3
       url: http://audio.kryon.com/en/Discovery%20channelling%204.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery%20channelling%202.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery%20channelling%202.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#2 - THURSDAY - MAIN"
       subtitle: KRYON CHANNELLING
@@ -2630,7 +2630,7 @@ ArtistData:
       filename: Discovery channelling 2.mp3
       url: http://audio.kryon.com/en/Discovery%20channelling%202.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery%20channelling%205.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery%20channelling%205.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#5 - SATURDAY - MAIN *"
       subtitle: KRYON CHANNELLING
@@ -2640,7 +2640,7 @@ ArtistData:
       filename: Discovery channelling 5.mp3
       url: http://audio.kryon.com/en/Discovery%20channelling%205.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery(mini)3.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery(mini)3.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#3 - FRIDAY - MINI"
       subtitle: KRYON CHANNELLING
@@ -2650,7 +2650,7 @@ ArtistData:
       filename: Discovery(mini)3.mp3
       url: http://audio.kryon.com/en/Discovery(mini)3.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Discovery(footwashing)6.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Discovery(footwashing)6.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: "#6 - SUNDAY - FOOTWASHING"
       subtitle: KRYON CHANNELLING
@@ -2660,7 +2660,7 @@ ArtistData:
       filename: Discovery(footwashing)6.mp3
       url: http://audio.kryon.com/en/Discovery(footwashing)6.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Saltmine-2-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Saltmine-2-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Salt mine (second group)
       subtitle: KRYON CHANNELLING
@@ -2670,7 +2670,7 @@ ArtistData:
       filename: Saltmine-2-17.mp3
       url: http://audio.kryon.com/en/Saltmine-2-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Female-isle-eng.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Female-isle-eng.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Female Island channelling
       subtitle: KRYON CHANNELLING
@@ -2680,7 +2680,7 @@ ArtistData:
       filename: Female-isle-eng.mp3
       url: http://audio.kryon.com/en/Female-isle-eng.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boat-1-eng.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boat-1-eng.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Boat channeling (going to islands)
       subtitle: KRYON CHANNELLING
@@ -2690,7 +2690,7 @@ ArtistData:
       filename: Boat-1-eng.mp3
       url: http://audio.kryon.com/en/Boat-1-eng.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Boat-4-eng.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Boat-4-eng.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Boat channeling (leaving the islands)
       subtitle: KRYON CHANNELLING
@@ -2700,7 +2700,7 @@ ArtistData:
       filename: Boat-4-eng.mp3
       url: http://audio.kryon.com/en/Boat-4-eng.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Male-isle-eng.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Male-isle-eng.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Male Island channelling
       subtitle: KRYON CHANNELLING
@@ -2710,7 +2710,7 @@ ArtistData:
       filename: Male-isle-eng.mp3
       url: http://audio.kryon.com/en/Male-isle-eng.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Lisbon-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Lisbon-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Lisbon Channeling 1
       subtitle: KRYON CHANNELLING
@@ -2720,7 +2720,7 @@ ArtistData:
       filename: Lisbon-1.mp3
       url: http://audio.kryon.com/en/Lisbon-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Lisbon-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Lisbon-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Lisbon Channeling 2
       subtitle: KRYON CHANNELLING
@@ -2730,7 +2730,7 @@ ArtistData:
       filename: Lisbon-2.mp3
       url: http://audio.kryon.com/en/Lisbon-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Lisbon-3.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Lisbon-3.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Lisbon Channeling 3
       subtitle: KRYON CHANNELLING
@@ -2740,7 +2740,7 @@ ArtistData:
       filename: Lisbon-3.mp3
       url: http://audio.kryon.com/en/Lisbon-3.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Fatima-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Fatima-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Fatima Channeling 1
       subtitle: KRYON CHANNELLING
@@ -2750,7 +2750,7 @@ ArtistData:
       filename: Fatima-1.mp3
       url: http://audio.kryon.com/en/Fatima-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Fatima-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Fatima-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Fatima Channeling 2
       subtitle: KRYON CHANNELLING
@@ -2760,7 +2760,7 @@ ArtistData:
       filename: Fatima-2.mp3
       url: http://audio.kryon.com/en/Fatima-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Porto-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Porto-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Porto - End of Fatima Channeling
       subtitle: KRYON CHANNELLING
@@ -2770,7 +2770,7 @@ ArtistData:
       filename: Porto-1.mp3
       url: http://audio.kryon.com/en/Porto-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Porto%202-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Porto%202-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Porto Channeling 1
       subtitle: KRYON CHANNELLING
@@ -2780,7 +2780,7 @@ ArtistData:
       filename: Porto 2-1.mp3
       url: http://audio.kryon.com/en/Porto%202-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Porto%202-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Porto%202-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Porto Channeling 2
       subtitle: KRYON CHANNELLING
@@ -2790,7 +2790,7 @@ ArtistData:
       filename: Porto 2-2.mp3
       url: http://audio.kryon.com/en/Porto%202-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Madrid-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Madrid-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Madrid Channeling 1
       subtitle: KRYON CHANNELLING
@@ -2800,7 +2800,7 @@ ArtistData:
       filename: Madrid-1.mp3
       url: http://audio.kryon.com/en/Madrid-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Madrid-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Madrid-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Madrid Channeling 2
       subtitle: KRYON CHANNELLING
@@ -2810,7 +2810,7 @@ ArtistData:
       filename: Madrid-2.mp3
       url: http://audio.kryon.com/en/Madrid-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA-Delhi1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA-Delhi1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INDIA-DELHI 1
       subtitle: KRYON CHANNELLING
@@ -2820,7 +2820,7 @@ ArtistData:
       filename: INDIA-Delhi1.mp3
       url: http://audio.kryon.com/en/INDIA-Delhi1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA-Delhi2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA-Delhi2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INDIA-DELHI 2
       subtitle: KRYON CHANNELLING
@@ -2830,7 +2830,7 @@ ArtistData:
       filename: INDIA-Delhi2.mp3
       url: http://audio.kryon.com/en/INDIA-Delhi2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA-Seminar1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA-Seminar1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DELHI SEMINAR 1
       subtitle: KRYON CHANNELLING
@@ -2840,7 +2840,7 @@ ArtistData:
       filename: INDIA-Seminar1.mp3
       url: http://audio.kryon.com/en/INDIA-Seminar1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA-Seminar2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA-Seminar2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DELHI SEMINAR 2
       subtitle: KRYON CHANNELLING
@@ -2850,7 +2850,7 @@ ArtistData:
       filename: INDIA-Seminar2.mp3
       url: http://audio.kryon.com/en/INDIA-Seminar2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Observatory.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Observatory.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: ASTROLOGY OBSERVATORY
       subtitle: KRYON CHANNELLING
@@ -2860,7 +2860,7 @@ ArtistData:
       filename: INDIA - Observatory.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Observatory.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Varanasi%20(hotel).mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Varanasi%20(hotel).mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: VARANASI 1
       subtitle: KRYON CHANNELLING
@@ -2870,7 +2870,7 @@ ArtistData:
       filename: INDIA - Varanasi (hotel).mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Varanasi%20(hotel).mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Ganges%20River.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Ganges%20River.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: GANGES CELEBRATION w/ Shailesh Tripathi
       subtitle: KRYON CHANNELLING
@@ -2880,7 +2880,7 @@ ArtistData:
       filename: INDIA - Ganges River.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Ganges%20River.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Delhi3.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Delhi3.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INDIA-DELHI 3 w/ Monika
       subtitle: KRYON CHANNELLING
@@ -2890,7 +2890,7 @@ ArtistData:
       filename: INDIA - Delhi3.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Delhi3.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Dharamshala1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Dharamshala1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DHARAMSHALA 1 w/ Monika
       subtitle: KRYON CHANNELLING
@@ -2900,7 +2900,7 @@ ArtistData:
       filename: INDIA - Dharamshala1.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Dharamshala1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Dharamshala2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Dharamshala2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: MONDAY CHANNELLING WORKSHOP
       subtitle: KRYON CHANNELLING
@@ -2910,7 +2910,7 @@ ArtistData:
       filename: INDIA - Dharamshala2.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Dharamshala2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20KANGRA%20FORT.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20KANGRA%20FORT.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DHARAMSHALA-KANGRA FORT
       subtitle: KRYON CHANNELLING
@@ -2920,7 +2920,7 @@ ArtistData:
       filename: INDIA - KANGRA FORT.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20KANGRA%20FORT.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Leh1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Leh1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INDIA-LEH 1
       subtitle: KRYON CHANNELLING
@@ -2930,7 +2930,7 @@ ArtistData:
       filename: INDIA - Leh1.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Leh1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA%20-%20Leh2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA%20-%20Leh2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: INDIA-LEH 2
       subtitle: KRYON CHANNELLING
@@ -2940,7 +2940,7 @@ ArtistData:
       filename: INDIA - Leh2.mp3
       url: http://audio.kryon.com/en/INDIA%20-%20Leh2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/NEPAL%20-%20Kathmandu1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/NEPAL%20-%20Kathmandu1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: NEPAL - KATHMANDU 1
       subtitle: KRYON CHANNELLING
@@ -2950,7 +2950,7 @@ ArtistData:
       filename: NEPAL - Kathmandu1.mp3
       url: http://audio.kryon.com/en/NEPAL%20-%20Kathmandu1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/NEPAL%20-%20Kathmandu2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/NEPAL%20-%20Kathmandu2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: NEPAL - KATHMANDU 2
       subtitle: KRYON CHANNELLING
@@ -2960,7 +2960,7 @@ ArtistData:
       filename: NEPAL - Kathmandu2.mp3
       url: http://audio.kryon.com/en/NEPAL%20-%20Kathmandu2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: NEPAL - DWARKIKAS RESORT
       subtitle: KRYON CHANNELLING
@@ -2970,7 +2970,7 @@ ArtistData:
       filename: NEPAL-Dwarikas Resort.mp3
       url: http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort.mp3
       mirrors: {}
-    http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: NEPAL - DWARKIKAS RESORT 2
       subtitle: KRYON CHANNELLING
@@ -2980,7 +2980,7 @@ ArtistData:
       filename: NEPAL-Dwarikas Resort2.mp3
       url: http://audio.kryon.com/en/NEPAL-Dwarikas%20Resort2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/INDIA-Final-channelling.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/INDIA-Final-channelling.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: FINAL CHANNELING
       subtitle: KRYON CHANNELLING
@@ -2990,7 +2990,7 @@ ArtistData:
       filename: INDIA-Final-channelling.mp3
       url: http://audio.kryon.com/en/INDIA-Final-channelling.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ARGENTINA-FRI.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ARGENTINA-FRI.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DUAL CHANNELLING - FRIDAY
       subtitle: Prageet Harris and Lee Carroll
@@ -3000,7 +3000,7 @@ ArtistData:
       filename: ARGENTINA-FRI.mp3
       url: http://audio.kryon.com/en/ARGENTINA-FRI.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ARGENTINA-SAT-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ARGENTINA-SAT-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: KRYON CHANNELLING - SAT 1
       subtitle: Lee Carroll
@@ -3010,7 +3010,7 @@ ArtistData:
       filename: ARGENTINA-SAT-1.mp3
       url: http://audio.kryon.com/en/ARGENTINA-SAT-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ARGENTINA-SAT-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ARGENTINA-SAT-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DUAL CHANNELLING - SAT 2
       subtitle: Prageet Harris and Lee Carroll
@@ -3020,7 +3020,7 @@ ArtistData:
       filename: ARGENTINA-SAT-2.mp3
       url: http://audio.kryon.com/en/ARGENTINA-SAT-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ARGENTINA-SUN-1.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ARGENTINA-SUN-1.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: KRYON CHANNELLING - SUN 1
       subtitle: Lee Carroll
@@ -3030,7 +3030,7 @@ ArtistData:
       filename: ARGENTINA-SUN-1.mp3
       url: http://audio.kryon.com/en/ARGENTINA-SUN-1.mp3
       mirrors: {}
-    http://audio.kryon.com/en/ARGENTINA-SUN-2.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/ARGENTINA-SUN-2.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: DUAL CHANNELLING - SUN 2
       subtitle: Prageet Harris and Lee Carroll
@@ -3040,7 +3040,7 @@ ArtistData:
       filename: ARGENTINA-SUN-2.mp3
       url: http://audio.kryon.com/en/ARGENTINA-SUN-2.mp3
       mirrors: {}
-    http://audio.kryon.com/en/KRYON-MONTREAL.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/KRYON-MONTREAL.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Becoming Multidimensional
       subtitle: KRYON CHANNELLING
@@ -3050,7 +3050,7 @@ ArtistData:
       filename: KRYON-MONTREAL.mp3
       url: http://audio.kryon.com/en/KRYON-MONTREAL.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Philadelphia-17-Sat-dual.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Philadelphia-17-Sat-dual.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Dual Channelling - SAT
       subtitle: KRYON & ADIRONNDA
@@ -3060,7 +3060,7 @@ ArtistData:
       filename: Philadelphia-17-Sat-dual.mp3
       url: http://audio.kryon.com/en/Philadelphia-17-Sat-dual.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Philadelphia-17-Sat-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Philadelphia-17-Sat-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"The way FEAR works" - SAT'
       subtitle: KRYON CHANNELLING
@@ -3070,7 +3070,7 @@ ArtistData:
       filename: Philadelphia-17-Sat-main.mp3
       url: http://audio.kryon.com/en/Philadelphia-17-Sat-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Philadelphia-17-Sun-main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Philadelphia-17-Sun-main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Reactions to an Unknown Future"'
       subtitle: KRYON CHANNELLING - SUNDAY
@@ -3080,7 +3080,7 @@ ArtistData:
       filename: Philadelphia-17-Sun-main.mp3
       url: http://audio.kryon.com/en/Philadelphia-17-Sun-main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Calgary-17-SAT-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Calgary-17-SAT-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini - Channelling - SAT
       subtitle: KRYON CHANNELLING
@@ -3090,7 +3090,7 @@ ArtistData:
       filename: Calgary-17-SAT-mini.mp3
       url: http://audio.kryon.com/en/Calgary-17-SAT-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Calgary-17-SAT-Main.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Calgary-17-SAT-Main.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Love - Revisited" - SAT'
       subtitle: KRYON CHANNELLING
@@ -3100,7 +3100,7 @@ ArtistData:
       filename: Calgary-17-SAT-Main.mp3
       url: http://audio.kryon.com/en/Calgary-17-SAT-Main.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Calgary-17-SUN.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Calgary-17-SUN.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"The Power of Coherence" - SUN'
       subtitle: KRYON CHANNELLING
@@ -3110,7 +3110,7 @@ ArtistData:
       filename: Calgary-17-SUN.mp3
       url: http://audio.kryon.com/en/Calgary-17-SUN.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Laguna1-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Laguna1-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Morning channelling
       subtitle: KRYON CHANNELLING
@@ -3120,7 +3120,7 @@ ArtistData:
       filename: Laguna1-17.mp3
       url: http://audio.kryon.com/en/Laguna1-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Laguna2-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Laguna2-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Evening channelling
       subtitle: KRYON CHANNELLING
@@ -3130,7 +3130,7 @@ ArtistData:
       filename: Laguna2-17.mp3
       url: http://audio.kryon.com/en/Laguna2-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Seattle-17-Saturday-mini.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Seattle-17-Saturday-mini.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: Mini - Channelling - SAT
       subtitle: KRYON CHANNELLING
@@ -3140,7 +3140,7 @@ ArtistData:
       filename: Seattle-17-Saturday-mini.mp3
       url: http://audio.kryon.com/en/Seattle-17-Saturday-mini.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Seattle-17-Saturday-%20final.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Seattle-17-Saturday-%20final.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"ALL GROWN UP" - SAT'
       subtitle: KRYON CHANNELLING
@@ -3150,7 +3150,7 @@ ArtistData:
       filename: Seattle-17-Saturday- final.mp3
       url: http://audio.kryon.com/en/Seattle-17-Saturday-%20final.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Seattle-17-Sunday%20-%20maiin.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Seattle-17-Sunday%20-%20maiin.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: '"Relationship between the parts" - SUN'
       subtitle: KRYON CHANNELLING
@@ -3160,7 +3160,7 @@ ArtistData:
       filename: Seattle-17-Sunday - maiin.mp3
       url: http://audio.kryon.com/en/Seattle-17-Sunday%20-%20maiin.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-1-RTL-Sister-brother-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-1-RTL-Sister-brother-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 1 - SISTERHOOD
       subtitle: KRYON CHANNELLING
@@ -3170,7 +3170,7 @@ ArtistData:
       filename: Channel-1-RTL-Sister-brother-17.mp3
       url: http://audio.kryon.com/en/Channel-1-RTL-Sister-brother-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-2-RTL-Day-One-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-2-RTL-Day-One-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 2 - Morning channelling
       subtitle: KRYON CHANNELLING
@@ -3180,7 +3180,7 @@ ArtistData:
       filename: Channel-2-RTL-Day-One-17.mp3
       url: http://audio.kryon.com/en/Channel-2-RTL-Day-One-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/RTL-Meditation-Day-One-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/RTL-Meditation-Day-One-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: MEDITATION - Kalei - John - Amber
       subtitle: KRYON CHANNELLING
@@ -3190,7 +3190,7 @@ ArtistData:
       filename: RTL-Meditation-Day-One-17.mp3
       url: http://audio.kryon.com/en/RTL-Meditation-Day-One-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-3-RTL-Day-One-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-3-RTL-Day-One-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 3 - THE TEACHING CIRCLE
       subtitle: KRYON CHANNELLING
@@ -3200,7 +3200,7 @@ ArtistData:
       filename: Channel-3-RTL-Day-One-17.mp3
       url: http://audio.kryon.com/en/Channel-3-RTL-Day-One-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-4-At%20the%20Volcano-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-4-At%20the%20Volcano-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 4 - VOLCANO
       subtitle: KRYON CHANNELLING
@@ -3210,7 +3210,7 @@ ArtistData:
       filename: Channel-4-At the Volcano-17.mp3
       url: http://audio.kryon.com/en/Channel-4-At%20the%20Volcano-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-5-RTL-Tri-channeling-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-5-RTL-Tri-channeling-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 5 - TRI CHANNELLING
       subtitle: KRYON CHANNELLING
@@ -3220,7 +3220,7 @@ ArtistData:
       filename: Channel-5-RTL-Tri-channeling-17.mp3
       url: http://audio.kryon.com/en/Channel-5-RTL-Tri-channeling-17.mp3
       mirrors: {}
-    http://audio.kryon.com/en/Channel-6-RTL-17.mp3: !ruby/object:UncleKryon::KryonAumData
+    http://audio.kryon.com/en/Channel-6-RTL-17.mp3: !ruby/object:UncleKryon::AumData
       updated_on: '2018-06-12 02:33:24'
       title: CHANNEL 6 - MEDIATION & CHANNELLING
       subtitle: KRYON CHANNELLING *
