@@ -1,7 +1,12 @@
 ---
 Artist: !ruby/object:UncleKryon::ArtistData
   updated_on: '2018-06-12 02:33:24'
+  updated_releases_on: '2018-06-12 02:33:24'
+  updated_albums_on: '2018-06-12 02:33:24'
   updated_aums_on: '2018-06-12 02:33:24'
+  updated_scrolls_on: '2018-06-12 02:33:24'
+  updated_visions_on: '2018-06-12 02:33:24'
+  updated_pics_on: '2018-06-12 02:33:24'
   
   id: 'kryon'
   name: 'Kryon'
