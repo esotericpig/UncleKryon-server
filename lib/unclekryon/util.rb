@@ -37,10 +37,15 @@ module UncleKryon
       return url
     end
     
+    def self.clean_charset(str)
+      return str.encode('utf-8','MacRoman',universal_newline: true) # X-MAC-ROMAN
+    end
+    
     def self.clean_data(str)
       # Have to use "[[:space:]]" for "&nbsp;" and "<br/>"
       # This is necessary for "<br />\s+" (see 2015 "KRYON IN LIMA, PERU (2)")
       str = str.clone()
+      str = clean_charset(str)
       str.gsub!(/[[:space:]]+/,' ') # Replace all spaces with one space
       str.strip!()
       return str

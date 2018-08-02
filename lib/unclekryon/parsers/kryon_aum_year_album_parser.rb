@@ -105,7 +105,8 @@ module UncleKryon
           :aum_filename=>[]
         }
       
-      # Force 'utf-8' (see charset "X-MAC-ROMAN" in 2017 "The Discovery Series")
+      # Force 'utf-8'
+      # - See charset "X-MAC-ROMAN" in 2017 "The Discovery Series", 2016 "Kryon in Budapest (5)"
       doc = Nokogiri::HTML(open(@url),nil,'utf-8')
       
       old_album = @artist.albums[@url]
@@ -248,7 +249,7 @@ module UncleKryon
         next if td.nil?
         next if td.content.nil?
         
-        orig_c = td.content
+        orig_c = Util.clean_charset(td.content)
         c = Util.clean_data(orig_c)
         
         next if c.empty?
