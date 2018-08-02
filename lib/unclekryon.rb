@@ -185,6 +185,10 @@ module UncleKryon
         op.on('-t','--title <title>','Title of year release to hack (e.g., 2017)')
         op.on('-a','--album <album>','Album to hack (e.g., 2017.12.25, 1.10, 6.4:2)')
         op.on('-s','--albums','Hack all albums')
+        op.on('-b','--begin-album <album>','Hack all albums starting from <album>') do |begin_album|
+          @options[:albums] = true
+          @options[:begin_album] = begin_album
+        end
       end
       
       @parsers.push(parser)
@@ -202,7 +206,7 @@ module UncleKryon
           @did_cmd = true
         elsif @options[:title]
           if @options[:albums]
-            hacker.train_kryon_aum_year_albums(@options[:title])
+            hacker.train_kryon_aum_year_albums(@options[:title],@options[:begin_album])
           else
             hacker.train_kryon_aum_year(@options[:title])
           end
@@ -215,7 +219,7 @@ module UncleKryon
           @did_cmd = true
         elsif @options[:title]
           if @options[:albums]
-            hacker.parse_kryon_aum_year_albums(@options[:title])
+            hacker.parse_kryon_aum_year_albums(@options[:title],@options[:begin_album])
           else
             hacker.parse_kryon_aum_year(@options[:title])
           end
