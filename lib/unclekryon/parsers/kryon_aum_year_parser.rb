@@ -106,7 +106,7 @@ module UncleKryon
           r[1] = nil
         end
       rescue ArgumentError => e
-        Log.instance.fatal("Invalid Date: '#{date}'",e)
+        Log.instance.fatal("Invalid Date: '#{date}'",error: e)
         raise
       end
       
@@ -260,15 +260,18 @@ module UncleKryon
         return false
       end
       
-      # See 2016 'Las Vegas, NV - "Numerology" - (3)' where the date cell's href is an image
+      # Sometimes, the date cell's href is an image (See 2016 'Las Vegas, NV - "Numerology" - (3)')
       good_urls = /
         \.html?[[:space:]]*\z
       /ix
       
-      if album.url !~ good_urls
-        bad_url = album.url
-        album.url = Util.clean_link(@release.url,cell['href'])
-        log.warn("Using topic cell's href for URL: #{File.basename(bad_url)}=>#{File.basename(album.url)}")
+      date_url = album.url
+      topic_url = Util.clean_link(@release.url,cell['href'])
+      
+      # Sometimes, the date cell's href is wrong (See 2016 '"Five Concepts for the New Human" (2)')
+      if album.url !~ good_urls || (!Util.empty_s?(topic_url) && date_url != topic_url)
+        album.url = topic_url
+        log.warn("Using topic cell's href for URL: #{File.basename(date_url)}=>#{File.basename(album.url)}")
         
         if Util.empty_s?(album.url)
           msg = "Date and topic cells' hrefs are empty: Topic[#{album.title}]"

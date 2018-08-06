@@ -75,7 +75,6 @@ module UncleKryon
         raise "Release[#{year}] does not exist" if release.nil?()
       end
       
-      # Find the album
       album = find_kryon_aum_year_album(artist,date,year,index)[0]
       album_parser = KryonAumYearAlbumParser.new(artist,album.url)
       

@@ -45,10 +45,9 @@ module UncleKryon
       # Have to use "[[:space:]]" for "&nbsp;" and "<br/>"
       # This is necessary for "<br />\s+" (see 2015 "KRYON IN LIMA, PERU (2)")
       str = str.clone()
-      str = clean_charset(str)
       str.gsub!(/[[:space:]]+/,' ') # Replace all spaces with one space
       str.strip!()
-      return str
+      return clean_charset(str)
     end
     
     def self.clean_link(url,link)
