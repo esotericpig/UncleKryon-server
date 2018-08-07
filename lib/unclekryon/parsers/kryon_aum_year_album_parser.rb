@@ -437,9 +437,15 @@ module UncleKryon
         end
         
         pic = PicData.new()
+        
         pic.url = Util.clean_link(url,src)
         pic.filename = Util.parse_url_filename(pic.url)
-        pic.name = File.basename(pic.filename,File.extname(pic.filename))
+        
+        pic.alt = img['alt']
+        pic.alt = '' if Util.empty_s?(pic.alt)
+        pic.caption = ''
+        
+        pic.name = Util.empty_s?(pic.alt) ? File.basename(pic.filename,File.extname(pic.filename)) : pic.alt
         pic.updated_on = @updated_on
         
         # Is it actually new?

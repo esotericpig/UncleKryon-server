@@ -25,6 +25,9 @@ module UncleKryon
     attr_accessor :name
     attr_accessor :filename
     
+    attr_accessor :alt
+    attr_accessor :caption
+    
     attr_accessor :url
     attr_accessor :mirrors
     
@@ -34,6 +37,9 @@ module UncleKryon
       @name = ''
       @filename = ''
       
+      @alt = ''
+      @caption = ''
+      
       @url = ''
       @mirrors = {}
     end
@@ -42,6 +48,8 @@ module UncleKryon
     def ==(y)
       return @name == y.name &&
              @filename == y.filename &&
+             @alt == y.alt &&
+             @caption == y.caption &&
              @url == y.url &&
              @mirrors == y.mirrors
     end
@@ -54,6 +62,9 @@ module UncleKryon
       else
         s << ('%-30s' % [@name])
         s << (' | %30s' % [@filename]) unless @name == @filename
+        
+        s << (' | %30s' % [@alt]) unless @name == @alt
+        s << (' | %60s' % [@caption])
       end
       
       return s
