@@ -63,6 +63,7 @@ module UncleKryon
       end
       
       @max_tag_id_length += 2 # Indention
+      @max_tag_id_length = 7 if @max_tag_id_length < 7 # For "<Enter>" option
       @max_tag_length = -@max_tag_length # Left justify
     end
     
