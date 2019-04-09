@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,22 +27,6 @@ require 'unclekryon/hacker'
 require 'unclekryon/log'
 require 'unclekryon/server'
 require 'unclekryon/version'
-
-# TODO: make command-line program for hacker, server, uploader
-#
-# hax kryon scroll main, hax lems aum main, hax ssb scroll year
-# lems = lemurian sisters; ssb = saytha sai baba
-#
-# unclekryon srv (uses site dir and current year) (default is just help)
-# unclekryon srv --every 10min/--once (save to kryon_<release>.yaml & to DB using config file for user/pass)
-#
-# unclekryon up --dir x --file x kryon/lems/ssb (upload kryon.yaml to database)
-# -l/-g take in arg of kryon/lems/ssb
-# unclekryon up --local /-l kryon (save to DB file for Android app)
-# unclekryon up --global/-g kryon (save to DB network; use config file for user/pass)
-#
-# for bash completion, have "--bash-completion" option output bash completion options and use in file
-# --install-bash-completion to write/copy file for bash completion to work (maybe need to use sudo/su?)
 
 module UncleKryon
   class Main

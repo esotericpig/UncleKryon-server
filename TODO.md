@@ -1,5 +1,6 @@
 # TODO | UncleKryon-server
 
+## Version 1.0
 - [ ] Download option to download mp3s to /stock, in case URLs change.
 - [ ] 2019 aums
 - [ ] 2018 aums
@@ -22,19 +23,21 @@
 - [ ] Option to convert YAML files to JSON for server/app.
 - [ ] Server option to continuously check [Kryon aums download page](http://audio.kryon.com/en/); maybe also do for Lemurian Sisterhood? One command checks all sites and separate commands check each individual site (for debugging).
 - [ ] If update something by hand, need manual option to send push notifications to apps and update server's DB.
-
-## Create systemd (fedora) service
-
-Create a systemd service that runs once. Then have the server code run internally every X time.
-
-Could attach it to rails server instead?
-
-Helpful links:
-
-- [Understanding & administering systemd](https://docs.fedoraproject.org/en-US/quick-docs/understanding-and-administering-systemd/)
-- [systemd unit file basics](https://fedoramagazine.org/systemd-getting-a-grip-on-units/)
-- [Packaging::Systemd#Unit_Files](https://fedoraproject.org/wiki/Packaging:Systemd#Unit_Files)
-
-Folders to add:
-
-- /fedora/(unclekryon.service)
+- [ ] Create systemd service; have the server code run internally every X time.
+    - Save to /systemd/unclekryon.service?
+    - [Understanding & administering systemd](https://docs.fedoraproject.org/en-US/quick-docs/understanding-and-administering-systemd/)
+    - [systemd unit file basics](https://fedoramagazine.org/systemd-getting-a-grip-on-units/)
+    - [Packaging::Systemd#Unit_Files](https://fedoraproject.org/wiki/Packaging:Systemd#Unit_Files)
+- [ ] Command line options:
+    - [ ] hax kryon scroll main; hax lems aum main; hax ssb scroll year
+        - lems = lemurian sisters; ssb = saytha sai baba
+    - [ ] unclekryon srv
+        - Uses site dir and current year; default is just help.
+        - unclekryon srv --every 10min/--once (save to kryon_&lt;release&gt;.yaml &amp; to DB using config file for user/pass)
+    - [ ] unclekryon up
+        - unclekryon up --dir x --file x kryon/lems/ssb (upload kryon.yaml to database)
+        - -l/-g take in arg of kryon/lems/ssb
+        - unclekryon up --local /-l kryon (save to DB file for Android app)
+        - unclekryon up --global/-g kryon (save to DB network; use config file for user/pass)
+    - [ ] For bash completion, have "--bash-completion" option output bash completion options and use in file
+        - --install-bash-completion to write/copy file for bash completion to work (maybe need to use sudo/su?)
