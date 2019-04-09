@@ -118,8 +118,15 @@ module UncleKryon
           r[0] = Date.strptime(date,'%b')
           r[0] = Date.new(r[1].year,r[0].month,r[0].day)
         else
-          r[0] = Date.strptime(date,"%B %d#{comma} %Y")
-          r[1] = nil
+          # "April 11, 12, 2015"
+          if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\s*,\s*[[:digit:]]+\s*,\s*[[:digit:]]+\z/
+            r[1] = Date.strptime(date,'%B %d, %d, %Y')
+            r[0] = Date.strptime(date,'%B %d')
+            r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+          else
+            r[0] = Date.strptime(date,"%B %d#{comma} %Y")
+            r[1] = nil
+          end
         end
       rescue ArgumentError => e
         Log.instance.fatal("Invalid Date: '#{date}'",error: e)
