@@ -290,14 +290,17 @@ module UncleKryon
       return true
     end
     
-    def self.get_kryon_year_url(year)
-      if year == '2002-2005'
-        url = 'http://www.kryon.com/freeAudio_folder/2002_05_freeAudio.html'
+    def self.get_kryon_year_url(year,url_version=2)
+      year = '2002_05' if year == '2002-2005'
+      
+      case url_version
+      when 1
+        url = 'http://www.kryon.com/freeAudio_folder/%s_freeAudio.html'
       else
-        url = "http://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
+        url = 'http://www.kryon.com/freeAudio_folder/mobile_pages/%s_freeAudio_m.html'
       end
       
-      return url
+      return url % [year]
     end
   end
 end

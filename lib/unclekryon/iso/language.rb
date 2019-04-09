@@ -140,6 +140,7 @@ module UncleKryon
           t.gsub!(/\AFRENC\z/i,'French')
           t.gsub!(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
           t.gsub!(/\ASPAN\z/i,'Spanish')
+          t.gsub!(/\AENGLSH\z/i,'English')
           
           lang = find(t)
           
