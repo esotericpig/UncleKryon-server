@@ -4,7 +4,7 @@ ArtistData:
     '2017': !ruby/object:UncleKryon::ReleaseData
       updated_on: '2018-06-12 02:33:24'
       title: '2017'
-      url: http://www.kryon.com/freeAudio_folder/2017_freeAudio.html
+      url: http://www.kryon.com/freeAudio_folder/mobile_pages/2017_freeAudio_m.html
       mirrors: {}
       albums:
       - http://www.kryon.com/cartprodimages/2017%20downloads/download_boulder-17.html

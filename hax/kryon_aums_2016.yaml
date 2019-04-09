@@ -4,7 +4,7 @@ ArtistData:
     '2016': !ruby/object:UncleKryon::ReleaseData
       updated_on: '2018-07-28 02:00:38'
       title: '2016'
-      url: http://www.kryon.com/freeAudio_folder/2016_freeAudio.html
+      url: http://www.kryon.com/freeAudio_folder/mobile_pages/2016_freeAudio_m.html
       mirrors: {}
       albums:
       - http://www.kryon.com/cartprodimages/2016%20downloads/download_boulder_16.html
