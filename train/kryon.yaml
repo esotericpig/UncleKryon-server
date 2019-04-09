@@ -1,6 +1,6 @@
 ---
 aum_year_album: !ruby/object:UncleKryon::Trainer
-  max_tag_id_length: 6
+  max_tag_id_length: 7
   max_tag_length: -15
   tags:
     alds: album_dates
@@ -1217,6 +1217,460 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
         Nevada: 1
         '1011': 1
         Numerology: 1
+        "¬": 1
+        Sun: 1
+        Valley: 1
+        Idaho: 1
+        '2015': 1
+        IS: 1
+        NAMED: 1
+        minisun15mp3: 1
+        mainsun15mp3: 1
+        main2sun15mp3: 1
+        FAST: 1
+        fast: 1
+        Internet: 1
+        DSL: 1
+        connection: 1
+        even: 1
+        hour: 1
+        four: 1
+        minutes: 1
+        Channel: 1
+        One: 1
+        '1312': 1
+        Min: 1
+        '159': 1
+        megs: 1
+        '3922': 1
+        '473': 1
+        '2525': 1
+        '306': 1
+        them: 1
+        ipod: 1
+        sell: 1
+        spirit: 1
+        web: 1
+        they: 1
+        offered: 1
+        without: 1
+        cost: 1
+        They: 1
+        been: 1
+        produced: 1
+        size: 1
+        easy: 1
+        manipulate: 1
+        Normally: 1
+        can: 1
+        run: 1
+        up: 1
+        playing: 1
+        length: 1
+        never: 1
+        played: 1
+        air: 1
+        broadcast: 1
+        BoulderSatminimp3: 1
+        BoulderSatmainmp3: 1
+        BoulderSunminimp3: 1
+        BoulderSunmainmp3: 1
+        '1637': 1
+        '202': 1
+        '3547': 1
+        '432': 1
+        '1420': 1
+        '174': 1
+        '3310': 1
+        '40': 1
+        Dimensional: 1
+        Perception: 1
+        Sylvan: 1
+        '24': 1
+        '25': 1
+        minisatsylvan15mp3: 1
+        mainsatsylvan15mp3: 1
+        mainsunsylvan15mp3: 1
+        Filters: 1
+        '1846': 1
+        '226': 1
+        '2551': 1
+        '311': 1
+        '3102': 1
+        '373': 1
+        Austin: 1
+        SatminiAustin15mp3: 1
+        SatmainAustin15mp3: 1
+        SunmainAustin15mp3: 1
+        Personal: 1
+        Action: 1
+        Way: 1
+        '1350': 1
+        '167': 1
+        '2945': 1
+        '358': 1
+        '2108': 1
+        '255': 1
+        Atlanta: 1
+        SatminiAtlanta15mp3: 1
+        SatmainAtlanta15mp3: 1
+        SunmainAtlanta15: 1
+        Your: 1
+        Fathers: 1
+        Age: 1
+        Paradign: 1
+        Shift: 1
+        '1434': 1
+        '176': 1
+        '3911': 1
+        '471': 1
+        '2534': 1
+        '308': 1
+        Sacramento: 1
+        SACmini15mp3: 1
+        SACmaini15mp3: 1
+        Door: 1
+        Parable: 1
+        WO: 1
+        '1015': 1
+        '124': 1
+        '3710': 1
+        '447': 1
+        LVmini15mp3: 1
+        LVmain15mp3: 1
+        BENEVOLENT: 1
+        CREATION: 1
+        '1144': 1
+        '142': 1
+        '3739': 1
+        '453': 1
+        Miami: 1
+        Feburary: 1
+        Congratulations: 1
+        kinds: 1
+        PC: 1
+        Rightclick: 1
+        image: 1
+        Save: 1
+        target: 1
+        select: 1
+        want: 1
+        Leftclick: 1
+        real: 1
+        time: 1
+        MAC: 1
+        OptionClick: 1
+        Click: 1
+        plays: 1
+        Dallas: 1
+        Weather: 1
+        Sydney: 1
+        NSW: 1
+        Australia: 1
+        Loading: 1
+        Dice: 1
+        Ken: 1
+        Davis: 1
+        ULURU: 1
+        NORTHERN: 1
+        TERRITORY: 1
+        portion: 1
+        represents: 1
+        six: 1
+        Creation: 1
+        held: 1
+        NOT: 1
+        toning: 1
+        performance: 1
+        which: 1
+        available: 1
+        TUES: 1
+        THURS: 1
+        '242526': 1
+        Gaia: 1
+        Global: 1
+        Retreat: 1
+        CLOSING: 1
+        ROCK: 1
+        Bali: 1
+        Indonesia: 1
+        Jenny: 1
+        Cheong: 1
+        Kim: 1
+        Saw: 1
+        Istanbul: 1
+        Turkey: 1
+        History: 1
+        Return: 1
+        Masters: 1
+        Catania: 1
+        Etna: 1
+        Sicily: 1
+        Four: 1
+        Phases: 1
+        Eruption: 1
+        Bologna: 1
+        Battle: 1
+        Within: 1
+        Munich: 1
+        '26': 1
+        Germain: 1
+        language: 1
+        Peter: 1
+        Herrmann: 1
+        Akash1Munich2015mp3: 1
+        Akash2Munich2015mp3: 1
+        Akash3Munich2015mp3: 1
+        '2726': 1
+        '331': 1
+        '222': 1
+        '1552': 1
+        '191': 1
+        Accelerated: 1
+        Awareness: 1
+        Rise: 1
+        Charlottesville: 1
+        Triad: 1
+        Salem: 1
+        Is: 1
+        Time: 1
+        Capsule: 1
+        Template: 1
+        P1: 1
+        dependant: 1
+        hotel: 1
+        system: 1
+        must: 1
+        wast: 1
+        However: 1
+        try: 1
+        bring: 1
+        what: 1
+        long: 1
+        P2: 1
+        Story: 1
+        Sedona: 1
+        '34': 1
+        Jan: 1
+        Tober: 1
+        Changes: 1
+        Goodbye: 1
+        Gears: 1
+        Levers: 1
+        Are: 1
+        Entourage: 1
+        Connie: 1
+        Okelberry: 1
+        MASTERS: 1
+        SUMMIT: 1
+        FRIDAYSATURDAYSUNDAY: 1
+        '567': 1
+        SEDONA: 1
+        ARIZONA: 1
+        Special: 1
+        ROBERT: 1
+        HAIG: 1
+        COXON: 1
+        FREE: 1
+        AUDIO: 1
+        GROUP: 1
+        attendance: 1
+        great: 1
+        event: 1
+        TOTAL: 1
+        Jeff: 1
+        Michaels: 1
+        Geoffrey: 1
+        Hoppe: 1
+        Jonette: 1
+        Crowley: 1
+        Kahu: 1
+        Fred: 1
+        Sterling: 1
+        Jim: 1
+        Steve: 1
+        Rother: 1
+        Ronna: 1
+        Herman: 1
+        James: 1
+        Tyberonn: 1
+        Baltimore: 1
+        MD: 1
+        '2021': 1
+        Prayer: 1
+        Works: 1
+        Totowa: 1
+        NJ: 1
+        Laguna: 1
+        Hills: 1
+        '45': 1
+        Mid: 1
+        Year: 1
+        Report: 1
+        Empowerment: 1
+        Washingon: 1
+        Linear: 1
+        Changing: 1
+        Normal: 1
+        Utah: 1
+        Biggest: 1
+        Filter: 1
+        Chicagoland: 1
+        Woodridge: 1
+        IL: 1
+        Update: 1
+        Cosmic: 1
+        Cook: 1
+        Bob: 1
+        Macko: 1
+        DNA: 1
+        Foot: 1
+        Each: 1
+        each: 1
+        AUGUST: 1
+        '1622': 1
+        KAUAI: 1
+        HAWAII: 1
+        guest: 1
+        VIDEO: 1
+        listnen: 1
+        GREETING: 1
+        HIKINAAKALA: 1
+        HEIAUI: 1
+        HINDU: 1
+        MONASTERY: 1
+        WAIMEA: 1
+        RIVER: 1
+        CANYON: 1
+        '56': 1
+        Going: 1
+        Get: 1
+        Where: 1
+        Valencia: 1
+        Spain: 1
+        VALENCIA: 1
+        QUALITY: 1
+        sorry: 1
+        noise: 1
+        first: 1
+        foreign: 1
+        countries: 1
+        difficult: 1
+        configurations: 1
+        wiring: 1
+        All: 1
+        clean: 1
+        Portugal: 1
+        Journey: 1
+        Home: 1
+        Missing: 1
+        Element: 1
+        Country: 1
+        Israel: 1
+        MINUTE: 1
+        Here: 1
+        L: 1
+        E: 1
+        R: 1
+        S: 1
+        C: 1
+        literally: 1
+        over: 1
+        '300': 1
+        '35': 1
+        travelling: 1
+        buses: 1
+        Occasionally: 1
+        talking: 1
+        giving: 1
+        live: 1
+        headsets: 1
+        French: 1
+        Russian: 1
+        German: 1
+        Hebrew: 1
+        Many: 1
+        either: 1
+        transcription: 1
+        PORTUGUESE: 1
+        HEBREW: 1
+        GERMAN: 1
+        FRENCH: 1
+        Tel: 1
+        Aviv: 1
+        Challenge: 1
+        conclusion: 1
+        countires: 1
+        soldout: 1
+        '900': 1
+        PEACE: 1
+        tones: 1
+        Peace: 1
+        minichannelings: 1
+        edited: 1
+        together: 1
+        Over: 1
+        duration: 1
+        singing: 1
+        pineal: 1
+        happened: 1
+        very: 1
+        profound: 1
+        within: 1
+        grounds: 1
+        MUSEUM: 1
+        Jerusalem: 1
+        original: 1
+        Dead: 1
+        Sea: 1
+        Scrolls: 1
+        Planning: 1
+        About: 1
+        channel: 1
+        called: 1
+        Before: 1
+        speaking: 1
+        would: 1
+        able: 1
+        otherwise: 1
+        since: 1
+        combined: 1
+        enhances: 1
+        entire: 1
+        wonderful: 1
+        divine: 1
+        planning: 1
+        current: 1
+        planetary: 1
+        shift: 1
+        KUNDALINI: 1
+        NOVEMBER: 1
+        BOLIVIA: 1
+        PERU: 1
+        Carla: 1
+        Gilardi: 1
+        Guillermo: 1
+        Urbaneja: 1
+        La: 1
+        Paz: 1
+        Bolivia: 1
+        Tiahuanaco: 1
+        Titicaca: 1
+        Sacred: 1
+        Peru: 1
+        Cusco: 1
+        Machu: 1
+        Picchu: 1
+        Lima: 1
+        Message: 1
+        South: 1
+        America: 1
+        Am: 1
+        Newport: 1
+        Scenario: 1
+        Rafael: 1
+        Hidden: 1
+        Youth: 1
       log_size: 
     data: !ruby/object:NBayes::Data
       data:
@@ -1232,7 +1686,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             LAKE: 1
             CITY: 1
             UTAH: 1
-            KRYON: 11
+            KRYON: 18
             IN: 4
             PETRA: 1
             JORDAN: 1
@@ -1253,7 +1707,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             MONUMENT: 1
             VALLEY: 1
             IRELAND: 5
-            TOUR: 6
+            TOUR: 7
             DUBLIN: 1
             GLENDALOUGH: 1
             AMSTERDAM: 2
@@ -1265,12 +1719,12 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             EXCURSION: 3
             TEL: 1
             AVIV: 1
-            ISRAEL: 1
+            ISRAEL: 5
             GENEVA: 1
             SWITZERLAND: 1
             QUANTUM: 1
-            CHOIR: 1
-            CHANNELLING: 1
+            CHOIR: 2
+            CHANNELLING: 2
             CHAMONIX: 1
             FRANCE: 1
             MOUNT: 1
@@ -1280,10 +1734,10 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             MONTANA: 1
             YELLOWSTONE: 1
             20th: 1
-            Kryon: 2
+            Kryon: 3
             Summer: 2
             Light: 2
-            Conference: 2
+            Conference: 3
             Panel: 2
             of: 2
             speakers: 2
@@ -1377,7 +1831,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             SUMMER: 1
             LIGHT: 1
             CONFERENCE: 1
-            The: 1
+            The: 3
             Choir: 1
             Delphi: 1
             University: 1
@@ -1414,52 +1868,73 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Las: 1
             Vegas: 1
             Nevada: 1
-          :total_tokens: 287
-          :examples: 95
+            THE: 3
+            CREATION: 1
+            CHANNELLINGS: 1
+            GAIA: 1
+            GLOBAL: 1
+            CONSCIOUSNESS: 1
+            RETREAT: 2
+            MASTERS: 1
+            SUMMIT: 1
+            LEMURIAN: 1
+            in: 4
+            Tel: 1
+            Aviv: 1
+            PEACE: 1
+            choir: 1
+            Pineal: 1
+            tones: 1
+            Final: 1
+            '2015': 2
+            Tour: 1
+            KUNDALINI: 1
+          :total_tokens: 333
+          :examples: 104
         album_mini_desc:
           :tokens:
-            January: 7
+            January: 9
             '78': 1
             '2017': 45
             BOULDER: 1
             COLORADO: 1
-            Lee: 47
-            Carroll: 45
-            Dr: 40
-            Amber: 38
-            Wolf: 38
+            Lee: 49
+            Carroll: 47
+            Dr: 50
+            Amber: 49
+            Wolf: 49
             Marilyn: 11
             Harper: 11
             Prageet: 6
             Harris: 6
-            Saturday: 37
-            Sunday: 43
+            Saturday: 61
+            Sunday: 67
             '1415': 1
-            Meditation: 32
-            '21': 5
+            Meditation: 38
+            '21': 7
             Live: 28
-            Kryon: 33
-            Channelling: 41
-            February: 7
+            Kryon: 47
+            Channelling: 54
+            February: 11
             '2132017': 1
             Organizer: 6
             Elan: 4
             Cohen: 4
-            Photos: 12
-            Monika: 17
-            Muranyi: 20
+            Photos: 25
+            Monika: 28
+            Muranyi: 31
             With: 1
-            Kahuna: 4
-            Kaleiiliahi: 2
+            Kahuna: 5
+            Kaleiiliahi: 3
             '14162017': 1
-            '2526': 3
-            KRYON: 22
+            '2526': 4
+            KRYON: 23
             channeling: 9
-            March: 3
-            '1112': 1
-            '1819': 2
-            April: 10
-            '1': 4
+            March: 6
+            '1112': 2
+            '1819': 3
+            April: 15
+            '1': 5
             '2': 4
             '1218': 1
             APRIL: 1
@@ -1468,38 +1943,38 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Maria: 2
             OFarrell: 2
             Carr: 1
-            Meditations: 2
+            Meditations: 3
             Jane: 4
             Donald: 4
             OCarroll: 2
-            by: 9
-            '29': 5
+            by: 29
+            '29': 6
             Dual: 1
-            Monday: 2
-            May: 16
+            Monday: 3
+            May: 22
             '3': 3
             AMSTERDAM: 1
             HOLLAND: 1
-            Robert: 13
-            Coxon: 13
-            SATURDAY: 2
-            '6': 2
-            Music: 17
+            Robert: 19
+            Coxon: 19
+            SATURDAY: 3
+            '6': 4
+            Music: 25
             Anders: 5
             Holte: 5
-            and: 10
+            and: 23
             Cacina: 8
             Meadu: 8
-            '7': 2
-            '8': 3
+            '7': 3
+            '8': 5
             ANDERS: 1
             HOLTE: 1
             vocal: 1
             BEATRICE: 1
             CELOTTI: 1
-            translation: 1
-            '13': 4
-            '14': 3
+            translation: 2
+            '13': 5
+            '14': 5
             TEL: 1
             AVIV: 1
             ISRAEL: 1
@@ -1514,28 +1989,28 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Karen: 1
             SUNDAY: 2
             This: 1
-            is: 2
-            the: 2
-            channelling: 1
+            is: 3
+            the: 6
+            channelling: 3
             section: 1
-            only: 1
-            of: 3
+            only: 3
+            of: 11
             Chamonix: 2
             France: 2
             Pineal: 1
             Choir: 1
             Historic: 1
             comments: 1
-            '22': 2
+            '22': 3
             CHAMONIX: 1
             FRANCE: 1
-            '23': 3
+            '23': 5
             Mount: 1
             Blanc: 1
             Excursion: 3
             from: 1
             Monica: 3
-            June: 8
+            June: 11
             '234': 1
             BIG: 1
             SKY: 1
@@ -1548,7 +2023,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Deborah: 1
             Rozman: 1
             FRIDAY: 1
-            '16': 2
+            '16': 5
             Asheville: 1
             North: 1
             Carolina: 1
@@ -1556,11 +2031,11 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             '1718': 1
             '2425': 1
             SaturdaySunday: 1
-            July: 6
+            July: 10
             JulyAugust: 1
             ALASKA: 1
             CRUISE: 1
-            August: 5
+            August: 6
             '1213': 1
             Channeling: 4
             '2427': 1
@@ -1568,31 +2043,31 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             ALBERTA: 1
             CANADA: 1
             organizer: 1
-            September: 10
-            '9': 5
-            '10': 5
+            September: 16
+            '9': 6
+            '10': 8
             BAVARIA: 1
             GERMANY: 1
             Salt: 1
             Mine: 1
-            Lake: 1
+            Lake: 2
             Tour: 1
-            THE: 1
+            THE: 2
             STORY: 1
             OF: 1
             FATIMA: 3
             TOUR: 2
             PORTUGAL: 3
-            '15': 4
+            '15': 6
             END: 1
             MEETING: 2
             PORTO: 1
             MAIN: 1
-            '17': 2
+            '17': 3
             MADRID: 1
             SPAIN: 1
             through: 2
-            October: 8
+            October: 13
             PAGE: 2
             ONE: 1
             INDIA: 1
@@ -1601,17 +2076,17 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             TWO: 1
             INDIANEPAL: 1
             '272829': 1
-            LEE: 2
-            CARROLL: 2
+            LEE: 7
+            CARROLL: 7
             PRAGEET: 2
             HARRIS: 2
-            November: 4
-            '11': 3
+            November: 5
+            '11': 6
             Dec: 1
-            December: 4
+            December: 6
             '19202122': 1
             ThreeDay: 1
-            Hawaii: 1
+            Hawaii: 2
             Seminar: 1
             Big: 1
             Island: 1
@@ -1624,54 +2099,54 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             meditation: 1
             '1617': 3
             Five: 1
-            in: 2
+            in: 4
             a: 1
             Circle: 1
-            The: 3
+            The: 28
             Basics: 1
-            Belief: 1
+            Belief: 2
             '2324': 2
             Quantum: 1
             Patterns: 1
             Assumptions: 2
             cochannelling: 1
-            Peggy: 3
-            Phoenix: 3
-            Dubro: 3
+            Peggy: 4
+            Phoenix: 4
+            Dubro: 4
             '1314': 3
-            Love: 1
+            Love: 2
             Letting: 1
             Go: 1
-            '2728': 1
-            New: 1
+            '2728': 2
+            New: 3
             Systems: 1
             Joy: 1
             Spirit: 1
-            MARCH: 1
+            MARCH: 3
             '1826': 1
             CHILEARGENTINA: 1
-            Translation: 6
-            Jorge: 1
-            Bianchi: 1
-            Spiritual: 1
-            Common: 1
-            Sense: 1
+            Translation: 8
+            Jorge: 3
+            Bianchi: 3
+            Spiritual: 2
+            Common: 2
+            Sense: 2
             Intellectualizing: 1
-            God: 1
+            God: 2
             Haig: 4
             Friday: 1
             Silvia: 3
             Autenreith: 3
-            '30': 1
+            '30': 2
             AKASHIC: 1
-            SOUL: 1
+            SOUL: 2
             COMMUNICATION: 1
             WORKSHOP: 1
             Produced: 1
             MOMANDA: 1
             Margarete: 1
             Scheipner: 1
-            Wednesday: 3
+            Wednesday: 6
             Janusz: 1
             Grabowski: 1
             DNAConsciousness: 1
@@ -1680,7 +2155,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Schultz: 1
             MAY: 1
             '2122': 1
-            '28': 1
+            '28': 2
             Hungary: 1
             Annamária: 1
             Verasztó: 1
@@ -1688,7 +2163,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Lupito: 1
             Crystal: 1
             Bowls: 1
-            JUNE: 1
+            JUNE: 2
             '9101112': 1
             HOT: 1
             SPRINGS: 1
@@ -1698,10 +2173,10 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             PEGGY: 1
             PHOENIX: 1
             DUBRO: 1
-            DR: 1
-            AMBER: 1
-            WOLF: 1
-            '12': 1
+            DR: 6
+            AMBER: 6
+            WOLF: 6
+            '12': 4
             Joe: 1
             Dispenza: 1
             Bruce: 1
@@ -1713,7 +2188,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Nothing: 1
             Random: 1
             Resilient: 1
-            Human: 2
+            Human: 7
             Point: 1
             Source: 1
             Syndrome: 1
@@ -1721,7 +2196,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             past: 1
             '2012': 1
             Prepared: 1
-            for: 1
+            for: 2
             YOU: 1
             Grandness: 1
             Aug: 1
@@ -1733,9 +2208,9 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             '411': 1
             CarrMeditations: 1
             Tuesday: 2
-            '18': 1
+            '18': 3
             '1628': 1
-            Thursday: 1
+            Thursday: 3
             OCTOBER: 2
             GAIA: 1
             GLOBAL: 1
@@ -1751,20 +2226,179 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             LEMURIAN: 1
             ADVENTURE: 1
             MURANYI: 1
-            '1920': 1
+            '1920': 2
             HOMEROOM: 1
             '1011': 1
-          :total_tokens: 1243
-          :examples: 96
+            Sun: 1
+            Valley: 1
+            Idaho: 1
+            '2015': 46
+            Sylvan: 1
+            AB: 1
+            Canada: 2
+            '24': 2
+            '25': 2
+            Austin: 1
+            Texas: 1
+            Atlanta: 1
+            Georgia: 1
+            Sacramento: 1
+            California: 1
+            Las: 1
+            Vegas: 1
+            Nevada: 1
+            Feburary: 1
+            Congratulations: 1
+            Weather: 1
+            Loading: 1
+            Dice: 1
+            Ken: 1
+            Davis: 1
+            ULURU: 2
+            NORTHERN: 2
+            TERRITORY: 2
+            AUSTRALIA: 2
+            portion: 2
+            TUES: 1
+            THURS: 1
+            '242526': 1
+            OLD: 1
+            Jenny: 1
+            Cheong: 1
+            AND: 1
+            Kim: 1
+            Saw: 1
+            Four: 1
+            Phases: 1
+            Catania: 1
+            Eruption: 1
+            'on': 1
+            at: 1
+            Etna: 1
+            '19': 1
+            Munich: 1
+            Germany: 1
+            Akashic: 1
+            Workshop: 1
+            '26': 2
+            Germain: 1
+            language: 1
+            Peter: 1
+            Herrmann: 1
+            Accelerated: 1
+            Awareness: 1
+            Rise: 1
+            Triad: 1
+            Three: 1
+            parts: 1
+            Consciousness: 1
+            Is: 1
+            this: 1
+            real: 1
+            Time: 2
+            Capsule: 2
+            Template: 3
+            P1: 1
+            w: 5
+            P2: 1
+            Evolution: 1
+            Soul: 2
+            Great: 1
+            Story: 1
+            '34': 1
+            Jan: 1
+            Tober: 1
+            Connie: 2
+            Okelberry: 2
+            FRIDAYSATURDAYSUNDAY: 1
+            '567': 1
+            SEDONA: 1
+            ARIZONA: 1
+            SUMMER: 1
+            LIGHT: 1
+            CONFERENCE: 1
+            Special: 2
+            music: 1
+            ROBERT: 1
+            HAIG: 1
+            COXON: 1
+            '2021': 1
+            Way: 1
+            Prayer: 1
+            Works: 1
+            Filters: 1
+            '45': 1
+            Parable: 1
+            Wo: 1
+            Linear: 1
+            Biggest: 1
+            Filter: 1
+            Power: 1
+            Energy: 2
+            Update: 1
+            Cosmic: 1
+            Cook: 1
+            Bob: 1
+            Macko: 1
+            Future: 2
+            DNA: 1
+            One: 1
+            Foot: 1
+            Each: 1
+            AUGUST: 1
+            '1622': 1
+            KAUAI: 1
+            HAWAII: 1
+            guest: 1
+            NOTE: 1
+            SEE: 1
+            VIDEO: 1
+            '56': 1
+            Going: 1
+            Back: 1
+            to: 1
+            Get: 1
+            Where: 1
+            Earth: 1
+            Journey: 1
+            Home: 1
+            Missing: 1
+            Element: 1
+            Country: 1
+            Israel: 4
+            Tel: 3
+            Aviv: 3
+            Planning: 1
+            Montreal: 1
+            QC: 1
+            NOVEMBER: 1
+            BOLIVIA: 1
+            PERU: 1
+            Carla: 1
+            Gilardi: 1
+            Guillermo: 1
+            Urbaneja: 1
+            Message: 1
+            South: 1
+            America: 1
+            Spanish: 1
+            Recalibration: 1
+            Scenario: 1
+            Hidden: 1
+            Youth: 1
+            End: 1
+            Year: 1
+          :total_tokens: 1875
+          :examples: 156
         aum_subtitle:
           :tokens:
-            KRYON: 344
-            CHANNELLING: 312
+            KRYON: 448
+            CHANNELLING: 407
             THE: 5
             COUNCIL: 5
             Marilyn: 1
             Harper: 1
-            Sunday: 1
+            Sunday: 2
             MARCH: 1
             '19': 1
             ALCAZAR: 1
@@ -1782,8 +2416,8 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Lee: 5
             Carroll: 5
             ADIRONNDA: 1
-            SUNDAY: 9
-            SATURDAY: 8
+            SUNDAY: 19
+            SATURDAY: 22
             Encludes: 1
             Channelling: 1
             JUNE: 4
@@ -1794,31 +2428,39 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             PRAGEET: 1
             PEGGY: 1
             TUESDAY: 2
-            WEDNESDAY: 2
-          :total_tokens: 739
-          :examples: 354
+            WEDNESDAY: 4
+            MINI: 6
+            MAIN: 9
+            Saturday: 1
+            Main: 2
+            '6': 1
+            CHANNELLINGS: 1
+            THURSDAY: 2
+            VALENCIA: 4
+          :total_tokens: 991
+          :examples: 480
         aum_title:
           :tokens:
-            SATURDAY: 13
-            MINI: 7
+            SATURDAY: 15
+            MINI: 11
             DUAL: 7
             ADIRONNDA: 3
             KRYON: 7
-            MAIN: 8
-            SUNDAY: 10
+            MAIN: 10
+            SUNDAY: 11
             ALCAZAR: 3
-            Mini: 40
-            Channelling: 57
+            Mini: 76
+            Channelling: 88
             Change: 2
-            Sunday: 12
+            Sunday: 13
             Enhanced: 3
             Innate: 1
-            '5': 5
+            '5': 6
             Deceptions: 1
-            of: 12
-            the: 10
-            Old: 2
-            Energy: 2
+            of: 18
+            the: 14
+            Old: 3
+            Energy: 5
             WELCOME: 4
             MEETING: 6
             ELEPHANTINE: 1
@@ -1842,7 +2484,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             IN: 1
             ABYDOS: 1
             NILE: 1
-            FAREWELL: 3
+            FAREWELL: 4
             MENA: 1
             HOUSE: 3
             HOTEL: 1
@@ -1859,19 +2501,19 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             DINNER: 2
             ANCIENT: 1
             PETRA: 1
-            EVENING: 2
-            LAST: 2
+            EVENING: 4
+            LAST: 3
             Things: 1
             that: 1
             go: 1
             BUMP: 1
-            in: 2
+            in: 3
             night: 1
-            Who: 1
-            is: 2
-            God: 4
-            The: 18
-            Great: 1
+            Who: 2
+            is: 3
+            God: 5
+            The: 46
+            Great: 2
             Escape: 2
             from: 1
             Self: 1
@@ -1884,12 +2526,12 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Channellng: 2
             Gifts: 1
             Regina: 3
-            Not: 1
+            Not: 2
             Ready: 1
             Celebrity: 1
-            CHANNELLING: 30
-            ONE: 6
-            TWO: 6
+            CHANNELLING: 32
+            ONE: 8
+            TWO: 8
             THREE: 6
             FOUR: 6
             FIVE: 6
@@ -1928,7 +2570,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Dublin: 1
             Farewell: 2
             Dinner: 1
-            How: 1
+            How: 2
             Spirit: 4
             really: 1
             communicates: 1
@@ -1936,10 +2578,10 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             one: 3
             two: 3
             AMSTERDAM: 4
-            '1': 29
-            '2': 27
-            '3': 10
-            '4': 6
+            '1': 32
+            '2': 30
+            '3': 12
+            '4': 7
             PISA: 2
             Abbey: 1
             San: 1
@@ -1963,7 +2605,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             FRANCE: 2
             'On': 1
             mountain: 1
-            FRIDAY: 13
+            FRIDAY: 15
             MONDAY: 6
             WORKSHOP: 2
             ENTIRE: 3
@@ -1978,24 +2620,24 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Pisgua: 1
             SAT: 15
             Three: 1
-            Paradigm: 1
-            Shifts: 1
+            Paradigm: 2
+            Shifts: 2
             From: 1
             Dark: 1
-            to: 5
+            to: 7
             Light: 1
             Discovery: 1
             Marilyn: 1
             Harper: 1
-            Lee: 1
+            Lee: 2
             Carroll: 1
-            New: 3
+            New: 6
             Paradigms: 1
             new: 1
-            Akashic: 3
+            Akashic: 4
             Remebrance: 1
             SUN: 5
-            DAY: 13
+            DAY: 19
             OPENING: 1
             FIRE: 1
             EARTH: 1
@@ -2004,7 +2646,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Addictive: 1
             Timing: 1
             THURSDAY: 2
-            '6': 3
+            '6': 4
             FOOTWASHING: 1
             Salt: 2
             mine: 1
@@ -2012,7 +2654,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             group: 1
             Female: 1
             Island: 2
-            channelling: 15
+            channelling: 16
             Boat: 2
             channeling: 2
             going: 1
@@ -2020,10 +2662,10 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             leaving: 1
             Male: 1
             Lisbon: 2
-            Channeling: 9
+            Channeling: 24
             Fatima: 3
             Porto: 3
-            End: 1
+            End: 2
             Madrid: 2
             INDIADELHI: 3
             DELHI: 2
@@ -2053,11 +2695,11 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             works: 1
             Reactions: 1
             an: 1
-            Unknown: 1
-            Future: 1
-            Love: 2
+            Unknown: 2
+            Future: 2
+            Love: 3
             Revisited: 1
-            Power: 1
+            Power: 2
             Coherence: 1
             Morning: 2
             Evening: 1
@@ -2067,31 +2709,31 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Relationship: 1
             between: 1
             parts: 1
-            CHANNEL: 6
+            CHANNEL: 7
             SISTERHOOD: 1
             MEDITATION: 1
             Kalei: 1
             John: 1
             Amber: 1
-            THE: 9
+            THE: 12
             TEACHING: 1
             VOLCANO: 1
             TRI: 1
             MEDIATION: 1
             What: 1
-            You: 1
+            You: 3
             Dont: 1
             Know: 1
             Communications: 1
             Five: 1
             a: 2
             basics: 1
-            Belief: 1
+            Belief: 2
             Quantum: 1
             Patterns: 1
             Assumptions: 2
             Kryon: 2
-            Peggy: 1
+            Peggy: 2
             PHoenix: 1
             Dubro: 1
             Letting: 1
@@ -2102,12 +2744,12 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Completing: 1
             Systems: 1
             Joy: 1
-            LETTER: 10
-            P: 1
+            LETTER: 23
+            P: 2
             PUNTA: 2
             ARENAS: 2
             CHILE: 5
-            A: 5
+            A: 8
             TORRES: 2
             DEL: 2
             PAINE: 2
@@ -2121,7 +2763,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             GLACIER: 1
             '0': 1
             USHUAIA: 1
-            N: 2
+            N: 3
             p1: 1
             WULAIA: 1
             BAY: 1
@@ -2130,12 +2772,12 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             BOARD: 2
             STELLA: 2
             AUSTRALIS: 2
-            I: 2
+            I: 4
             Melding: 1
             with: 1
             Real: 1
             Physics: 1
-            Recalibration: 1
+            Recalibration: 2
             Completion: 1
             Getting: 2
             Connected: 2
@@ -2146,13 +2788,13 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             SALT: 1
             MINE: 1
             PROGRAM: 1
-            Wo: 1
-            and: 1
+            Wo: 2
+            and: 3
             Mine: 1
             Spirituality: 1
-            HUMAN: 6
-            SOUL: 7
-            Evolution: 1
+            HUMAN: 8
+            SOUL: 8
+            Evolution: 3
             Consciousness: 2
             '247': 1
             Coming: 1
@@ -2161,21 +2803,21 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             DNAConsiousness: 1
             Compassion: 1
             Factor: 1
-            Back: 1
+            Back: 2
             Basics: 1
             Trio: 1
             TRIAD: 1
             Crystal: 4
             part: 4
-            Workshop: 1
+            Workshop: 4
             Friday: 2
             Intro: 1
             minichannelling: 1
             Final: 3
-            Saturday: 2
+            Saturday: 3
             Crystalline: 1
-            Choir: 1
-            Soul: 1
+            Choir: 2
+            Soul: 3
             Stewardship: 1
             Field: 2
             Transition: 1
@@ -2183,14 +2825,14 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Nothing: 1
             Random: 1
             Resilient: 1
-            Human: 2
+            Human: 6
             Source: 1
             Syndrome: 1
             Help: 1
             Past: 2
             '2012': 1
             Prepared: 1
-            for: 1
+            for: 2
             YOU: 1
             Grandness: 1
             Two: 1
@@ -2201,7 +2843,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             larger: 1
             Akash: 1
             Ireland: 1
-            Revealed: 1
+            Revealed: 3
             RING: 1
             KERRY: 1
             ST: 1
@@ -2215,18 +2857,18 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             end: 1
             GLENDALOUGH: 1
             ITALIAN: 1
-            OLD: 1
+            OLD: 2
             POWER: 1
             EXPECTATION: 1
             PROOF: 1
             GOD: 1
-            NEW: 1
+            NEW: 3
             PARADIGMS: 1
             FOR: 1
             HEALERS: 1
             ACCROPOLIS: 1
             DELPHI: 2
-            AT: 2
+            AT: 3
             APPOLLO: 1
             ATHENA: 1
             CRETE: 7
@@ -2237,7 +2879,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             MELIDONI: 1
             CAVE: 1
             GREECE: 1
-            Truth: 1
+            Truth: 2
             Duality: 1
             Healing: 1
             Wound: 1
@@ -2254,7 +2896,7 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Jesse: 1
             Gubb: 1
             Muranyi: 1
-            Lake: 3
+            Lake: 4
             Tekapo: 1
             West: 1
             Coast: 1
@@ -2273,85 +2915,219 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             butterly: 1
             flaps: 1
             Numerology: 1
-          :total_tokens: 1095
-          :examples: 354
+            Channel: 6
+            '2015': 3
+            One: 2
+            Dimensional: 1
+            Perception: 1
+            Filters: 2
+            Personal: 1
+            Action: 1
+            Way: 2
+            it: 1
+            Your: 1
+            Fathers: 1
+            Age: 1
+            Paradign: 1
+            Shift: 1
+            Door: 1
+            Parable: 1
+            WO: 1
+            BENEVOLENT: 1
+            CREATION: 1
+            Congratulations: 1
+            Weather: 1
+            Loading: 1
+            Dice: 1
+            ULURU: 1
+            CHOIR: 1
+            CLOSING: 1
+            PEGGY: 1
+            LEE: 1
+            ROCK: 1
+            History: 1
+            Return: 1
+            Masters: 1
+            Four: 1
+            Phases: 1
+            Eruption: 1
+            Battle: 1
+            Within: 1
+            are: 1
+            Accelerated: 1
+            Awareness: 1
+            Triad: 1
+            Is: 2
+            this: 2
+            real: 2
+            Time: 2
+            Capsule: 2
+            Template: 3
+            P1: 2
+            P2: 2
+            Story: 1
+            Changes: 1
+            Goodbye: 1
+            Gears: 1
+            Levers: 1
+            Are: 1
+            Entourage: 1
+            GROUP: 3
+            TOTAL: 1
+            Prayer: 1
+            Works: 1
+            Mid: 1
+            Year: 2
+            Report: 1
+            Empowerment: 1
+            Linear: 1
+            Changing: 1
+            Normal: 1
+            Biggest: 1
+            Filter: 1
+            Update: 1
+            Cosmic: 1
+            Cook: 1
+            DNA: 1
+            Foot: 1
+            each: 1
+            AUGUST: 4
+            '16': 1
+            GREETING: 1
+            '17': 1
+            HIKINAAKALA: 1
+            HEIAUI: 1
+            '18': 1
+            HINDU: 1
+            MONASTERY: 1
+            '20': 1
+            WAIMEA: 2
+            RIVER: 1
+            CANYON: 1
+            Going: 1
+            Get: 1
+            Where: 1
+            Earth: 1
+            Missing: 1
+            Element: 1
+            L: 1
+            E: 3
+            R: 1
+            S: 1
+            '7': 1
+            '8': 1
+            '9': 1
+            '10': 1
+            C: 1
+            '11': 1
+            '12': 1
+            '13': 1
+            Again: 1
+            Challenge: 1
+            Israel: 1
+            Peace: 1
+            It: 1
+            has: 1
+            happened: 1
+            before: 1
+            Planning: 1
+            La: 1
+            Paz: 1
+            Bolivia: 3
+            Seminar: 1
+            Tiahuanaco: 1
+            Titicaca: 1
+            Sacred: 1
+            Valley: 1
+            Peru: 4
+            Cusco: 2
+            Machu: 1
+            Picchu: 1
+            Message: 1
+            South: 1
+            Am: 1
+            Scenario: 1
+            Hidden: 1
+            Youth: 1
+          :total_tokens: 1506
+          :examples: 498
         ignore:
           :tokens:
-            WHAT: 39
-            TO: 67
-            DO: 39
-            FIRST: 11
-            YOU: 71
-            NEED: 70
-            A: 71
+            WHAT: 54
+            TO: 83
+            DO: 54
+            FIRST: 25
+            YOU: 87
+            NEED: 86
+            A: 87
             STRONG: 4
-            INTERNET: 70
-            CONNECTION: 70
-            CLICK: 103
-            the: 74
-            MP3: 208
-            icons: 11
-            below: 12
-            to: 113
-            listen: 11
-            or: 39
-            rightclick: 11
-            download: 12
-            You: 69
-            will: 132
-            not: 69
-            be: 70
-            asked: 69
-            for: 69
-            any: 69
-            personal: 69
-            information: 69
-            'no': 202
-            registration: 69
-            email: 65
-            fuss: 64
-            just: 92
-            free: 92
-            What: 65
-            a: 93
-            concept: 65
-            INSTRUCTIONS: 55
-            GOOD: 59
-            THE: 125
-            ICON: 116
-            above: 113
-            It: 62
-            open: 62
-            another: 62
-            window: 62
-            and: 63
-            play: 90
-            RIGHTCLICK: 62
-            Download: 62
-            file: 89
-            wherever: 62
-            you: 90
-            wish: 62
-            'on': 90
-            your: 90
-            computer: 62
-            'ON': 28
-            ICONS: 36
-            BELOW: 28
-            PLAY: 28
-            FILES: 27
-            This: 27
-            of: 30
-            Kryon: 28
-            channelling: 28
-            is: 27
-            Please: 28
-            enjoy: 28
-            it: 111
-            Pass: 28
-            around: 28
-            put: 28
-            device: 28
+            INTERNET: 86
+            CONNECTION: 86
+            CLICK: 111
+            the: 296
+            MP3: 343
+            icons: 16
+            below: 17
+            to: 331
+            listen: 15
+            or: 45
+            rightclick: 16
+            download: 91
+            You: 86
+            will: 160
+            not: 110
+            be: 112
+            asked: 86
+            for: 86
+            any: 86
+            personal: 86
+            information: 86
+            'no': 253
+            registration: 86
+            email: 82
+            fuss: 81
+            just: 110
+            free: 135
+            What: 82
+            a: 181
+            concept: 82
+            INSTRUCTIONS: 74
+            GOOD: 64
+            THE: 129
+            ICON: 120
+            above: 117
+            It: 82
+            open: 64
+            another: 64
+            window: 64
+            and: 135
+            play: 133
+            RIGHTCLICK: 64
+            Download: 64
+            file: 179
+            wherever: 64
+            you: 138
+            wish: 64
+            'on': 143
+            your: 137
+            computer: 83
+            'ON': 29
+            ICONS: 37
+            BELOW: 29
+            PLAY: 29
+            FILES: 28
+            This: 46
+            of: 99
+            Kryon: 54
+            channelling: 47
+            is: 91
+            Please: 54
+            enjoy: 54
+            it: 245
+            Pass: 54
+            around: 54
+            put: 54
+            device: 29
             NOTE: 1
             ATTENDEES: 1
             others: 1
@@ -2368,62 +3144,136 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             by: 1
             Hightail: 1
             hires: 1
-            NICE: 7
-            These: 1
-            files: 1
-            are: 1
+            NICE: 9
+            These: 8
+            files: 33
+            are: 47
             Dr: 1
             John: 1
             Ryan: 1
             e: 4
-            MPS: 11
+            MPS: 12
             FILE: 1
-          :total_tokens: 4751
-          :examples: 187
+            "¬": 10
+            FAST: 9
+            With: 9
+            fast: 9
+            Internet: 9
+            DSL: 9
+            connection: 9
+            even: 9
+            that: 34
+            one: 34
+            hour: 34
+            in: 99
+            about: 7
+            four: 7
+            minutes: 9
+            channellings: 7
+            them: 28
+            ipod: 25
+            but: 25
+            please: 25
+            do: 44
+            sell: 25
+            In: 25
+            spirit: 25
+            web: 25
+            they: 7
+            offered: 25
+            all: 25
+            without: 25
+            cost: 25
+            They: 32
+            have: 7
+            been: 25
+            produced: 25
+            size: 25
+            quality: 25
+            easy: 25
+            manipulate: 25
+            Normally: 25
+            these: 25
+            can: 25
+            run: 25
+            up: 25
+            playing: 25
+            length: 25
+            never: 26
+            played: 25
+            air: 25
+            broadcast: 6
+            has: 18
+            kinds: 18
+            PC: 40
+            Rightclick: 20
+            image: 80
+            Save: 20
+            target: 20
+            as: 20
+            select: 20
+            where: 20
+            want: 20
+            Leftclick: 20
+            real: 40
+            time: 40
+            MAC: 40
+            OptionClick: 20
+            Click: 20
+            If: 19
+            plays: 19
+            most: 19
+            few: 2
+            KRYON: 1
+            FREE: 1
+            AUDIO: 1
+            listnen: 1
+          :total_tokens: 8718
+          :examples: 280
         album_main_desc:
           :tokens:
             NOTE: 4
             'On': 3
-            these: 2
+            these: 4
             Audios: 2
             You: 2
-            may: 2
-            hear: 2
+            may: 3
+            hear: 4
             voices: 3
-            behind: 1
+            behind: 2
             most: 3
-            of: 12
-            the: 30
-            channelling: 6
-            'on': 5
-            this: 7
+            of: 22
+            the: 60
+            channelling: 10
+            'on': 8
+            this: 12
             page: 1
-            This: 7
-            is: 5
-            for: 6
+            This: 13
+            is: 13
+            for: 11
             two: 1
             reasons: 1
             '1': 1
-            There: 1
-            were: 7
+            There: 2
+            were: 12
             multplle: 1
             translations: 1
             taking: 1
             place: 1
             into: 2
             three: 3
-            other: 3
-            languages: 1
+            other: 5
+            languages: 4
             '2': 1
-            The: 3
-            channellings: 2
+            The: 5
+            channellings: 6
             often: 1
-            given: 4
-            in: 11
+            given: 11
+            in: 22
             public: 2
             places: 2
             Egypt: 3
-            where: 1
+            where: 2
             others: 2
             touring: 1
             Organizer: 2
@@ -2433,32 +3283,32 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Travel: 2
             Key: 2
             Occassionally: 1
-            we: 2
-            have: 2
+            we: 5
+            have: 3
             put: 1
             things: 1
-            before: 3
-            Kryon: 3
-            channelings: 1
-            In: 2
-            one: 3
-            case: 1
+            before: 4
+            Kryon: 7
+            channelings: 2
+            In: 3
+            one: 5
+            case: 2
             its: 2
-            Lee: 5
+            Lee: 8
             doing: 1
             some: 2
             explanations: 1
             meanings: 1
             energy: 1
-            a: 10
+            a: 11
             meditation: 1
             by: 3
-            Monika: 1
-            Muranyi: 1
-            and: 11
+            Monika: 2
+            Muranyi: 2
+            and: 14
             another: 1
-            will: 1
-            be: 1
+            will: 3
+            be: 3
             Navajo: 1
             songs: 1
             tribe: 1
@@ -2469,21 +3319,21 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Henry: 1
             Haycock: 1
             seminar: 2
-            was: 8
+            was: 12
             originally: 1
-            recorded: 1
-            with: 7
+            recorded: 2
+            with: 8
             Ialian: 1
-            translation: 2
+            translation: 3
             but: 3
-            due: 1
+            due: 2
             technical: 1
             issue: 1
             only: 2
             English: 1
             heard: 2
             If: 2
-            you: 6
+            you: 10
             wish: 2
             an: 1
             Italian: 2
@@ -2491,14 +3341,14 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             here: 2
             please: 2
             go: 2
-            to: 15
+            to: 22
             site: 1
             wwwentouragedikryonit: 1
-            Thank: 1
+            Thank: 3
             threeday: 1
-            conference: 1
+            conference: 3
             included: 1
-            tour: 3
+            tour: 4
             largest: 1
             27K: 1
             particle: 1
@@ -2509,11 +3359,11 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             France: 1
             'No': 1
             channels: 2
-            there: 1
+            there: 3
             Toning: 1
-            below: 1
+            below: 2
             zero: 1
-            at: 6
+            at: 9
             '13000': 1
             feet: 1
             highres: 1
@@ -2528,13 +3378,13 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             sign: 1
             topright: 1
             download: 2
-            your: 1
+            your: 2
             device: 1
-            recording: 2
+            recording: 3
             used: 2
             permission: 2
-            from: 4
-            all: 7
+            from: 7
+            all: 8
             participants: 2
             thank: 2
             GREGG: 2
@@ -2549,22 +3399,22 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Pisgah: 1
             Inn: 1
             Listen: 1
-            '6': 2
+            '6': 5
             also: 1
             clarification: 1
             more: 1
             explanation: 1
             Note: 3
             Not: 2
-            attendees: 1
-            are: 4
-            represented: 1
+            attendees: 2
+            are: 8
+            represented: 2
             CLICK: 2
             HERE: 2
             fullres: 1
             Voices: 1
-            background: 1
-            translators: 1
+            background: 2
+            translators: 2
             close: 1
             proximity: 1
             while: 1
@@ -2580,10 +3430,10 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Dalai: 1
             Lama: 1
             granted: 1
-            our: 3
+            our: 4
             group: 1
             private: 1
-            audience: 1
+            audience: 4
             man: 1
             beloved: 1
             planet: 1
@@ -2592,29 +3442,29 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             us: 1
             about: 2
             oneness: 1
-            people: 1
+            people: 2
             Earth: 1
             Then: 1
             he: 2
             looked: 1
             me: 1
             eye: 1
-            said: 1
+            said: 2
             twinkle: 1
             Im: 1
             not: 2
             kidding: 1
             What: 1
-            day: 2
-            that: 3
-            Carroll: 1
+            day: 3
+            that: 4
+            Carroll: 4
             TWO: 1
             CHANNEL: 1
             BEGINS: 1
             AT: 1
             '1056': 1
             THIS: 1
-            KRYON: 3
+            KRYON: 4
             PATAGONIA: 1
             ADVENTURE: 1
             breathtaking: 1
@@ -2638,25 +3488,25 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             large: 1
             setups: 1
             so: 2
-            audio: 1
+            audio: 5
             recordings: 2
             vary: 2
             We: 1
             do: 1
-            best: 1
-            make: 1
+            best: 2
+            make: 2
             sound: 1
-            similar: 1
+            similar: 2
             country: 2
             sometimes: 1
             balance: 1
             music: 1
-            quality: 1
+            quality: 2
             might: 1
             out: 1
             control: 1
-            SEE: 1
-            THE: 1
+            SEE: 2
+            THE: 3
             THREE: 1
             AMIGOS: 1
             DANCE: 1
@@ -2671,15 +3521,15 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             LIPTON: 1
             wwwbruceliptoncom: 1
             More: 1
-            information: 1
-            choir: 2
-            last: 1
+            information: 2
+            choir: 4
+            last: 3
             Nodes: 1
             Nulls: 1
-            has: 2
+            has: 3
             channelled: 1
             SPECIAL: 1
-            Sometimes: 1
+            Sometimes: 2
             audios: 1
             because: 1
             many: 1
@@ -2689,11 +3539,11 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             being: 1
             simultaneously: 1
             translated: 1
-            Portuguese: 1
+            Portuguese: 3
             Gustavo: 1
             Amorim: 1
-            who: 1
-            always: 2
+            who: 2
+            always: 4
             Attendees: 1
             know: 1
             seven: 1
@@ -2702,29 +3552,384 @@ aum_year_album: !ruby/object:UncleKryon::Trainer
             Lake: 1
             Wanaka: 1
             did: 2
-            record: 1
-            Again: 1
+            record: 2
+            Again: 2
             makes: 1
             certain: 1
             recorder: 1
             operating: 1
             begins: 1
-            So: 1
-            as: 1
+            So: 2
+            as: 3
             few: 1
             instances: 1
             past: 1
-            kept: 1
-            channeling: 1
-            later: 1
+            kept: 2
+            channeling: 2
+            later: 2
             He: 1
-            Please: 1
+            Please: 2
             see: 1
             AUCKLAND: 1
-          :total_tokens: 598
-          :examples: 28
+            MP3: 2
+            file: 5
+            represents: 3
+            six: 2
+            Creation: 1
+            Choir: 1
+            held: 3
+            ULURU: 2
+            Australia: 2
+            NOT: 1
+            toning: 1
+            portion: 1
+            performance: 1
+            which: 3
+            available: 2
+            EIGHT: 1
+            '8': 2
+            Gaia: 1
+            Global: 1
+            Consciousness: 1
+            Retreat: 1
+            Peggy: 1
+            Phoenix: 1
+            Dubro: 1
+            Jorge: 1
+            Bianchi: 1
+            Kahuna: 1
+            Kalei: 1
+            dependant: 1
+            hotel: 1
+            or: 2
+            system: 1
+            must: 1
+            it: 3
+            wast: 1
+            However: 1
+            try: 1
+            bring: 1
+            what: 1
+            long: 2
+            attendance: 1
+            great: 1
+            event: 1
+            QUALITY: 1
+            OF: 1
+            VALENCIA: 1
+            SATURDAY: 1
+            MAIN: 1
+            sorry: 1
+            noise: 1
+            first: 1
+            '23': 1
+            minutes: 1
+            foreign: 1
+            countries: 2
+            can: 1
+            difficult: 1
+            new: 2
+            configurations: 1
+            wiring: 1
+            All: 1
+            files: 1
+            clean: 1
+            '30': 1
+            MINUTE: 1
+            VIDEO: 1
+            Click: 1
+            Here: 2
+            These: 2
+            '13': 1
+            literally: 1
+            over: 1
+            Israel: 3
+            '300': 1
+            '35': 2
+            travelling: 1
+            buses: 1
+            Occasionally: 1
+            talking: 1
+            giving: 1
+            live: 1
+            headsets: 1
+            French: 4
+            Russian: 2
+            Spanish: 2
+            German: 2
+            Hebrew: 2
+            Many: 1
+            either: 1
+            transcription: 1
+            SPANISH: 4
+            PORTUGUESE: 4
+            HEBREW: 4
+            GERMAN: 4
+            ITALIAN: 4
+            FRENCH: 1
+            conclusion: 1
+            '2015': 1
+            Tel: 1
+            Aviv: 1
+            October: 1
+            countires: 1
+            soldout: 1
+            '900': 1
+            minichannelings: 1
+            edited: 1
+            together: 1
+            Over: 1
+            duration: 1
+            between: 1
+            singing: 1
+            pineal: 1
+            tones: 1
+            Dr: 1
+            Todd: 1
+            Ovokaitys: 1
+            very: 2
+            profound: 1
+            ISRAEL: 2
+            TOUR: 1
+            It: 4
+            within: 1
+            grounds: 1
+            MUSEUM: 1
+            Jerusalem: 1
+            original: 1
+            Dead: 1
+            Sea: 1
+            Scrolls: 1
+            About: 1
+            enjoy: 1
+            channel: 1
+            called: 1
+            happened: 1
+            Before: 1
+            Montreal: 1
+            speaking: 1
+            would: 1
+            never: 2
+            been: 1
+            able: 1
+            otherwise: 1
+            since: 1
+            'no': 1
+            combined: 1
+            enhances: 1
+            entire: 1
+            concept: 1
+            wonderful: 1
+            divine: 1
+            planning: 1
+            current: 1
+            planetary: 1
+            shift: 1
+          :total_tokens: 1038
+          :examples: 43
+        dump:
+          :tokens:
+            Saturday: 12
+            MINI: 6
+            channelling: 23
+            FILE: 23
+            IS: 23
+            NAMED: 23
+            minisun15mp3: 1
+            MAIN: 6
+            mainsun15mp3: 1
+            Sunday: 6
+            main2sun15mp3: 1
+            Mini: 1
+            BoulderSatminimp3: 1
+            Main: 2
+            BoulderSatmainmp3: 1
+            Wednesday: 2
+            mini: 1
+            BoulderSunminimp3: 1
+            BoulderSunmainmp3: 1
+            minisatsylvan15mp3: 1
+            mainsatsylvan15mp3: 1
+            mainsunsylvan15mp3: 1
+            SatminiAustin15mp3: 1
+            SatmainAustin15mp3: 1
+            SunmainAustin15mp3: 1
+            SatminiAtlanta15mp3: 1
+            SatmainAtlanta15mp3: 1
+            SunmainAtlanta15: 1
+            SACmini15mp3: 1
+            SACmaini15mp3: 1
+            LVmini15mp3: 1
+            LVmain15mp3: 1
+            Akash: 3
+            Workshop: 3
+            '1': 1
+            Akash1Munich2015mp3: 1
+            '2': 1
+            Akash2Munich2015mp3: 1
+            '3': 1
+            Akash3Munich2015mp3: 1
+            Jeff: 1
+            Michaels: 1
+            Geoffrey: 1
+            Hoppe: 1
+            Prageet: 1
+            Harris: 1
+            Jonette: 1
+            Crowley: 1
+            Kahu: 1
+            Fred: 1
+            Sterling: 1
+            Jim: 1
+            Self: 1
+            Peggy: 1
+            Phoenix: 1
+            Dubro: 1
+            Steve: 1
+            Rother: 1
+            Ronna: 1
+            Herman: 1
+            James: 1
+            Tyberonn: 1
+            Marilyn: 1
+            Harper: 1
+            Lee: 1
+            Carroll: 1
+          :total_tokens: 186
+          :examples: 20
+        aum_timespan:
+          :tokens:
+            '1312': 1
+            Min: 23
+            '159': 1
+            megs: 23
+            '3922': 1
+            '473': 1
+            '2525': 1
+            '306': 1
+            '1637': 1
+            '202': 1
+            '3547': 1
+            '432': 1
+            '1420': 1
+            '174': 1
+            '3310': 1
+            '40': 1
+            '1846': 1
+            '226': 1
+            '2551': 1
+            '311': 1
+            '3102': 1
+            '373': 1
+            '1350': 1
+            '167': 1
+            '2945': 1
+            '358': 1
+            '2108': 1
+            '255': 1
+            '1434': 1
+            '176': 1
+            '3911': 1
+            '471': 1
+            '2534': 1
+            '308': 1
+            '1015': 1
+            '124': 1
+            '3710': 1
+            '447': 1
+            '1144': 1
+            '142': 1
+            '3739': 1
+            '453': 1
+            '2726': 1
+            '331': 1
+            '1826': 1
+            '222': 1
+            '1552': 1
+            '191': 1
+          :total_tokens: 92
+          :examples: 23
+        album_locations:
+          :tokens:
+            BOULDER: 1
+            COLORADO: 1
+            Miami: 1
+            Florida: 1
+            Dallas: 1
+            Texas: 1
+            Sydney: 1
+            NSW: 1
+            Australia: 1
+            Bali: 1
+            Indonesia: 1
+            Istanbul: 1
+            Turkey: 1
+            Catania: 1
+            Mt: 1
+            Etna: 1
+            Sicily: 1
+            Italy: 2
+            Bologna: 1
+            Asheville: 1
+            North: 1
+            Carolina: 1
+            Charlottesville: 1
+            Virginia: 1
+            Salem: 1
+            Massachusetts: 1
+            Buffalo: 1
+            New: 1
+            York: 1
+            Calgary: 1
+            AB: 1
+            Canada: 3
+            Regina: 1
+            SK: 1
+            Sedona: 1
+            Arizona: 1
+            Baltimore: 1
+            MD: 1
+            Totowa: 1
+            NJ: 1
+            Laguna: 1
+            Hills: 1
+            California: 3
+            Seattle: 1
+            Washingon: 1
+            Salt: 1
+            Lake: 1
+            City: 1
+            Utah: 1
+            Chicagoland: 1
+            Woodridge: 1
+            IL: 1
+            Minneapolis: 1
+            Minnesota: 1
+            Vancouver: 1
+            BC: 1
+            Valencia: 1
+            Spain: 1
+            Porto: 1
+            Portugal: 3
+            Lisbon: 2
+            Workshop: 1
+            Lima: 1
+            Peru: 1
+            Newport: 1
+            Beach: 1
+            San: 1
+            Rafael: 1
+          :total_tokens: 76
+          :examples: 30
+        album_dates:
+          :tokens:
+            January: 1
+            '1718': 1
+            '2015': 1
+          :total_tokens: 3
+          :examples: 1
 aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
-  max_tag_id_length: 3
+  max_tag_id_length: 7
   max_tag_length: -8
   tags:
     d: date
@@ -3074,103 +4279,262 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
         '1920': 1
         HOMEROOM: 1
         '1011': 1
+        Sun: 1
+        Valley: 1
+        Idaho: 1
+        '2015': 1
+        Sylvan: 1
+        AB: 1
+        Canada: 1
+        '24': 1
+        '25': 1
+        Austin: 1
+        Texas: 1
+        Atlanta: 1
+        Georgia: 1
+        Sacramento: 1
+        California: 1
+        Las: 1
+        Vegas: 1
+        Nevada: 1
+        Feburary: 1
+        Congratulations: 1
+        Weather: 1
+        Loading: 1
+        Dice: 1
+        Ken: 1
+        Davis: 1
+        ULURU: 1
+        NORTHERN: 1
+        TERRITORY: 1
+        AUSTRALIA: 1
+        portion: 1
+        TUES: 1
+        THURS: 1
+        '242526': 1
+        OLD: 1
+        Jenny: 1
+        Cheong: 1
+        AND: 1
+        Kim: 1
+        Saw: 1
+        Four: 1
+        Phases: 1
+        Catania: 1
+        Eruption: 1
+        'on': 1
+        at: 1
+        Etna: 1
+        '19': 1
+        Munich: 1
+        Germany: 1
+        Akashic: 1
+        Workshop: 1
+        '26': 1
+        Germain: 1
+        language: 1
+        Peter: 1
+        Herrmann: 1
+        Accelerated: 1
+        Awareness: 1
+        Rise: 1
+        Triad: 1
+        Three: 1
+        parts: 1
+        Consciousness: 1
+        Is: 1
+        this: 1
+        real: 1
+        Time: 1
+        Capsule: 1
+        Template: 1
+        P1: 1
+        w: 1
+        P2: 1
+        Evolution: 1
+        Soul: 1
+        Great: 1
+        Story: 1
+        '34': 1
+        Jan: 1
+        Tober: 1
+        Connie: 1
+        Okelberry: 1
+        FRIDAYSATURDAYSUNDAY: 1
+        '567': 1
+        SEDONA: 1
+        ARIZONA: 1
+        SUMMER: 1
+        LIGHT: 1
+        CONFERENCE: 1
+        Special: 1
+        music: 1
+        ROBERT: 1
+        HAIG: 1
+        COXON: 1
+        '2021': 1
+        Way: 1
+        Prayer: 1
+        Works: 1
+        Filters: 1
+        '45': 1
+        Parable: 1
+        Wo: 1
+        Linear: 1
+        Biggest: 1
+        Filter: 1
+        Power: 1
+        Energy: 1
+        Update: 1
+        Cosmic: 1
+        Cook: 1
+        Bob: 1
+        Macko: 1
+        Future: 1
+        DNA: 1
+        One: 1
+        Foot: 1
+        Each: 1
+        AUGUST: 1
+        '1622': 1
+        KAUAI: 1
+        HAWAII: 1
+        guest: 1
+        NOTE: 1
+        SEE: 1
+        VIDEO: 1
+        '56': 1
+        Going: 1
+        Back: 1
+        to: 1
+        Get: 1
+        Where: 1
+        Earth: 1
+        Journey: 1
+        Home: 1
+        Missing: 1
+        Element: 1
+        Country: 1
+        Israel: 1
+        Tel: 1
+        Aviv: 1
+        Planning: 1
+        Montreal: 1
+        QC: 1
+        NOVEMBER: 1
+        BOLIVIA: 1
+        PERU: 1
+        Carla: 1
+        Gilardi: 1
+        Guillermo: 1
+        Urbaneja: 1
+        Message: 1
+        South: 1
+        America: 1
+        Spanish: 1
+        Recalibration: 1
+        Scenario: 1
+        Hidden: 1
+        Youth: 1
+        End: 1
+        Year: 1
       log_size: 
     data: !ruby/object:NBayes::Data
       data:
         date:
           :tokens:
-            January: 7
+            January: 9
             '78': 1
             '2017': 44
-            Saturday: 37
-            Sunday: 43
+            Saturday: 61
+            Sunday: 67
             '1415': 1
-            '21': 5
-            February: 7
+            '21': 7
+            February: 11
             '2132017': 1
             '14162017': 1
-            '2526': 3
-            March: 3
-            '1112': 1
-            '1819': 2
-            April: 10
-            '1': 4
+            '2526': 4
+            March: 6
+            '1112': 2
+            '1819': 3
+            April: 15
+            '1': 5
             '2': 3
             '1218': 1
             APRIL: 1
             '2130': 1
             IRELAND: 2
-            '29': 5
-            Monday: 2
-            May: 16
+            '29': 6
+            Monday: 3
+            May: 22
             '3': 3
-            SATURDAY: 2
-            '6': 2
-            '7': 2
-            '8': 2
-            '13': 4
-            '14': 3
+            SATURDAY: 3
+            '6': 4
+            '7': 3
+            '8': 4
+            '13': 5
+            '14': 5
             '151617': 1
             SUNDAY: 2
-            '22': 2
-            '23': 3
-            June: 8
+            '22': 3
+            '23': 5
+            June: 11
             '234': 1
             '4': 4
             FRIDAY: 1
-            '16': 2
+            '16': 5
             '1718': 1
             '2425': 1
             SaturdaySunday: 1
-            July: 6
+            July: 10
             JulyAugust: 1
-            August: 5
+            August: 6
             '1213': 1
             '2427': 1
-            September: 10
-            '9': 5
-            '10': 4
-            '15': 4
-            '17': 2
+            September: 16
+            '9': 6
+            '10': 7
+            '15': 6
+            '17': 3
             through: 2
-            October: 8
+            October: 13
             '20': 4
             '272829': 1
-            November: 4
-            '11': 3
+            November: 5
+            '11': 6
             Dec: 1
-            December: 4
+            December: 6
             '19202122': 1
             '910': 2
             '2016': 42
             '1617': 3
             '2324': 2
             '1314': 3
-            '2728': 1
-            MARCH: 1
+            '2728': 2
+            MARCH: 3
             '1826': 1
             CHILEARGENTINA: 1
             Friday: 1
-            '30': 1
-            Wednesday: 3
+            '30': 2
+            Wednesday: 6
             MAY: 1
             '2122': 1
-            '28': 1
+            '28': 2
             '791617': 1
-            JUNE: 1
+            JUNE: 2
             '9101112': 1
             HOT: 1
             SPRINGS: 1
             ARKANSAS: 1
-            '12': 1
+            '12': 4
             Aug: 1
             7th: 1
             SEPTEMBER: 2
             '411': 1
             Tuesday: 2
-            '18': 1
+            '18': 3
             '1628': 1
-            Thursday: 1
+            Thursday: 3
             OCTOBER: 2
             KRYON: 3
             GAIA: 1
@@ -3181,11 +4545,32 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             SOUTHERN: 1
             LEMURIAN: 1
             ADVENTURE: 1
-            '1920': 1
+            '1920': 2
             HOMEROOM: 1
             '1011': 1
-          :total_tokens: 410
-          :examples: 96
+            and: 5
+            '2015': 46
+            '24': 2
+            '25': 2
+            Feburary: 1
+            TUES: 1
+            THURS: 1
+            '242526': 1
+            '19': 1
+            '26': 2
+            '34': 1
+            FRIDAYSATURDAYSUNDAY: 1
+            '567': 1
+            '2021': 1
+            '45': 1
+            AUGUST: 1
+            '1622': 1
+            '56': 1
+            NOVEMBER: 1
+            BOLIVIA: 1
+            PERU: 1
+          :total_tokens: 623
+          :examples: 142
         location:
           :tokens:
             BOULDER: 1
@@ -3224,7 +4609,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             Salt: 1
             Mine: 1
             and: 1
-            Lake: 1
+            Lake: 2
             Tour: 1
             FATIMA: 2
             TOUR: 2
@@ -3235,47 +4620,73 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             MAIN: 1
             MADRID: 1
             SPAIN: 1
-          :total_tokens: 53
-          :examples: 15
+            Sun: 1
+            Valley: 1
+            Idaho: 1
+            Sylvan: 1
+            AB: 1
+            Canada: 2
+            Austin: 1
+            Texas: 1
+            Atlanta: 1
+            Georgia: 1
+            Sacramento: 1
+            California: 1
+            Las: 1
+            Vegas: 1
+            Nevada: 1
+            ULURU: 2
+            NORTHERN: 2
+            TERRITORY: 2
+            AUSTRALIA: 2
+            KAUAI: 1
+            HAWAII: 1
+            Tel: 3
+            Aviv: 3
+            Israel: 3
+            Montreal: 1
+            QC: 1
+          :total_tokens: 91
+          :examples: 28
         desc:
           :tokens:
-            Lee: 40
-            Carroll: 38
-            Dr: 40
-            Amber: 38
-            Wolf: 38
+            Lee: 42
+            Carroll: 40
+            Dr: 50
+            Amber: 49
+            Wolf: 49
             Marilyn: 11
             Harper: 11
             Prageet: 6
             Harris: 6
-            Meditation: 32
+            Meditation: 38
             Organizer: 6
             Elan: 4
             Cohen: 4
-            Photos: 12
-            Monika: 17
-            Muranyi: 20
+            Photos: 25
+            Monika: 28
+            Muranyi: 31
             With: 1
-            Kahuna: 4
-            Kaleiiliahi: 2
-            KRYON: 19
+            Kahuna: 5
+            Kaleiiliahi: 3
+            KRYON: 20
             channeling: 9
             Maria: 2
             OFarrell: 2
             Carr: 1
-            Meditations: 2
+            Meditations: 3
             Jane: 4
             Donald: 4
-            Channelling: 13
+            Channelling: 15
             OCarroll: 2
-            by: 9
+            by: 29
             Dual: 1
-            Robert: 13
-            Coxon: 13
-            Music: 17
+            Robert: 19
+            Coxon: 19
+            Music: 25
             Anders: 5
             Holte: 5
-            and: 9
+            and: 13
             Cacina: 8
             Meadu: 8
             ANDERS: 1
@@ -3283,7 +4694,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             vocal: 1
             BEATRICE: 1
             CELOTTI: 1
-            translation: 1
+            translation: 2
             Gregg: 3
             Braden: 3
             Todd: 1
@@ -3296,7 +4707,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             channelling: 1
             section: 1
             only: 1
-            of: 3
+            of: 6
             '2017': 1
             Chamonix: 1
             France: 1
@@ -3311,7 +4722,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             Rozman: 1
             Channeling: 4
             organizer: 1
-            THE: 1
+            THE: 2
             STORY: 1
             OF: 1
             FATIMA: 1
@@ -3323,12 +4734,12 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             TWO: 1
             '8': 1
             INDIANEPAL: 1
-            LEE: 2
-            CARROLL: 2
+            LEE: 7
+            CARROLL: 7
             PRAGEET: 2
             HARRIS: 2
             ThreeDay: 1
-            Hawaii: 1
+            Hawaii: 2
             Seminar: 1
             Excursion: 1
             Big: 1
@@ -3339,31 +4750,31 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             PHOTOS: 1
             meditation: 1
             Five: 1
-            in: 2
+            in: 4
             a: 1
             Circle: 1
-            The: 3
+            The: 10
             Basics: 1
             Belief: 1
             Quantum: 1
             Patterns: 1
             Assumptions: 2
             '2': 1
-            Kryon: 6
+            Kryon: 8
             cochannelling: 1
-            Peggy: 3
-            Phoenix: 3
-            Dubro: 3
+            Peggy: 4
+            Phoenix: 4
+            Dubro: 4
             Love: 1
             Letting: 1
             Go: 1
-            New: 1
+            New: 2
             Systems: 1
             Joy: 1
             Spirit: 1
-            Translation: 6
-            Jorge: 1
-            Bianchi: 1
+            Translation: 8
+            Jorge: 3
+            Bianchi: 3
             Spiritual: 1
             Common: 1
             Sense: 1
@@ -3398,9 +4809,9 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             PEGGY: 1
             PHOENIX: 1
             DUBRO: 1
-            DR: 1
-            AMBER: 1
-            WOLF: 1
+            DR: 6
+            AMBER: 6
+            WOLF: 6
             Joe: 1
             Dispenza: 1
             Bruce: 1
@@ -3412,7 +4823,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             Nothing: 1
             Random: 1
             Resilient: 1
-            Human: 2
+            Human: 4
             Point: 1
             Source: 1
             Syndrome: 1
@@ -3420,7 +4831,7 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             past: 1
             '2012': 1
             Prepared: 1
-            for: 1
+            for: 2
             YOU: 1
             Grandness: 1
             Exteralizing: 2
@@ -3433,14 +4844,149 @@ aum_year_album_mini_desc: !ruby/object:UncleKryon::Trainer
             BIANCHIMONIKA: 2
             MURANYIMeditation: 1
             MURANYI: 1
-          :total_tokens: 688
-          :examples: 123
+            Ken: 1
+            Davis: 1
+            Jenny: 1
+            Cheong: 1
+            AND: 1
+            Kim: 1
+            Saw: 1
+            Four: 1
+            Phases: 1
+            Catania: 1
+            Eruption: 1
+            'on': 1
+            at: 1
+            Etna: 1
+            Munich: 1
+            Germany: 1
+            Akashic: 1
+            Workshop: 1
+            Germain: 1
+            language: 1
+            Peter: 1
+            Herrmann: 1
+            Triad: 1
+            Three: 1
+            parts: 1
+            Consciousness: 1
+            Is: 1
+            this: 1
+            real: 1
+            Time: 1
+            Capsule: 1
+            Template: 1
+            P1: 1
+            w: 5
+            Jan: 1
+            Tober: 1
+            Connie: 2
+            Okelberry: 2
+            SEDONA: 1
+            ARIZONA: 1
+            SUMMER: 1
+            LIGHT: 1
+            CONFERENCE: 1
+            Special: 2
+            music: 1
+            ROBERT: 1
+            HAIG: 1
+            COXON: 1
+            Bob: 1
+            Macko: 1
+            Future: 1
+            DNA: 1
+            One: 1
+            Foot: 1
+            Each: 1
+            Energy: 1
+            guest: 1
+            NOTE: 1
+            SEE: 1
+            VIDEO: 1
+            Country: 1
+            Israel: 1
+            Carla: 1
+            Gilardi: 1
+            Guillermo: 1
+            Urbaneja: 1
+            Message: 1
+            South: 1
+            America: 1
+            Spanish: 1
+          :total_tokens: 947
+          :examples: 176
         ignore:
           :tokens:
             Live: 23
-            Kryon: 27
-            Channelling: 28
+            Kryon: 39
+            Channelling: 39
             Lee: 7
             Carroll: 7
-          :total_tokens: 92
-          :examples: 34
+            Congratulations: 1
+            The: 18
+            Weather: 1
+            Loading: 1
+            the: 4
+            Dice: 1
+            channelling: 2
+            portion: 2
+            only: 2
+            OLD: 1
+            SOUL: 1
+            Accelerated: 1
+            Awareness: 1
+            Rise: 1
+            of: 5
+            Spiritual: 1
+            Common: 1
+            Sense: 1
+            Time: 1
+            Capsule: 1
+            Template: 2
+            P2: 1
+            Evolution: 1
+            Human: 3
+            Soul: 2
+            Great: 1
+            Love: 1
+            Story: 1
+            Way: 1
+            Prayer: 1
+            Works: 1
+            Filters: 1
+            Parable: 1
+            Wo: 1
+            Linear: 1
+            Biggest: 1
+            Filter: 1
+            and: 4
+            Power: 1
+            Belief: 1
+            Energy: 1
+            Update: 1
+            Cosmic: 1
+            Cook: 1
+            Going: 1
+            Back: 1
+            to: 1
+            Get: 1
+            Future: 1
+            Where: 1
+            is: 1
+            God: 1
+            New: 1
+            Earth: 1
+            Journey: 1
+            Home: 1
+            Missing: 1
+            Element: 1
+            Planning: 1
+            Recalibration: 1
+            Scenario: 1
+            Hidden: 1
+            Youth: 1
+            End: 1
+            Year: 1
+          :total_tokens: 214
+          :examples: 61
