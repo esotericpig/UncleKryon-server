@@ -48,7 +48,7 @@ module UncleKryon
         op.banner = <<~EOS
           Usage:    #{op.program_name} [options] <command> [options] <command>...
           
-          Commands:
+          Sub Commands:
               hax kryon aum year
           
           Options:
@@ -85,6 +85,9 @@ module UncleKryon
           
           s = <<~EOS
             Examples:
+            |    # To view all of the options for the sub commands:
+            |    $ #{parser.program_name} hax kryon aum year
+            |    
             |    <hax>:
             |    # Train the data 1st before haxing (if there is no training data)
             |    $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -s
