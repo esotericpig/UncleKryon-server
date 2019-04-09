@@ -6,7 +6,7 @@
 - [ ] 2018 aums
 - [x] 2017 aums
 - [x] 2016 aums
-- [ ] 2015 aums
+- [x] 2015 aums
 - [ ] 2014 aums
 - [ ] 2013 aums
 - [ ] 2012 aums
