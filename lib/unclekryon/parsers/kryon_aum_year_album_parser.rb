@@ -239,8 +239,10 @@ module UncleKryon
         \A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*minutes[[:space:]]*\z|
         \([[:space:]]*[[:digit:]]+[[:space:]]+minutes[[:space:]]*\)[[:space:]]*\z
       /ix
-      # 2017 " KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
+      # 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
       time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*\z/i
+      # 2015 ones have a lot of "13:12 Min - 15.9 megs"
+      time_and_size_regex = /\A[[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+[[:space:]]+Min[[:space:]]+\-[[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]+megs/i
       
       size_count = 0
       time_count = 0
@@ -277,6 +279,15 @@ module UncleKryon
             @local_dump[:aum_filesize].push(c)
             size_count += 1
           end
+          
+          add_to_dump = false
+        elsif c =~ time_and_size_regex
+          time_and_size = c.split(/[[:space:]]*\-[[:space:]]*/) # Split on '-'
+          
+          @local_dump[:aum_timespan].push(TimespanData.new(time_and_size[0]).to_s())
+          time_count += 1
+          @local_dump[:aum_filesize].push(time_and_size[1])
+          size_count += 1
           
           add_to_dump = false
         elsif c =~ filename_regex
