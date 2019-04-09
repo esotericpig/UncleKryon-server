@@ -21,7 +21,7 @@ For Nokogiri:
 [GNU GPL v3+](LICENSE)
 
 > UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
-> Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)  
+> Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)  
 > 
 > UncleKryon-server is free software: you can redistribute it and/or modify  
 > it under the terms of the GNU General Public License as published by  
