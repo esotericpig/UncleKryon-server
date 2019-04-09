@@ -64,38 +64,54 @@ module UncleKryon
       
       # Fix misspellings and/or weird shortenings
       date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
-      date.gsub!(/SEPT\s+/i,'Sep ') # "SEPT 29 - OCT 9, 2017"
+      date.gsub!(/SEPT(\s+|\-)/i,'Sep\1') # "SEPT 29 - OCT 9, 2017", "Sept-Oct 2015"
       date.gsub!(/Septembe\s+/i,'September ') # "Septembe 4, 2016"
+      date.gsub!(/Ocotber/i,'October') # "Ocotber 10, 2015"
       
       comma = date.include?(',') ? ',' : '' # "May 6 2017"
       r = Array.new(2)
       
       begin
         if date.include?('-')
-          # "SEPT 29 - OCT 9, 2017"
-          if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s+\-\s+[[:alpha:]]+\s+[[:digit:]]+/
-            r1f = "%B %d - %B %d#{comma} %Y"
+          # "Sept-Oct 2015"
+          if date =~ /\A[[:alpha:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
+            r[1] = Date.strptime(date,'%b-%b %Y')
+            r[0] = Date.strptime(date,'%b')
+            r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           else
-            # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
-            date.gsub!(/\s+\-\s+/,'-')
-            
-            # "June 7-9-16-17" & "June 9-10-11-12"
-            if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\z/
-              r1f = "%B %d-%d-%d-%d"
+            # "SEPT 29 - OCT 9, 2017"
+            if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s+\-\s+[[:alpha:]]+\s+[[:digit:]]+/
+              r1f = "%B %d - %B %d#{comma} %Y"
+            # "December 12-13"
+            elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
+              r1f = "%B %d-%d"
               
               if !year.nil?()
                 date << ", #{year}"
                 r1f << ", %Y"
               end
             else
-              # "MAY 15-16-17, 2017" and "January 7-8, 2017"
-              r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+              # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
+              date.gsub!(/\s+\-\s+/,'-')
+              
+              # "June 7-9-16-17" & "June 9-10-11-12"
+              if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\z/
+                r1f = "%B %d-%d-%d-%d"
+                
+                if !year.nil?()
+                  date << ", #{year}"
+                  r1f << ", %Y"
+                end
+              else
+                # "MAY 15-16-17, 2017" and "January 7-8, 2017"
+                r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+              end
             end
+            
+            r[1] = Date.strptime(date,r1f)
+            r[0] = Date.strptime(date,'%B %d')
+            r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           end
-          
-          r[1] = Date.strptime(date,r1f)
-          r[0] = Date.strptime(date,'%B %d')
-          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
         elsif date.include?('/')
           # "JULY/AUG 2017"
           r[1] = Date.strptime(date,'%b/%b %Y')
