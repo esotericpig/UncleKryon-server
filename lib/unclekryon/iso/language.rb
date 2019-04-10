@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -141,6 +141,7 @@ module UncleKryon
           t.gsub!(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
           t.gsub!(/\ASPAN\z/i,'Spanish')
           t.gsub!(/\AENGLSH\z/i,'English')
+          t.gsub!(/\AHUNGARY\z/i,'Hungarian')
           
           lang = find(t)
           

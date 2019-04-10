@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -89,6 +89,9 @@ module UncleKryon
         t = t.gsub(/Kansas[[:space:]]*\,[[:space:]]*City/i,'Kansas City')
         t = t.gsub(/[\+\*]+/,'') # Means more countries, but won't worry about it (since not listed)
         t = t.gsub(/Berkeley[[:space:]]+Spings/i,'Berkeley Springs, WV')
+        t = t.gsub(/SWITZ[[:space:]]*\z/i,'Switzerland')
+        t = t.gsub(/\A[[:space:]]*NEWPORT[[:space:]]+BEACH[[:space:]]*\z/,'Newport Beach, California')
+        t = t.gsub(/\A[[:space:]]*SAN[[:space:]]+RAFAEL[[:space:]]*\z/,'San Rafael, California')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last

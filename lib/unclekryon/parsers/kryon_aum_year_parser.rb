@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -79,9 +79,19 @@ module UncleKryon
             r[0] = Date.strptime(date,'%b')
             r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           else
-            # "SEPT 29 - OCT 9, 2017"
-            if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s+\-\s+[[:alpha:]]+\s+[[:digit:]]+/
-              r1f = "%B %d - %B %d#{comma} %Y"
+            # "SEPT 29 - OCT 9, 2017", "May 31-June 1, 2014"
+            if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+[\,\s]+[[:digit:]]+\z/
+              date = date.gsub(/\s*\-\s*/,'-')
+              r1f = "%B %d-%B %d#{comma} %Y"
+            # "OCT 25 - NOV 3" (2014)
+            elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
+              date = date.gsub(/\s*\-\s*/,'-')
+              r1f = '%B %d-%B %d'
+              
+              if !year.nil?()
+                date << ", #{year}"
+                r1f << ", %Y"
+              end
             # "December 12-13"
             elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
               r1f = "%B %d-%d"
@@ -224,9 +234,19 @@ module UncleKryon
       return false if (cell = cells[1]).nil?
       return false if (cell = cell.css('a')).nil?
       return false if cell.length < 1
-      return false if (cell = cell.first).nil?
-      return false if cell.content.nil?
-      return false if cell['href'].nil?
+      
+      # For 2014 albums
+      cells = cell
+      cell = nil
+      
+      cells.each do |c|
+        if !c.nil?() && !Util.empty_s?(c.content) && !c['href'].nil?()
+          cell = c
+          break
+        end
+      end
+      
+      return false if cell.nil?()
       
       r_date = self.class.parse_kryon_date(Util.clean_data(cell.content),@title)
       album.date_begin = r_date[0]
@@ -254,6 +274,7 @@ module UncleKryon
       return false if cells.length <= 3
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
+      return false if cell =~ /[[:space:]]*RADIO[[:space:]]+SHOW[[:space:]]*/ # 2014
       
       album.locations = Iso.find_kryon_locations(cell)
       
@@ -269,10 +290,17 @@ module UncleKryon
       return false if cell.length < 1
       
       # For 2017 "San Jose, California (3)"
-      cell = (cell.length <= 1) ? cell.first : cell.pop
+      cells = cell
+      cell = nil
       
-      return false if cell.nil?
-      return false if cell.content.nil?
+      cells.each do |c|
+        if !c.nil?() && !Util.empty_s?(c.content)
+          cell = c
+          break
+        end
+      end
+      
+      return false if cell.nil?()
       
       album.title = Util.fix_shortwith_text(Util.clean_data(cell.content))
       

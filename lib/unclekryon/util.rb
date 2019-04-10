@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -103,7 +103,7 @@ module UncleKryon
     end
     
     def self.empty_s?(str)
-      return str.nil?() || str.strip().empty?()
+      return str.nil?() || str.gsub(/[[:space:]]+/,'').empty?()
     end
     
     def self.fix_shortwith_text(text)
