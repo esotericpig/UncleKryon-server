@@ -83,8 +83,8 @@ module UncleKryon
     def self.find_kryon_locations(text)
       locs = []
       
-      # Multiple countries are separated by '/'
-      text.split(/[[:space:]]*\/[[:space:]]*/).each() do |t|
+      # Multiple countries are separated by '/' or '&'
+      text.split(/[[:space:]]*[\/\&][[:space:]]*/).each() do |t|
         # Fix misspellings and/or weird shortenings
         t = t.gsub(/Kansas[[:space:]]*\,[[:space:]]*City/i,'Kansas City')
         t = t.gsub(/[\+\*]+/,'') # Means more countries, but won't worry about it (since not listed)
