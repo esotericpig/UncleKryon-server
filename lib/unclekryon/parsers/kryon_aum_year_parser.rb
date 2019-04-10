@@ -123,6 +123,10 @@ module UncleKryon
             r[1] = Date.strptime(date,'%B %d, %d, %Y')
             r[0] = Date.strptime(date,'%B %d')
             r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+          # "March, 2014"
+          elsif date =~ /\A[[:alpha:]]+\s*,\s*[[:digit:]]+\z/
+            r[0] = Date.strptime(date,'%B, %Y')
+            r[1] = nil
           else
             r[0] = Date.strptime(date,"%B %d#{comma} %Y")
             r[1] = nil
