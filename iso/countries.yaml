@@ -2134,8 +2134,9 @@ Countries:
     alpha3_code: ROU
   RUS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
-    name: Russian Federation
+    name: Russia
     names:
+    - Russia
     - Russian Federation
     code: RUS
     codes:
