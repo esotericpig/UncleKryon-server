@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ module UncleKryon
     attr_reader :codes
     attr_reader :alpha2_code
     attr_reader :alpha3_code
+    attr_reader :region
     
     def initialize(row=nil)
       super()
@@ -46,6 +47,7 @@ module UncleKryon
       @codes = nil
       @alpha2_code = nil
       @alpha3_code = nil
+      @region = nil
       
       if row.is_a?(Array)
         @name = self.class.simplify_name(row[0])
@@ -60,8 +62,9 @@ module UncleKryon
     
     def to_s()
       s = '['
-      s << %Q("#{@name}","#{@names.join(';')}",)
-      s << %Q(#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
+      s << %Q("#{@name}","#{@names.join(';')}")
+      s << %Q(,#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
+      s << %Q(,#{@region})
       s << ']'
       
       return s

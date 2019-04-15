@@ -11,6 +11,7 @@ Countries:
     - AW
     alpha2_code: AW
     alpha3_code: ABW
+    region: North America
   AFG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Afghanistan
@@ -22,6 +23,7 @@ Countries:
     - AF
     alpha2_code: AF
     alpha3_code: AFG
+    region: Asia
   AGO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Angola
@@ -33,6 +35,7 @@ Countries:
     - AO
     alpha2_code: AO
     alpha3_code: AGO
+    region: Africa
   AIA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Anguilla
@@ -44,6 +47,7 @@ Countries:
     - AI
     alpha2_code: AI
     alpha3_code: AIA
+    region: North America
   ALA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Åland Islands
@@ -55,6 +59,7 @@ Countries:
     - AX
     alpha2_code: AX
     alpha3_code: ALA
+    region: Europe
   ALB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Albania
@@ -66,6 +71,7 @@ Countries:
     - AL
     alpha2_code: AL
     alpha3_code: ALB
+    region: Europe
   AND: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Andorra
@@ -77,6 +83,7 @@ Countries:
     - AD
     alpha2_code: AD
     alpha3_code: AND
+    region: Europe
   ARE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: United Arab Emirates
@@ -88,6 +95,7 @@ Countries:
     - AE
     alpha2_code: AE
     alpha3_code: ARE
+    region: Asia
   ARG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Argentina
@@ -99,6 +107,7 @@ Countries:
     - AR
     alpha2_code: AR
     alpha3_code: ARG
+    region: South America
   ARM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Armenia
@@ -110,6 +119,7 @@ Countries:
     - AM
     alpha2_code: AM
     alpha3_code: ARM
+    region: Asia
   ASM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: American Samoa
@@ -121,6 +131,7 @@ Countries:
     - AS
     alpha2_code: AS
     alpha3_code: ASM
+    region: Oceania
   ATA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Antarctica
@@ -132,6 +143,7 @@ Countries:
     - AQ
     alpha2_code: AQ
     alpha3_code: ATA
+    region: Antarctica
   ATF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: French Southern Territories
@@ -143,6 +155,7 @@ Countries:
     - TF
     alpha2_code: TF
     alpha3_code: ATF
+    region: Antarctica
   ATG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Antigua and Barbuda
@@ -154,6 +167,7 @@ Countries:
     - AG
     alpha2_code: AG
     alpha3_code: ATG
+    region: North America
   AUS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Australia
@@ -165,6 +179,7 @@ Countries:
     - AU
     alpha2_code: AU
     alpha3_code: AUS
+    region: Australia
   AUT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Austria
@@ -176,6 +191,7 @@ Countries:
     - AT
     alpha2_code: AT
     alpha3_code: AUT
+    region: Europe
   AZE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Azerbaijan
@@ -187,6 +203,7 @@ Countries:
     - AZ
     alpha2_code: AZ
     alpha3_code: AZE
+    region: Asia
   BDI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Burundi
@@ -198,6 +215,7 @@ Countries:
     - BI
     alpha2_code: BI
     alpha3_code: BDI
+    region: Africa
   BEL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Belgium
@@ -209,6 +227,7 @@ Countries:
     - BE
     alpha2_code: BE
     alpha3_code: BEL
+    region: Europe
   BEN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Benin
@@ -220,6 +239,7 @@ Countries:
     - BJ
     alpha2_code: BJ
     alpha3_code: BEN
+    region: Africa
   BES: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bonaire, Sint Eustatius and Saba
@@ -231,6 +251,7 @@ Countries:
     - BQ
     alpha2_code: BQ
     alpha3_code: BES
+    region: North America
   BFA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Burkina Faso
@@ -242,6 +263,7 @@ Countries:
     - BF
     alpha2_code: BF
     alpha3_code: BFA
+    region: Africa
   BGD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bangladesh
@@ -253,6 +275,7 @@ Countries:
     - BD
     alpha2_code: BD
     alpha3_code: BGD
+    region: Asia
   BGR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bulgaria
@@ -264,6 +287,7 @@ Countries:
     - BG
     alpha2_code: BG
     alpha3_code: BGR
+    region: Europe
   BHR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bahrain
@@ -275,6 +299,7 @@ Countries:
     - BH
     alpha2_code: BH
     alpha3_code: BHR
+    region: Asia
   BHS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bahamas
@@ -286,6 +311,7 @@ Countries:
     - BS
     alpha2_code: BS
     alpha3_code: BHS
+    region: North America
   BIH: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bosnia and Herzegovina
@@ -297,6 +323,7 @@ Countries:
     - BA
     alpha2_code: BA
     alpha3_code: BIH
+    region: Europe
   BLM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Barthélemy
@@ -308,6 +335,7 @@ Countries:
     - BL
     alpha2_code: BL
     alpha3_code: BLM
+    region: North America
   BLR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Belarus
@@ -319,6 +347,7 @@ Countries:
     - BY
     alpha2_code: BY
     alpha3_code: BLR
+    region: Europe
   BLZ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Belize
@@ -330,6 +359,7 @@ Countries:
     - BZ
     alpha2_code: BZ
     alpha3_code: BLZ
+    region: North America
   BMU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bermuda
@@ -341,6 +371,7 @@ Countries:
     - BM
     alpha2_code: BM
     alpha3_code: BMU
+    region: North America
   BOL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bolivia
@@ -352,6 +383,7 @@ Countries:
     - BO
     alpha2_code: BO
     alpha3_code: BOL
+    region: South America
   BRA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Brazil
@@ -363,6 +395,7 @@ Countries:
     - BR
     alpha2_code: BR
     alpha3_code: BRA
+    region: South America
   BRB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Barbados
@@ -374,6 +407,7 @@ Countries:
     - BB
     alpha2_code: BB
     alpha3_code: BRB
+    region: North America
   BRN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Brunei Darussalam
@@ -385,6 +419,7 @@ Countries:
     - BN
     alpha2_code: BN
     alpha3_code: BRN
+    region: Asia
   BTN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bhutan
@@ -396,6 +431,7 @@ Countries:
     - BT
     alpha2_code: BT
     alpha3_code: BTN
+    region: Asia
   BVT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Bouvet Island
@@ -407,6 +443,7 @@ Countries:
     - BV
     alpha2_code: BV
     alpha3_code: BVT
+    region: Antarctica
   BWA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Botswana
@@ -418,6 +455,7 @@ Countries:
     - BW
     alpha2_code: BW
     alpha3_code: BWA
+    region: Africa
   CAF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Central African Republic
@@ -429,6 +467,7 @@ Countries:
     - CF
     alpha2_code: CF
     alpha3_code: CAF
+    region: Africa
   CAN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Canada
@@ -440,6 +479,7 @@ Countries:
     - CA
     alpha2_code: CA
     alpha3_code: CAN
+    region: North America
   CCK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cocos Islands
@@ -451,6 +491,7 @@ Countries:
     - CC
     alpha2_code: CC
     alpha3_code: CCK
+    region: Asia
   CHE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Switzerland
@@ -462,6 +503,7 @@ Countries:
     - CH
     alpha2_code: CH
     alpha3_code: CHE
+    region: Europe
   CHL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Chile
@@ -473,6 +515,7 @@ Countries:
     - CL
     alpha2_code: CL
     alpha3_code: CHL
+    region: South America
   CHN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: China
@@ -484,6 +527,7 @@ Countries:
     - CN
     alpha2_code: CN
     alpha3_code: CHN
+    region: Asia
   CIV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Côte d'Ivoire
@@ -495,6 +539,7 @@ Countries:
     - CI
     alpha2_code: CI
     alpha3_code: CIV
+    region: Africa
   CMR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cameroon
@@ -506,6 +551,7 @@ Countries:
     - CM
     alpha2_code: CM
     alpha3_code: CMR
+    region: Africa
   COD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: DR Congo
@@ -517,6 +563,7 @@ Countries:
     - CD
     alpha2_code: CD
     alpha3_code: COD
+    region: Africa
   COG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Congo
@@ -528,6 +575,7 @@ Countries:
     - CG
     alpha2_code: CG
     alpha3_code: COG
+    region: Africa
   COK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cook Islands
@@ -539,6 +587,7 @@ Countries:
     - CK
     alpha2_code: CK
     alpha3_code: COK
+    region: Oceania
   COL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Colombia
@@ -550,6 +599,7 @@ Countries:
     - CO
     alpha2_code: CO
     alpha3_code: COL
+    region: South America
   COM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Comoros
@@ -561,6 +611,7 @@ Countries:
     - KM
     alpha2_code: KM
     alpha3_code: COM
+    region: Africa
   CPV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cabo Verde
@@ -572,6 +623,7 @@ Countries:
     - CV
     alpha2_code: CV
     alpha3_code: CPV
+    region: Africa
   CRI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Costa Rica
@@ -583,6 +635,7 @@ Countries:
     - CR
     alpha2_code: CR
     alpha3_code: CRI
+    region: North America
   CUB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cuba
@@ -594,6 +647,7 @@ Countries:
     - CU
     alpha2_code: CU
     alpha3_code: CUB
+    region: North America
   CUW: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Curaçao
@@ -605,6 +659,7 @@ Countries:
     - CW
     alpha2_code: CW
     alpha3_code: CUW
+    region: North America
   CXR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Christmas Island
@@ -616,6 +671,7 @@ Countries:
     - CX
     alpha2_code: CX
     alpha3_code: CXR
+    region: Asia
   CYM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cayman Islands
@@ -627,6 +683,7 @@ Countries:
     - KY
     alpha2_code: KY
     alpha3_code: CYM
+    region: North America
   CYP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cyprus
@@ -638,6 +695,7 @@ Countries:
     - CY
     alpha2_code: CY
     alpha3_code: CYP
+    region: Asia
   CZE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Czechia
@@ -649,6 +707,7 @@ Countries:
     - CZ
     alpha2_code: CZ
     alpha3_code: CZE
+    region: Europe
   DEU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Germany
@@ -660,6 +719,7 @@ Countries:
     - DE
     alpha2_code: DE
     alpha3_code: DEU
+    region: Europe
   DJI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Djibouti
@@ -671,6 +731,7 @@ Countries:
     - DJ
     alpha2_code: DJ
     alpha3_code: DJI
+    region: Africa
   DMA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Dominica
@@ -682,6 +743,7 @@ Countries:
     - DM
     alpha2_code: DM
     alpha3_code: DMA
+    region: North America
   DNK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Denmark
@@ -693,6 +755,7 @@ Countries:
     - DK
     alpha2_code: DK
     alpha3_code: DNK
+    region: Europe
   DOM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Dominican Republic
@@ -704,6 +767,7 @@ Countries:
     - DO
     alpha2_code: DO
     alpha3_code: DOM
+    region: North America
   DZA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Algeria
@@ -715,6 +779,7 @@ Countries:
     - DZ
     alpha2_code: DZ
     alpha3_code: DZA
+    region: Africa
   ECU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Ecuador
@@ -726,6 +791,7 @@ Countries:
     - EC
     alpha2_code: EC
     alpha3_code: ECU
+    region: South America
   EGY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Egypt
@@ -737,6 +803,7 @@ Countries:
     - EG
     alpha2_code: EG
     alpha3_code: EGY
+    region: Africa
   ERI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Eritrea
@@ -748,6 +815,7 @@ Countries:
     - ER
     alpha2_code: ER
     alpha3_code: ERI
+    region: Africa
   ESH: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Western Sahara*
@@ -759,6 +827,7 @@ Countries:
     - EH
     alpha2_code: EH
     alpha3_code: ESH
+    region: Africa
   ESP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Spain
@@ -770,6 +839,7 @@ Countries:
     - ES
     alpha2_code: ES
     alpha3_code: ESP
+    region: Europe
   EST: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Estonia
@@ -781,6 +851,7 @@ Countries:
     - EE
     alpha2_code: EE
     alpha3_code: EST
+    region: Europe
   ETH: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Ethiopia
@@ -792,6 +863,7 @@ Countries:
     - ET
     alpha2_code: ET
     alpha3_code: ETH
+    region: Africa
   FIN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Finland
@@ -803,6 +875,7 @@ Countries:
     - FI
     alpha2_code: FI
     alpha3_code: FIN
+    region: Europe
   FJI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Fiji
@@ -814,6 +887,7 @@ Countries:
     - FJ
     alpha2_code: FJ
     alpha3_code: FJI
+    region: Oceania
   FLK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Falkland Islands
@@ -826,6 +900,7 @@ Countries:
     - FK
     alpha2_code: FK
     alpha3_code: FLK
+    region: South America
   FRA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: France
@@ -837,6 +912,7 @@ Countries:
     - FR
     alpha2_code: FR
     alpha3_code: FRA
+    region: Europe
   FRO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Faroe Islands
@@ -848,6 +924,7 @@ Countries:
     - FO
     alpha2_code: FO
     alpha3_code: FRO
+    region: Europe
   FSM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Micronesia
@@ -859,6 +936,7 @@ Countries:
     - FM
     alpha2_code: FM
     alpha3_code: FSM
+    region: Oceania
   GAB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Gabon
@@ -870,6 +948,7 @@ Countries:
     - GA
     alpha2_code: GA
     alpha3_code: GAB
+    region: Africa
   GB-ENG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: England
@@ -882,6 +961,7 @@ Countries:
     - EN
     alpha2_code: EN
     alpha3_code: ENG
+    region: Europe
   GB-NIR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Northern Ireland
@@ -894,6 +974,7 @@ Countries:
     - NI
     alpha2_code: NI
     alpha3_code: NIR
+    region: Europe
   GB-SCT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Scotland
@@ -906,6 +987,7 @@ Countries:
     - SC
     alpha2_code: SC
     alpha3_code: SCT
+    region: Europe
   GB-WLS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Wales
@@ -918,6 +1000,7 @@ Countries:
     - WL
     alpha2_code: WL
     alpha3_code: WLS
+    region: Europe
   GBR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: UK
@@ -932,6 +1015,7 @@ Countries:
     - GB
     alpha2_code: GB
     alpha3_code: GBR
+    region: Europe
   GEO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Georgia
@@ -943,6 +1027,7 @@ Countries:
     - GE
     alpha2_code: GE
     alpha3_code: GEO
+    region: Asia
   GGY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guernsey
@@ -954,6 +1039,7 @@ Countries:
     - GG
     alpha2_code: GG
     alpha3_code: GGY
+    region: Europe
   GHA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Ghana
@@ -965,6 +1051,7 @@ Countries:
     - GH
     alpha2_code: GH
     alpha3_code: GHA
+    region: Africa
   GIB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Gibraltar
@@ -976,6 +1063,7 @@ Countries:
     - GI
     alpha2_code: GI
     alpha3_code: GIB
+    region: Europe
   GIN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guinea
@@ -987,6 +1075,7 @@ Countries:
     - GN
     alpha2_code: GN
     alpha3_code: GIN
+    region: Africa
   GLP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guadeloupe
@@ -998,6 +1087,7 @@ Countries:
     - GP
     alpha2_code: GP
     alpha3_code: GLP
+    region: North America
   GMB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Gambia
@@ -1009,6 +1099,7 @@ Countries:
     - GM
     alpha2_code: GM
     alpha3_code: GMB
+    region: Africa
   GNB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guinea-Bissau
@@ -1020,6 +1111,7 @@ Countries:
     - GW
     alpha2_code: GW
     alpha3_code: GNB
+    region: Africa
   GNQ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Equatorial Guinea
@@ -1031,6 +1123,7 @@ Countries:
     - GQ
     alpha2_code: GQ
     alpha3_code: GNQ
+    region: Africa
   GRC: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Greece
@@ -1042,6 +1135,7 @@ Countries:
     - GR
     alpha2_code: GR
     alpha3_code: GRC
+    region: Europe
   GRD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Grenada
@@ -1053,6 +1147,7 @@ Countries:
     - GD
     alpha2_code: GD
     alpha3_code: GRD
+    region: North America
   GRL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Greenland
@@ -1064,6 +1159,7 @@ Countries:
     - GL
     alpha2_code: GL
     alpha3_code: GRL
+    region: North America
   GTM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guatemala
@@ -1075,6 +1171,7 @@ Countries:
     - GT
     alpha2_code: GT
     alpha3_code: GTM
+    region: North America
   GUF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: French Guiana
@@ -1086,6 +1183,7 @@ Countries:
     - GF
     alpha2_code: GF
     alpha3_code: GUF
+    region: South America
   GUM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guam
@@ -1097,6 +1195,7 @@ Countries:
     - GU
     alpha2_code: GU
     alpha3_code: GUM
+    region: Oceania
   GUY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Guyana
@@ -1108,6 +1207,7 @@ Countries:
     - GY
     alpha2_code: GY
     alpha3_code: GUY
+    region: South America
   HKG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Hong Kong
@@ -1119,6 +1219,7 @@ Countries:
     - HK
     alpha2_code: HK
     alpha3_code: HKG
+    region: Asia
   HMD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Heard Island and McDonald Islands
@@ -1130,6 +1231,7 @@ Countries:
     - HM
     alpha2_code: HM
     alpha3_code: HMD
+    region: Antarctica
   HND: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Honduras
@@ -1141,6 +1243,7 @@ Countries:
     - HN
     alpha2_code: HN
     alpha3_code: HND
+    region: North America
   HRV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Croatia
@@ -1152,6 +1255,7 @@ Countries:
     - HR
     alpha2_code: HR
     alpha3_code: HRV
+    region: Europe
   HTI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Haiti
@@ -1163,6 +1267,7 @@ Countries:
     - HT
     alpha2_code: HT
     alpha3_code: HTI
+    region: North America
   HUN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Hungary
@@ -1174,6 +1279,7 @@ Countries:
     - HU
     alpha2_code: HU
     alpha3_code: HUN
+    region: Europe
   IDN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Indonesia
@@ -1185,6 +1291,7 @@ Countries:
     - ID
     alpha2_code: ID
     alpha3_code: IDN
+    region: Asia
   IMN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Isle of Man
@@ -1196,6 +1303,7 @@ Countries:
     - IM
     alpha2_code: IM
     alpha3_code: IMN
+    region: Europe
   IND: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: India
@@ -1207,6 +1315,7 @@ Countries:
     - IN
     alpha2_code: IN
     alpha3_code: IND
+    region: Asia
   IOT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: British Indian Ocean Territory
@@ -1218,6 +1327,7 @@ Countries:
     - IO
     alpha2_code: IO
     alpha3_code: IOT
+    region: Asia
   IRL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Ireland
@@ -1229,6 +1339,7 @@ Countries:
     - IE
     alpha2_code: IE
     alpha3_code: IRL
+    region: Europe
   IRN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Iran
@@ -1240,6 +1351,7 @@ Countries:
     - IR
     alpha2_code: IR
     alpha3_code: IRN
+    region: Asia
   IRQ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Iraq
@@ -1251,6 +1363,7 @@ Countries:
     - IQ
     alpha2_code: IQ
     alpha3_code: IRQ
+    region: Asia
   ISL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Iceland
@@ -1262,6 +1375,7 @@ Countries:
     - IS
     alpha2_code: IS
     alpha3_code: ISL
+    region: Europe
   ISR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Israel
@@ -1273,6 +1387,7 @@ Countries:
     - IL
     alpha2_code: IL
     alpha3_code: ISR
+    region: Asia
   ITA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Italy
@@ -1284,6 +1399,7 @@ Countries:
     - IT
     alpha2_code: IT
     alpha3_code: ITA
+    region: Europe
   JAM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Jamaica
@@ -1295,6 +1411,7 @@ Countries:
     - JM
     alpha2_code: JM
     alpha3_code: JAM
+    region: North America
   JEY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Jersey
@@ -1306,6 +1423,7 @@ Countries:
     - JE
     alpha2_code: JE
     alpha3_code: JEY
+    region: Europe
   JOR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Jordan
@@ -1317,6 +1435,7 @@ Countries:
     - JO
     alpha2_code: JO
     alpha3_code: JOR
+    region: Asia
   JPN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Japan
@@ -1328,6 +1447,7 @@ Countries:
     - JP
     alpha2_code: JP
     alpha3_code: JPN
+    region: Asia
   KAZ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Kazakhstan
@@ -1339,6 +1459,7 @@ Countries:
     - KZ
     alpha2_code: KZ
     alpha3_code: KAZ
+    region: Asia
   KEN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Kenya
@@ -1350,6 +1471,7 @@ Countries:
     - KE
     alpha2_code: KE
     alpha3_code: KEN
+    region: Africa
   KGZ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Kyrgyzstan
@@ -1361,6 +1483,7 @@ Countries:
     - KG
     alpha2_code: KG
     alpha3_code: KGZ
+    region: Asia
   KHM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Cambodia
@@ -1372,6 +1495,7 @@ Countries:
     - KH
     alpha2_code: KH
     alpha3_code: KHM
+    region: Asia
   KIR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Kiribati
@@ -1383,6 +1507,7 @@ Countries:
     - KI
     alpha2_code: KI
     alpha3_code: KIR
+    region: Oceania
   KNA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Kitts and Nevis
@@ -1394,6 +1519,7 @@ Countries:
     - KN
     alpha2_code: KN
     alpha3_code: KNA
+    region: North America
   KOR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: South Korea
@@ -1405,6 +1531,7 @@ Countries:
     - KR
     alpha2_code: KR
     alpha3_code: KOR
+    region: Asia
   KWT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Kuwait
@@ -1416,6 +1543,7 @@ Countries:
     - KW
     alpha2_code: KW
     alpha3_code: KWT
+    region: Asia
   LAO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Lao People's Democratic Republic
@@ -1427,6 +1555,7 @@ Countries:
     - LA
     alpha2_code: LA
     alpha3_code: LAO
+    region: Asia
   LBN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Lebanon
@@ -1438,6 +1567,7 @@ Countries:
     - LB
     alpha2_code: LB
     alpha3_code: LBN
+    region: Asia
   LBR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Liberia
@@ -1449,6 +1579,7 @@ Countries:
     - LR
     alpha2_code: LR
     alpha3_code: LBR
+    region: Africa
   LBY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Libya
@@ -1460,6 +1591,7 @@ Countries:
     - LY
     alpha2_code: LY
     alpha3_code: LBY
+    region: Africa
   LCA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Lucia
@@ -1471,6 +1603,7 @@ Countries:
     - LC
     alpha2_code: LC
     alpha3_code: LCA
+    region: North America
   LIE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Liechtenstein
@@ -1482,6 +1615,7 @@ Countries:
     - LI
     alpha2_code: LI
     alpha3_code: LIE
+    region: Europe
   LKA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sri Lanka
@@ -1493,6 +1627,7 @@ Countries:
     - LK
     alpha2_code: LK
     alpha3_code: LKA
+    region: Asia
   LSO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Lesotho
@@ -1504,6 +1639,7 @@ Countries:
     - LS
     alpha2_code: LS
     alpha3_code: LSO
+    region: Africa
   LTU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Lithuania
@@ -1515,6 +1651,7 @@ Countries:
     - LT
     alpha2_code: LT
     alpha3_code: LTU
+    region: Europe
   LUX: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Luxembourg
@@ -1526,6 +1663,7 @@ Countries:
     - LU
     alpha2_code: LU
     alpha3_code: LUX
+    region: Europe
   LVA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Latvia
@@ -1537,6 +1675,7 @@ Countries:
     - LV
     alpha2_code: LV
     alpha3_code: LVA
+    region: Europe
   MAC: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Macao
@@ -1548,6 +1687,7 @@ Countries:
     - MO
     alpha2_code: MO
     alpha3_code: MAC
+    region: Asia
   MAF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Martin
@@ -1559,6 +1699,7 @@ Countries:
     - MF
     alpha2_code: MF
     alpha3_code: MAF
+    region: North America
   MAR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Morocco
@@ -1570,6 +1711,7 @@ Countries:
     - MA
     alpha2_code: MA
     alpha3_code: MAR
+    region: Africa
   MCO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Monaco
@@ -1581,6 +1723,7 @@ Countries:
     - MC
     alpha2_code: MC
     alpha3_code: MCO
+    region: Europe
   MDA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Moldova
@@ -1592,6 +1735,7 @@ Countries:
     - MD
     alpha2_code: MD
     alpha3_code: MDA
+    region: Europe
   MDG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Madagascar
@@ -1603,6 +1747,7 @@ Countries:
     - MG
     alpha2_code: MG
     alpha3_code: MDG
+    region: Africa
   MDV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Maldives
@@ -1614,6 +1759,7 @@ Countries:
     - MV
     alpha2_code: MV
     alpha3_code: MDV
+    region: Asia
   MEX: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mexico
@@ -1625,6 +1771,7 @@ Countries:
     - MX
     alpha2_code: MX
     alpha3_code: MEX
+    region: North America
   MHL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Marshall Islands
@@ -1636,6 +1783,7 @@ Countries:
     - MH
     alpha2_code: MH
     alpha3_code: MHL
+    region: Oceania
   MKD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Macedonia
@@ -1647,6 +1795,7 @@ Countries:
     - MK
     alpha2_code: MK
     alpha3_code: MKD
+    region: Europe
   MLI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mali
@@ -1658,6 +1807,7 @@ Countries:
     - ML
     alpha2_code: ML
     alpha3_code: MLI
+    region: Africa
   MLT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Malta
@@ -1669,6 +1819,7 @@ Countries:
     - MT
     alpha2_code: MT
     alpha3_code: MLT
+    region: Europe
   MMR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Myanmar
@@ -1680,6 +1831,7 @@ Countries:
     - MM
     alpha2_code: MM
     alpha3_code: MMR
+    region: Asia
   MNE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Montenegro
@@ -1691,6 +1843,7 @@ Countries:
     - ME
     alpha2_code: ME
     alpha3_code: MNE
+    region: Europe
   MNG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mongolia
@@ -1702,6 +1855,7 @@ Countries:
     - MN
     alpha2_code: MN
     alpha3_code: MNG
+    region: Asia
   MNP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Northern Mariana Islands
@@ -1713,6 +1867,7 @@ Countries:
     - MP
     alpha2_code: MP
     alpha3_code: MNP
+    region: Oceania
   MOZ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mozambique
@@ -1724,6 +1879,7 @@ Countries:
     - MZ
     alpha2_code: MZ
     alpha3_code: MOZ
+    region: Africa
   MRT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mauritania
@@ -1735,6 +1891,7 @@ Countries:
     - MR
     alpha2_code: MR
     alpha3_code: MRT
+    region: Africa
   MSR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Montserrat
@@ -1746,6 +1903,7 @@ Countries:
     - MS
     alpha2_code: MS
     alpha3_code: MSR
+    region: North America
   MTQ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Martinique
@@ -1757,6 +1915,7 @@ Countries:
     - MQ
     alpha2_code: MQ
     alpha3_code: MTQ
+    region: North America
   MUS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mauritius
@@ -1768,6 +1927,7 @@ Countries:
     - MU
     alpha2_code: MU
     alpha3_code: MUS
+    region: Africa
   MWI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Malawi
@@ -1779,6 +1939,7 @@ Countries:
     - MW
     alpha2_code: MW
     alpha3_code: MWI
+    region: Africa
   MYS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Malaysia
@@ -1790,6 +1951,7 @@ Countries:
     - MY
     alpha2_code: MY
     alpha3_code: MYS
+    region: Asia
   MYT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Mayotte
@@ -1801,6 +1963,7 @@ Countries:
     - YT
     alpha2_code: YT
     alpha3_code: MYT
+    region: Africa
   NAM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Namibia
@@ -1812,6 +1975,7 @@ Countries:
     - NA
     alpha2_code: NA
     alpha3_code: NAM
+    region: Africa
   NCL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: New Caledonia
@@ -1823,6 +1987,7 @@ Countries:
     - NC
     alpha2_code: NC
     alpha3_code: NCL
+    region: Oceania
   NER: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Niger
@@ -1834,6 +1999,7 @@ Countries:
     - NE
     alpha2_code: NE
     alpha3_code: NER
+    region: Africa
   NFK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Norfolk Island
@@ -1845,6 +2011,7 @@ Countries:
     - NF
     alpha2_code: NF
     alpha3_code: NFK
+    region: Oceania
   NGA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Nigeria
@@ -1856,6 +2023,7 @@ Countries:
     - NG
     alpha2_code: NG
     alpha3_code: NGA
+    region: Africa
   NIC: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Nicaragua
@@ -1867,6 +2035,7 @@ Countries:
     - NI
     alpha2_code: NI
     alpha3_code: NIC
+    region: North America
   NIU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Niue
@@ -1878,6 +2047,7 @@ Countries:
     - NU
     alpha2_code: NU
     alpha3_code: NIU
+    region: Oceania
   NLD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Netherlands
@@ -1890,6 +2060,7 @@ Countries:
     - NL
     alpha2_code: NL
     alpha3_code: NLD
+    region: Europe
   NOR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Norway
@@ -1901,6 +2072,7 @@ Countries:
     - 'NO'
     alpha2_code: 'NO'
     alpha3_code: NOR
+    region: Europe
   NPL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Nepal
@@ -1912,6 +2084,7 @@ Countries:
     - NP
     alpha2_code: NP
     alpha3_code: NPL
+    region: Asia
   NRU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Nauru
@@ -1923,6 +2096,7 @@ Countries:
     - NR
     alpha2_code: NR
     alpha3_code: NRU
+    region: Oceania
   NZL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: New Zealand
@@ -1934,6 +2108,7 @@ Countries:
     - NZ
     alpha2_code: NZ
     alpha3_code: NZL
+    region: Oceania
   OMN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Oman
@@ -1945,6 +2120,7 @@ Countries:
     - OM
     alpha2_code: OM
     alpha3_code: OMN
+    region: Asia
   PAK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Pakistan
@@ -1956,6 +2132,7 @@ Countries:
     - PK
     alpha2_code: PK
     alpha3_code: PAK
+    region: Asia
   PAN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Panama
@@ -1967,6 +2144,7 @@ Countries:
     - PA
     alpha2_code: PA
     alpha3_code: PAN
+    region: North America
   PCN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Pitcairn
@@ -1978,6 +2156,7 @@ Countries:
     - PN
     alpha2_code: PN
     alpha3_code: PCN
+    region: Oceania
   PER: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Peru
@@ -1989,6 +2168,7 @@ Countries:
     - PE
     alpha2_code: PE
     alpha3_code: PER
+    region: South America
   PHL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Philippines
@@ -2000,6 +2180,7 @@ Countries:
     - PH
     alpha2_code: PH
     alpha3_code: PHL
+    region: Asia
   PLW: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Palau
@@ -2011,6 +2192,7 @@ Countries:
     - PW
     alpha2_code: PW
     alpha3_code: PLW
+    region: Oceania
   PNG: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Papua New Guinea
@@ -2022,6 +2204,7 @@ Countries:
     - PG
     alpha2_code: PG
     alpha3_code: PNG
+    region: Australia
   POL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Poland
@@ -2033,6 +2216,7 @@ Countries:
     - PL
     alpha2_code: PL
     alpha3_code: POL
+    region: Europe
   PRI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Puerto Rico
@@ -2044,6 +2228,7 @@ Countries:
     - PR
     alpha2_code: PR
     alpha3_code: PRI
+    region: North America
   PRK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: North Korea
@@ -2055,6 +2240,7 @@ Countries:
     - KP
     alpha2_code: KP
     alpha3_code: PRK
+    region: Asia
   PRT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Portugal
@@ -2066,6 +2252,7 @@ Countries:
     - PT
     alpha2_code: PT
     alpha3_code: PRT
+    region: Europe
   PRY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Paraguay
@@ -2077,6 +2264,7 @@ Countries:
     - PY
     alpha2_code: PY
     alpha3_code: PRY
+    region: South America
   PSE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Palestine, State of
@@ -2088,6 +2276,7 @@ Countries:
     - PS
     alpha2_code: PS
     alpha3_code: PSE
+    region: Asia
   PYF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: French Polynesia
@@ -2099,6 +2288,7 @@ Countries:
     - PF
     alpha2_code: PF
     alpha3_code: PYF
+    region: Oceania
   QAT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Qatar
@@ -2110,6 +2300,7 @@ Countries:
     - QA
     alpha2_code: QA
     alpha3_code: QAT
+    region: Asia
   REU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Réunion
@@ -2121,6 +2312,7 @@ Countries:
     - RE
     alpha2_code: RE
     alpha3_code: REU
+    region: Africa
   ROU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Romania
@@ -2132,6 +2324,7 @@ Countries:
     - RO
     alpha2_code: RO
     alpha3_code: ROU
+    region: Europe
   RUS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Russia
@@ -2144,6 +2337,7 @@ Countries:
     - RU
     alpha2_code: RU
     alpha3_code: RUS
+    region: Asia
   RWA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Rwanda
@@ -2155,6 +2349,7 @@ Countries:
     - RW
     alpha2_code: RW
     alpha3_code: RWA
+    region: Africa
   SAU: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saudi Arabia
@@ -2166,6 +2361,7 @@ Countries:
     - SA
     alpha2_code: SA
     alpha3_code: SAU
+    region: Asia
   SDN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sudan
@@ -2177,6 +2373,7 @@ Countries:
     - SD
     alpha2_code: SD
     alpha3_code: SDN
+    region: Africa
   SEN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Senegal
@@ -2188,6 +2385,7 @@ Countries:
     - SN
     alpha2_code: SN
     alpha3_code: SEN
+    region: Africa
   SGP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Singapore
@@ -2199,6 +2397,7 @@ Countries:
     - SG
     alpha2_code: SG
     alpha3_code: SGP
+    region: Asia
   SGS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: South Georgia and the South Sandwich Islands
@@ -2210,6 +2409,7 @@ Countries:
     - GS
     alpha2_code: GS
     alpha3_code: SGS
+    region: Antarctica
   SHN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Helena, Ascension and Tristan da Cunha
@@ -2221,6 +2421,7 @@ Countries:
     - SH
     alpha2_code: SH
     alpha3_code: SHN
+    region: Africa
   SJM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Svalbard and Jan Mayen
@@ -2232,6 +2433,7 @@ Countries:
     - SJ
     alpha2_code: SJ
     alpha3_code: SJM
+    region: Europe
   SLB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Solomon Islands
@@ -2243,6 +2445,7 @@ Countries:
     - SB
     alpha2_code: SB
     alpha3_code: SLB
+    region: Oceania
   SLE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sierra Leone
@@ -2254,6 +2457,7 @@ Countries:
     - SL
     alpha2_code: SL
     alpha3_code: SLE
+    region: Africa
   SLV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: El Salvador
@@ -2265,6 +2469,7 @@ Countries:
     - SV
     alpha2_code: SV
     alpha3_code: SLV
+    region: North America
   SMR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: San Marino
@@ -2276,6 +2481,7 @@ Countries:
     - SM
     alpha2_code: SM
     alpha3_code: SMR
+    region: Europe
   SOM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Somalia
@@ -2287,6 +2493,7 @@ Countries:
     - SO
     alpha2_code: SO
     alpha3_code: SOM
+    region: Africa
   SPM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Pierre and Miquelon
@@ -2298,6 +2505,7 @@ Countries:
     - PM
     alpha2_code: PM
     alpha3_code: SPM
+    region: North America
   SRB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Serbia
@@ -2309,6 +2517,7 @@ Countries:
     - RS
     alpha2_code: RS
     alpha3_code: SRB
+    region: Europe
   SSD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: South Sudan
@@ -2320,6 +2529,7 @@ Countries:
     - SS
     alpha2_code: SS
     alpha3_code: SSD
+    region: Africa
   STP: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sao Tome and Principe
@@ -2331,6 +2541,7 @@ Countries:
     - ST
     alpha2_code: ST
     alpha3_code: STP
+    region: Africa
   SUR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Suriname
@@ -2342,6 +2553,7 @@ Countries:
     - SR
     alpha2_code: SR
     alpha3_code: SUR
+    region: South America
   SVK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Slovakia
@@ -2353,6 +2565,7 @@ Countries:
     - SK
     alpha2_code: SK
     alpha3_code: SVK
+    region: Europe
   SVN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Slovenia
@@ -2364,6 +2577,7 @@ Countries:
     - SI
     alpha2_code: SI
     alpha3_code: SVN
+    region: Europe
   SWE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sweden
@@ -2375,6 +2589,7 @@ Countries:
     - SE
     alpha2_code: SE
     alpha3_code: SWE
+    region: Europe
   SWZ: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Swaziland
@@ -2386,6 +2601,7 @@ Countries:
     - SZ
     alpha2_code: SZ
     alpha3_code: SWZ
+    region: Africa
   SXM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Sint Maarten
@@ -2397,6 +2613,7 @@ Countries:
     - SX
     alpha2_code: SX
     alpha3_code: SXM
+    region: North America
   SYC: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Seychelles
@@ -2408,6 +2625,7 @@ Countries:
     - SC
     alpha2_code: SC
     alpha3_code: SYC
+    region: Africa
   SYR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Syrian Arab Republic
@@ -2419,6 +2637,7 @@ Countries:
     - SY
     alpha2_code: SY
     alpha3_code: SYR
+    region: Asia
   TCA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Turks and Caicos Islands
@@ -2430,6 +2649,7 @@ Countries:
     - TC
     alpha2_code: TC
     alpha3_code: TCA
+    region: North America
   TCD: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Chad
@@ -2441,6 +2661,7 @@ Countries:
     - TD
     alpha2_code: TD
     alpha3_code: TCD
+    region: Africa
   TGO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Togo
@@ -2452,6 +2673,7 @@ Countries:
     - TG
     alpha2_code: TG
     alpha3_code: TGO
+    region: Africa
   THA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Thailand
@@ -2463,6 +2685,7 @@ Countries:
     - TH
     alpha2_code: TH
     alpha3_code: THA
+    region: Asia
   TJK: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tajikistan
@@ -2474,6 +2697,7 @@ Countries:
     - TJ
     alpha2_code: TJ
     alpha3_code: TJK
+    region: Asia
   TKL: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tokelau
@@ -2485,6 +2709,7 @@ Countries:
     - TK
     alpha2_code: TK
     alpha3_code: TKL
+    region: Oceania
   TKM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Turkmenistan
@@ -2496,6 +2721,7 @@ Countries:
     - TM
     alpha2_code: TM
     alpha3_code: TKM
+    region: Asia
   TLS: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Timor-Leste
@@ -2507,6 +2733,7 @@ Countries:
     - TL
     alpha2_code: TL
     alpha3_code: TLS
+    region: Asia
   TON: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tonga
@@ -2518,6 +2745,7 @@ Countries:
     - TO
     alpha2_code: TO
     alpha3_code: TON
+    region: Oceania
   TTO: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Trinidad and Tobago
@@ -2529,6 +2757,7 @@ Countries:
     - TT
     alpha2_code: TT
     alpha3_code: TTO
+    region: North America
   TUN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tunisia
@@ -2540,6 +2769,7 @@ Countries:
     - TN
     alpha2_code: TN
     alpha3_code: TUN
+    region: Africa
   TUR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Turkey
@@ -2551,6 +2781,7 @@ Countries:
     - TR
     alpha2_code: TR
     alpha3_code: TUR
+    region: Asia
   TUV: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tuvalu
@@ -2562,6 +2793,7 @@ Countries:
     - TV
     alpha2_code: TV
     alpha3_code: TUV
+    region: Oceania
   TWN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Taiwan
@@ -2573,6 +2805,7 @@ Countries:
     - TW
     alpha2_code: TW
     alpha3_code: TWN
+    region: Asia
   TZA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Tanzania, United Republic of
@@ -2584,6 +2817,7 @@ Countries:
     - TZ
     alpha2_code: TZ
     alpha3_code: TZA
+    region: Africa
   UGA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Uganda
@@ -2595,6 +2829,7 @@ Countries:
     - UG
     alpha2_code: UG
     alpha3_code: UGA
+    region: Africa
   UKR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Ukraine
@@ -2606,6 +2841,7 @@ Countries:
     - UA
     alpha2_code: UA
     alpha3_code: UKR
+    region: Europe
   UMI: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: United States Minor Outlying Islands
@@ -2617,6 +2853,7 @@ Countries:
     - UM
     alpha2_code: UM
     alpha3_code: UMI
+    region: North America
   URY: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Uruguay
@@ -2628,6 +2865,7 @@ Countries:
     - UY
     alpha2_code: UY
     alpha3_code: URY
+    region: South America
   USA: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: USA
@@ -2640,6 +2878,7 @@ Countries:
     - US
     alpha2_code: US
     alpha3_code: USA
+    region: North America
   UZB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Uzbekistan
@@ -2651,6 +2890,7 @@ Countries:
     - UZ
     alpha2_code: UZ
     alpha3_code: UZB
+    region: Asia
   VAT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Holy See
@@ -2662,6 +2902,7 @@ Countries:
     - VA
     alpha2_code: VA
     alpha3_code: VAT
+    region: Europe
   VCT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Saint Vincent and the Grenadines
@@ -2673,6 +2914,7 @@ Countries:
     - VC
     alpha2_code: VC
     alpha3_code: VCT
+    region: North America
   VEN: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Venezuela
@@ -2684,6 +2926,7 @@ Countries:
     - VE
     alpha2_code: VE
     alpha3_code: VEN
+    region: South America
   VGB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Virgin Islands (British)
@@ -2695,6 +2938,7 @@ Countries:
     - VG
     alpha2_code: VG
     alpha3_code: VGB
+    region: North America
   VIR: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Virgin Islands (US)
@@ -2706,6 +2950,7 @@ Countries:
     - VI
     alpha2_code: VI
     alpha3_code: VIR
+    region: North America
   VNM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Viet Nam
@@ -2717,6 +2962,7 @@ Countries:
     - VN
     alpha2_code: VN
     alpha3_code: VNM
+    region: Asia
   VUT: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Vanuatu
@@ -2728,6 +2974,7 @@ Countries:
     - VU
     alpha2_code: VU
     alpha3_code: VUT
+    region: Oceania
   WLF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Wallis and Futuna
@@ -2739,6 +2986,7 @@ Countries:
     - WF
     alpha2_code: WF
     alpha3_code: WLF
+    region: Oceania
   WSM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Samoa
@@ -2750,6 +2998,7 @@ Countries:
     - WS
     alpha2_code: WS
     alpha3_code: WSM
+    region: Oceania
   YEM: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Yemen
@@ -2761,6 +3010,7 @@ Countries:
     - YE
     alpha2_code: YE
     alpha3_code: YEM
+    region: Asia
   ZAF: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: South Africa
@@ -2772,6 +3022,7 @@ Countries:
     - ZA
     alpha2_code: ZA
     alpha3_code: ZAF
+    region: Africa
   ZMB: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Zambia
@@ -2783,6 +3034,7 @@ Countries:
     - ZM
     alpha2_code: ZM
     alpha3_code: ZMB
+    region: Africa
   ZWE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
     name: Zimbabwe
@@ -2794,3 +3046,4 @@ Countries:
     - ZW
     alpha2_code: ZW
     alpha3_code: ZWE
+    region: Africa

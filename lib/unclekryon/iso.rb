@@ -30,9 +30,9 @@ require 'unclekryon/data/base_data'
 
 require 'unclekryon/iso/base_iso'
 require 'unclekryon/iso/can_state'
-require 'unclekryon/iso/continent'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
+require 'unclekryon/iso/region'
 require 'unclekryon/iso/usa_state'
 
 module UncleKryon
@@ -41,16 +41,16 @@ module UncleKryon
     ID = 'ISO'
     
     @@can_states = nil
-    @@continents = nil
     @@countries = nil
     @@iso = nil
     @@languages = nil
+    @@regions = nil
     @@usa_states = nil
     
     attr_accessor :updated_can_states_on
-    attr_accessor :updated_continents_on
     attr_accessor :updated_countries_on
     attr_accessor :updated_languages_on
+    attr_accessor :updated_regions_on
     attr_accessor :updated_usa_states_on
     
     def initialize()
@@ -64,13 +64,6 @@ module UncleKryon
         @@can_states = CanStates.load_file()
       end
       return @@can_states
-    end
-    
-    def self.continents()
-      if !@@continents
-        @@continents = Continents.load_file()
-      end
-      return @@continents
     end
     
     def self.countries()
@@ -100,7 +93,7 @@ module UncleKryon
         city = nil
         state = nil
         country = countries().find_by_name(last) # By name because e.g. code CO is Colorado and Colombia
-        continent = nil
+        region = nil
         
         parse_state = true
         state_i = parts.length() - 1
@@ -134,11 +127,11 @@ module UncleKryon
               end
               
               if country.nil?()
-                # Continent?
-                continent = continents().find_by_name(t)
+                # Region?
+                region = regions().find_by_name(t)
                 
-                if continent.nil?()
-                  msg = %Q(No state/country/continent: "#{text}","#{t}","#{last}")
+                if region.nil?()
+                  msg = %Q(No state/country/region: "#{text}","#{t}","#{last}")
                   
                   if DevOpts.instance.dev?()
                     raise msg
@@ -146,7 +139,7 @@ module UncleKryon
                     log.warn(msg)
                   end
                 else
-                  continent = continent.code
+                  region = region.code
                   state_i = 0
                 end
               else
@@ -165,7 +158,7 @@ module UncleKryon
           country = country.code
         end
         
-        if continent.nil?()
+        if region.nil?()
           # Not USA
           if parse_state
             if parts.length() >= 2
@@ -203,10 +196,15 @@ module UncleKryon
           end
           city = city.compact()
           city = city.empty?() ? nil : city.map(&:capitalize).join(' ')
+          
+          # Region
+          if !country.nil?()
+            region = countries().find_by_code(country).region
+          end
         end
         
         # Location
-        loc = [city,state,country,continent] # Don't do compact(); we won't all 4 ','
+        loc = [city,state,country,region] # Don't do compact(); we won't all 4 ','
         locs.push(loc.join(',')) unless loc.compact().empty?()
       end
       
@@ -233,6 +231,13 @@ module UncleKryon
       return iso
     end
     
+    def self.regions()
+      if !@@regions
+        @@regions = Regions.load_file()
+      end
+      return @@regions
+    end
+    
     def save_to_file(filepath=DEFAULT_FILEPATH)
       File.open(filepath,'w') do |f|
         iso = {ID=>self}
@@ -242,9 +247,9 @@ module UncleKryon
     
     def update_all()
       @updated_can_states_on = BaseData.max_updated_on_s(self.class.can_states.values)
-      @updated_continents_on = BaseData.max_updated_on_s(self.class.continents.values)
       @updated_countries_on = BaseData.max_updated_on_s(self.class.countries.values)
       @updated_languages_on = BaseData.max_updated_on_s(self.class.languages.values)
+      @updated_regions_on = BaseData.max_updated_on_s(self.class.regions.values)
       @updated_usa_states_on = BaseData.max_updated_on_s(self.class.usa_states.values)
     end
     
@@ -258,9 +263,9 @@ module UncleKryon
     def to_s()
       s = 'Updated On:'
       s << "\n- CAN States: #{@updated_can_states_on}"
-      s << "\n- Continents: #{@updated_continents_on}"
       s << "\n- Countries:  #{@updated_countries_on}"
       s << "\n- Languages:  #{@updated_languages_on}"
+      s << "\n- Regions: #{@updated_regions_on}"
       s << "\n- USA States: #{@updated_usa_states_on}"
       return s
     end
@@ -269,9 +274,9 @@ end
 
 if $0 == __FILE__
   puts UncleKryon::Iso.can_states['ON']
-  puts UncleKryon::Iso.continents['South America']
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
+  puts UncleKryon::Iso.regions['South America']
   puts UncleKryon::Iso.usa_states['AL']
   puts UncleKryon::Iso.iso
 end

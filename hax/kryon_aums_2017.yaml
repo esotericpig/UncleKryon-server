@@ -61,7 +61,7 @@ ArtistData:
       date_end: '2017-01-08'
       title: Boulder Colorao w/ Marilyn & Prageet (6)
       locations:
-      - Boulder,CO,USA,
+      - Boulder,CO,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_boulder-17.html
@@ -89,7 +89,7 @@ ArtistData:
       date_end: '2017-01-15'
       title: San Jose, California (3)
       locations:
-      - San Jose,CA,USA,
+      - San Jose,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_San%20Jose_17.html
@@ -112,7 +112,7 @@ ArtistData:
       date_end: ''
       title: Salt Lake City, Utah "5 Deceptions" (2)
       locations:
-      - Salt Lake City,UT,USA,
+      - Salt Lake City,UT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_saltlake_17.html
@@ -134,7 +134,7 @@ ArtistData:
       date_end: '2017-02-13'
       title: The Kryon Egypt Tour (17)
       locations:
-      - ",,EGY,"
+      - ",,EGY,Africa"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_egypt_17.html
@@ -190,7 +190,7 @@ ArtistData:
       date_end: '2017-02-16'
       title: Petra, Jordan (5)
       locations:
-      - Petra,,JOR,
+      - Petra,,JOR,Asia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_petra_17.html
@@ -218,7 +218,7 @@ ArtistData:
       date_end: '2017-02-26'
       title: '"Things that go Bump.." "Who is God?" (3)'
       locations:
-      - Tucson,AZ,USA,
+      - Tucson,AZ,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Tucson_17.html
@@ -241,7 +241,7 @@ ArtistData:
       date_end: '2017-03-12'
       title: '"The Great Escape" (3)'
       locations:
-      - Boston,MA,USA,
+      - Boston,MA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Boston_17.html
@@ -265,7 +265,7 @@ ArtistData:
       date_end: '2017-03-19'
       title: '"Unexpected Change" (4)'
       locations:
-      - Vancouver,BC,CAN,
+      - Vancouver,BC,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_vancouver_17.html
@@ -290,7 +290,7 @@ ArtistData:
       date_end: '2017-03-26'
       title: UNITY VILLAGE (3)
       locations:
-      - Kansas City,MO,USA,
+      - Kansas City,MO,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Kansas_17.html
@@ -314,7 +314,7 @@ ArtistData:
       date_end: '2017-04-02'
       title: Regina, SK, Canada (3)
       locations:
-      - Regina,SK,CAN,
+      - Regina,SK,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_regina_17.html
@@ -337,7 +337,7 @@ ArtistData:
       date_end: '2017-04-18'
       title: Monument Valley Tour (11)
       locations:
-      - Monument Valley,UT,USA,
+      - Monument Valley,UT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_mv_17.html
@@ -384,7 +384,7 @@ ArtistData:
       date_end: '2017-04-29'
       title: IRELAND 2017 (11)
       locations:
-      - ",,IRL,"
+      - ",,IRL,Europe"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_ireland_17.html
@@ -424,7 +424,7 @@ ArtistData:
       date_end: ''
       title: DUBLIN IRELAND (2)
       locations:
-      - ",,IRL,"
+      - ",,IRL,Europe"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_dublin_17.html
@@ -446,7 +446,7 @@ ArtistData:
       date_end: ''
       title: GLENDALOUGH IRELAND (2)
       locations:
-      - ",,IRL,"
+      - ",,IRL,Europe"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_glendalough_17.html
@@ -468,7 +468,7 @@ ArtistData:
       date_end: ''
       title: AMSTERDAM, HOLLAND (4)
       locations:
-      - ",,NLD,"
+      - ",,NLD,Europe"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_amsterdam-17.html
@@ -493,7 +493,7 @@ ArtistData:
       date_end: ''
       title: PISA ITALY (2)
       locations:
-      - Pisa,,ITA,
+      - Pisa,,ITA,Europe
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_italy-seminar-17.html
@@ -521,7 +521,7 @@ ArtistData:
       date_end: '2017-05-08'
       title: ITALY EXCURSION IN TUSCANY (3)
       locations:
-      - Tuscany,,ITA,
+      - Tuscany,,ITA,Europe
       languages:
       - ita
       - eng
@@ -547,7 +547,7 @@ ArtistData:
       date_end: '2017-05-14'
       title: TEL AVIV, ISRAEL (4)
       locations:
-      - Tel Aviv,,ISR,
+      - Tel Aviv,,ISR,Asia
       languages:
       - heb
       - eng
@@ -573,7 +573,7 @@ ArtistData:
       date_end: '2017-05-17'
       title: GENEVA, SWITZERLAND (5)
       locations:
-      - ",,CHE,"
+      - ",,CHE,Europe"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Geneva-17.html
@@ -604,7 +604,7 @@ ArtistData:
       date_end: ''
       title: THE QUANTUM CHOIR CHANNELLINGS
       locations:
-      - Charmonix,,FRA,
+      - Charmonix,,FRA,Europe
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_chamonixchoir-17.html
@@ -629,7 +629,7 @@ ArtistData:
       date_end: ''
       title: CHAMONIX FRANCE (2)
       locations:
-      - Chamonix,,FRA,
+      - Chamonix,,FRA,Europe
       languages:
       - fra
       - eng
@@ -653,7 +653,7 @@ ArtistData:
       date_end: ''
       title: MOUNT BLANC (1)
       locations:
-      - Mount Blanc,,FRA,
+      - Mount Blanc,,FRA,Europe
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Blanc-17.html
@@ -678,7 +678,7 @@ ArtistData:
       date_end: '2017-06-04'
       title: 20TH KRYON SUMMER LIGHT CONFERENCE (7)
       locations:
-      - Big Sky,MT,USA,
+      - Big Sky,MT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_SLC-17.html
@@ -712,7 +712,7 @@ ArtistData:
       date_end: ''
       title: SUMMER LIGHT CONFERENCE PANEL (1)
       locations:
-      - Big Sky,MT,USA,
+      - Big Sky,MT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_panel-SLC_17.html
@@ -737,7 +737,7 @@ ArtistData:
       date_end: ''
       title: ASHEVILLE, NC - EXCURSION
       locations:
-      - Asheville,NC,USA,
+      - Asheville,NC,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville-ex-17.html
@@ -763,7 +763,7 @@ ArtistData:
       date_end: '2017-06-18'
       title: ASHEVILLE, NC
       locations:
-      - Asheville,NC,USA,
+      - Asheville,NC,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Asheville_17.html
@@ -786,7 +786,7 @@ ArtistData:
       date_end: '2017-06-25'
       title: BUFFALO NY "Dark to Light" (3)
       locations:
-      - Buffalo,NY,USA,
+      - Buffalo,NY,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Buffalo_17.html
@@ -809,7 +809,7 @@ ArtistData:
       date_end: '2017-07-02'
       title: LAGUNA HILLS, CA (2)
       locations:
-      - Laguna Hills,CA,USA,
+      - Laguna Hills,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_laguna_17.html
@@ -831,7 +831,7 @@ ArtistData:
       date_end: '2017-07-23'
       title: MINNEAPOLIS, MINNESOTA (3)
       locations:
-      - Minneapolis,MN,USA,
+      - Minneapolis,MN,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_minneapolis_17.html
@@ -854,7 +854,7 @@ ArtistData:
       date_end: '2017-08-05'
       title: THE KRYON CRUISE TO ALASKA (6)
       locations:
-      - ",AK,USA,"
+      - ",AK,USA,North America"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Alaska-Cruise-17.html
@@ -879,7 +879,7 @@ ArtistData:
       date_end: '2017-08-13'
       title: STAMFORD CONNECTICUT (3)
       locations:
-      - Stamford,CT,USA,
+      - Stamford,CT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Stamford_17.html
@@ -903,7 +903,7 @@ ArtistData:
       date_end: '2017-08-27'
       title: THE DISCOVERY SERIES 2017 (6)
       locations:
-      - ",AB,CAN,"
+      - ",AB,CAN,North America"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Discovery-17.html
@@ -930,7 +930,7 @@ ArtistData:
       date_end: '2017-09-10'
       title: Berchtesgaden Salt Mine & Lake Excursion (5)
       locations:
-      - Bavaria,,DEU,
+      - Bavaria,,DEU,Europe
       languages:
       - deu
       - eng
@@ -958,7 +958,7 @@ ArtistData:
       date_end: ''
       title: LISBON, PORTUGAL (Fatima Tour) (3)
       locations:
-      - Lisbon,,PRT,
+      - Lisbon,,PRT,Europe
       languages:
       - por
       - eng
@@ -982,7 +982,7 @@ ArtistData:
       date_end: ''
       title: FATIMA TOUR - PORTUGAL (2)
       locations:
-      - Fatima,,PRT,
+      - Fatima,,PRT,Europe
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_fatima-17.html
@@ -1005,7 +1005,7 @@ ArtistData:
       date_end: ''
       title: PORTO, PORTUGAL (end of tour) (1)
       locations:
-      - Porto,,PRT,
+      - Porto,,PRT,Europe
       languages:
       - por
       - eng
@@ -1027,7 +1027,7 @@ ArtistData:
       date_end: ''
       title: PORTO, PORTUGAL (Main Meeting) (2)
       locations:
-      - Porto,,PRT,
+      - Porto,,PRT,Europe
       languages:
       - por
       - eng
@@ -1051,7 +1051,7 @@ ArtistData:
       date_end: ''
       title: MADRID, SPAIN (2)
       locations:
-      - Madrid,,ESP,
+      - Madrid,,ESP,Europe
       languages:
       - spa
       - eng
@@ -1074,7 +1074,7 @@ ArtistData:
       date_end: '2017-10-09'
       title: KRYON INDIA-NEPAL TOUR PART 1 (10)
       locations:
-      - ",,IND,"
+      - ",,IND,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-1-17.html
@@ -1115,8 +1115,8 @@ ArtistData:
       date_end: '2017-10-20'
       title: KRYON INDIA-NEPAL TOUR PART 2 (8)
       locations:
-      - ",,IND,"
-      - ",,NPL,"
+      - ",,IND,Asia"
+      - ",,NPL,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_INDIA-2-17.html
@@ -1150,7 +1150,7 @@ ArtistData:
       date_end: '2017-10-29'
       title: BUENOS AIRES, ARGENTINA (5)
       locations:
-      - ",,ARG,"
+      - ",,ARG,South America"
       languages:
       - spa
       - eng
@@ -1179,7 +1179,7 @@ ArtistData:
       date_end: ''
       title: MONTREAL, QC - CANADA (1)
       locations:
-      - Montreal,,CAN,
+      - Montreal,,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_montreal_17.html
@@ -1200,7 +1200,7 @@ ArtistData:
       date_end: '2017-11-19'
       title: PHILADELPHIA, PENNSYLVANIA (3)
       locations:
-      - Philadelphia,PA,USA,
+      - Philadelphia,PA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Philadelphia_17.html
@@ -1224,7 +1224,7 @@ ArtistData:
       date_end: '2017-11-26'
       title: CALGARY, AB, CANADA (3)
       locations:
-      - Calgary,AB,CAN,
+      - Calgary,AB,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Calgary_17.html
@@ -1247,7 +1247,7 @@ ArtistData:
       date_end: ''
       title: LAGUNA HILLS, CALIFORNIA (2)
       locations:
-      - Laguna Hills,CA,USA,
+      - Laguna Hills,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_lagunaxmas-17.html
@@ -1269,7 +1269,7 @@ ArtistData:
       date_end: '2017-12-10'
       title: SEATTLE, WASHINGTON (3)
       locations:
-      - Seattle,WA,USA,
+      - Seattle,WA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_Seattle_17.html
@@ -1292,7 +1292,7 @@ ArtistData:
       date_end: '2017-12-22'
       title: RETURN TO LEMURIA (7)
       locations:
-      - Big Island,HI,USA,
+      - Big Island,HI,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2017%20downloads/download_hawaii-17.html

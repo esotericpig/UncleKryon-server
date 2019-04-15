@@ -61,7 +61,7 @@ ArtistData:
       date_end: '2015-01-22'
       title: '"2015" & "The One Truth" (3)'
       locations:
-      - Sun Valley,ID,USA,
+      - Sun Valley,ID,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sunvalley_15.html
@@ -86,7 +86,7 @@ ArtistData:
       date_end: '2015-01-18'
       title: '"New Paradigms" & "Dimensional Perception" (4)'
       locations:
-      - Boulder,CO,USA,
+      - Boulder,CO,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_BOULDER_15.html
@@ -114,7 +114,7 @@ ArtistData:
       date_end: '2015-01-25'
       title: '"Evolution Revealed" & "Akashic Filters" (3)'
       locations:
-      - Sylvan Lake,AB,CAN,
+      - Sylvan Lake,AB,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sylvan_15.html
@@ -139,7 +139,7 @@ ArtistData:
       date_end: '2015-02-08'
       title: '"Personal Action" & "The Way of it!" (3)'
       locations:
-      - Austin,TX,USA,
+      - Austin,TX,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_austin_15.html
@@ -164,7 +164,7 @@ ArtistData:
       date_end: '2015-02-15'
       title: '"Not Your Father''s New Age" & "Paradigm Shift" (3)'
       locations:
-      - Atlanta,,GEO,
+      - Atlanta,,GEO,Asia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Atlanata_15.html
@@ -189,7 +189,7 @@ ArtistData:
       date_end: ''
       title: '"The Door - A Parable of WO" (2)'
       locations:
-      - Sacramento,CA,USA,
+      - Sacramento,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sacramento_15.html
@@ -212,7 +212,7 @@ ArtistData:
       date_end: ''
       title: '"Benevolent Creation - The Big Gamble" (2)'
       locations:
-      - Las Vegas,NV,USA,
+      - Las Vegas,NV,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_lasvegas_15.html
@@ -239,7 +239,7 @@ ArtistData:
       date_end: ''
       title: '"Congratulations - Connecting the Dots" (2)'
       locations:
-      - Miami,FL,USA,
+      - Miami,FL,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_miami_15.html
@@ -261,7 +261,7 @@ ArtistData:
       date_end: ''
       title: '"The Weather" (2)'
       locations:
-      - Dallas,TX,USA,
+      - Dallas,TX,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_dallas_15.html
@@ -287,7 +287,7 @@ ArtistData:
       date_end: ''
       title: '"Loading the Dice" (2)'
       locations:
-      - Sydney,,AUS,
+      - Sydney,,AUS,Australia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sydney_15.html
@@ -309,7 +309,7 @@ ArtistData:
       date_end: ''
       title: The Creation Choir (1)
       locations:
-      - Uluru,,AUS,
+      - Uluru,,AUS,Australia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_uluru_choir_channels_15.html
@@ -340,7 +340,7 @@ ArtistData:
       date_end: '2015-03-26'
       title: Gaia Global Consciousness Retreat (8)
       locations:
-      - Uluru,,AUS,
+      - Uluru,,AUS,Australia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_uluru_Gaia_retreat_15.html
@@ -383,7 +383,7 @@ ArtistData:
       date_end: ''
       title: '"The Old Soul" (2)'
       locations:
-      - Bali,,IDN,
+      - Bali,,IDN,Asia
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_bali_15.html
@@ -405,7 +405,7 @@ ArtistData:
       date_end: '2015-04-12'
       title: '"Unknown History" and "Return of the Masters" (4)'
       locations:
-      - Istanbul,,TUR,
+      - Istanbul,,TUR,Asia
       languages:
       - tur
       - eng
@@ -430,7 +430,7 @@ ArtistData:
       date_end: '2015-04-16'
       title: '"The Four Phases" and "Eruption" (2)'
       locations:
-      - Catania,,ITA,
+      - Catania,,ITA,Europe
       languages:
       - ita
       - eng
@@ -456,7 +456,7 @@ ArtistData:
       date_end: '2015-04-19'
       title: '"The Battle Within" and "How Old are You?" (4)'
       locations:
-      - Bologna,,ITA,
+      - Bologna,,ITA,Europe
       languages:
       - ita
       - eng
@@ -482,7 +482,7 @@ ArtistData:
       date_end: ''
       title: THE AKASHIC WORKSHOP CHANNELLINGS (3)
       locations:
-      - Munich,,DEU,
+      - Munich,,DEU,Europe
       languages:
       - deu
       - eng
@@ -512,7 +512,7 @@ ArtistData:
       date_end: ''
       title: '"Accelerated Awareness The Rise of Spiritual Common Sense"'
       locations:
-      - Asheville,NC,USA,
+      - Asheville,NC,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Asheville_15.html
@@ -534,7 +534,7 @@ ArtistData:
       date_end: ''
       title: '"The Triad" (2)'
       locations:
-      - Charlottesville,VA,USA,
+      - Charlottesville,VA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Charlottesville_15.html
@@ -560,7 +560,7 @@ ArtistData:
       date_end: ''
       title: '"The Time Capsule Template Part 1" (3)'
       locations:
-      - Salem,MA,USA,
+      - Salem,MA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Salem_15.html
@@ -586,7 +586,7 @@ ArtistData:
       date_end: ''
       title: '"The Time Capsule Template Part 2" (2)'
       locations:
-      - Buffalo,NY,USA,
+      - Buffalo,NY,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Buffalo_15.html
@@ -612,7 +612,7 @@ ArtistData:
       date_end: ''
       title: '"Evolution of The Human Soul" (2)'
       locations:
-      - Calgary,AB,CAN,
+      - Calgary,AB,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Calgary_15.html
@@ -634,7 +634,7 @@ ArtistData:
       date_end: ''
       title: '"The Great Love Story"'
       locations:
-      - Regina Sk.,,CAN,
+      - Regina Sk.,,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Regina_15.html
@@ -656,7 +656,7 @@ ArtistData:
       date_end: '2015-06-04'
       title: '"THE KRYON SUMMER LIGHT CONFERENCE" (4)'
       locations:
-      - Sedona,AZ,USA,
+      - Sedona,AZ,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sedona_15.html
@@ -683,7 +683,7 @@ ArtistData:
       date_end: '2015-06-07'
       title: '"THE MASTER''S CHANNELLING SUMMIT" (5)'
       locations:
-      - Sedona,AZ,USA,
+      - Sedona,AZ,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sedona-mega_15.html
@@ -725,7 +725,7 @@ ArtistData:
       date_end: '2015-06-21'
       title: '"THE Way Prayer Works" + Workshop channelling (3)'
       locations:
-      - Baltimore,MD,USA,
+      - Baltimore,MD,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Baltimore_15.html
@@ -748,7 +748,7 @@ ArtistData:
       date_end: '2015-06-28'
       title: '"The Human Filters" + Workshop channelling (3)'
       locations:
-      - Totowa,NJ,USA,
+      - Totowa,NJ,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Totowa_15.html
@@ -771,7 +771,7 @@ ArtistData:
       date_end: '2015-07-05'
       title: ''
       locations:
-      - Laguna Hills,CA,USA,
+      - Laguna Hills,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_laguna(sm)_15.html
@@ -795,7 +795,7 @@ ArtistData:
       date_end: '2015-07-12'
       title: '"Changing Normal" (3)'
       locations:
-      - Seattle,WA,USA,
+      - Seattle,WA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Seattle_15.html
@@ -818,7 +818,7 @@ ArtistData:
       date_end: '2015-07-19'
       title: '"The Biggest Filter" + "The Power of Belief" (3)'
       locations:
-      - Salt Lake City,UT,USA,
+      - Salt Lake City,UT,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Saltlakecity_15.html
@@ -841,7 +841,7 @@ ArtistData:
       date_end: '2015-07-26'
       title: '"Energy Update" + "The Cosmic Cook" (3)'
       locations:
-      - Chicagoland,IL,USA,
+      - Chicagoland,IL,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Chicagoland_15.html
@@ -864,7 +864,7 @@ ArtistData:
       date_end: '2015-08-02'
       title: '"Effect of the New Energy on DNA" + "One Foot in Each Energy" (3)'
       locations:
-      - Minneapolis,NM,USA,
+      - Minneapolis,NM,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Minneapolis_15.html
@@ -887,7 +887,7 @@ ArtistData:
       date_end: '2015-08-22'
       title: The Lemurian Retreat - Hawaii - 2015 (6)
       locations:
-      - Kauai,HI,USA,
+      - Kauai,HI,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_lemuria_15.html
@@ -925,7 +925,7 @@ ArtistData:
       date_end: '2015-09-06'
       title: '"Going Back to get the Future" + "Where is God?" (3)'
       locations:
-      - Vancouver,BC,CAN,
+      - Vancouver,BC,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Vancouver_15.html
@@ -948,7 +948,7 @@ ArtistData:
       date_end: '2015-09-20'
       title: '"The New Human" - SPAIN (4)'
       locations:
-      - Valencia,,ESP,
+      - Valencia,,ESP,Europe
       languages:
       - spa
       - eng
@@ -977,7 +977,7 @@ ArtistData:
       date_end: ''
       title: '"The New Earth" - PORTUGAL (2)'
       locations:
-      - Porto,,PRT,
+      - Porto,,PRT,Europe
       languages:
       - por
       - eng
@@ -1005,7 +1005,7 @@ ArtistData:
       date_end: ''
       title: '"The Jorney Home Workshop channelling" (1)'
       locations:
-      - Lisbon,,PRT,
+      - Lisbon,,PRT,Europe
       languages:
       - por
       - eng
@@ -1030,7 +1030,7 @@ ArtistData:
       date_end: ''
       title: '"The Missing Element" (2)'
       locations:
-      - Lisbon,,PRT,
+      - Lisbon,,PRT,Europe
       languages:
       - por
       - eng
@@ -1058,7 +1058,7 @@ ArtistData:
       date_end: '2015-10-01'
       title: THE ISRAEL 2015 CHANNELINGS (13)
       locations:
-      - ",,ISR,"
+      - ",,ISR,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Israel_15(T).html
@@ -1103,7 +1103,7 @@ ArtistData:
       date_end: ''
       title: Tel Aviv - ISRAEL (2)
       locations:
-      - ",,ISR,"
+      - ",,ISR,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Israel_15(2).html
@@ -1131,7 +1131,7 @@ ArtistData:
       date_end: ''
       title: THE ISRAEL PEACE CHOIR (1)
       locations:
-      - ",,ISR,"
+      - ",,ISR,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_Israel_peace_choir.html
@@ -1157,7 +1157,7 @@ ArtistData:
       date_end: ''
       title: THE FINAL 2015 TOUR IN ISRAEL (1)
       locations:
-      - ",,ISR,"
+      - ",,ISR,Asia"
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_last_tour-Israel.html
@@ -1183,7 +1183,7 @@ ArtistData:
       date_end: ''
       title: '"SOUL PLANNING" (1)'
       locations:
-      - Montreal Qb,,CAN,
+      - Montreal Qb,,CAN,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_montreal.html
@@ -1207,7 +1207,7 @@ ArtistData:
       date_end: ''
       title: 2015 KRYON KUNDALINI TOUR (7)
       locations:
-      - Bolivia,,PER,
+      - Bolivia,,PER,South America
       languages:
       - spa
       - eng
@@ -1240,7 +1240,7 @@ ArtistData:
       date_end: ''
       title: KRYON IN LIMA, PERU (2)
       locations:
-      - Lima,,PER,
+      - Lima,,PER,South America
       languages:
       - spa
       - eng
@@ -1263,7 +1263,7 @@ ArtistData:
       date_end: ''
       title: '"The Recalibration Scenario" (2)'
       locations:
-      - Newport,CA,USA,
+      - Newport,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_newport_15.html
@@ -1285,7 +1285,7 @@ ArtistData:
       date_end: '2015-12-13'
       title: '"The Hidden Youthing Template" & "The End of the Year" (3)'
       locations:
-      - San Rafael,CA,USA,
+      - San Rafael,CA,USA,North America
       languages:
       - eng
       url: http://www.kryon.com/cartprodimages/2015%20downloads/download_sanrafael_15.html

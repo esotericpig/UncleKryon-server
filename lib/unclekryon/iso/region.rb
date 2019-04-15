@@ -2,7 +2,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,25 +26,25 @@ require 'unclekryon/iso/base_iso'
 # @see https://en.wikipedia.org/wiki/Continent
 ##
 module UncleKryon
-  class Continent < BaseIso
+  class Region < BaseIso
     def initialize()
       super()
     end
   end
   
-  class Continents < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/continents.yaml"
+  class Regions < BaseIsos
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/regions.yaml"
     
     def initialize()
       super()
     end
     
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return Continents.new().load_file(filepath)
+      return Regions.new().load_file(filepath)
     end
   end
 end
 
 if $0 == __FILE__
-  puts UncleKryon::Continents.load_file().to_s()
+  puts UncleKryon::Regions.load_file().to_s()
 end

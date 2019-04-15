@@ -1,0 +1,38 @@
+---
+Regions:
+  Africa: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Africa
+    code: Africa
+  Antarctica: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Antarctica
+    code: Antarctica
+  Asia: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Asia
+    code: Asia
+  Australia: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Australia
+    code: Australia
+  Europe: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Europe
+    code: Europe
+  North America: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: North America
+    code: North America
+  Oceania: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Oceania
+    code: Oceania
+  South America: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: South America
+    code: South America
+  World: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: World
+    code: World

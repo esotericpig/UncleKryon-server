@@ -1,7 +1,7 @@
 ---
 ISO: !ruby/object:UncleKryon::Iso
   updated_can_states_on: '2018-06-11 17:29:04'
-  updated_continents_on: '2018-06-11 17:35:28'
   updated_countries_on: '2018-06-11 17:41:10'
   updated_languages_on: '2018-06-11 17:54:13'
+  updated_regions_on: '2018-06-11 17:35:28'
   updated_usa_states_on: '2018-06-11 17:31:44'
