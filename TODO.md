@@ -1,6 +1,6 @@
 # TODO | UncleKryon-server
 
-## Version 1.0
+## v1.0.0
 - [ ] Download option to download mp3s to /stock/, in case URLs change.
 - [ ] "World" option if no country/continent.
 - [ ] Script to change "updated_on" in /hax/ to all same date time.
