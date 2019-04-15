@@ -2,8 +2,8 @@
 
 ## v1.0.0
 - [ ] Download option to download mp3s to /stock/, in case URLs change.
-- [ ] "World" option if no country/continent.
-- [ ] Script to change "updated_on" in /hax/ to all same date time.
+- [x] "World" option if no country/continent.
+- [x] Option to change "updated_on" in /hax/ to all same date time.
 - [ ] 2019 aums
 - [ ] 2018 aums
 - [x] 2017 aums

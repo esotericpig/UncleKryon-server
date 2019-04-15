@@ -24,12 +24,38 @@ require 'optparse'
 
 require 'unclekryon/dev_opts'
 require 'unclekryon/hacker'
+require 'unclekryon/iso'
 require 'unclekryon/log'
 require 'unclekryon/server'
+require 'unclekryon/trainer'
+require 'unclekryon/uploader'
+require 'unclekryon/util'
 require 'unclekryon/version'
+
+require 'unclekryon/data/album_data'
+require 'unclekryon/data/artist_data'
+require 'unclekryon/data/artist_data_data'
+require 'unclekryon/data/aum_data'
+require 'unclekryon/data/base_data'
+require 'unclekryon/data/pic_data'
+require 'unclekryon/data/release_data'
+require 'unclekryon/data/social_data'
+require 'unclekryon/data/timespan_data'
+
+require 'unclekryon/iso/base_iso'
+require 'unclekryon/iso/can_state'
+require 'unclekryon/iso/country'
+require 'unclekryon/iso/language'
+require 'unclekryon/iso/region'
+require 'unclekryon/iso/usa_state'
+
+require 'unclekryon/parsers/kryon_aum_year_album_parser'
+require 'unclekryon/parsers/kryon_aum_year_parser'
 
 module UncleKryon
   class Main
+    OPT_HELP_UPDATED_ON = %Q^Change all "updated_*on" datetimes to <datetime> (e.g., #{Util.format_datetime(DateTime.now())})^
+    
     include Logging
     
     def initialize(args)
@@ -50,6 +76,7 @@ module UncleKryon
           
           Sub Commands:
               hax kryon aum year
+              iso list
           
           Options:
         EOS
@@ -72,6 +99,7 @@ module UncleKryon
       
       if shift_args()
         parse_hax_cmd()
+        parse_iso_cmd()
       end
       
       if !@did_cmd
@@ -87,6 +115,7 @@ module UncleKryon
             Examples:
             |    # To view all of the options for the sub commands:
             |    $ #{parser.program_name} hax kryon aum year
+            |    $ #{parser.program_name} iso list
             |    
             |    <hax>:
             |    # Train the data 1st before haxing (if there is no training data)
@@ -123,10 +152,22 @@ module UncleKryon
         op.on('-i','--train-dir <dir>',"Directory to save the training data to (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
           @options[:train_dirname] = dir
         end
+        op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
+          @options[:updated_on] = datetime
+        end
       end
       
       @parsers.push(parser)
       parser.order!(@args,into: @options)
+      
+      if do_cmd?()
+        if @options[:updated_on]
+          hax_dirname = @options[:hax_dirname] ? @options[:hax_dirname] : Hacker::HAX_DIRNAME
+          gsub_updated_on(hax_dirname,@options[:updated_on])
+          
+          @did_cmd = true
+        end
+      end
       
       if shift_args()
         parse_hax_kryon_cmd()
@@ -181,38 +222,131 @@ module UncleKryon
       @parsers.push(parser)
       parser.order!(@args,into: @options)
       
-      return if !do_cmd?()
-      
-      log_opts()
-      
-      hacker = Hacker.new(@options)
-      
-      if @options[:train]
-        if @options[:album]
-          hacker.train_kryon_aum_year_album(@options[:album],@options[:title])
-          @did_cmd = true
-        elsif @options[:title]
-          if @options[:albums]
-            hacker.train_kryon_aum_year_albums(@options[:title],@options[:begin_album])
-          else
-            hacker.train_kryon_aum_year(@options[:title])
+      if do_cmd?()
+        log_opts()
+        
+        hacker = Hacker.new(@options)
+        
+        if @options[:train]
+          if @options[:album]
+            hacker.train_kryon_aum_year_album(@options[:album],@options[:title])
+            @did_cmd = true
+          elsif @options[:title]
+            if @options[:albums]
+              hacker.train_kryon_aum_year_albums(@options[:title],@options[:begin_album])
+            else
+              hacker.train_kryon_aum_year(@options[:title])
+            end
+            
+            @did_cmd = true
           end
+        else
+          if @options[:album]
+            hacker.parse_kryon_aum_year_album(@options[:album],@options[:title])
+            @did_cmd = true
+          elsif @options[:title]
+            if @options[:albums]
+              hacker.parse_kryon_aum_year_albums(@options[:title],@options[:begin_album])
+            else
+              hacker.parse_kryon_aum_year(@options[:title])
+            end
+            
+            @did_cmd = true
+          end
+        end
+      end
+    end
+    
+    def parse_iso_cmd()
+      return if !cmd?('iso')
+      
+      parser = OptionParser.new do |op|
+        op.banner = '<iso> options:'
+        
+        op.on('-d','--dir <dir>',"Directory to read/write ISO data (default: #{BaseIsos::DEFAULT_DIR})") do |dir|
+          @options[:iso_dirname] = dir
+        end
+        op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
+          @options[:updated_on] = datetime
+        end
+      end
+      
+      @parsers.push(parser)
+      parser.order!(@args,into: @options)
+      
+      if do_cmd?()
+        if @options[:updated_on]
+          iso_dirname = @options[:iso_dirname] ? @options[:iso_dirname] : BaseIsos::DEFAULT_DIR
+          gsub_updated_on(iso_dirname,@options[:updated_on])
           
           @did_cmd = true
         end
-      else
-        if @options[:album]
-          hacker.parse_kryon_aum_year_album(@options[:album],@options[:title])
+      end
+      
+      if shift_args()
+        parse_iso_list_cmd()
+      end
+    end
+    
+    def parse_iso_list_cmd()
+      return if !cmd?('list')
+      
+      parser = OptionParser.new do |op|
+        op.banner = '<list> options:'
+        
+        op.on('-c','--canada','List Canadian provinces and territories')
+        op.on('-u','--usa','List USA states')
+        op.on('-o','--country','List countries')
+        op.on('-l','--language','List languages')
+        op.on('-r','--region','List regions (i.e., continents, etc.)')
+      end
+      
+      @parsers.push(parser)
+      parser.order!(@args,into: @options)
+      
+      if do_cmd?()
+        if @options[:canada]
+          puts Iso.can_states
           @did_cmd = true
-        elsif @options[:title]
-          if @options[:albums]
-            hacker.parse_kryon_aum_year_albums(@options[:title],@options[:begin_album])
-          else
-            hacker.parse_kryon_aum_year(@options[:title])
-          end
-          
+        elsif @options[:usa]
+          puts Iso.usa_states
+          @did_cmd = true
+        elsif @options[:country]
+          puts Iso.countries
+          @did_cmd = true
+        elsif @options[:language]
+          puts Iso.languages
+          @did_cmd = true
+        elsif @options[:region]
+          puts Iso.regions
           @did_cmd = true
         end
+      end
+    end
+    
+    def gsub_updated_on(dirname,updated_on)
+      updated_on = Util.parse_datetime_s(updated_on) # Raise errors on bad format
+      updated_on = Util.format_datetime(updated_on)
+      
+      Dir.glob(File.join(dirname,'*.yaml')) do |filepath|
+        lines = IO.readlines(filepath)
+        update_count = 0
+        
+        lines.each_with_index do |line,i|
+          if line =~ /\A\s*updated\_.*on\:.*\Z/i
+            line = line.split(':')[0] << ": '#{updated_on}'"
+            lines[i] = line
+            update_count += 1
+          end
+        end
+        
+        if !@options[:no_clobber]
+          File.open(filepath,'w') do |file|
+            file.puts lines
+          end
+        end
+        
+        log.info(%Q^"#{filepath}" updated_on: #{update_count}^)
       end
     end
     
@@ -221,7 +355,7 @@ module UncleKryon
     end
     
     def cmd?(cmd)
-      return !@did_cmd && @cmd.match?(/\A[[:space:]]*#{Regexp.escape(cmd)}[[:space:]]*\z/i)
+      return !@did_cmd && !@cmd.nil?() && @cmd.match?(/\A[[:space:]]*#{Regexp.escape(cmd)}[[:space:]]*\z/i)
     end
     
     def do_cmd?()
