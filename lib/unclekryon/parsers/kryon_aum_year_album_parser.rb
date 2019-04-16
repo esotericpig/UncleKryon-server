@@ -236,13 +236,13 @@ module UncleKryon
       # 2017 "Monument Valley Tour (11)" has a "." in the minutes cell
       # 2017 "SUMMER LIGHT CONFERENCE PANEL (1)" is a special case ("One hour 6 minutes - (66 minutes)")
       time_regex = /
-        \A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*minutes[[:space:]]*\z|
+        \A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*(minutes|Min)[[:space:]]*\z|
         \([[:space:]]*[[:digit:]]+[[:space:]]+minutes[[:space:]]*\)[[:space:]]*\z
       /ix
       # 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
       time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*\z/i
       # 2015 ones have a lot of "13:12 Min - 15.9 megs"
-      time_and_size_regex = /\A[[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+[[:space:]]+Min[[:space:]]+\-[[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]+megs/i
+      time_and_size_regex = /\A[[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+[[:space:]]+Min[[:space:]]+\-[[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]*megs/i
       
       size_count = 0
       time_count = 0
