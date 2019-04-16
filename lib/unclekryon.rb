@@ -72,7 +72,7 @@ module UncleKryon
         op.version = VERSION
         
         op.banner = <<~EOS
-          Usage:    #{op.program_name} [options] <command> [options] <command>...
+          Usage:    #{op.program_name} [options] <sub_cmd> [options] <sub_cmd>...
           
           Sub Commands:
               hax kryon aum year
@@ -129,6 +129,10 @@ module UncleKryon
             |    
             |    # Hax the 2nd "6.4" album (if there are 2)
             |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 6.4:2
+            |    
+            |    <iso>:
+            |    $ #{parser.program_name} -n iso -u '2019-04-16 11:11:00'
+            |    $ #{parser.program_name} iso list -r
           EOS
           puts s.gsub(/^\|/,'')
         end
@@ -346,7 +350,7 @@ module UncleKryon
           end
         end
         
-        log.info(%Q^"#{filepath}" updated_on: #{update_count}^)
+        puts %Q^"#{filepath}" updated_on: #{update_count}^
       end
     end
     
