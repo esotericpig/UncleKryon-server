@@ -3,7 +3,7 @@
 
 ###
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.version                = UncleKryon::VERSION
   spec.authors                = ['Jonathan Bradley Whited @esotericpig']
   spec.email                  = ['']
-  spec.license                = 'GPL-3.0'
+  spec.license                = 'GPL-3.0-or-later'
   
   spec.summary                = 'UncleKryon server (& hacker)'
   spec.description            = 'UncleKryon server (& hacker) for the UncleKryon Android app'
