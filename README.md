@@ -7,16 +7,23 @@ Tasks include sending push notifications, building the database, and parsing/hac
 
 ## Contents
 - [Setup](#setup)
+- [Hacking](#hacking)
 - [License](#license)
 
 ## [Setup](#contents)
 For Nokogiri:
 
-- http://www.nokogiri.org/tutorials/installing_nokogiri.html
+- [Installing Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html)
     - Fedora
         - `$ sudo dnf install gcc ruby-devel zlib-devel`
     - Ubuntu / Debian
         - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
+
+## [Hacking](#contents)
+
+For code structure see the docs (**TODO**: generate docs and add link).
+
+If you want to fork and/or maintain this code, please read the walkthrough: [HACKING.md](HACKING.md).
 
 ## [License](#contents)
 [GNU GPL v3+](LICENSE)

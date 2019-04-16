@@ -9,7 +9,7 @@
 - [x] 2017 aums
 - [x] 2016 aums
 - [x] 2015 aums
-- [ ] 2014 aums
+- [x] 2014 aums
 - [ ] 2013 aums
 - [ ] 2012 aums
 - [ ] 2011 aums
@@ -43,3 +43,5 @@
         - unclekryon up --global/-g kryon (save to DB network; use config file for user/pass)
     - [ ] For bash completion, have "--bash-completion" option output bash completion options and use in file
         - --install-bash-completion to write/copy file for bash completion to work (maybe need to use sudo/su?)
+- [ ] Explain code in HACKING.md.
+- [ ] Generate docs and add to release (don't commit) and add link to README.md.
