@@ -275,6 +275,7 @@ module UncleKryon
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
       return false if cell =~ /[[:space:]]*RADIO[[:space:]]+SHOW[[:space:]]*/ # 2014
+      return false if (cell = Util.clean_data(cell)).empty?()
       
       album.locations = Iso.find_kryon_locations(cell)
       

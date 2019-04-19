@@ -129,8 +129,8 @@ module UncleKryon
     def find_by_kryon(text,add_english: false,**options)
       langs = []
       regexes = [
-          /[[:space:]]*\/[[:space:]]*/, # Multiple languages are usually separated by '/'
-          /[[:space:]]+/                # Sometimes separated by space/newline
+          /[[:space:]]*[\/\+][[:space:]]*/, # Multiple languages are usually separated by '/'
+          /[[:space:]]+/                    # Sometimes separated by space/newline
         ]
       
       regexes.each_with_index() do |regex,i|

@@ -76,6 +76,9 @@ module UncleKryon
     def self.find_kryon_locations(text)
       locs = []
       
+      # Fix bad data
+      text = text.gsub(/\A[[:space:]]*SASKATOON\-CALGARY[[:space:]]*\z/,'SASKATOON, SASKATCHEWAN, CANADA / CALGARY, ALBERTA, CANADA')
+      
       # Multiple countries are separated by '/' or '&'
       text.split(/[[:space:]]*[\/\&][[:space:]]*/).each() do |t|
         # Fix misspellings and/or weird shortenings
@@ -85,6 +88,8 @@ module UncleKryon
         t = t.gsub(/SWITZ[[:space:]]*\z/i,'Switzerland')
         t = t.gsub(/\A[[:space:]]*NEWPORT[[:space:]]+BEACH[[:space:]]*\z/,'Newport Beach, California')
         t = t.gsub(/\A[[:space:]]*SAN[[:space:]]+RAFAEL[[:space:]]*\z/,'San Rafael, California')
+        t = t.gsub(/\A[[:space:]]*MILANO\,[[:space:]]*MARITTIMA[[:space:]]*\z/,'MILANO MARITTIMA, ITALY')
+        t = t.gsub(/\A[[:space:]]*MAR[[:space:]]+DEL[[:space:]]+PLATA[[:space:]]*\z/,'MAR DEL PLATA, ARGENTINA')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last
