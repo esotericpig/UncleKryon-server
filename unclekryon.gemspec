@@ -1,7 +1,7 @@
-# encoding: utf-8
+# encoding: UTF-8
 # frozen_string_literal: true
 
-###
+#--
 # This file is part of UncleKryon-server.
 # Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
 # 
@@ -16,45 +16,50 @@
 # GNU General Public License for more details.
 # 
 # You should have received a copy of the GNU General Public License
-# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
-###
+# along with UncleKryon-server.  If not, see <https://www.gnu.org/licenses/>.
+#++
+
 
 lib = File.expand_path('../lib',__FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'unclekryon/version'
 
-Gem::Specification.new do |spec|
-  spec.name                   = 'unclekryon'
-  spec.version                = UncleKryon::VERSION
-  spec.authors                = ['Jonathan Bradley Whited @esotericpig']
-  spec.email                  = ['']
-  spec.license                = 'GPL-3.0-or-later'
+Gem::Specification.new() do |spec|
+  spec.name        = 'unclekryon'
+  spec.version     = UncleKryon::VERSION
+  spec.authors     = ['Jonathan Bradley Whited (@esotericpig)']
+  spec.email       = ['bradley@esotericpig.com']
+  spec.licenses    = ['GPL-3.0-or-later']
+  spec.homepage    = 'https://github.com/esotericpig/UncleKryon-server'
+  spec.summary     = 'UncleKryon server (& hacker)'
+  spec.description = 'UncleKryon server (& hacker) for the UncleKryon mobile apps.'
   
-  spec.summary                = 'UncleKryon server (& hacker)'
-  spec.description            = 'UncleKryon server (& hacker) for the UncleKryon Android app'
-  spec.homepage               = 'https://github.com/esotericpig/UncleKryon-server'
+  spec.metadata = {
+    'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
+    'homepage_uri'    => 'https://github.com/esotericpig/UncleKryon-server',
+    'source_code_uri' => 'https://github.com/esotericpig/UncleKryon-server'
+  }
   
-  spec.files                  = Dir.glob("{bin,hax,iso,lib,train}/**/*") + %w(
-                                    Gemfile
-                                    Gemfile.lock
-                                    LICENSE
-                                    README.md
-                                    unclekryon.gemspec
-                                  )
-  spec.require_paths          = ['lib']
-  spec.bindir                 = 'bin'
-  spec.executables            = ['unclekryon']
-  spec.post_install_message   = 'You can now use "unclekryon" on the command-line.'
+  spec.require_paths = ['lib']
+  spec.bindir        = 'bin'
+  spec.executables   = [spec.name]
   
-  spec.required_ruby_version  = '>= 2.4.0'
-  spec.requirements          << 'nokogiri: http://www.nokogiri.org/tutorials/installing_nokogiri.html'
-  spec.requirements          << '- Fedora:   sudo dnf install gcc ruby-devel zlib-devel'
-  spec.requirements          << '- Ubuntu:   sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev'
+  spec.files = Dir.glob(File.join("{#{spec.require_paths.join(',')}}",'**','*.{rb}')) +
+               Dir.glob(File.join(spec.bindir,'**',"{#{spec.executables.join(',')}}")) +
+               Dir.glob(File.join("{hax,iso,test,train}",'**','*.{rb,yaml}')) +
+               %W( Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ) +
+               %w( LICENSE README.md )
   
-  spec.add_runtime_dependency 'nbayes'  ,'~> 0.1.2'  # For training type of text (machine learning)
-  spec.add_runtime_dependency 'nokogiri','~> 1.10.1' # For hacking html
+  spec.post_install_message = "You can now use [#{spec.executables.join(', ')}] on the command line."
   
-  spec.add_development_dependency 'bundler','>= 1.16'
-  #spec.add_development_dependency 'rake','>= 10.0'
+  spec.required_ruby_version = '>= 2.4.0'
+  spec.requirements << 'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html'
+  
+  spec.add_runtime_dependency 'nbayes'  ,'~> 0.1.2' # For training type of text (machine learning)
+  spec.add_runtime_dependency 'nokogiri','~> 1.10'  # For hacking HTML
+  
+  spec.add_development_dependency 'bundler' ,'~> 1.17'
+  spec.add_development_dependency 'minitest','~> 5.11'
+  spec.add_development_dependency 'rake'    ,'~> 12.3'
 end
