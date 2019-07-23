@@ -25,52 +25,15 @@ require 'bundler/gem_tasks'
 require 'rake/clean'
 require 'rake/testtask'
 
+require 'raketeer/irb_task'
+require 'raketeer/nokogiri_installs'
+
 CLEAN.exclude('.git/','stock/')
 CLOBBER.include('doc/')
 
 task :default => [:irb]
 
-desc 'Open an irb session loaded with this library'
-task :irb do
-  sh_cmd = ['irb']
-  
-  sh_cmd.push('-r','rubygems')
-  sh_cmd.push('-r','bundler/setup')
-  sh_cmd.push('-r','unclekryon')
-  sh_cmd << '-w'
-  
-  sh *sh_cmd
-end
-
-desc 'Install Nokogiri libs for Ubuntu/Debian'
-task :nokogiri_apt do
-  sh_cmd = ['sudo','apt-get','install']
-  
-  sh_cmd << 'build-essential'
-  sh_cmd << 'libgmp-dev'
-  sh_cmd << 'liblzma-dev'
-  sh_cmd << 'patch'
-  sh_cmd << 'ruby-dev'
-  sh_cmd << 'zlib1g-dev'
-  
-  sh *sh_cmd
-end
-
-desc 'Install Nokogiri libs for Fedora/CentOS/Red Hat'
-task :nokogiri_dnf do
-  sh_cmd = ['sudo','dnf','install']
-  
-  sh_cmd << 'gcc'
-  sh_cmd << 'ruby-devel'
-  sh_cmd << 'zlib-devel'
-  
-  sh *sh_cmd
-end
-
-desc 'Install Nokogiri libs for other OSes'
-task :nokogiri_other do
-  puts 'https://nokogiri.org/tutorials/installing_nokogiri.html'
-end
+Raketeer::IRBTask.new()
 
 Rake::TestTask.new() do |task|
   task.libs = ['lib','test']

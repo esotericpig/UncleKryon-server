@@ -32,7 +32,7 @@ Gem::Specification.new() do |spec|
   spec.email       = ['bradley@esotericpig.com']
   spec.licenses    = ['GPL-3.0-or-later']
   spec.homepage    = 'https://github.com/esotericpig/UncleKryon-server'
-  spec.summary     = 'UncleKryon server (& hacker)'
+  spec.summary     = 'UncleKryon server (& hacker).'
   spec.description = 'UncleKryon server (& hacker) for the UncleKryon mobile apps.'
   
   spec.metadata = {
@@ -60,6 +60,8 @@ Gem::Specification.new() do |spec|
   spec.add_runtime_dependency 'nokogiri','~> 1.10'  # For hacking HTML
   
   spec.add_development_dependency 'bundler' ,'~> 1.17'
-  spec.add_development_dependency 'minitest','~> 5.11'
+  spec.add_development_dependency 'irb'     ,'~> 1.0'
+  spec.add_development_dependency 'minitest','~> 5.11' # For testing
   spec.add_development_dependency 'rake'    ,'~> 12.3'
+  spec.add_development_dependency 'raketeer','~> 0.1'  # For Nokogiri & IRB rake tasks
 end
