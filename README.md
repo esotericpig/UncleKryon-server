@@ -1,9 +1,7 @@
 # UncleKryon-server
-Server (and Hacker) for the Uncle Kryon Android project.
+Server (and Hacker) for the Uncle Kryon mobile apps.
 
 Tasks include sending push notifications, building the database, and parsing/hacking the websites for the data.
-
-**Note:** This project is currently in development on v0.4.4. The first working version will be v1.0.0.
 
 ## Contents
 - [Setup](#setup)
@@ -11,19 +9,30 @@ Tasks include sending push notifications, building the database, and parsing/hac
 - [License](#license)
 
 ## [Setup](#contents)
-For Nokogiri:
 
-- [Installing Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html)
-    - Fedora
+**Nokogiri:**
+
+- [Installing Nokogiri](https://www.nokogiri.org/tutorials/installing_nokogiri.html)
+    - Fedora / CentOS / Red Hat
         - `$ sudo dnf install gcc ruby-devel zlib-devel`
     - Ubuntu / Debian
-        - `$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev`
+        - `$ sudo apt-get install build-essential libgmp-dev liblzma-dev patch ruby-dev zlib1g-dev`
+
+Alternatively, you can run one of the rake tasks:
+
+```
+$ bundle exec rake nokogiri_apt   # Ubuntu / Debian
+$ bundle exec rake nokogiri_dnf   # Fedora / CentOS / Red Hat
+$ bundle exec rake nokogiri_other
+```
 
 ## [Hacking](#contents)
 
-For code structure see the docs (**TODO**: generate docs and add link).
-
-If you want to fork and/or maintain this code, please read the walkthrough: [HACKING.md](HACKING.md).
+```
+$ git clone 'https://github.com/esotericpig/UncleKryon-server.git'
+$ bundle install
+$ bundle exec rake -T
+```
 
 ## [License](#contents)
 [GNU GPL v3+](LICENSE)
@@ -42,4 +51,4 @@ If you want to fork and/or maintain this code, please read the walkthrough: [HAC
 > GNU General Public License for more details.  
 > 
 > You should have received a copy of the GNU General Public License  
-> along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.  
+> along with UncleKryon-server.  If not, see <https://www.gnu.org/licenses/>.  
