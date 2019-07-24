@@ -32,8 +32,8 @@ Gem::Specification.new() do |spec|
   spec.email       = ['bradley@esotericpig.com']
   spec.licenses    = ['GPL-3.0-or-later']
   spec.homepage    = 'https://github.com/esotericpig/UncleKryon-server'
-  spec.summary     = 'UncleKryon server (& hacker).'
-  spec.description = 'UncleKryon server (& hacker) for the UncleKryon mobile apps.'
+  spec.summary     = 'Uncle Kryon server (& hacker).'
+  spec.description = 'Uncle Kryon server (& hacker) for the Uncle Kryon mobile apps.'
   
   spec.metadata = {
     'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
