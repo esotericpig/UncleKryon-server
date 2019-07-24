@@ -25,15 +25,13 @@ require 'bundler/gem_tasks'
 require 'rake/clean'
 require 'rake/testtask'
 
-require 'raketeer/irb_task'
+require 'raketeer/irb'
 require 'raketeer/nokogiri_installs'
 
 CLEAN.exclude('.git/','stock/')
 CLOBBER.include('doc/')
 
 task :default => [:irb]
-
-Raketeer::IRBTask.new()
 
 Rake::TestTask.new() do |task|
   task.libs = ['lib','test']

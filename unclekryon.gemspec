@@ -63,5 +63,5 @@ Gem::Specification.new() do |spec|
   spec.add_development_dependency 'irb'     ,'~> 1.0'
   spec.add_development_dependency 'minitest','~> 5.11' # For testing
   spec.add_development_dependency 'rake'    ,'~> 12.3'
-  spec.add_development_dependency 'raketeer','~> 0.1'  # For Nokogiri & IRB rake tasks
+  spec.add_development_dependency 'raketeer','~> 0.2'  # For Nokogiri & IRB rake tasks
 end

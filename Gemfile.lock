@@ -20,7 +20,7 @@ GEM
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     rake (12.3.2)
-    raketeer (0.1.0)
+    raketeer (0.2.1)
       rake
 
 PLATFORMS
@@ -32,7 +32,7 @@ DEPENDENCIES
   minitest (~> 5.11)
   nbayes!
   rake (~> 12.3)
-  raketeer (~> 0.1)
+  raketeer (~> 0.2)
   unclekryon!
 
 BUNDLED WITH
