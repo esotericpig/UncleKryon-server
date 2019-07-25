@@ -173,7 +173,7 @@ module UncleKryon
       year = pd[:year]
       
       album_parser = create_kryon_aum_year_album_parser(date,year,index)
-      album = album_parser.parse_site()
+      album_parser.parse_site()
       
       if @no_clobber
         puts album_parser.album.to_s()
@@ -231,7 +231,7 @@ module UncleKryon
     def train_kryon_aum_year(year)
       year_parser = create_kryon_aum_year_parser(year)
       year_parser.training = true
-      release = year_parser.parse_site()
+      year_parser.parse_site()
       
       if @no_clobber
         puts year_parser.trainers.to_s()
@@ -243,7 +243,7 @@ module UncleKryon
     def train_kryon_aum_year_album(date,year=nil,index=nil)
       album_parser = create_kryon_aum_year_album_parser(date,year,index)
       album_parser.training = true
-      album = album_parser.parse_site()
+      album_parser.parse_site()
       
       if @no_clobber
         puts album_parser.trainers.to_s()
