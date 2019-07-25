@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
+# frozen_string_literal: true
 
-###
+#--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2018-2019 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,8 +17,9 @@
 # GNU General Public License for more details.
 # 
 # You should have received a copy of the GNU General Public License
-# along with UncleKryon-server.  If not, see <http://www.gnu.org/licenses/>.
-###
+# along with UncleKryon-server.  If not, see <https://www.gnu.org/licenses/>.
+#++
+
 
 require 'date'
 
