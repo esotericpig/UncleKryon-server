@@ -122,8 +122,8 @@ module UncleKryon
              @mini_desc == y.mini_desc &&
              @main_desc == y.main_desc &&
              @pics == y.pics &&
-             @aums == y.aums
-             @scrolls == y.scrolls
+             @aums == y.aums &&
+             @scrolls == y.scrolls &&
              @visions == y.visions
     end
     
