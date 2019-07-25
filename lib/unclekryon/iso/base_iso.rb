@@ -184,7 +184,7 @@ module UncleKryon
     end
     
     def to_s()
-      s = ''
+      s = ''.dup()
       
       @values.each() do |code,value|
         s << "#{code}: #{value}\n"

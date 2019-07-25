@@ -112,7 +112,7 @@ module UncleKryon
     end
     
     def to_s()
-      s = '['
+      s = '['.dup()
       s << %Q("#{@name}","#{@names.join(';')}",)
       s << %Q(#{@code},"#{@codes.join(';')}",)
       s << %Q(#{@alpha2_code},#{@alpha3_code},#{@alpha3_code_b})
