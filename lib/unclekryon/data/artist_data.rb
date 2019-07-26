@@ -42,6 +42,7 @@ module UncleKryon
     attr_accessor :id
     attr_accessor :name
     attr_accessor :long_name
+    attr_accessor :desc
     
     attr_accessor :url
     attr_accessor :mirrors
@@ -63,6 +64,7 @@ module UncleKryon
       @id = ''
       @name = ''
       @long_name = ''
+      @desc = ''
       
       @url = ''
       @mirrors = {}
@@ -97,6 +99,7 @@ module UncleKryon
       s << ('%-5s' % [@id])
       s << (' | %15s' % [@name])
       s << (' | %25s' % [@long_name])
+      s << (' | %s' % [@desc])
       s << (' | fb: @%-20s' % [@facebook.username])
       s << (' | tw: @%-20s' % [@twitter.username])
       s << (' | yt: @%-35s' % [@youtube.username])
