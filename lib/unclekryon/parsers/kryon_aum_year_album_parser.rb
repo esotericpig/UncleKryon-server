@@ -361,7 +361,7 @@ module UncleKryon
               when 'album_main_desc'
                 if !@local_dump[:album_main_desc]
                   @local_dump[:album_main_desc] = true
-                  album.main_desc = ''
+                  album.main_desc = ''.dup()
                 else
                   album.main_desc << "\n\n" if !album.main_desc.strip().empty?()
                 end

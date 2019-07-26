@@ -81,6 +81,19 @@ module UncleKryon
             r[1] = Date.strptime(date,'%b-%b %Y')
             r[0] = Date.strptime(date,'%b')
             r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+          # "4/28/12 - 4/29/12"
+          elsif date =~ /\A[[:digit:]]+\s*\/\s*[[:digit:]]+\s*\/\s*[[:digit:]]+\s*\-/
+            date = date.split(/\s*-\s*/)
+            
+            r[0] = Date.strptime(date[0],'%m/%d/%y')
+            r[1] = Date.strptime(date[1],'%m/%d/%y')
+          # "10-17 to 11-18, 2012"
+          elsif date =~ /\A[[:digit:]]+\s*\-\s*[[:digit:]]+\s+to\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\s*,\s*[[:digit:]]+\z/i
+            date = date.split(/\s*to\s*/i)
+            
+            r[1] = Date.strptime(date[1],'%m-%d, %Y')
+            r[0] = Date.strptime(date[0],'%m-%d')
+            r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           else
             # "SEPT 29 - OCT 9, 2017", "May 31-June 1, 2014"
             if date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+[\,\s]+[[:digit:]]+\z/
@@ -126,10 +139,18 @@ module UncleKryon
             r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           end
         elsif date.include?('/')
-          # "JULY/AUG 2017"
-          r[1] = Date.strptime(date,'%b/%b %Y')
-          r[0] = Date.strptime(date,'%b')
-          r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+          # "1/7/2012"
+          if date =~ /\A[[:digit:]]+\s*\/\s*[[:digit:]]+\s*\/\s*[[:digit:]]+\z/
+            date = date.gsub(/\s+/,'')
+            
+            r[0] = Date.strptime(date,'%m/%d/%Y')
+            r[1] = nil
+          else
+            # "JULY/AUG 2017"
+            r[1] = Date.strptime(date,'%b/%b %Y')
+            r[0] = Date.strptime(date,'%b')
+            r[0] = Date.new(r[1].year,r[0].month,r[0].day)
+          end
         else
           # "April 11, 12, 2015"
           if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\s*,\s*[[:digit:]]+\s*,\s*[[:digit:]]+\z/
@@ -171,6 +192,7 @@ module UncleKryon
       
       if @release.nil?
         @release = ReleaseData.new
+        @release.mirrors = self.class.get_kryon_year_mirrors(@title)
         @release.title = @title
         @release.updated_on = @updated_on
         @release.url = @url
@@ -204,7 +226,7 @@ module UncleKryon
           # - If it doesn't have any cells, it is probably javascript or something else, so don't log it
           # - If @exclude_album, then it has already been logged, so don't log it
           if (!has_date_cell && has_other_cell) || (has_date_cell && !@exclude_album)
-            log.warn("Excluding album: #{row_pos},#{album.date_begin},#{album.date_end},#{album.title}," <<
+            log.warn("Excluding album: #{row_pos},#{album.date_begin},#{album.date_end},#{album.title}," +
               "#{album.locations},#{album.languages}")
             row_pos += 1
           end
@@ -216,6 +238,8 @@ module UncleKryon
         if @artist.albums.key?(album.url) && album == @artist.albums[album.url]
           album.updated_on = @artist.albums[album.url].updated_on
         end
+        
+        album.url = Util.fix_link(album.url)
         
         @artist.albums[album.url] = album
         
@@ -349,17 +373,26 @@ module UncleKryon
       return true
     end
     
-    def self.get_kryon_year_url(year,url_version=2)
+    def self.fix_kryon_year_title(year)
       year = '2002_05' if year == '2002-2005'
       
-      case url_version
-      when 1
-        url = 'http://www.kryon.com/freeAudio_folder/%s_freeAudio.html'
-      else
-        url = 'http://www.kryon.com/freeAudio_folder/mobile_pages/%s_freeAudio_m.html'
-      end
+      return year
+    end
+    
+    def self.get_kryon_year_mirrors(year)
+      year = fix_kryon_year_title(year)
       
-      return url % [year]
+      mirrors = {
+        'original' => "https://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
+      }
+      
+      return mirrors
+    end
+    
+    def self.get_kryon_year_url(year,url_version=2)
+      year = fix_kryon_year_title(year)
+      
+      return "https://www.kryon.com/freeAudio_folder/mobile_pages/#{year}_freeAudio_m.html"
     end
   end
 end
