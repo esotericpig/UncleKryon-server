@@ -36,6 +36,7 @@ require 'unclekryon/iso/can_state'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
 require 'unclekryon/iso/region'
+require 'unclekryon/iso/subregion'
 require 'unclekryon/iso/usa_state'
 
 module UncleKryon
@@ -48,12 +49,14 @@ module UncleKryon
     @@iso = nil
     @@languages = nil
     @@regions = nil
+    @@subregions = nil
     @@usa_states = nil
     
     attr_accessor :updated_can_states_on
     attr_accessor :updated_countries_on
     attr_accessor :updated_languages_on
     attr_accessor :updated_regions_on
+    attr_accessor :updated_subregions_on
     attr_accessor :updated_usa_states_on
     
     def initialize()
@@ -93,6 +96,12 @@ module UncleKryon
         t = t.gsub(/\A[[:space:]]*SAN[[:space:]]+RAFAEL[[:space:]]*\z/,'San Rafael, California')
         t = t.gsub(/\A[[:space:]]*MILANO\,[[:space:]]*MARITTIMA[[:space:]]*\z/,'MILANO MARITTIMA, ITALY')
         t = t.gsub(/\A[[:space:]]*MAR[[:space:]]+DEL[[:space:]]+PLATA[[:space:]]*\z/,'MAR DEL PLATA, ARGENTINA')
+        t = t.gsub(/\A[[:space:]]*PATAGONIA[[:space:]]+CRUISE[[:space:]]+2012[[:space:]]*\z/,'Patagonia, South America')
+        t = t.gsub(/\A[[:space:]]*PHILADELPHIA,[[:space:]]+PENNSYLVANNIA[[:space:]]*\z/,'Philadelphia, Pennsylvania')
+        t = t.gsub(/\ATHE[[:space:]]+AWAKENING[[:space:]]+ZONE.COM\z/,'World')
+        t = t.gsub(/\ASEDONA, AZ - Summer Light Conference\z/,'Sedona, AZ')
+        t = t.gsub(/\AHAWAII CRUISE 11\z/,'Hawaii')
+        t = t.gsub(/\A28 AUDIO FILES - 6 COUNTRIES\z/,'World')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last
@@ -101,6 +110,7 @@ module UncleKryon
         city = nil
         state = nil
         country = countries().find_by_name(last) # By name because e.g. code CO is Colorado and Colombia
+        subregion = nil
         region = nil
         
         parse_state = true
@@ -135,19 +145,35 @@ module UncleKryon
               end
               
               if country.nil?()
-                # Region?
-                region = regions().find_by_name(t)
+                # Subregion?
+                subregion = subregions().find_by_name(t)
                 
-                if region.nil?()
-                  msg = %Q(No state/country/region: "#{text}","#{t}","#{last}")
+                if subregion.nil?() && !last2.nil?()
+                  subregion = subregions().find_by_name(last2)
+                end
+                
+                if subregion.nil?()
+                  # Region?
+                  region = regions().find_by_name(t)
                   
-                  if DevOpts.instance.dev?()
-                    raise msg
+                  if region.nil?() && !last2.nil?()
+                    region = regions().find_by_name(last2)
+                  end
+                  
+                  if region.nil?()
+                    msg = %Q(No state/country/region: "#{text}","#{t}","#{last}")
+                    
+                    if DevOpts.instance.dev?()
+                      raise msg
+                    else
+                      log.warn(msg)
+                    end
                   else
-                    log.warn(msg)
+                    region = region.code
+                    state_i = 0
                   end
                 else
-                  region = region.code
+                  subregion = subregion.code
                   state_i = 0
                 end
               else
@@ -166,7 +192,7 @@ module UncleKryon
           country = country.code
         end
         
-        if region.nil?()
+        if region.nil?() || subregion.nil?()
           # Not USA
           if parse_state
             if parts.length() >= 2
@@ -212,7 +238,7 @@ module UncleKryon
         end
         
         # Location
-        loc = [city,state,country,region] # Don't do compact(); we won't all 4 ','
+        loc = [city,state,country,subregion,region] # Don't do compact(); we won't all 5 ','
         locs.push(loc.join(',')) unless loc.compact().empty?()
       end
       
@@ -253,11 +279,19 @@ module UncleKryon
       end
     end
     
+    def self.subregions()
+      if !@@subregions
+        @@subregions = Subregions.load_file()
+      end
+      return @@subregions
+    end
+    
     def update_all()
       @updated_can_states_on = BaseData.max_updated_on_s(self.class.can_states.values)
       @updated_countries_on = BaseData.max_updated_on_s(self.class.countries.values)
       @updated_languages_on = BaseData.max_updated_on_s(self.class.languages.values)
       @updated_regions_on = BaseData.max_updated_on_s(self.class.regions.values)
+      @updated_subregions_on = BaseData.max_updated_on_s(self.class.subregions.values)
       @updated_usa_states_on = BaseData.max_updated_on_s(self.class.usa_states.values)
     end
     
@@ -269,11 +303,12 @@ module UncleKryon
     end
     
     def to_s()
-      s = 'Updated On:'
+      s = 'Updated On:'.dup()
       s << "\n- CAN States: #{@updated_can_states_on}"
       s << "\n- Countries:  #{@updated_countries_on}"
       s << "\n- Languages:  #{@updated_languages_on}"
       s << "\n- Regions: #{@updated_regions_on}"
+      s << "\n- Subregions: #{@updated_subregions_on}"
       s << "\n- USA States: #{@updated_usa_states_on}"
       return s
     end
@@ -285,6 +320,7 @@ if $0 == __FILE__
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.regions['South America']
+  puts UncleKryon::Iso.subregions['Pantagonia']
   puts UncleKryon::Iso.usa_states['AL']
   puts UncleKryon::Iso.iso
 end
