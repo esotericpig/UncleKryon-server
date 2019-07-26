@@ -36,8 +36,10 @@ module UncleKryon
     DATETIME_FORMAT = '%F %T'
     
     def self.add_trail_slash(url)
-      url = url + '/' if url !~ /\/\z/
-      return url
+      #url = url + '/' if url !~ /\/\z/
+      #return url
+      
+      return File.join(url,'')
     end
     
     def self.clean_charset(str)
@@ -98,8 +100,11 @@ module UncleKryon
       end
       
       # 4th, handle no path
-      if link !~ /#{get_top_link(url)}/i
+      #if link !~ /#{get_top_link(url)}/i
+      if link !~ /\Ahttps?:/i
         link = url + link
+      else
+        link = link.sub(/\Ahttp:/i,'https:')
       end
       
       return link
@@ -107,6 +112,15 @@ module UncleKryon
     
     def self.empty_s?(str)
       return str.nil?() || str.gsub(/[[:space:]]+/,'').empty?()
+    end
+    
+    def self.fix_link(url)
+      # If we do URI.escape(), then if it's already "%20",
+      # then it will convert it to "%2520"
+      
+      url = url.gsub(/[[:space:]]/,'%20')
+      
+      return url
     end
     
     def self.fix_shortwith_text(text)
