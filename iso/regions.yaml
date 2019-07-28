@@ -32,6 +32,10 @@ Regions:
     updated_on: '2018-06-11 17:35:28'
     name: South America
     code: South America
+  Western Mediterranean: !ruby/object:UncleKryon::Region
+    updated_on: '2018-06-11 17:35:28'
+    name: Western Mediterranean
+    code: Western Mediterranean
   World: !ruby/object:UncleKryon::Region
     updated_on: '2018-06-11 17:35:28'
     name: World
