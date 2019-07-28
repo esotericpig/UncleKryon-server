@@ -107,6 +107,11 @@ module UncleKryon
         t = t.gsub(/\AGEMATRIA\s+SEMINAR\z/,'Sedona, Arizona')
         t = t.gsub(/\AKONA\,\s+HAWAI\'I\z/,'Kona, Hawaii')
         t = t.gsub(/\ATALKSHOE\.COM\z/,'World')
+        t = t.gsub(/\AConnor\'s\s+Corner\z/,'World')
+        t = t.gsub(/\AUNITED\s+NATIONS,\s+NEW\s+YORK\s+CITY\z/i,'United Nations, New York City, NY')
+        t = t.gsub(/\AMEDITERRANEAN\s+CRUISE\s+[[:digit:]]+\z/i,'Western Mediterranean')
+        t = t.gsub(/\AHAWAI\'I\s+CRUISE\s+[[:digit:]]+\z/i,'Hawaii')
+        t = t.gsub(/\AALASKA\s+CRUISE\s+[[:digit:]]+\z/i,'Alaska')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last

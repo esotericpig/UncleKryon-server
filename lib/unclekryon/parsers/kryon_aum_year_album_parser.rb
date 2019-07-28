@@ -174,6 +174,10 @@ module UncleKryon
         aum.filename = Util.parse_url_filename(aum.url)
         aum.updated_on = @updated_on
         
+        if aum.url =~ /\A\.\.?\//
+          aum.url = Util.clean_link(@url,aum.url)
+        end
+        
         # Filesize
         if !DevOpts.instance.test?()
           # Getting header data is slow, so only do it when not testing
