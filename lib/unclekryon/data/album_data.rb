@@ -61,10 +61,10 @@ module UncleKryon
       @mini_desc = ''
       @main_desc = ''
       
-      @pics = []
-      @aums = []
-      @scrolls = []
-      @visions = []
+      @pics = {}
+      @aums = {}
+      @scrolls = {}
+      @visions = {}
       
       @dump = []
     end
@@ -141,10 +141,10 @@ module UncleKryon
       s << "\n- #{@mini_desc}" unless mini
       s << "\n- #{@main_desc}" unless mini
       
-      s << (mini ? (' | pics:%3d'    % [@pics.length()])    : ("\n- Pics:\n  - "   << @pics.join("\n  - ")))
-      s << (mini ? (' | aums:%3d'    % [@aums.length()])    : ("\n- Aums:\n  - "   << @aums.join("\n  - ")))
-      s << (mini ? (' | scrolls:%3d' % [@scrolls.length()]) : ("\n- Scrolls:\n - " << @scrolls.join("\n  - ")))
-      s << (mini ? (' | visions:%3d' % [@visions.length()]) : ("\n- Visions:\n - " << @visions.join("\n  - ")))
+      #s << (mini ? (' | pics:%3d'    % [@pics.length()])    : ("\n- Pics:\n  - "   << @pics.join("\n  - ")))
+      #s << (mini ? (' | aums:%3d'    % [@aums.length()])    : ("\n- Aums:\n  - "   << @aums.join("\n  - ")))
+      #s << (mini ? (' | scrolls:%3d' % [@scrolls.length()]) : ("\n- Scrolls:\n - " << @scrolls.join("\n  - ")))
+      #s << (mini ? (' | visions:%3d' % [@visions.length()]) : ("\n- Visions:\n - " << @visions.join("\n  - ")))
       
       s << (mini ? (' | dump:%3d' % [@dump.length()]) : ("\n- Dump:\n  - " << @dump.join("\n  - ")))
       return s

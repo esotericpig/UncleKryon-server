@@ -102,6 +102,11 @@ module UncleKryon
         t = t.gsub(/\ASEDONA, AZ - Summer Light Conference\z/,'Sedona, AZ')
         t = t.gsub(/\AHAWAII CRUISE 11\z/,'Hawaii')
         t = t.gsub(/\A28 AUDIO FILES - 6 COUNTRIES\z/,'World')
+        t = t.gsub(/\ABLOGTALKRADIO\.COM\z/,'World')
+        t = t.gsub(/\AAWAKENINGZONE\.COM\z/,'World')
+        t = t.gsub(/\AGEMATRIA\s+SEMINAR\z/,'Sedona, Arizona')
+        t = t.gsub(/\AKONA\,\s+HAWAI\'I\z/,'Kona, Hawaii')
+        t = t.gsub(/\ATALKSHOE\.COM\z/,'World')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last
@@ -141,6 +146,10 @@ module UncleKryon
               
               if country.nil?()
                 country = countries().find_by_name(t)
+                state_i = 0 unless country.nil?()
+              end
+              if country.nil?() && !last2.nil?()
+                country = countries().find_by_name(last2)
                 state_i = 0 unless country.nil?()
               end
               

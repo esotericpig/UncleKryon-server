@@ -87,6 +87,17 @@ module UncleKryon
       @artist = artist unless artist.nil?()
       @url = url unless url.nil?()
       
+      # URLs that return 404 or are empty; fix by hand
+      exclude_urls = /
+        awakeningzone\.com\/Episode\.aspx\?EpisodeID\=|
+        www\.talkshoe\.com\/talkshoe\/web\/audioPop\.jsp\?episodeId\=
+      /ix
+      
+      if @url =~ exclude_urls
+        log.warn("Excluding Album URL #{@url}")
+        return
+      end
+      
       @trainers.load_file()
       
       raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
@@ -150,9 +161,13 @@ module UncleKryon
         
         audio_file_regex = /\.mp3/i
         href = link['href']
+        exclude_links = /
+          files\.kryonespanol\.com\/audio\/
+        /ix
         
         next if href.nil? || href.empty?
         next if href !~ audio_file_regex
+        next if href =~ exclude_links
         
         aum = AumData.new
         aum.url = Util.clean_data(href)
@@ -161,10 +176,14 @@ module UncleKryon
         
         # Filesize
         if !DevOpts.instance.test?()
-          # Getting header data is slow, so only do it in production
-          r = Util.get_url_header_data(aum.url)
-          aum.filesize = r['content-length']
-          aum.filesize = aum.filesize[0] if aum.filesize.is_a?(Array)
+          # Getting header data is slow, so only do it when not testing
+          begin
+            r = Util.get_url_header_data(aum.url)
+            aum.filesize = r['content-length']
+            aum.filesize = aum.filesize[0] if aum.filesize.is_a?(Array)
+          rescue => e
+            raise e.exception("#{e.message}; couldn't get header data for #{aum.url}")
+          end
         end
         
         # Subtitle
@@ -198,11 +217,13 @@ module UncleKryon
         else
           msg = "No timespan for: #{aum.title},#{aum.subtitle},#{aum.filename},#{aum.url}"
           
-          if DevOpts.instance.dev?()
-            raise msg
-          else
-            log.warn(msg)
-          end
+          log.warn(msg)
+          
+          #if DevOpts.instance.dev?()
+          #  raise "#{msg}:\n#{@local_dump}\n#{album.dump}"
+          #else
+          #  log.warn(msg)
+          #end
         end
         
         # Filesize, if not set
@@ -213,17 +234,14 @@ module UncleKryon
         
         i += 1
         
-        # Is it actually new?
-        if @artist.aums.key?(aum.url) && aum == @artist.aums[aum.url]
-          aum.updated_on = @artist.aums[aum.url].updated_on
-        end
-        
-        @artist.aums[aum.url] = aum
-        
-        if !album.aums.include?(aum.url)
-          album.aums.push(aum.url)
+        # Is it old?
+        if album.aums.key?(aum.url) && aum == album.aums[aum.url]
+          aum.updated_on = album.aums[aum.url].updated_on
+        else # New
           album.updated_on = @updated_on
         end
+        
+        album.aums[aum.url] = aum
       end
     end
     
@@ -314,8 +332,9 @@ module UncleKryon
                 end
               end
             else
-              has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
-                @local_dump[:album_locations] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
+              #has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
+              #  @local_dump[:album_locations] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
+              has_header = true
               tag = @trainers['aum_year_album'].tag(par)
               
               # For 2017 "RETURN TO LEMURIA (7)"
@@ -462,17 +481,14 @@ module UncleKryon
         pic.name = Util.empty_s?(pic.alt) ? File.basename(pic.filename,File.extname(pic.filename)) : pic.alt
         pic.updated_on = @updated_on
         
-        # Is it actually new?
-        if @artist.pics.key?(pic.url) && pic == @artist.pics[pic.url]
-          pic.updated_on = @artist.pics[pic.url].updated_on
-        end
-        
-        @artist.pics[pic.url] = pic
-        
-        if !album.pics.include?(pic.url)
-          album.pics.push(pic.url)
+        # Is it old?
+        if album.pics.key?(pic.url) && pic == album.pics[pic.url]
+          pic.updated_on = album.pics[pic.url].updated_on
+        else # New
           album.updated_on = @updated_on
         end
+        
+        album.pics[pic.url] = pic
       end
     end
   end
