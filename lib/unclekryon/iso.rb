@@ -238,7 +238,7 @@ module UncleKryon
         end
         
         # Location
-        loc = [city,state,country,subregion,region] # Don't do compact(); we won't all 5 ','
+        loc = [city,state,country,subregion,region] # Don't do compact(); we want all 4 ','
         locs.push(loc.join(',')) unless loc.compact().empty?()
       end
       
