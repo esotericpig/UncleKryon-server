@@ -28,10 +28,29 @@ require 'rake/testtask'
 require 'raketeer/irb'
 require 'raketeer/nokogiri_installs'
 
+require 'unclekryon/version'
+
+PKG_DIR = 'pkg'
+
 CLEAN.exclude('.git/','stock/')
 CLOBBER.include('doc/')
 
 task :default => [:irb]
+
+desc "Package YAML data as a Zip file into '#{File.join(PKG_DIR,'')}'"
+task :pkg_yaml do
+  pattern = File.join('{hax,train}','**','*.yaml')
+  zip_name = "unclekryon-yaml-#{UncleKryon::VERSION}.zip"
+  
+  zip_file = File.join(PKG_DIR,zip_name)
+  
+  mkdir_p PKG_DIR
+  
+  Dir.glob(pattern).sort().each do |file|
+    # Rake::PackageTask also does this
+    sh 'zip','-r',zip_file,file
+  end
+end
 
 Rake::TestTask.new() do |task|
   task.libs = ['lib','test']
