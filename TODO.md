@@ -1,28 +1,14 @@
 # TODO | UncleKryon-server
 
-## v1.0.0
+## [v1.0.0]
 - [ ] Download option to download mp3s to /stock/, in case URLs change.
 - [x] "World" option if no country/continent.
 - [x] Option to change "updated_on" in /hax/ to all same date time.
-- [ ] 2019 aums
-- [ ] 2018 aums
-- [x] 2017 aums
-- [x] 2016 aums
-- [x] 2015 aums
-- [x] 2014 aums
-- [ ] 2013 aums
-- [ ] 2012 aums
-- [ ] 2011 aums
-- [ ] 2010 aums
-- [ ] 2009 aums
-- [ ] 2008 aums
-- [ ] 2007 aums
-- [ ] 2006 aums
-- [ ] 2002-2005 aums
+- [ ] 2002-2019 aums
 - [ ] [The Parables of Kryon aums](http://www.kryon.com/cartprodimages/downloadParables.html)
 - [ ] [The Lightworker's Handbook Channeling Series aums](http://www.kryon.com/k_25b.html)
 - [ ] [Lemurian Sisterhood aums](https://amberwolfphd.com/lemurian-sisterhood/ls-audio-and-transcripts)
-- [ ] Option to convert YAML files to JSON for server/app.
+- [ ] Option to convert YAML files to JSON/DB for server/app.
 - [ ] Server option to continuously check [Kryon aums download page](http://audio.kryon.com/en/); maybe also do for Lemurian Sisterhood? One command checks all sites and separate commands check each individual site (for debugging).
 - [ ] If update something by hand, need manual option to send push notifications to apps and update server's DB.
 - [ ] Create systemd service; have the server code run internally every X time.
@@ -32,7 +18,7 @@
     - [Packaging::Systemd#Unit_Files](https://fedoraproject.org/wiki/Packaging:Systemd#Unit_Files)
 - [ ] Command line options:
     - [ ] hax kryon scroll main; hax lems aum main; hax ssb scroll year
-        - lems = lemurian sisters; ssb = saytha sai baba
+        - lems = lemurian sisterhood; ssb = saytha sai baba
     - [ ] unclekryon srv
         - Uses site dir and current year; default is just help.
         - unclekryon srv --every 10min/--once (save to kryon_&lt;release&gt;.yaml &amp; to DB using config file for user/pass)
@@ -41,8 +27,6 @@
         - -l/-g take in arg of kryon/lems/ssb
         - unclekryon up --local /-l kryon (save to DB file for Android app)
         - unclekryon up --global/-g kryon (save to DB network; use config file for user/pass)
-    - [ ] For bash completion, have "--bash-completion" option output bash completion options and use in file
-        - --install-bash-completion to write/copy file for bash completion to work (maybe need to use sudo/su?)
 - [ ] Add [Glossary](https://www.monikamuranyi.com/glossary)?
 - [ ] Add Monika Muranyi artist & [articles](https://www.monikamuranyi.com/articles)?
 - [ ] Add Kryon [announcements](https://www.kryon.com/announce2.html)?
