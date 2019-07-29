@@ -112,6 +112,7 @@ module UncleKryon
         t = t.gsub(/\AMEDITERRANEAN\s+CRUISE\s+[[:digit:]]+\z/i,'Western Mediterranean')
         t = t.gsub(/\AHAWAI\'I\s+CRUISE\s+[[:digit:]]+\z/i,'Hawaii')
         t = t.gsub(/\AALASKA\s+CRUISE\s+[[:digit:]]+\z/i,'Alaska')
+        t = t.gsub(/\AGLASS\s+HOUSE\s+MT\.\s+\(AU\)\z/i,'Glass House Mountains, Australia')
         
         parts = t.split(/[[:space:]\,\-]+/)
         last = parts.last

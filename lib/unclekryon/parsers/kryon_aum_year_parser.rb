@@ -110,12 +110,27 @@ module UncleKryon
               end
             # "December 12-13"
             elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
-              r1f = "%B %d-%d"
+              date = date.gsub(/\s*\-\s*/,'-')
               
-              if !year.nil?()
-                date << ", #{year}"
-                r1f << ", %Y"
+              # "September 16 - 2018"
+              if date =~ /-[[:digit:]]{4}\z/
+                r1f = '%B %d-%Y'
+              else
+                r1f = '%B %d-%d'.dup()
+                
+                if !year.nil?()
+                  date << ", #{year}"
+                  r1f << ', %Y'
+                end
               end
+            # "June 30-July 1-2018"
+            elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
+              date = date.gsub(/\s*\-\s*/,'-')
+              r1f = '%B %d-%B %d-%Y'
+            # "September 7 & 9-2018"
+            elsif date =~ /\A[[:alpha:]]+\s+[[:digit:]]+\s+\&\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
+              date = date.gsub(/\s*\-\s*/,'-')
+              r1f = '%B %d & %d-%Y'
             else
               # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
               date.gsub!(/\s+\-\s+/,'-')
