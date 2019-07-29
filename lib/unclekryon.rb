@@ -47,10 +47,11 @@ require 'unclekryon/data/social_data'
 require 'unclekryon/data/timespan_data'
 
 require 'unclekryon/iso/base_iso'
-require 'unclekryon/iso/can_state'
+require 'unclekryon/iso/can_prov_terr'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
 require 'unclekryon/iso/region'
+require 'unclekryon/iso/subregion'
 require 'unclekryon/iso/usa_state'
 
 require 'unclekryon/parsers/kryon_aum_year_album_parser'
@@ -307,6 +308,7 @@ module UncleKryon
         op.on('-o','--country','List countries')
         op.on('-l','--language','List languages')
         op.on('-r','--region','List regions (i.e., continents, etc.)')
+        op.on('-s','--subregion','List subregions')
       end
       
       @parsers.push(parser)
@@ -314,7 +316,7 @@ module UncleKryon
       
       if do_cmd?()
         if @options[:canada]
-          puts Iso.can_states
+          puts Iso.can_provs_terrs
           @did_cmd = true
         elsif @options[:usa]
           puts Iso.usa_states
@@ -327,6 +329,9 @@ module UncleKryon
           @did_cmd = true
         elsif @options[:region]
           puts Iso.regions
+          @did_cmd = true
+        elsif @options[:subregion]
+          puts Iso.subregions
           @did_cmd = true
         end
       end

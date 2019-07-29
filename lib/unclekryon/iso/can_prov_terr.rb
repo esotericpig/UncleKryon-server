@@ -29,13 +29,11 @@ require 'open-uri'
 require 'unclekryon/iso/base_iso'
 
 ##
-# I know that they are provinces/territories, but calling them states for consistency.
-# 
 # @see https://en.wikipedia.org/wiki/ISO_3166-2:CA
 # @see https://www.iso.org/obp/ui/#iso:code:3166:CA
 ##
 module UncleKryon
-  class CanState < BaseIso
+  class CanProvTerr < BaseIso
     def initialize(row=nil)
       super()
       
@@ -46,17 +44,17 @@ module UncleKryon
     end
   end
   
-  class CanStates < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/can_states.yaml"
+  class CanProvsTerrs < BaseIsos
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/can_provs_terrs.yaml"
     
     def initialize()
       super()
       
-      @id = 'CAN States'
+      @id = 'CAN Provinces & Territories'
     end
     
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return CanStates.new().load_file(filepath)
+      return CanProvsTerrs.new().load_file(filepath)
     end
     
     # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
@@ -66,7 +64,7 @@ module UncleKryon
       doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
       trs = doc.css('tr')
       
-      states = CanStates.new()
+      provs_terrs = CanProvsTerrs.new()
       
       trs.each() do |tr|
         tds = tr.css('td')
@@ -85,31 +83,31 @@ module UncleKryon
           
           if (i += 1) >= 7
             #puts tr.inspect()
-            state = CanState.new(tr)
-            raise "CAN state already exists: #{state.inspect()}" if states.key?(state.code)
+            prov_terr = CanProvTerr.new(tr)
+            raise "CAN prov/terr already exists: #{prov_terr.inspect()}" if provs_terrs.key?(prov_terr.code)
             
-            states.values.each_value() do |v|
-              puts "Duplicate CAN state names: #{v.name}" if v.name == state.name
+            provs_terrs.values.each_value() do |v|
+              puts "Duplicate CAN prov/terr names: #{v.name}" if v.name == prov_terr.name
             end
             
-            states[state.code] = state
+            provs_terrs[prov_terr.code] = prov_terr
             tr.clear()
             i = 0
           end
         end
       end
       
-      states.sort_keys!()
-      states.save_to_file(save_filepath)
+      provs_terrs.sort_keys!()
+      provs_terrs.save_to_file(save_filepath)
     end
   end
 end
 
 if $0 == __FILE__
   if ARGV.length < 1
-    puts UncleKryon::CanStates.load_file().to_s()
+    puts UncleKryon::CanProvsTerrs.load_file().to_s()
   else
-    UncleKryon::CanStates.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
-      UncleKryon::CanStates::DEFAULT_FILEPATH)
+    UncleKryon::CanProvsTerrs.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
+      UncleKryon::CanProvsTerrs::DEFAULT_FILEPATH)
   end
 end

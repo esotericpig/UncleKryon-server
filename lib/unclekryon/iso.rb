@@ -32,7 +32,7 @@ require 'unclekryon/util'
 require 'unclekryon/data/base_data'
 
 require 'unclekryon/iso/base_iso'
-require 'unclekryon/iso/can_state'
+require 'unclekryon/iso/can_prov_terr'
 require 'unclekryon/iso/country'
 require 'unclekryon/iso/language'
 require 'unclekryon/iso/region'
@@ -44,7 +44,7 @@ module UncleKryon
     DEFAULT_FILEPATH = "#{BaseIsos::DEFAULT_DIR}/iso.yaml"
     ID = 'ISO'
     
-    @@can_states = nil
+    @@can_provs_terrs = nil
     @@countries = nil
     @@iso = nil
     @@languages = nil
@@ -52,7 +52,7 @@ module UncleKryon
     @@subregions = nil
     @@usa_states = nil
     
-    attr_accessor :updated_can_states_on
+    attr_accessor :updated_can_provs_terrs_on
     attr_accessor :updated_countries_on
     attr_accessor :updated_languages_on
     attr_accessor :updated_regions_on
@@ -65,11 +65,11 @@ module UncleKryon
       update_all()
     end
     
-    def self.can_states()
-      if !@@can_states
-        @@can_states = CanStates.load_file()
+    def self.can_provs_terrs()
+      if !@@can_provs_terrs
+        @@can_provs_terrs = CanProvsTerrs.load_file()
       end
-      return @@can_states
+      return @@can_provs_terrs
     end
     
     def self.countries()
@@ -138,11 +138,11 @@ module UncleKryon
           end
           
           if state.nil?()
-            # CAN state?
-            state = can_states().find(last)
+            # CAN prov/terr? (use state var)
+            state = can_provs_terrs().find(last)
             
             if state.nil?() && !last2.nil?()
-              state = can_states().find_by_name(last2)
+              state = can_provs_terrs().find_by_name(last2)
               state_i = parts.length() - 2 unless state.nil?()
             end
             
@@ -213,13 +213,13 @@ module UncleKryon
             if parts.length() >= 2
               state = parts[-2].gsub(/[[:space:]]+/,' ').strip()
               
-              # CAN state?
+              # CAN prov/terr? (use state var)
               if country == countries().find_by_code('CAN').code
-                state = can_states().find(state)
+                state = can_provs_terrs().find(state)
                 
                 if state.nil?()
                   if parts.length() >= 3
-                    state = can_states().find_by_name(parts[-3] + parts[-2])
+                    state = can_provs_terrs().find_by_name(parts[-3] + parts[-2])
                     state_i = parts.length() - 3 unless state.nil?()
                   end
                 else
@@ -302,7 +302,7 @@ module UncleKryon
     end
     
     def update_all()
-      @updated_can_states_on = BaseData.max_updated_on_s(self.class.can_states.values)
+      @updated_can_provs_terrs_on = BaseData.max_updated_on_s(self.class.can_provs_terrs.values)
       @updated_countries_on = BaseData.max_updated_on_s(self.class.countries.values)
       @updated_languages_on = BaseData.max_updated_on_s(self.class.languages.values)
       @updated_regions_on = BaseData.max_updated_on_s(self.class.regions.values)
@@ -319,7 +319,7 @@ module UncleKryon
     
     def to_s()
       s = 'Updated On:'.dup()
-      s << "\n- CAN States: #{@updated_can_states_on}"
+      s << "\n- CAN Provs/Terrs: #{@updated_can_provs_terrs_on}"
       s << "\n- Countries:  #{@updated_countries_on}"
       s << "\n- Languages:  #{@updated_languages_on}"
       s << "\n- Regions: #{@updated_regions_on}"
@@ -331,7 +331,7 @@ module UncleKryon
 end
 
 if $0 == __FILE__
-  puts UncleKryon::Iso.can_states['ON']
+  puts UncleKryon::Iso.can_provs_terrs['ON']
   puts UncleKryon::Iso.countries['USA']
   puts UncleKryon::Iso.languages['eng']
   puts UncleKryon::Iso.regions['South America']
