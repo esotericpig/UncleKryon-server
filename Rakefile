@@ -48,7 +48,7 @@ task :pkg_yaml do
   
   Dir.glob(pattern).sort().each do |file|
     # Rake::PackageTask also does this
-    sh 'zip','-r',zip_file,file
+    sh 'zip','-8','-r',zip_file,file
   end
 end
 
