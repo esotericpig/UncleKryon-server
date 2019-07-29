@@ -698,8 +698,9 @@ Countries:
     region: Asia
   CZE: !ruby/object:UncleKryon::Country
     updated_on: '2018-06-11 17:41:10'
-    name: Czechia
+    name: Czech Republic
     names:
+    - Czech Republic
     - Czechia
     code: CZE
     codes:
