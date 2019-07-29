@@ -27,6 +27,7 @@ require 'rake/testtask'
 
 require 'raketeer/irb'
 require 'raketeer/nokogiri_installs'
+require 'raketeer/run'
 
 require 'unclekryon/version'
 
