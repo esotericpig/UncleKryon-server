@@ -34,7 +34,7 @@ require 'unclekryon/version'
 PKG_DIR = 'pkg'
 
 CLEAN.exclude('.git/','stock/')
-CLOBBER.include('doc/')
+CLOBBER.include('doc/',File.join(PKG_DIR,''))
 
 task :default => [:irb]
 
