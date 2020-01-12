@@ -36,8 +36,7 @@ module UncleKryon
     attr_accessor :url
     attr_accessor :mirrors
     
-    attr_accessor :mini_desc
-    attr_accessor :main_desc
+    attr_accessor :desc
     
     attr_accessor :pics
     attr_accessor :aums
@@ -58,8 +57,7 @@ module UncleKryon
       @url = ''
       @mirrors = {}
       
-      @mini_desc = ''
-      @main_desc = ''
+      @desc = ''
       
       @pics = {}
       @aums = {}
@@ -81,8 +79,7 @@ module UncleKryon
       @url = @url.clone()
       @mirrors = @mirrors.clone()
       
-      @mini_desc = @mini_desc.clone()
-      @main_desc = @main_desc.clone()
+      @desc = @desc.clone()
       
       @pics = @pics.clone()
       @aums = @aums.clone()
@@ -99,8 +96,7 @@ module UncleKryon
       @locations |= album.locations unless album.locations.nil?()
       @languages |= album.languages unless album.languages.nil?()
       
-      @mini_desc = album.mini_desc unless Util.empty_s?(album.mini_desc)
-      @main_desc = album.main_desc unless Util.empty_s?(album.main_desc)
+      @desc = album.desc unless Util.empty_s?(album.desc)
       
       @pics |= album.pics unless album.pics.nil?()
       @aums |= album.aums unless album.aums.nil?()
@@ -119,8 +115,7 @@ module UncleKryon
              @languages == y.languages &&
              @url == y.url &&
              @mirrors == y.mirrors &&
-             @mini_desc == y.mini_desc &&
-             @main_desc == y.main_desc &&
+             @desc == y.desc &&
              @pics == y.pics &&
              @aums == y.aums &&
              @scrolls == y.scrolls &&
@@ -138,8 +133,7 @@ module UncleKryon
       s << (' | %25s' % [@locations.join(';')])
       s << (' | %10s' % [@languages.join(';')])
       
-      s << "\n- #{@mini_desc}" unless mini
-      s << "\n- #{@main_desc}" unless mini
+      s << "\n- #{@desc}" unless mini
       
       #s << (mini ? (' | pics:%3d'    % [@pics.length()])    : ("\n- Pics:\n  - "   << @pics.join("\n  - ")))
       #s << (mini ? (' | aums:%3d'    % [@aums.length()])    : ("\n- Aums:\n  - "   << @aums.join("\n  - ")))
