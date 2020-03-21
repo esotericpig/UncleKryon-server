@@ -30,6 +30,7 @@ $ bundle exec rake nokogiri_other
 
 ```
 $ git clone 'https://github.com/esotericpig/UncleKryon-server.git'
+$ cd UncleKryon-server
 $ bundle install
 $ bundle exec rake -T
 ```
