@@ -59,9 +59,9 @@ Gem::Specification.new() do |spec|
   spec.add_runtime_dependency 'nbayes'  ,'~> 0.1.2' # For training type of text (machine learning)
   spec.add_runtime_dependency 'nokogiri','~> 1.10'  # For hacking HTML
   
-  spec.add_development_dependency 'bundler' ,'~> 1.17'
-  spec.add_development_dependency 'irb'     ,'~> 1.0'
-  spec.add_development_dependency 'minitest','~> 5.11' # For testing
-  spec.add_development_dependency 'rake'    ,'~> 12.3'
+  spec.add_development_dependency 'bundler' ,'~> 2.1'
+  spec.add_development_dependency 'irb'     ,'~> 1.2'
+  spec.add_development_dependency 'minitest','~> 5.14' # For testing
+  spec.add_development_dependency 'rake'    ,'~> 13.0'
   spec.add_development_dependency 'raketeer','~> 0.2'  # For Nokogiri & IRB rake tasks
 end
