@@ -47,16 +47,13 @@ task :pkg_yaml do
   
   mkdir_p PKG_DIR
   
-  Dir.glob(pattern).sort().each do |file|
-    # Rake::PackageTask also does this
-    sh 'zip','-8','-r',zip_file,file
-  end
+  sh 'zip','-9rv',zip_file,*Dir.glob(pattern).sort()
 end
 
 Rake::TestTask.new() do |task|
   task.libs = ['lib','test']
   task.pattern = File.join('test','**','*_test.rb')
   task.description += " ('#{task.pattern}')"
-  task.verbose = true
+  task.verbose = false
   task.warning = true
 end
