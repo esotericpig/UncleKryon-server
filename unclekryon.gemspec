@@ -20,7 +20,7 @@
 #++
 
 
-lib = File.expand_path('../lib',__FILE__)
+lib = File.expand_path(File.join('..','lib'),__FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'unclekryon/version'
@@ -46,12 +46,10 @@ Gem::Specification.new() do |spec|
   spec.executables   = [spec.name]
   
   spec.files = Dir.glob(File.join("{#{spec.require_paths.join(',')}}",'**','*.{rb}')) +
-               Dir.glob(File.join(spec.bindir,'**',"{#{spec.executables.join(',')}}")) +
-               Dir.glob(File.join("{hax,iso,test,train}",'**','*.{rb,yaml}')) +
+               Dir.glob(File.join(spec.bindir,'*')) +
+               Dir.glob(File.join("{iso,test}",'**','*.{rb,yaml}')) +
                %W( Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ) +
                %w( LICENSE README.md )
-  
-  spec.post_install_message = "You can now use [#{spec.executables.join(', ')}] on the command line."
   
   spec.required_ruby_version = '>= 2.4.0'
   spec.requirements << 'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html'
@@ -64,4 +62,6 @@ Gem::Specification.new() do |spec|
   spec.add_development_dependency 'minitest','~> 5.14' # For testing
   spec.add_development_dependency 'rake'    ,'~> 13.0'
   spec.add_development_dependency 'raketeer','~> 0.2'  # For Nokogiri & IRB rake tasks
+  
+  spec.post_install_message = "You can now use [#{spec.executables.join(', ')}] on the command line."
 end
