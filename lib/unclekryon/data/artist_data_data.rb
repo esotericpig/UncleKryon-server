@@ -39,10 +39,10 @@ module UncleKryon
     ID = 'ArtistData'
     RELEASES_ID = 'Releases'
     ALBUMS_ID = 'Albums'
-    #AUMS_ID = 'Aums'
-    #SCROLLS_ID = 'Scrolls'
-    #VISIONS_ID = 'Visions'
-    #PICS_ID = 'Pics'
+    AUMS_ID = 'Aums'
+    SCROLLS_ID = 'Scrolls'
+    VISIONS_ID = 'Visions'
+    PICS_ID = 'Pics'
     
     attr_accessor :releases
     attr_accessor :albums

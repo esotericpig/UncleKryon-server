@@ -58,7 +58,7 @@ module UncleKryon
     end
     
     def to_s()
-      s = ''
+      s = ''.dup()
       
       if @name.empty?() || @name.strip().empty?()
         s << ('%-100s' % [@url])
