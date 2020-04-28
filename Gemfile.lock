@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    unclekryon (0.4.9.pre.alpha)
+    unclekryon (0.4.10)
       nokogiri (~> 1.10)
 
 GEM

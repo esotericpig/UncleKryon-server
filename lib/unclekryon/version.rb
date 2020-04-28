@@ -22,5 +22,5 @@
 
 
 module UncleKryon
-  VERSION = '0.4.9-alpha'
+  VERSION = '0.4.10'
 end
