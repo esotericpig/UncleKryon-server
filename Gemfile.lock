@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/oasic/nbayes.git
   revision: 3dd46bd2c8a2258ccdb69ee9ceff7d2fb5d62ed5
+  ref: 3dd46bd
   specs:
     nbayes (0.1.2)
 
@@ -8,7 +9,6 @@ PATH
   remote: .
   specs:
     unclekryon (0.4.9.pre.alpha)
-      nbayes (~> 0.1.2)
       nokogiri (~> 1.10)
 
 GEM

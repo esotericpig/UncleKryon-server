@@ -38,7 +38,7 @@ Gem::Specification.new() do |spec|
   spec.metadata = {
     'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
     'homepage_uri'    => 'https://github.com/esotericpig/UncleKryon-server',
-    'source_code_uri' => 'https://github.com/esotericpig/UncleKryon-server'
+    'source_code_uri' => 'https://github.com/esotericpig/UncleKryon-server',
   }
   
   spec.require_paths = ['lib']
@@ -54,7 +54,6 @@ Gem::Specification.new() do |spec|
   spec.required_ruby_version = '>= 2.4.0'
   spec.requirements << 'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html'
   
-  spec.add_runtime_dependency 'nbayes'  ,'~> 0.1.2' # For training type of text (machine learning)
   spec.add_runtime_dependency 'nokogiri','~> 1.10'  # For hacking HTML
   
   spec.add_development_dependency 'bundler' ,'~> 2.1'
