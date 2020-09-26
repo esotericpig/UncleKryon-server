@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2020 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,6 @@ require 'bundler/gem_tasks'
 
 require 'rake/clean'
 require 'rake/testtask'
-
 require 'raketeer/irb'
 require 'raketeer/nokogiri_installs'
 require 'raketeer/run'
@@ -33,15 +32,15 @@ require 'unclekryon/version'
 
 PKG_DIR = 'pkg'
 
-CLEAN.exclude('.git/','stock/')
+CLEAN.exclude('{.git,stock}/**/*')
 CLOBBER.include('doc/',File.join(PKG_DIR,''))
 
-task :default => [:irb]
+task default: [:irb]
 
-desc "Package YAML data as a Zip file into '#{File.join(PKG_DIR,'')}'"
-task :pkg_yaml do
-  pattern = File.join('{hax,train}','**','*.yaml')
-  zip_name = "unclekryon-yaml-#{UncleKryon::VERSION}.zip"
+desc "Package data as a Zip file into '#{File.join(PKG_DIR,'')}'"
+task :pkg_data do
+  pattern = File.join('{hax,train}','**','*.{yaml,yml}')
+  zip_name = "unclekryon-data-#{UncleKryon::VERSION}.zip"
   
   zip_file = File.join(PKG_DIR,zip_name)
   
