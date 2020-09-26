@@ -4,7 +4,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2020 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -97,56 +97,75 @@ module UncleKryon
         op.on('-t','--test','Fill in training data with random values, etc. for fast testing') do
           DevOpts.instance.test = true
         end
-        op.on('-v','--version','Print version to console')
+        op.on('-v','--version','Print version to console') do
+          puts "#{op.program_name} v#{op.version}"
+          exit
+        end
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if shift_args()
         parse_hax_cmd()
         parse_iso_cmd()
       end
       
-      if !@did_cmd
-        if @options[:version]
-          puts "#{parser.program_name} v#{parser.version}"
-        else
-          @parsers.each do |p|
-            puts p
-            puts
-          end
-          
-          s = <<~EOS
-            Examples:
-            |    # To view all of the options for the sub commands:
-            |    $ #{parser.program_name} hax kryon aum year
-            |    $ #{parser.program_name} iso list
-            |    
-            |    <hax>:
-            |    # Train the data 1st before haxing (if there is no training data)
-            |    $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -s
-            |    $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -a 2.2
-            |    
-            |    # Hax the data (even though --title is not required, it is recommended)
-            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -s
-            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 10.9
-            |    $ #{parser.program_name} -d hax kryon aum year -a 2017.9.29
-            |    
-            |    # Hax the 2nd "6.4" album (if there are 2)
-            |    $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 6.4:2
-            |    
-            |    <iso>:
-            |    $ #{parser.program_name} -n iso -u '2019-04-16 11:11:00'
-            |    $ #{parser.program_name} iso list -r
-          EOS
-          puts s.gsub(/^\|/,'')
-        end
+      return if @did_cmd
+      
+      @parsers.each do |p|
+        puts p
+        puts
       end
+      
+      puts <<~EOX
+        Examples:
+            # To view all of the options for the sub commands:
+            $ #{parser.program_name} hax kryon aum year
+            $ #{parser.program_name} iso list
+            
+            <hax>:
+            # Train the data 1st before haxing (if there is no training data)
+            $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -s
+            $ #{parser.program_name} -d hax -t kryon aum year -t 2017 -a 2.2
+            
+            # Hax the data (even though --title is not required, it is recommended)
+            $ #{parser.program_name} -d hax kryon aum year -t 2017 -s
+            $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 10.9
+            $ #{parser.program_name} -d hax kryon aum year -a 2017.9.29
+            
+            # Hax the 2nd "6.4" album (if there are 2)
+            $ #{parser.program_name} -d hax kryon aum year -t 2017 -a 6.4:2
+            
+            <iso>:
+            $ #{parser.program_name} -n iso -u '2019-04-16 11:11:00'
+            $ #{parser.program_name} iso list -r
+      EOX
+    end
+    
+    def add_parser(parser)
+      @parsers.push(parser)
+      parser.order!(@args,into: @options)
     end
     
     def shift_args()
       return !@args.nil?() && !(@cmd = @args.shift()).nil?()
+    end
+    
+    def log_opts()
+      log.info("Using options#{@options}")
+    end
+    
+    def cmd?(cmd)
+      return false if @did_cmd || @cmd.nil?()
+      
+      user_cmd = @cmd.gsub(/[[:space:]]+/,'').downcase()
+      cmd = cmd.gsub(/[[:space:]]+/,'').downcase()
+      
+      return cmd.start_with?(user_cmd)
+    end
+    
+    def do_cmd?()
+      return !@options[:help] && !@options[:version]
     end
     
     def parse_hax_cmd()
@@ -167,8 +186,7 @@ module UncleKryon
         end
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if do_cmd?()
         if @options[:updated_on]
@@ -198,8 +216,7 @@ module UncleKryon
         end
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if shift_args()
         parse_hax_kryon_aum_cmd()
@@ -229,8 +246,7 @@ module UncleKryon
         end
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if do_cmd?()
         log_opts()
@@ -281,8 +297,7 @@ module UncleKryon
         end
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if do_cmd?()
         if @options[:updated_on]
@@ -312,8 +327,7 @@ module UncleKryon
         op.on('-s','--subregion','List subregions')
       end
       
-      @parsers.push(parser)
-      parser.order!(@args,into: @options)
+      add_parser(parser)
       
       if do_cmd?()
         if @options[:canada]
@@ -362,18 +376,6 @@ module UncleKryon
         
         puts %Q^"#{filepath}" updated_on: #{update_count}^
       end
-    end
-    
-    def log_opts()
-      log.info("Using options#{@options}")
-    end
-    
-    def cmd?(cmd)
-      return !@did_cmd && !@cmd.nil?() && @cmd.match?(/\A[[:space:]]*#{Regexp.escape(cmd)}[[:space:]]*\z/i)
-    end
-    
-    def do_cmd?()
-      return !@options[:help] && !@options[:version]
     end
   end
 end
