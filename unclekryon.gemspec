@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2019 Jonathan Bradley Whited (@esotericpig)
+# Copyright (c) 2017-2020 Jonathan Bradley Whited (@esotericpig)
 # 
 # UncleKryon-server is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,31 +36,48 @@ Gem::Specification.new() do |spec|
   spec.description = 'Uncle Kryon server (& hacker) for the Uncle Kryon mobile apps.'
   
   spec.metadata = {
-    'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
     'homepage_uri'    => 'https://github.com/esotericpig/UncleKryon-server',
     'source_code_uri' => 'https://github.com/esotericpig/UncleKryon-server',
+    'changelog_uri'   => 'https://github.com/esotericpig/UncleKryon-server/releases',
+    'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
   }
   
   spec.require_paths = ['lib']
   spec.bindir        = 'bin'
   spec.executables   = [spec.name]
   
-  spec.files = Dir.glob(File.join("{#{spec.require_paths.join(',')}}",'**','*.{rb}')) +
-               Dir.glob(File.join(spec.bindir,'*')) +
-               Dir.glob(File.join("{iso,test}",'**','*.{rb,yaml}')) +
-               %W( Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ) +
-               %w( LICENSE README.md )
+  spec.files = [
+    Dir.glob(File.join("{#{spec.require_paths.join(',')},test}",'**','*.{erb,rb}')),
+    Dir.glob(File.join(spec.bindir,'*')),
+    Dir.glob(File.join('{hax,iso,train}','**','*.{yaml,yml}')),
+    %W( Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ),
+    %w( LICENSE README.md ),
+  ].flatten()
   
   spec.required_ruby_version = '>= 2.4.0'
-  spec.requirements << 'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html'
+  spec.requirements = [
+    'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html',
+  ]
   
-  spec.add_runtime_dependency 'nokogiri','~> 1.10'  # For hacking HTML
+  spec.add_runtime_dependency 'nokogiri','~> 1.10'  # Hacking HTML
   
   spec.add_development_dependency 'bundler' ,'~> 2.1'
-  spec.add_development_dependency 'irb'     ,'~> 1.2'
-  spec.add_development_dependency 'minitest','~> 5.14' # For testing
+  spec.add_development_dependency 'irb'     ,'~> 1.2'   # IRB rake task
+  spec.add_development_dependency 'minitest','~> 5.14'
   spec.add_development_dependency 'rake'    ,'~> 13.0'
-  spec.add_development_dependency 'raketeer','~> 0.2'  # For Nokogiri & IRB rake tasks
+  spec.add_development_dependency 'raketeer','~> 0.2'   # Nokogiri & IRB rake tasks
   
-  spec.post_install_message = "You can now use [#{spec.executables.join(', ')}] on the command line."
+  spec.post_install_message = <<-EOM
+  
+  UncleKryon v#{UncleKryon::VERSION}
+  
+  You can now use [#{spec.executables.join(', ')}] on the command line.
+  
+  Homepage:  #{spec.homepage}
+  
+  Code:      #{spec.metadata['source_code_uri']}
+  Changelog: #{spec.metadata['changelog_uri']}
+  Bugs:      #{spec.metadata['bug_tracker_uri']}
+  
+  EOM
 end
