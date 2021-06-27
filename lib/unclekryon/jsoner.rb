@@ -89,7 +89,7 @@ module UncleKryon
     
     def jsonify_iso(json)
       json['iso'] = to_hash(Iso.iso)
-      json['can_proter'] = to_hash(Iso.can_provs_terrs.values)
+      json['can_proterr'] = to_hash(Iso.can_provs_terrs.values)
       json['country'] = to_hash(Iso.countries.values)
       json['language'] = to_hash(Iso.languages.values)
       json['region'] = to_hash(Iso.regions.values)
