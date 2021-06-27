@@ -1,7 +1,8 @@
 # UncleKryon-server
+
 Server (and Hacker) for the Uncle Kryon mobile apps.
 
-Tasks include sending push notifications, building the database, and parsing/hacking the websites for the data.
+Tasks include sending push notifications, building the database, and scraping the websites for the data.
 
 ## Contents
 - [Setup](#setup)
@@ -39,7 +40,7 @@ $ bundle exec rake -T
 [GNU GPL v3+](LICENSE)
 
 > UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
-> Copyright (c) 2017-2020 Jonathan Bradley Whited (@esotericpig)  
+> Copyright (c) 2017-2021 Jonathan Bradley Whited  
 > 
 > UncleKryon-server is free software: you can redistribute it and/or modify  
 > it under the terms of the GNU General Public License as published by  
