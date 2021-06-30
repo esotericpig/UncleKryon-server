@@ -1,43 +1,39 @@
-GIT
-  remote: https://github.com/oasic/nbayes.git
-  revision: 3dd46bd2c8a2258ccdb69ee9ceff7d2fb5d62ed5
-  ref: 3dd46bd
-  specs:
-    nbayes (0.1.2)
-
 PATH
   remote: .
   specs:
     unclekryon (0.4.10)
-      nokogiri (~> 1.10)
+      nbayes (= 0.1.3)
+      nokogiri (~> 1.11)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    io-console (0.5.6)
-    irb (1.2.7)
-      reline (>= 0.1.5)
-    mini_portile2 (2.4.0)
-    minitest (5.14.2)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
-    rake (13.0.1)
-    raketeer (0.2.9)
+    io-console (0.5.9)
+    irb (1.3.6)
+      reline (>= 0.2.5)
+    mini_portile2 (2.5.3)
+    minitest (5.14.4)
+    nbayes (0.1.3)
+    nokogiri (1.11.7)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    racc (1.5.2)
+    rake (13.0.3)
+    raketeer (0.2.13)
       rake
-    reline (0.1.5)
+    reline (0.2.6)
       io-console (~> 0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.1)
-  irb (~> 1.2)
+  bundler (~> 2.2)
+  irb (~> 1.3)
   minitest (~> 5.14)
-  nbayes!
   rake (~> 13.0)
   raketeer (~> 0.2)
   unclekryon!
 
 BUNDLED WITH
-   2.1.4
+   2.2.21
