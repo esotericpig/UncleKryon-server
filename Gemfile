@@ -4,11 +4,10 @@
 
 source 'https://rubygems.org'
 
-# NOTE:
-#   The author finally updated the version on RubyGems,
-#     so this has been moved to the Gemspec.
-#   However, in case the author doesn't update it again,
-#     leaving this code here for possible use in the future.
+# NOTE: The author finally updated the version on RubyGems,
+#         so this has been moved to the Gemspec.
+#       However, in case the author doesn't update it again,
+#         leaving this code here for possible use in the future.
 #
 # For training type of text (machine learning).
 # - nbayes Gem is out-of-date, so must use GitHub.
