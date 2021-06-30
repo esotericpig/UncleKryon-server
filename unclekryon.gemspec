@@ -7,7 +7,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'unclekryon/version'
 
-Gem::Specification.new() do |spec|
+Gem::Specification.new do |spec|
   spec.name        = 'unclekryon'
   spec.version     = UncleKryon::VERSION
   spec.authors     = ['Jonathan Bradley Whited']
@@ -32,11 +32,11 @@ Gem::Specification.new() do |spec|
     Dir.glob(File.join("{#{spec.require_paths.join(',')},test}",'**','*.{erb,rb}')),
     Dir.glob(File.join(spec.bindir,'*')),
     Dir.glob(File.join('{hax,iso,train}','**','*.{yaml,yml}')),
-    %W( Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ),
-    %w( LICENSE README.md ),
-  ].flatten()
+    %W[ Gemfile Gemfile.lock #{spec.name}.gemspec Rakefile ],
+    %w[ LICENSE README.md ],
+  ].flatten
 
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 2.5.0'
   spec.requirements = [
     'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html',
   ]

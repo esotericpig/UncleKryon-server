@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -21,7 +20,7 @@ module UncleKryon
 
     attr_accessor :albums
 
-    def initialize()
+    def initialize
       super()
 
       @title = ''
@@ -32,14 +31,14 @@ module UncleKryon
       @albums = []
     end
 
-    def to_mini_s()
+    def to_mini_s
       return to_s(true)
     end
 
     def to_s(mini=false)
       s = ''
       s << ('%-10s' % [@title])
-      s << (mini ? (' | %3d' % [@albums.length()]) : ("\n- " << @albums.join("\n- ")))
+      s << (mini ? (' | %3d' % [@albums.length]) : ("\n- " << @albums.join("\n- ")))
       return s
     end
   end

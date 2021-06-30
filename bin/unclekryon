@@ -16,4 +16,4 @@ require 'bundler/setup'
 require 'unclekryon'
 
 main = UncleKryon::Main.new(ARGV)
-main.run()
+main.run

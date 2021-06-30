@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -16,14 +15,14 @@ require 'singleton'
 module UncleKryon
   class UncleKryonLogger < Logger
     def initialize
-      super(STDOUT)
+      super($stdout)
 
-      @progname = self.class.to_s()
+      @progname = self.class.to_s
     end
 
     def build_message(message,error: nil,**options)
       # Don't use mutable methods
-      message += error.backtrace().map(){|e| "\n  > " + e}.join('') if !error.nil?
+      message += error.backtrace.map{|e| "\n  > " + e}.join('') if !error.nil?
 
       return message
     end
@@ -54,37 +53,37 @@ module UncleKryon
 
   # Mixin for class use
   module Logging
-    def init_log()
+    def init_log
     end
 
-    def log()
+    def log
       if !@log
-        @log = UncleKryonLogger.new()
-        @log.progname = self.class.to_s()
+        @log = UncleKryonLogger.new
+        @log.progname = self.class.to_s
 
-        init_log()
+        init_log
       end
       return @log
     end
   end
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   class Tester
     include UncleKryon::Logging
 
-    def init_log()
-      @log.progname.prepend("[Risky]")
+    def init_log
+      @log.progname.prepend('[Risky]')
     end
 
-    def take_risk()
+    def take_risk
       log.fatal('Risky! Risky! Risky!')
     end
   end
 
   begin
-    t = Tester.new()
-    t.take_risk()
+    t = Tester.new
+    t.take_risk
 
     raise 'Oops!'
   rescue StandardError => e

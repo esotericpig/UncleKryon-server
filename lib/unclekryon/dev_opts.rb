@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -22,7 +21,7 @@ module UncleKryon
     alias_method :dev?,:dev
     alias_method :test?,:test
 
-    def initialize()
+    def initialize
       @dev = false
       @test = false
     end

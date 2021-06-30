@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -9,13 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
-IS_SCRIPT = $0 == __FILE__
-
-if IS_SCRIPT
-  require 'rubygems'
-  require 'bundler/setup'
-end
 
 require 'json'
 require 'yaml'
@@ -34,7 +26,7 @@ module UncleKryon
       #jsonify_iso(json)
       jsonify_artists(json)
 
-      return pretty ? JSON.pretty_generate(json) : json.to_json()
+      return pretty ? JSON.pretty_generate(json) : json.to_json
     end
 
     def jsonify_artists(json)
@@ -58,13 +50,13 @@ module UncleKryon
     def jsonify_artist_data(json,artist,file)
       data = ArtistDataData.load_file(file)
 
-      data.albums.each() do |album_id,album|
-        album.aums.each() do |aum_id,aum|
+      data.albums.each do |album_id,album|
+        album.aums.each do |aum_id,aum|
           json[ArtistDataData::AUMS_ID][aum_id] = to_hash(aum)
         end
         album.aums = album.aums.keys
 
-        album.pics.each() do |pic_id,pic|
+        album.pics.each do |pic_id,pic|
           json[ArtistDataData::PICS_ID][pic_id] = to_hash(pic)
         end
         album.pics = album.pics.keys
@@ -90,15 +82,15 @@ module UncleKryon
       hash = {}
 
       if obj.respond_to?(:instance_variables) && obj.instance_variables.length > 0
-        obj.instance_variables.each() do |var|
-          hash[var.to_s().delete('@')] = to_hash(obj.instance_variable_get(var))
+        obj.instance_variables.each do |var|
+          hash[var.to_s.delete('@')] = to_hash(obj.instance_variable_get(var))
         end
       elsif obj.is_a?(Hash)
-        obj.each() do |k,v|
+        obj.each do |k,v|
           hash[k] = to_hash(v)
         end
       else
-        return Util.empty_s?(obj.to_s()) ? nil : obj
+        return Util.empty_s?(obj.to_s) ? nil : obj
       end
 
       return hash
@@ -106,8 +98,8 @@ module UncleKryon
   end
 end
 
-if IS_SCRIPT
-  j = UncleKryon::Jsoner.new()
+if $PROGRAM_NAME == __FILE__
+  j = UncleKryon::Jsoner.new
 
   puts j.jsonify_all(true)
 end

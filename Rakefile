@@ -28,10 +28,10 @@ task :pkg_data do
 
   mkdir_p PKG_DIR
 
-  sh 'zip','-9rv',zip_file,*Dir.glob(pattern).sort()
+  sh 'zip','-9rv',zip_file,*Dir.glob(pattern).sort
 end
 
-Rake::TestTask.new() do |task|
+Rake::TestTask.new do |task|
   task.libs = ['lib','test']
   task.pattern = File.join('test','**','*_test.rb')
   task.description += " ('#{task.pattern}')"

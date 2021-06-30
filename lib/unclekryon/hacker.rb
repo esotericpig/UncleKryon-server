@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -9,8 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
-require 'bundler/setup'
 
 require 'date'
 
@@ -56,22 +53,22 @@ module UncleKryon
       year = pd[:year]
 
       # Try the yaml file
-      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(build_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
 
-      if release.nil?()
+      if release.nil?
         # Try manually from the site
         year_parser = create_kryon_aum_year_parser(year)
         artist = year_parser.artist
-        release = year_parser.parse_site()
-        raise "Release[#{year}] does not exist" if release.nil?()
+        release = year_parser.parse_site
+        raise "Release[#{year}] does not exist" if release.nil?
       end
 
       album = find_kryon_aum_year_album(artist,date,year,index)[0]
       album_parser = KryonAumYearAlbumParser.new(artist,album.url)
 
       album_parser.album = album
-      album_parser.trainers.filepath = get_train_kryon_filepath()
+      album_parser.trainers.filepath = build_train_kryon_filepath
 
       return album_parser
     end
@@ -79,7 +76,7 @@ module UncleKryon
     def create_kryon_aum_year_parser(year)
       year_parser = KryonAumYearParser.new(year)
 
-      year_parser.trainers.filepath = get_train_kryon_filepath()
+      year_parser.trainers.filepath = build_train_kryon_filepath
 
       return year_parser
     end
@@ -98,7 +95,7 @@ module UncleKryon
         end
       end
 
-      if !albums.empty?()
+      if !albums.empty?
         if index >= 0 && index < albums.length
           album = albums[index]
         else
@@ -106,7 +103,7 @@ module UncleKryon
         end
       end
 
-      raise "Invalid album[#{date}]" if album.nil?()
+      raise "Invalid album[#{date}]" if album.nil?
 
       return album
     end
@@ -116,9 +113,9 @@ module UncleKryon
         ds = date.split(':')
         date = ds[0]
 
-        if index.nil?()
+        if index.nil?
           index = ds
-          index = (index.length <= 1) ? 0 : (index[1].to_i() - 1)
+          index = (index.length <= 1) ? 0 : (index[1].to_i - 1)
         end
 
         begin
@@ -126,32 +123,32 @@ module UncleKryon
         rescue ArgumentError
           new_date = Date.strptime(date,'%m.%d')
 
-          if !year.nil?()
-            new_date = Date.new(year.to_i(),new_date.month,new_date.day)
+          if !year.nil?
+            new_date = Date.new(year.to_i,new_date.month,new_date.day)
           end
         end
 
         date = new_date
-      elsif index.nil?()
+      elsif index.nil?
         index = 0
       end
 
-      if year.nil?()
+      if year.nil?
         # year is actually the release's title, so only override it if have to
-        year = date.year.to_s()
+        year = date.year.to_s
       end
 
-      return {:date=>date,:index=>index,:year=>year}
+      return {date: date,index: index,year: year}
     end
 
     def parse_kryon_aum_year(year)
       year_parser = create_kryon_aum_year_parser(year)
-      release = year_parser.parse_site()
+      release = year_parser.parse_site
 
       if @no_clobber
-        puts release.to_s()
+        puts release.to_s
       else
-        year_parser.artist.save_to_file(get_hax_kryon_aums_filepath(year))
+        year_parser.artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
     end
 
@@ -162,17 +159,17 @@ module UncleKryon
       year = pd[:year]
 
       album_parser = create_kryon_aum_year_album_parser(date,year,index)
-      album_parser.parse_site()
+      album_parser.parse_site
 
       if @no_clobber
-        puts album_parser.album.to_s()
+        puts album_parser.album.to_s
       else
-        album_parser.artist.save_to_file(get_hax_kryon_aums_filepath(year))
+        album_parser.artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
     end
 
     def parse_kryon_aum_year_albums(year,begin_album=nil)
-      if !begin_album.nil?()
+      if !begin_album.nil?
         pd = parse_date(begin_album,year)
         begin_album = pd[:date]
         index = pd[:index]
@@ -180,26 +177,26 @@ module UncleKryon
       end
 
       # Try the yaml file
-      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(build_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
       updated_on = nil
 
-      if release.nil?()
+      if release.nil?
         # Try manually from the site
         year_parser = create_kryon_aum_year_parser(year)
         artist = year_parser.artist
-        release = year_parser.parse_site()
-        raise "Release[#{year}] does not exist" if release.nil?()
+        release = year_parser.parse_site
+        raise "Release[#{year}] does not exist" if release.nil?
         updated_on = release.updated_on
       end
 
       album_parser = KryonAumYearAlbumParser.new
-      album_parser.trainers.filepath = get_train_kryon_filepath()
-      album_parser.updated_on = updated_on unless updated_on.nil?()
+      album_parser.trainers.filepath = build_train_kryon_filepath
+      album_parser.updated_on = updated_on unless updated_on.nil?
 
       albums = release.albums
 
-      if !begin_album.nil?()
+      if !begin_album.nil?
         album_index = find_kryon_aum_year_album(artist,begin_album,year,index)[1]
         albums = albums[album_index..-1]
       end
@@ -207,42 +204,42 @@ module UncleKryon
       albums.each do |album_id|
         album = artist.albums[album_id]
         log.info("Hacking album[#{album.date_begin},#{album.date_end},#{album.title}]")
-        album = album_parser.parse_site(artist,album.url)
+        #album = album_parser.parse_site(artist,album.url)
       end
 
       if @no_clobber
-        puts release.to_s()
+        puts release.to_s
       else
-        artist.save_to_file(get_hax_kryon_aums_filepath(year))
+        artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
     end
 
     def train_kryon_aum_year(year)
       year_parser = create_kryon_aum_year_parser(year)
       year_parser.training = true
-      year_parser.parse_site()
+      year_parser.parse_site
 
       if @no_clobber
-        puts year_parser.trainers.to_s()
+        puts year_parser.trainers.to_s
       else
-        year_parser.trainers.save_to_file()
+        year_parser.trainers.save_to_file
       end
     end
 
     def train_kryon_aum_year_album(date,year=nil,index=nil)
       album_parser = create_kryon_aum_year_album_parser(date,year,index)
       album_parser.training = true
-      album_parser.parse_site()
+      album_parser.parse_site
 
       if @no_clobber
-        puts album_parser.trainers.to_s()
+        puts album_parser.trainers.to_s
       else
-        album_parser.trainers.save_to_file()
+        album_parser.trainers.save_to_file
       end
     end
 
     def train_kryon_aum_year_albums(year,begin_album=nil)
-      if !begin_album.nil?()
+      if !begin_album.nil?
         pd = parse_date(begin_album,year)
         begin_album = pd[:date]
         index = pd[:index]
@@ -250,20 +247,20 @@ module UncleKryon
       end
 
       # Try the yaml file
-      artist = ArtistDataData.load_file(get_hax_kryon_aums_filepath(year))
+      artist = ArtistDataData.load_file(build_hax_kryon_aums_filepath(year))
       release = artist.releases[year]
 
-      if release.nil?()
+      if release.nil?
         # Try manually from the site
         year_parser = create_kryon_aum_year_parser(year)
         artist = year_parser.artist
-        release = year_parser.parse_site()
-        raise "Release[#{year}] does not exist" if release.nil?()
+        release = year_parser.parse_site
+        raise "Release[#{year}] does not exist" if release.nil?
       end
 
       albums = release.albums
 
-      if !begin_album.nil?()
+      if !begin_album.nil?
         album_index = find_kryon_aum_year_album(artist,begin_album,year,index)[1]
         albums = albums[album_index..-1]
       end
@@ -273,41 +270,41 @@ module UncleKryon
 
         album_parser = KryonAumYearAlbumParser.new
         album_parser.album = album
-        album_parser.trainers.filepath = get_train_kryon_filepath()
+        album_parser.trainers.filepath = build_train_kryon_filepath
         album_parser.training = true
 
         log.info("Training album[#{album.date_begin},#{album.date_end},#{album.title}]")
-        album = album_parser.parse_site(artist,album.url)
+        #album = album_parser.parse_site(artist,album.url)
 
         if @no_clobber
-          puts album_parser.trainers.to_s()
+          puts album_parser.trainers.to_s
         else
-          album_parser.trainers.save_to_file()
+          album_parser.trainers.save_to_file
         end
       end
     end
 
-    def get_hax_kryon_aums_filepath(release)
-      return get_hax_kryon_filepath('aums',release)
+    def build_hax_kryon_aums_filepath(release)
+      return build_hax_kryon_filepath('aums',release)
     end
 
-    def get_hax_kryon_filepath(hax,release)
-      raise "Release (year) arg is nil" if release.nil?()
+    def build_hax_kryon_filepath(hax,release)
+      raise 'Release (year) arg is nil' if release.nil?
 
-      fn = @hax_kryon_filename.clone()
+      fn = @hax_kryon_filename.clone
       fn = fn.gsub('<hax>',hax)
-      fn = fn.gsub('<release>',release.to_s())
+      fn = fn.gsub('<release>',release.to_s)
 
       return File.join(@hax_dirname,fn)
     end
 
-    def get_train_kryon_filepath()
+    def build_train_kryon_filepath
       return File.join(@train_dirname,@train_kryon_filename)
     end
   end
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   hacker = UncleKryon::Hacker.new(no_clobber: true)
 
   #hacker.parse_kryon_aum_year('2017')

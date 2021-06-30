@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -43,82 +42,82 @@ module UncleKryon
       @album = album
       @artist = artist
       @options = options
-      @updated_on = Util.format_datetime(DateTime.now()) if Util.empty_s?(updated_on)
+      @updated_on = Util.format_datetime(DateTime.now) if Util.empty_s?(updated_on)
       @url = url
 
       @trainers = Trainers.new(train_filepath)
       @training = training
 
       @trainers['aum_year_album'] = Trainer.new({
-          'alds'=>'album_dates',
-          'altt'=>'album_title',
-          'allo'=>'album_locations',
-          'almi'=>'album_mini_desc',
-          'alma'=>'album_main_desc',
-          'aust'=>'aum_subtitle',
-          'aulg'=>'aum_languages', # See 2018 "Montreal QB w/Robert Coxon (3)" aums' subtitles "FRENCH"
-          'autt'=>'aum_title',
-          'autm'=>'aum_timespan',
-          'ausz'=>'aum_filesize',
-          'aufn'=>'aum_filename',
-          'audu'=>'dump',
-          'i'   =>'ignore'
-        })
+        'alds' => 'album_dates',
+        'altt' => 'album_title',
+        'allo' => 'album_locations',
+        'almi' => 'album_mini_desc',
+        'alma' => 'album_main_desc',
+        'aust' => 'aum_subtitle',
+        'aulg' => 'aum_languages', # See 2018 "Montreal QB w/Robert Coxon (3)" aums' subtitles "FRENCH"
+        'autt' => 'aum_title',
+        'autm' => 'aum_timespan',
+        'ausz' => 'aum_filesize',
+        'aufn' => 'aum_filename',
+        'audu' => 'dump',
+        'i'    => 'ignore',
+      })
       @trainers['aum_year_album_mini_desc'] = Trainer.new({
-          'd'=>'date',
-          'l'=>'location',
-          's'=>'desc',
-          'i'=>'ignore'
-        })
+        'd' => 'date',
+        'l' => 'location',
+        's' => 'desc',
+        'i' => 'ignore',
+      })
     end
 
     def parse_site(artist=nil,url=nil)
-      @artist = artist unless artist.nil?()
-      @url = url unless url.nil?()
+      @artist = artist unless artist.nil?
+      @url = url unless url.nil?
 
       # URLs that return 404 or are empty; fix by hand
-      exclude_urls = /
-        awakeningzone\.com\/Episode\.aspx\?EpisodeID\=|
-        www\.talkshoe\.com\/talkshoe\/web\/audioPop\.jsp\?episodeId\=
-      /ix
+      exclude_urls = %r{
+        awakeningzone\.com/Episode\.aspx\?EpisodeID\=|
+        www\.talkshoe\.com/talkshoe/web/audioPop\.jsp\?episodeId\=
+      }ix
 
       if @url =~ exclude_urls
         log.warn("Excluding Album URL #{@url}")
         return
       end
 
-      @trainers.load_file()
+      @trainers.load_file
 
-      raise ArgumentError,"Artist cannot be nil" if @artist.nil?()
-      raise ArgumentError,"URL cannot be empty" if @url.nil?() || (@url = @url.strip()).empty?()
+      raise ArgumentError,'Artist cannot be nil' if @artist.nil?
+      raise ArgumentError,'URL cannot be empty' if @url.nil? || (@url = @url.strip).empty?
 
       # Album data (flags are okay) should never go in this, only for aums, pics, etc.
       @local_dump = {
-          :album_dates=>false,
-          :album_title=>false,
-          :album_locations=>false,
-          :album_mini_desc=>false,
-          :album_main_desc=>false,
-          :aums=>0,
-          :aum_subtitle=>[],
-          :aum_languages=>[],
-          :aum_title=>[],
-          :aum_timespan=>[],
-          :aum_filesize=>[],
-          :aum_filename=>[]
-        }
+        album_dates: false,
+        album_title: false,
+        album_locations: false,
+        album_mini_desc: false,
+        album_main_desc: false,
+        aums: 0,
+        aum_subtitle: [],
+        aum_languages: [],
+        aum_title: [],
+        aum_timespan: [],
+        aum_filesize: [],
+        aum_filename: [],
+      }
 
       # Force 'utf-8'
       # - See charset "X-MAC-ROMAN" in 2017 "The Discovery Series", 2016 "Kryon in Budapest (5)"
-      doc = Nokogiri::HTML(open(@url),nil,'utf-8')
+      doc = Nokogiri::HTML(URI(@url).open,nil,'utf-8')
 
       old_album = @artist.albums[@url]
 
-      @album = old_album.clone()
+      @album = old_album.clone
       @album.updated_on = @updated_on
       @album.url = @url
 
-      if old_album.nil?()
+      if old_album.nil?
         @artist.albums[@url] = @album
       end
 
@@ -150,9 +149,9 @@ module UncleKryon
 
         audio_file_regex = /\.mp3/i
         href = link['href']
-        exclude_links = /
-          files\.kryonespanol\.com\/audio\/
-        /ix
+        exclude_links = %r{
+          files\.kryonespanol\.com/audio/
+        }ix
 
         next if href.nil? || href.empty?
         next if href !~ audio_file_regex
@@ -163,18 +162,18 @@ module UncleKryon
         aum.filename = Util.parse_url_filename(aum.url)
         aum.updated_on = @updated_on
 
-        if aum.url =~ /\A\.\.?\//
+        if aum.url =~ %r{\A\.\.?/}
           aum.url = Util.clean_link(@url,aum.url)
         end
 
         # Filesize
-        if !DevOpts.instance.test?()
+        if !DevOpts.instance.test?
           # Getting header data is slow, so only do it when not testing
           begin
             r = Util.get_url_header_data(aum.url)
             aum.filesize = r['content-length']
             aum.filesize = aum.filesize[0] if aum.filesize.is_a?(Array)
-          rescue => e
+          rescue StandardError => e
             raise e.exception("#{e.message}; couldn't get header data for #{aum.url}")
           end
         end
@@ -194,9 +193,9 @@ module UncleKryon
           aum.title = @local_dump[:aum_title][i]
         else
           # Set title to something at least
-          if !(afn = aum.filename).nil?() && !afn.strip().empty?()
+          if !(afn = aum.filename).nil? && !afn.strip.empty?
             # More descriptive than subtitle
-            aum.title = afn.gsub(audio_file_regex,'').strip()
+            aum.title = afn.gsub(audio_file_regex,'').strip
             log.warn("Using filename as title: #{aum.title}")
           else
             aum.title = aum.subtitle
@@ -220,7 +219,7 @@ module UncleKryon
         end
 
         # Filesize, if not set
-        if (aum.filesize.nil?() || aum.filesize.strip().empty?) && i < @local_dump[:aum_filesize].length
+        if (aum.filesize.nil? || aum.filesize.strip.empty?) && i < @local_dump[:aum_filesize].length
           aum.filesize = @local_dump[:aum_filesize][i]
           log.warn("Using local dump filesize: #{aum.filesize}")
         end
@@ -256,7 +255,11 @@ module UncleKryon
       # 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
       time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*\z/i
       # 2015 ones have a lot of "13:12 Min - 15.9 megs"
-      time_and_size_regex = /\A[[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+[[:space:]]+Min[[:space:]]+\-[[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]*megs/i
+      time_and_size_regex = /\A
+        [[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+
+        [[:space:]]+Min[[:space:]]+\-
+        [[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]*megs
+      /xi
 
       size_count = 0
       time_count = 0
@@ -277,7 +280,7 @@ module UncleKryon
         add_to_dump = true
 
         if c =~ time_regex
-          @local_dump[:aum_timespan].push(TimespanData.new(c).to_s())
+          @local_dump[:aum_timespan].push(TimespanData.new(c).to_s)
           add_to_dump = false
           time_count += 1
         elsif c =~ size_regex
@@ -287,7 +290,7 @@ module UncleKryon
         elsif c =~ time_or_size_regex
           # Time is usually before size
           if time_count == size_count
-            @local_dump[:aum_timespan].push(TimespanData.new(c).to_s())
+            @local_dump[:aum_timespan].push(TimespanData.new(c).to_s)
             time_count += 1
           else
             @local_dump[:aum_filesize].push(c)
@@ -298,7 +301,7 @@ module UncleKryon
         elsif c =~ time_and_size_regex
           time_and_size = c.split(/[[:space:]]*\-[[:space:]]*/) # Split on '-'
 
-          @local_dump[:aum_timespan].push(TimespanData.new(time_and_size[0]).to_s())
+          @local_dump[:aum_timespan].push(TimespanData.new(time_and_size[0]).to_s)
           time_count += 1
           @local_dump[:aum_filesize].push(time_and_size[1])
           size_count += 1
@@ -312,26 +315,30 @@ module UncleKryon
           pars = orig_c.gsub(/\A[[:space:]]+/,'').gsub(/[[:space:]]+\z/,'')
           pars = pars.split(/[\r\n\p{Zl}\p{Zp}]{2,}/)
 
-          pars.each() do |par|
-            par = par.gsub(/[[:blank:]]+/,' ').strip()
+          pars.each do |par|
+            par = par.gsub(/[[:blank:]]+/,' ').strip
             par = Util.fix_shortwith_text(par)
 
-            next if par.empty?()
+            next if par.empty?
 
             if @training
               if @trainers['aum_year_album'].train(par) == 'album_mini_desc'
-                par.split(/\n+/).each() do |p|
+                par.split(/\n+/).each do |p|
                   @trainers['aum_year_album_mini_desc'].train(p)
                 end
               end
             else
               #has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
-              #  @local_dump[:album_locations] || @local_dump[:album_mini_desc] || @local_dump[:album_main_desc]
+              #  @local_dump[:album_locations] || @local_dump[:album_mini_desc] ||
+              #  @local_dump[:album_main_desc]
               has_header = true
               tag = @trainers['aum_year_album'].tag(par)
 
               # For 2017 "RETURN TO LEMURIA (7)"
-              if par =~ /\A[[:space:]]*MEDITATION[[:space:]]+-[[:space:]]+Kalei[[:space:]]+-[[:space:]]+John[[:space:]]+-[[:space:]]+Amber[[:space:]]*\z/i
+              if par =~ /\A[[:space:]]*MEDITATION[[:space:]]+-
+                           [[:space:]]+Kalei[[:space:]]+-
+                           [[:space:]]+John[[:space:]]+-
+                           [[:space:]]+Amber[[:space:]]*\z/xi
                 tag = 'aum_title'
                 log.warn("Changing tag to aum_title: #{Util.clean_data(par)}")
               end
@@ -350,17 +357,17 @@ module UncleKryon
                   @local_dump[:album_locations] = true
                 end
               when 'album_mini_desc'
-                par.split(/\n+/).each() do |p|
+                par.split(/\n+/).each do |p|
                   p = Util.clean_data(p)
 
-                  if !p.empty?()
+                  if !p.empty?
                     case @trainers['aum_year_album_mini_desc'].tag(p)
                     when 'desc'
                       if !@local_dump[:album_mini_desc]
                         @local_dump[:album_mini_desc] = true
                         album.mini_desc = p
                       else
-                        album.mini_desc << ' | ' if !album.mini_desc.strip().empty?()
+                        album.mini_desc << ' | ' if !album.mini_desc.strip.empty?
                         album.mini_desc << p
                       end
                     when 'ignore'
@@ -373,16 +380,16 @@ module UncleKryon
               when 'album_main_desc'
                 if !@local_dump[:album_main_desc]
                   @local_dump[:album_main_desc] = true
-                  album.main_desc = ''.dup()
+                  album.main_desc = ''.dup
                 else
-                  album.main_desc << "\n\n" if !album.main_desc.strip().empty?()
+                  album.main_desc << "\n\n" if !album.main_desc.strip.empty?
                 end
 
-                par.split(/\n+/).each() do |p|
+                par.split(/\n+/).each do |p|
                   album.main_desc << Util.clean_data(p) << "\n"
                 end
 
-                album.main_desc = album.main_desc.strip() # Remove last newline
+                album.main_desc = album.main_desc.strip # Remove last newline
                 add_to_dump = false
               when 'ignore'
                 log.warn("Excluding content: #{Util.clean_data(par)}")
@@ -405,13 +412,13 @@ module UncleKryon
 
                     # Special case for 2017 "LISBON, PORTUGAL (Fatima Tour) (3)"
                     if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/i
-                      @local_dump[:aum_title].push('Lisbon Channeling 2');
-                      @local_dump[:aum_title].push('Lisbon Channeling 3');
+                      @local_dump[:aum_title].push('Lisbon Channeling 2')
+                      @local_dump[:aum_title].push('Lisbon Channeling 3')
                       log.warn("Adding aum_titles for: #{Util.clean_data(par)}")
                     end
                     # For 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" & "KRYON INDIA-NEPAL TOUR PART 2 (8)"
                     if par =~ /\A[[:space:]]*PAGE[[:space:]]*(ONE|TWO)[[:space:]]*\z/i
-                      p = @local_dump[:aum_title].pop()
+                      p = @local_dump[:aum_title].pop
                       log.warn("Ignoring aum title: #{p}")
                     end
 
@@ -462,7 +469,7 @@ module UncleKryon
           next
         end
 
-        pic = PicData.new()
+        pic = PicData.new
 
         pic.url = Util.clean_link(url,src)
         pic.filename = Util.parse_url_filename(pic.url)

@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -22,7 +21,7 @@ module UncleKryon
     attr_reader :name
     attr_reader :code
 
-    def initialize()
+    def initialize
       super()
 
       @name = nil
@@ -30,29 +29,29 @@ module UncleKryon
     end
 
     def self.fix_name(name)
-      return self.flip_word_order(self.simplify_name(name))
+      return flip_word_order(simplify_name(name))
     end
 
     def self.flip_word_order(word)
       # e.g., change 'English, Old' to 'Old English'
-      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip()
+      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip
     end
 
     def self.simplify_code(code)
       # e.g., remove 'US-' from 'US-AL'
-      return code.gsub(/[[:alnum:][:space:]]+\-[[:space:]]*/,'').strip()
+      return code.gsub(/[[:alnum:][:space:]]+\-[[:space:]]*/,'').strip
     end
 
     def self.simplify_name(name)
       # e.g., remove '(the)' from 'United States of America (the)'
-      return name.gsub(/[[:space:]]*\([^\)]*\)[[:space:]]*/,'').strip()
+      return name.gsub(/[[:space:]]*\([^\)]*\)[[:space:]]*/,'').strip
     end
 
-    def ==(y)
-      return @name == y.name && @code == y.code
+    def ==(other)
+      return @name == other.name && @code == other.code
     end
 
-    def to_s()
+    def to_s
       return %Q(["#{@name}",#{@code}])
     end
   end
@@ -65,7 +64,7 @@ module UncleKryon
     attr_reader :id
     attr_reader :values
 
-    def initialize()
+    def initialize
       super()
 
       @id = self.class.get_class_name(self)
@@ -74,29 +73,29 @@ module UncleKryon
 
     def find(text)
       lang = find_by_name(text)
-      return lang unless lang.nil?()
+      return lang unless lang.nil?
 
       lang = find_by_code(text)
       return lang
     end
 
     def find_by_code(code)
-      code = code.gsub(/[[:space:]]+/,'').downcase()
+      code = code.gsub(/[[:space:]]+/,'').downcase
 
-      @values.each() do |k,v|
+      @values.each do |k,v|
         codes = nil
 
         if v.respond_to?(:codes)
           codes = v.codes()
         elsif v.respond_to?(:code)
-          codes = [v.code()]
+          codes = [v.code]
         else
           raise "No codes()/code() method for class #{v.class.name}"
         end
 
-        codes.each() do |c|
-          next if c.nil?()
-          c = c.gsub(/[[:space:]]+/,'').downcase()
+        codes.each do |c|
+          next if c.nil?
+          c = c.gsub(/[[:space:]]+/,'').downcase
           return v if c == code
         end
       end
@@ -105,22 +104,22 @@ module UncleKryon
     end
 
     def find_by_name(name)
-      name = name.gsub(/[[:space:]]+/,'').downcase()
+      name = name.gsub(/[[:space:]]+/,'').downcase
 
-      @values.each() do |k,v|
+      @values.each do |k,v|
         names = nil
 
         if v.respond_to?(:names)
           names = v.names()
         elsif v.respond_to?(:name)
-          names = [v.name()]
+          names = [v.name]
         else
           raise "No names()/name() method for class #{v.class.name}"
         end
 
-        names.each() do |n|
-          next if n.nil?()
-          n = n.gsub(/[[:space:]]+/,'').downcase()
+        names.each do |n|
+          next if n.nil?
+          n = n.gsub(/[[:space:]]+/,'').downcase
           return v if n == name
         end
       end
@@ -143,12 +142,12 @@ module UncleKryon
       end
     end
 
-    def sort_keys!()
+    def sort_keys!
       # Old way: @values = @values.sort().to_h()
 
       new_values = {}
 
-      @values.keys().sort().each() do |code|
+      @values.keys.sort.each do |code|
         new_values[code] = @values[code]
       end
 
@@ -172,10 +171,10 @@ module UncleKryon
       @values.key?(code)
     end
 
-    def to_s()
-      s = ''.dup()
+    def to_s
+      s = ''.dup
 
-      @values.each() do |code,value|
+      @values.each do |code,value|
         s << "#{code}: #{value}\n"
       end
 

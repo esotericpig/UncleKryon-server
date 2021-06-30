@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -9,8 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
-require 'bundler/setup'
 
 require 'nokogiri'
 require 'open-uri'
@@ -36,65 +33,66 @@ module UncleKryon
   class CanProvsTerrs < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/can_provs_terrs.yaml"
 
-    def initialize()
+    def initialize
       super()
 
       @id = 'CAN Provinces & Territories'
     end
 
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return CanProvsTerrs.new().load_file(filepath)
+      return CanProvsTerrs.new.load_file(filepath)
     end
 
-    # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
+    # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML
+    #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#iso:code:3166:CA
     def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
-      doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
+      doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       trs = doc.css('tr')
 
-      provs_terrs = CanProvsTerrs.new()
+      provs_terrs = CanProvsTerrs.new
 
-      trs.each() do |tr|
+      trs.each do |tr|
         tds = tr.css('td')
 
         # Skip French; we just want English
-        next if tds[4].content.gsub(/[[:space:]]+/,' ').strip().downcase() == 'fr'
+        next if tds[4].content.gsub(/[[:space:]]+/,' ').strip.downcase == 'fr'
 
         i = 0
         tr = []
 
-        tds.each() do |td|
+        tds.each do |td|
           c = td.content
           c.gsub!(/[[:space:]]+/,' ')
-          c.strip!()
+          c.strip!
           tr.push(c)
 
           if (i += 1) >= 7
             #puts tr.inspect()
             prov_terr = CanProvTerr.new(tr)
-            raise "CAN prov/terr already exists: #{prov_terr.inspect()}" if provs_terrs.key?(prov_terr.code)
+            raise "CAN prov/terr already exists: #{prov_terr.inspect}" if provs_terrs.key?(prov_terr.code)
 
-            provs_terrs.values.each_value() do |v|
+            provs_terrs.values.each_value do |v|
               puts "Duplicate CAN prov/terr names: #{v.name}" if v.name == prov_terr.name
             end
 
             provs_terrs[prov_terr.code] = prov_terr
-            tr.clear()
+            tr.clear
             i = 0
           end
         end
       end
 
-      provs_terrs.sort_keys!()
+      provs_terrs.sort_keys!
       provs_terrs.save_to_file(save_filepath)
     end
   end
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   if ARGV.length < 1
-    puts UncleKryon::CanProvsTerrs.load_file().to_s()
+    puts UncleKryon::CanProvsTerrs.load_file.to_s
   else
     UncleKryon::CanProvsTerrs.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
       UncleKryon::CanProvsTerrs::DEFAULT_FILEPATH)

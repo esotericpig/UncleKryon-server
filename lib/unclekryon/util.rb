@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -10,10 +9,10 @@
 #++
 
 
+require 'cgi'
 require 'date'
 require 'fileutils'
 require 'uri'
-
 require 'net/http'
 
 require 'unclekryon/dev_opts'
@@ -38,21 +37,21 @@ module UncleKryon
     def self.clean_data(str)
       # Have to use "[[:space:]]" for "&nbsp;" and "<br/>"
       # This is necessary for "<br />\s+" (see 2015 "KRYON IN LIMA, PERU (2)")
-      str = str.clone()
+      str = str.clone
       str.gsub!(/[[:space:]]+/,' ') # Replace all spaces with one space
-      str.strip!()
+      str.strip!
       return clean_charset(str)
     end
 
     def self.clean_link(url,link)
-      if url !~ /\/\z/
+      if url !~ %r{/\z}
         # Don't know if the end is a filename or a dirname, so just assume it is a filename and chop it off
         url = File.dirname(url)
         url = add_trail_slash(url)
       end
 
       # 1st, handle "/" (because you won't have "/../filename", which is invalid)
-      slash_regex = /\A(\/+\.*\/*)+/
+      slash_regex = %r{\A(/+\.*/*)+}
 
       if link =~ slash_regex
         link = link.gsub(slash_regex,'')
@@ -63,11 +62,11 @@ module UncleKryon
 
       # 2nd, handle "../" (and potentially "../././/" or "..//")
       # - Ignores "./" if has it
-      dotdot_regex = /\A(\.\.\/)((\.\/)*(\/)*)*/ # \A (../) ( (./)* (/)* )*
+      dotdot_regex = %r{\A(\.\./)((\./)*(/)*)*} # \A (../) ( (./)* (/)* )*
       num_dirs = 0 # Could be a boolean; left as int because of legacy code
 
       while link =~ dotdot_regex
-        num_dirs = num_dirs + 1
+        num_dirs += 1
         link = link.gsub(dotdot_regex,'')
         url = File.dirname(url)
       end
@@ -79,7 +78,7 @@ module UncleKryon
       end
 
       # 3rd, handle "./"
-      dot_regex = /\A(\.\/+)+/
+      dot_regex = %r{\A(\./+)+}
 
       if link =~ dot_regex
         link = link.gsub(dot_regex,'')
@@ -100,7 +99,7 @@ module UncleKryon
     end
 
     def self.empty_s?(str)
-      return str.nil?() || str.gsub(/[[:space:]]+/,'').empty?()
+      return str.nil? || str.gsub(/[[:space:]]+/,'').empty?
     end
 
     def self.fix_link(url)
@@ -113,33 +112,33 @@ module UncleKryon
     end
 
     def self.fix_shortwith_text(text)
-      if text =~ /w\/[[:alnum:]]/i
+      if text =~ %r{w/[[:alnum:]]}i
         # I think it looks better with a space, personally.
         #  Some grammar guides say no space, but the Chicago style guide says there should be a space when it
         #    is a word by itself.
-        text = text.gsub(/w\//i,'w/ ')
+        text = text.gsub(%r{w/}i,'w/ ')
       end
 
       return text
     end
 
     def self.format_date(date)
-      return date.nil?() ? nil : date.strftime(DATE_FORMAT)
+      return date.nil? ? nil : date.strftime(DATE_FORMAT)
     end
 
     def self.format_datetime(datetime)
-      return datetime.nil?() ? nil : datetime.strftime(DATETIME_FORMAT)
+      return datetime.nil? ? nil : datetime.strftime(DATETIME_FORMAT)
     end
 
     def self.get_top_link(url)
-      raise "No top link: #{url}" if DevOpts.instance.dev?() && url !~ /\Ahttps?\:/i
+      raise "No top link: #{url}" if DevOpts.instance.dev? && url !~ /\Ahttps?\:/i
 
       http_regex = /\Ahttps?\:|\A\./i # Check '.' to prevent infinite loop
 
       while File.basename(File.dirname(url)) !~ http_regex
-        url = File.dirname(url).strip()
+        url = File.dirname(url).strip
 
-        break if url == '.' || url.empty?()
+        break if url == '.' || url.empty?
       end
 
       return add_trail_slash(url)
@@ -151,7 +150,7 @@ module UncleKryon
 
       Net::HTTP.start(uri.host,uri.port) do |http|
         resp = http.request_head(uri)
-        r = resp.to_hash()
+        r = resp.to_hash
       end
 
       return r
@@ -160,33 +159,33 @@ module UncleKryon
     def self.hash_def(hash,keys,value)
       v = hash
 
-      for i in 0..keys.length-2
+      (0..keys.length - 2).each do |i|
         v = v[keys[i]]
       end
 
-      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?()
-      return v[keys[keys.length-1]]
+      v[keys[keys.length - 1]] = value if v[keys[keys.length - 1]].nil?
+      return v[keys[keys.length - 1]]
     end
 
     def self.hash_def_all(hash,keys,value)
       v = hash
 
-      for i in 0..keys.length-2
-        if v[keys[i]].nil?()
+      (0..keys.length - 2).each do |i|
+        if v[keys[i]].nil?
           v[keys[i]] = {}
           v = v[keys[i]]
         end
       end
 
-      v[keys[keys.length-1]] = value if v[keys[keys.length-1]].nil?()
-      return v[keys[keys.length-1]]
+      v[keys[keys.length - 1]] = value if v[keys[keys.length - 1]].nil?
+      return v[keys[keys.length - 1]]
     end
 
     def self.mk_dirs_from_filepath(filepath)
       dirname = File.dirname(filepath)
 
-      if !dirname.nil?()
-        raise "Spaces around dirname: '#{dirname}'" if dirname != dirname.strip()
+      if !dirname.nil?
+        raise "Spaces around dirname: '#{dirname}'" if dirname != dirname.strip
 
         if !Dir.exist?(dirname)
           Log.instance.info("Making dirs: '#{dirname}'...")
@@ -196,22 +195,22 @@ module UncleKryon
     end
 
     def self.parse_date_s(str)
-      return self.empty_s?(str) ? nil : Date.strptime(str,DATE_FORMAT)
+      return empty_s?(str) ? nil : Date.strptime(str,DATE_FORMAT)
     end
 
     def self.parse_datetime_s(str)
-      return self.empty_s?(str) ? nil : DateTime.strptime(str,DATETIME_FORMAT)
+      return empty_s?(str) ? nil : DateTime.strptime(str,DATETIME_FORMAT)
     end
 
     def self.parse_url_filename(url)
       uri = URI.parse(url)
       r = File.basename(uri.path)
-      r = URI.unescape(r)
-      return r.strip()
+      r = CGI.unescape(r)
+      return r.strip
     end
 
     def self.safe_max(a,b)
-      return a.nil?() ? b : (b.nil?() ? a : ((a > b) ? a : b))
+      return a.nil? ? b : (b.nil? ? a : ((a > b) ? a : b))
     end
   end
 end

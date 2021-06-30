@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -9,8 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
-require 'bundler/setup'
 
 require 'nbayes'
 
@@ -28,9 +25,9 @@ module UncleKryon
     def self.to_tokens(text)
       tokens = []
 
-      text.split(/[[:space:]]+/).each() do |t|
+      text.split(/[[:space:]]+/).each do |t|
         t.gsub!(/[[:punct:][:cntrl:]]+/,'')
-        tokens.push(t) if !t.empty?()
+        tokens.push(t) if !t.empty?
       end
 
       return tokens
@@ -40,12 +37,12 @@ module UncleKryon
       @max_tag_id_length = 0
       @max_tag_length = 0
       @tags = tags
-      @trainer = NBayes::Base.new()
+      @trainer = NBayes::Base.new
 
-      init_lengths()
+      init_lengths
     end
 
-    def init_lengths()
+    def init_lengths
       @max_tag_id_length = 0
       @max_tag_length = 0
 
@@ -60,7 +57,7 @@ module UncleKryon
     end
 
     def train(text)
-      guess_tag = self.tag(text) # Try and guess
+      guess_tag = tag(text) # Try and guess
       tokens = self.class.to_tokens(text)
 
       puts '#################'
@@ -79,14 +76,14 @@ module UncleKryon
       print 'What is it? '
 
       # Use -t/--test option
-      if DevOpts.instance.test?()
-        puts (tag_id = @tags.keys.sample()) # For testing purposes
+      if DevOpts.instance.test?
+        puts(tag_id = @tags.keys.sample) # For testing purposes
       else
-        tag_id = STDIN.gets().chomp().strip() # STDIN because app accepts args
+        tag_id = $stdin.gets.chomp.strip # $stdin because app accepts args
       end
       puts
 
-      if tag_id.empty?()
+      if tag_id.empty?
         raise "Invalid guess tag[#{guess_tag}]" if !@tags.value?(guess_tag)
         tag = guess_tag
       else
@@ -103,11 +100,11 @@ module UncleKryon
       return @trainer.classify(self.class.to_tokens(text)).max_class
     end
 
-    def to_s()
+    def to_s
       s = ''
-      s << @trainer.to_yaml()
+      s << @trainer.to_yaml
       s << "\n"
-      s << @trainer.data.category_stats()
+      s << @trainer.data.category_stats
 
       return s
     end
@@ -122,15 +119,15 @@ module UncleKryon
       @trainers = {}
     end
 
-    def load_file()
-      if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
+    def load_file
+      if @filepath.nil? || (@filepath = @filepath.strip).empty?
         raise ArgumentError,'Training filepath cannot be empty'
       end
 
       if File.exist?(@filepath)
         y = YAML.load_file(@filepath)
 
-        y.each() do |id,trainer|
+        y.each do |id,trainer|
           if !@trainers.key?(id)
             @trainers[id] = trainer
           else
@@ -138,21 +135,21 @@ module UncleKryon
             @trainers[id].trainer = trainer.trainer
           end
 
-          @trainers[id].trainer.reset_after_import()
-          @trainers[id].init_lengths()
+          @trainers[id].trainer.reset_after_import
+          @trainers[id].init_lengths
         end
       end
     end
 
-    def save_to_file()
-      if @filepath.nil?() || (@filepath = @filepath.strip()).empty?()
+    def save_to_file
+      if @filepath.nil? || (@filepath = @filepath.strip).empty?
         raise ArgumentError,'Training filepath cannot be empty'
       end
 
       Util.mk_dirs_from_filepath(@filepath)
 
       File.open(@filepath,'w') do |f|
-        f.write(to_s())
+        f.write(to_s)
       end
     end
 
@@ -164,13 +161,13 @@ module UncleKryon
       @trainers[id] = trainer
     end
 
-    def to_s()
+    def to_s
       return YAML.dump(@trainers)
     end
   end
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   fp = 'test.yaml'
   ts = UncleKryon::Trainers.new(fp)
 
@@ -182,7 +179,7 @@ if $0 == __FILE__
          'young, minimal']
 
   if File.exist?(fp)
-    ts.load_file()
+    ts.load_file
     puts ts
     puts
 
@@ -199,14 +196,14 @@ if $0 == __FILE__
     puts
 
     puts 'What kind of drink would you like?'
-    txt = STDIN.gets().chomp().strip()
+    txt = $stdin.gets.chomp.strip
     puts "coffee => #{ts['coffee'].tag(txt)}"
     puts "tea    => #{ts['tea'].tag(txt)}"
   else
     ts['coffee'] = UncleKryon::Trainer.new(
-      {'b'=>'black','c'=>'cappuccino','l'=>'latte'})
+      {'b' => 'black','c' => 'cappuccino','l' => 'latte'})
     ts['tea'] = UncleKryon::Trainer.new(
-      {'g'=>'green','r'=>'red','w'=>'white'})
+      {'g' => 'green','r' => 'red','w' => 'white'})
 
     ctx.each do |v|
       ts['coffee'].train(v)
@@ -215,6 +212,6 @@ if $0 == __FILE__
       ts['tea'].train(v)
     end
 
-    ts.save_to_file()
+    ts.save_to_file
   end
 end

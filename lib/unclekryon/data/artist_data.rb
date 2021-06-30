@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -40,7 +39,7 @@ module UncleKryon
     attr_accessor :twitter
     attr_accessor :youtube
 
-    def initialize()
+    def initialize
       super()
 
       @updated_releases_on = ''
@@ -58,9 +57,9 @@ module UncleKryon
       @url = ''
       @mirrors = {}
 
-      @facebook = SocialData.new()
-      @twitter = SocialData.new()
-      @youtube = SocialData.new()
+      @facebook = SocialData.new
+      @twitter = SocialData.new
+      @youtube = SocialData.new
     end
 
     def self.load_file(filepath)
@@ -70,16 +69,16 @@ module UncleKryon
     end
 
     def save_to_file(filepath,**options)
-      raise "Empty filepath: #{filepath}" if filepath.nil?() || (filepath = filepath.strip()).empty?()
+      raise "Empty filepath: #{filepath}" if filepath.nil? || (filepath = filepath.strip).empty?
 
       Util.mk_dirs_from_filepath(filepath)
       File.open(filepath,'w') do |f|
-        artist = {ID=>self}
+        artist = {ID => self}
         YAML.dump(artist,f)
       end
     end
 
-    def to_mini_s()
+    def to_mini_s
       return to_s(true)
     end
 

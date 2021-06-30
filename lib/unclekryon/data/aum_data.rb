@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -24,7 +23,7 @@ module UncleKryon
     attr_accessor :url
     attr_accessor :mirrors
 
-    def initialize()
+    def initialize
       super()
 
       @title = ''
@@ -39,18 +38,18 @@ module UncleKryon
     end
 
     # Excludes @updated_on
-    def ==(y)
-      return @title == y.title &&
-             @subtitle == y.subtitle &&
-             @languages == y.languages &&
-             @timespan == y.timespan &&
-             @filesize == y.filesize &&
-             @filename == y.filename &&
-             @url == y.url &&
-             @mirrors == y.mirrors
+    def ==(other)
+      return @title == other.title &&
+             @subtitle == other.subtitle &&
+             @languages == other.languages &&
+             @timespan == other.timespan &&
+             @filesize == other.filesize &&
+             @filename == other.filename &&
+             @url == other.url &&
+             @mirrors == other.mirrors
     end
 
-    def to_s()
+    def to_s
       s = ''
       s << ('%-40s' % [@title])
       s << (' | %30s' % [@subtitle])

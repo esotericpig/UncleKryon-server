@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -25,20 +24,20 @@ module UncleKryon
       @mins = 0
       @secs = 0
 
-      if !time.nil?() && !(time = time.strip()).empty?()
+      if !time.nil? && !(time = time.strip).empty?
         time = time.gsub(/\A[^\(]+\(/,'') # "One hour 6 minutes - (66 minutes)"
         time = time.gsub(/[^[[:digit:]]\:\.]+/,'')
         a = time.split(/[\:\.]/)
 
         if a.length == 1
-          @mins = a[0].to_i()
+          @mins = a[0].to_i
         elsif a.length == 2
-          @mins = a[0].to_i()
-          @secs = a[1].to_i()
+          @mins = a[0].to_i
+          @secs = a[1].to_i
         elsif a.length >= 3
-          @hours = a[0].to_i()
-          @mins = a[1].to_i()
-          @secs = a[2].to_i()
+          @hours = a[0].to_i
+          @mins = a[1].to_i
+          @secs = a[2].to_i
         end
 
         if @secs >= 60
@@ -52,7 +51,7 @@ module UncleKryon
       end
     end
 
-    def to_s()
+    def to_s
       return "#{@hours}:#{@mins}:#{@secs}"
     end
   end

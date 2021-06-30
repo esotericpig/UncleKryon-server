@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -10,9 +9,12 @@
 #++
 
 
-require 'bundler/setup'
-
 module UncleKryon
   class Server
+    # TODO: server
   end
+end
+
+if $PROGRAM_NAME == __FILE__
+  # Test here.
 end

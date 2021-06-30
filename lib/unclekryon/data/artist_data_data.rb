@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -40,7 +39,7 @@ module UncleKryon
     #attr_accessor :visions
     #attr_accessor :pics
 
-    def initialize()
+    def initialize
       super()
 
       @releases = {}
@@ -55,7 +54,7 @@ module UncleKryon
       filedata = YAML.load_file(filepath) if File.exist?(filepath)
       filedata = {} if !filedata
 
-      artist = ArtistDataData.new()
+      artist = ArtistDataData.new
       Util.hash_def(filedata,[ID],{})
       artist.releases = Util.hash_def(filedata,[ID,RELEASES_ID],artist.releases)
       artist.albums = Util.hash_def(filedata,[ID,ALBUMS_ID],artist.albums)
@@ -68,9 +67,9 @@ module UncleKryon
     end
 
     def save_to_file(filepath,**options)
-      raise "Empty filepath: #{filepath}" if filepath.nil?() || (filepath = filepath.strip()).empty?()
+      raise "Empty filepath: #{filepath}" if filepath.nil? || (filepath = filepath.strip).empty?
 
-      filedata = {ID=>{}}
+      filedata = {ID => {}}
       filedata[ID][RELEASES_ID] = @releases
       filedata[ID][ALBUMS_ID] = @albums
       #filedata[ID][AUMS_ID] = @aums
@@ -84,7 +83,7 @@ module UncleKryon
       end
     end
 
-    def max_updated_on()
+    def max_updated_on
       max = nil
       max = Util.safe_max(max,BaseData.max_updated_on(@releases))
       max = Util.safe_max(max,BaseData.max_updated_on(@albums))
@@ -96,7 +95,7 @@ module UncleKryon
       return Util.format_datetime(max)
     end
 
-    def to_mini_s()
+    def to_mini_s
       return to_s(true)
     end
 
@@ -104,12 +103,12 @@ module UncleKryon
       s = ''
 
       s << "- Releases:\n"
-      @releases.each() do |k,v|
-        s << "  - " << v.to_s(mini).gsub("\n","\n    ") << "\n"
+      @releases.each do |k,v|
+        s << '  - ' << v.to_s(mini).gsub("\n","\n    ") << "\n"
       end
       s << "- Albums:\n"
-      @albums.each() do |k,v|
-        s << "  - " << v.to_s(mini).gsub("\n","\n    ") << "\n"
+      @albums.each do |k,v|
+        s << '  - ' << v.to_s(mini).gsub("\n","\n    ") << "\n"
       end
 
       #s << "- Aums:\n"

@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -10,8 +9,6 @@
 #++
 
 
-require 'bundler/setup'
-
 require 'unclekryon/iso/base_iso'
 
 ##
@@ -19,7 +16,7 @@ require 'unclekryon/iso/base_iso'
 ##
 module UncleKryon
   class Subregion < BaseIso
-    def initialize()
+    def initialize
       super()
     end
   end
@@ -27,16 +24,16 @@ module UncleKryon
   class Subregions < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/subregions.yaml"
 
-    def initialize()
+    def initialize
       super()
     end
 
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return Subregions.new().load_file(filepath)
+      return Subregions.new.load_file(filepath)
     end
   end
 end
 
-if $0 == __FILE__
-  puts UncleKryon::Subregions.load_file().to_s()
+if $PROGRAM_NAME == __FILE__
+  puts UncleKryon::Subregions.load_file.to_s
 end

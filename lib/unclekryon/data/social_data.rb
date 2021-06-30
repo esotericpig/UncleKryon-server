@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -18,7 +17,7 @@ module UncleKryon
     attr_accessor :username
     attr_accessor :url
 
-    def initialize()
+    def initialize
       super()
 
       @username = ''

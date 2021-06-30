@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: UTF-8
 # frozen_string_literal: true
 
@@ -9,8 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
-require 'bundler/setup'
 
 require 'nokogiri'
 require 'open-uri'
@@ -48,15 +45,15 @@ module UncleKryon
 
         @names = @name
         @code = @alpha3_code
-        @codes = [@alpha3_code,@alpha2_code].compact().uniq()
+        @codes = [@alpha3_code,@alpha2_code].compact.uniq
       end
     end
 
-    def to_s()
-      s = '['.dup()
+    def to_s
+      s = '['.dup
       s << %Q("#{@name}","#{@names.join(';')}")
       s << %Q(,#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
-      s << %Q(,#{@region})
+      s << ",#{@region}"
       s << ']'
 
       return s
@@ -66,55 +63,56 @@ module UncleKryon
   class Countries < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/countries.yaml"
 
-    def initialize()
+    def initialize
       super()
     end
 
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      return Countries.new().load_file(filepath)
+      return Countries.new.load_file(filepath)
     end
 
-    # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML into local file
+    # @param parse_filepath [String] use web browser's developer tools to copy & paste table HTML
+    #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#search/code/
     def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
-      doc = Nokogiri::HTML(open(parse_filepath),nil,'utf-8')
+      doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       tds = doc.css('td')
 
-      countries = Countries.new()
+      countries = Countries.new
       i = 0
       tr = []
 
       tds.each do |td|
         c = td.content
         c.gsub!(/[[:space:]]+/,' ')
-        c.strip!()
+        c.strip!
         tr.push(c)
 
         if (i += 1) >= 5
           #puts tr.inspect()
           country = Country.new(tr)
-          raise "Country already exists: #{country.inspect()}" if countries.key?(country.code)
+          raise "Country already exists: #{country.inspect}" if countries.key?(country.code)
 
-          countries.values.each_value() do |v|
+          countries.values.each_value do |v|
             puts "Duplicate country names: #{v.name}" if v.name == country.name
           end
 
           countries[country.code] = country
-          tr.clear()
+          tr.clear
           i = 0
         end
       end
 
-      countries.sort_keys!()
+      countries.sort_keys!
       countries.save_to_file(save_filepath)
     end
   end
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   if ARGV.length < 1
-    puts UncleKryon::Countries.load_file().to_s()
+    puts UncleKryon::Countries.load_file.to_s
   else
     UncleKryon::Countries.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
       UncleKryon::Countries::DEFAULT_FILEPATH)
