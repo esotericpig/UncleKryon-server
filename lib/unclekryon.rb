@@ -248,7 +248,7 @@ module UncleKryon
       if do_cmd?
         log_opts
 
-        hacker = Hacker.new(@options)
+        hacker = Hacker.new(**@options)
 
         if @options[:train]
           if @options[:album]
