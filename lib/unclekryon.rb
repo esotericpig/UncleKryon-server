@@ -168,12 +168,12 @@ module UncleKryon
         op.banner = '<hax> options:'
 
         op.on('-d','--dir <dir>','Directory to save the hax data to' \
-            " (default: #{Hacker::HAX_DIRNAME})") do |dir|
+              " (default: #{Hacker::HAX_DIRNAME})") do |dir|
           @options[:hax_dirname] = dir
         end
         op.on('-t','--train','Train the data using machine learning')
         op.on('-i','--train-dir <dir>','Directory to save the training data to' \
-            " (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
+              " (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
           @options[:train_dirname] = dir
         end
         op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
@@ -204,11 +204,11 @@ module UncleKryon
         op.banner = '<kryon> options:'
 
         op.on('-f','--file <file>','File to save the hax data to' \
-            " (default: #{Hacker::HAX_KRYON_FILENAME})") do |file|
+              " (default: #{Hacker::HAX_KRYON_FILENAME})") do |file|
           @options[:hax_kryon_filename] = file
         end
         op.on('-t','--train-file <file>','File to save the training data to' \
-            " (default: #{Hacker::TRAIN_KRYON_FILENAME})") do |file|
+              " (default: #{Hacker::TRAIN_KRYON_FILENAME})") do |file|
           @options[:train_kryon_filename] = file
         end
       end
@@ -287,7 +287,7 @@ module UncleKryon
         op.banner = '<iso> options:'
 
         op.on('-d','--dir <dir>','Directory to read/write ISO data' \
-            " (default: #{BaseIsos::DEFAULT_DIR})") do |dir|
+              " (default: #{BaseIsos::DEFAULT_DIR})") do |dir|
           @options[:iso_dirname] = dir
         end
         op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
