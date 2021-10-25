@@ -3,25 +3,25 @@ PATH
   specs:
     unclekryon (0.4.11)
       nbayes (= 0.1.3)
-      nokogiri (~> 1.11)
+      nokogiri (~> 1.12)
 
 GEM
   remote: https://rubygems.org/
   specs:
     io-console (0.5.9)
-    irb (1.3.6)
-      reline (>= 0.2.5)
-    mini_portile2 (2.5.3)
+    irb (1.3.7)
+      reline (>= 0.2.7)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     nbayes (0.1.3)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
-    racc (1.5.2)
-    rake (13.0.3)
+    racc (1.6.0)
+    rake (13.0.6)
     raketeer (0.2.13)
       rake
-    reline (0.2.6)
+    reline (0.2.7)
       io-console (~> 0.5)
 
 PLATFORMS
@@ -36,4 +36,4 @@ DEPENDENCIES
   unclekryon!
 
 BUNDLED WITH
-   2.2.21
+   2.2.29
