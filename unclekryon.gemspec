@@ -44,25 +44,25 @@ Gem::Specification.new do |spec|
   # Uses exact version in case the author breaks something.
   # Please see the Gemfile for more details.
   spec.add_runtime_dependency 'nbayes'  ,'0.1.3'     # Training type of text (machine learning).
-  spec.add_runtime_dependency 'nokogiri','~> 1.12'   # Hacking HTML.
+  spec.add_runtime_dependency 'nokogiri','~> 1.13'   # Hacking HTML.
 
-  spec.add_development_dependency 'bundler' ,'~> 2.2'
-  spec.add_development_dependency 'irb'     ,'~> 1.3'   # IRB rake task.
-  spec.add_development_dependency 'minitest','~> 5.14'
+  spec.add_development_dependency 'bundler' ,'~> 2.3'
+  spec.add_development_dependency 'irb'     ,'~> 1.4'   # IRB rake task.
+  spec.add_development_dependency 'minitest','~> 5.15'
   spec.add_development_dependency 'rake'    ,'~> 13.0'
   spec.add_development_dependency 'raketeer','~> 0.2'   # Nokogiri & IRB rake tasks.
 
-  spec.post_install_message = <<-MSG
-
-  UncleKryon v#{UncleKryon::VERSION}
-
-  You can now use [#{spec.executables.join(', ')}] on the command line.
-
-  Homepage:  #{spec.homepage}
-
-  Code:      #{spec.metadata['source_code_uri']}
-  Changelog: #{spec.metadata['changelog_uri']}
-  Bugs:      #{spec.metadata['bug_tracker_uri']}
-
+  spec.post_install_message = <<~MSG
+    +=============================================================================+
+    | UncleKryon v#{UncleKryon::VERSION}
+    |
+    | You can now use [#{spec.executables.join(', ')}] on the command line.
+    |
+    | Homepage:  #{spec.homepage}
+    |
+    | Code:      #{spec.metadata['source_code_uri']}
+    | Changelog: #{spec.metadata['changelog_uri']}
+    | Bugs:      #{spec.metadata['bug_tracker_uri']}
+    +=============================================================================+
   MSG
 end
