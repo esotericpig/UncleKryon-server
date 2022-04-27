@@ -14,7 +14,7 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     nbayes (0.1.3)
-    nokogiri (1.13.3)
+    nokogiri (1.13.4)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     racc (1.6.0)
@@ -36,4 +36,4 @@ DEPENDENCIES
   unclekryon!
 
 BUNDLED WITH
-   2.3.8
+   2.3.12
