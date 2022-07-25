@@ -2,10 +2,7 @@
 # frozen_string_literal: true
 
 
-lib = File.expand_path(File.join('..','lib'),__FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-require 'unclekryon/version'
+require_relative 'lib/unclekryon/version'
 
 Gem::Specification.new do |spec|
   spec.name        = 'unclekryon'
@@ -24,6 +21,11 @@ Gem::Specification.new do |spec|
     'bug_tracker_uri' => 'https://github.com/esotericpig/UncleKryon-server/issues',
   }
 
+  spec.required_ruby_version = '>= 2.5.0'
+  spec.requirements = [
+    'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html',
+  ]
+
   spec.require_paths = ['lib']
   spec.bindir        = 'bin'
   spec.executables   = [spec.name]
@@ -36,21 +38,18 @@ Gem::Specification.new do |spec|
     %w[ LICENSE README.md ],
   ].flatten
 
-  spec.required_ruby_version = '>= 2.5.0'
-  spec.requirements = [
-    'Nokogiri: https://www.nokogiri.org/tutorials/installing_nokogiri.html',
-  ]
-
+  run_dep = spec.method(:add_runtime_dependency)
   # Uses exact version in case the author breaks something.
-  # Please see the Gemfile for more details.
-  spec.add_runtime_dependency 'nbayes'  ,'0.1.3'     # Training type of text (machine learning).
-  spec.add_runtime_dependency 'nokogiri','~> 1.13'   # Hacking HTML.
+  #   Please see the Gemfile for more details.
+  run_dep[ 'nbayes'  ,'0.1.3'   ] # Training type of text (machine learning).
+  run_dep[ 'nokogiri','~> 1.13' ] # Hacking HTML.
 
-  spec.add_development_dependency 'bundler' ,'~> 2.3'
-  spec.add_development_dependency 'irb'     ,'~> 1.4'   # IRB rake task.
-  spec.add_development_dependency 'minitest','~> 5.15'
-  spec.add_development_dependency 'rake'    ,'~> 13.0'
-  spec.add_development_dependency 'raketeer','~> 0.2'   # Nokogiri & IRB rake tasks.
+  dev_dep = spec.method(:add_development_dependency)
+  dev_dep[ 'bundler' ,'~> 2.3'  ]
+  dev_dep[ 'irb'     ,'~> 1.4'  ] # IRB rake task.
+  dev_dep[ 'minitest','~> 5.16' ]
+  dev_dep[ 'rake'    ,'~> 13.0' ]
+  dev_dep[ 'raketeer','~> 0.2'  ] # Nokogiri & IRB rake tasks.
 
   spec.post_install_message = <<~MSG
     +=============================================================================+
