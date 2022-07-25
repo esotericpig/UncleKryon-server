@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2021 Jonathan Bradley Whited
+# Copyright (c) 2017-2022 Jonathan Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
@@ -355,7 +355,7 @@ module UncleKryon
       updated_on = Util.format_datetime(updated_on)
 
       Dir.glob(File.join(dirname,'*.yaml')) do |filepath|
-        lines = IO.readlines(filepath)
+        lines = File.readlines(filepath)
         update_count = 0
 
         lines.each_with_index do |line,i|

@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2021 Jonathan Bradley Whited
+# Copyright (c) 2017-2022 Jonathan Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
@@ -198,7 +198,7 @@ module UncleKryon
 
       if !begin_album.nil?
         album_index = find_kryon_aum_year_album(artist,begin_album,year,index)[1]
-        albums = albums[album_index..-1]
+        albums = albums[album_index..]
       end
 
       albums.each do |album_id|
@@ -262,7 +262,7 @@ module UncleKryon
 
       if !begin_album.nil?
         album_index = find_kryon_aum_year_album(artist,begin_album,year,index)[1]
-        albums = albums[album_index..-1]
+        albums = albums[album_index..]
       end
 
       albums.each do |album_id|

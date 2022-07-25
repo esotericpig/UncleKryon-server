@@ -40,7 +40,7 @@ $ bundle exec rake -T
 [GNU GPL v3+](LICENSE)
 
 > UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
-> Copyright (c) 2017-2021 Jonathan Bradley Whited  
+> Copyright (c) 2017-2022 Jonathan Bradley Whited  
 > 
 > UncleKryon-server is free software: you can redistribute it and/or modify  
 > it under the terms of the GNU General Public License as published by  

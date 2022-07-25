@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2019-2021 Jonathan Bradley Whited
+# Copyright (c) 2019-2022 Jonathan Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
@@ -16,17 +16,10 @@ require 'unclekryon/iso/base_iso'
 ##
 module UncleKryon
   class Subregion < BaseIso
-    def initialize
-      super()
-    end
   end
 
   class Subregions < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/subregions.yaml"
-
-    def initialize
-      super()
-    end
 
     def self.load_file(filepath=DEFAULT_FILEPATH)
       return Subregions.new.load_file(filepath)

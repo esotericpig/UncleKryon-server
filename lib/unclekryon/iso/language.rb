@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018-2021 Jonathan Bradley Whited
+# Copyright (c) 2018-2022 Jonathan Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
@@ -110,10 +110,6 @@ module UncleKryon
 
   class Languages < BaseIsos
     DEFAULT_FILEPATH = "#{DEFAULT_DIR}/languages.yaml"
-
-    def initialize
-      super()
-    end
 
     def find_by_kryon(text,add_english: false,**options)
       langs = []

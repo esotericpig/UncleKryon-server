@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2017-2021 Jonathan Bradley Whited
+# Copyright (c) 2017-2022 Jonathan Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
@@ -147,10 +147,7 @@ module UncleKryon
       end
 
       Util.mk_dirs_from_filepath(@filepath)
-
-      File.open(@filepath,'w') do |f|
-        f.write(to_s)
-      end
+      File.write(@filepath,to_s)
     end
 
     def [](id)
