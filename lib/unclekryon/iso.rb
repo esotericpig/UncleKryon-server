@@ -265,7 +265,7 @@ module UncleKryon
     end
 
     def self.load_file(filepath=DEFAULT_FILEPATH)
-      y = YAML.load_file(filepath)
+      y = YAML.unsafe_load_file(filepath)
       iso = y[ID]
       return iso
     end

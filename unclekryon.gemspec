@@ -42,13 +42,13 @@ Gem::Specification.new do |spec|
   # Uses exact version in case the author breaks something.
   #   Please see the Gemfile for more details.
   run_dep[ 'nbayes'  ,'0.1.3'   ] # Training type of text (machine learning).
-  run_dep[ 'nokogiri','~> 1.13' ] # Hacking HTML.
+  run_dep[ 'nokogiri','~> 1.16' ] # Hacking HTML.
 
   dev_dep = spec.method(:add_development_dependency)
-  dev_dep[ 'bundler' ,'~> 2.3'  ]
-  dev_dep[ 'irb'     ,'~> 1.4'  ] # IRB rake task.
-  dev_dep[ 'minitest','~> 5.16' ]
-  dev_dep[ 'rake'    ,'~> 13.0' ]
+  dev_dep[ 'bundler' ,'~> 2.5'  ]
+  dev_dep[ 'irb'     ,'~> 1.14' ] # IRB rake task.
+  dev_dep[ 'minitest','~> 5.25' ]
+  dev_dep[ 'rake'    ,'~> 13.2' ]
   dev_dep[ 'raketeer','~> 0.2'  ] # Nokogiri & IRB rake tasks.
 
   spec.post_install_message = <<~MSG

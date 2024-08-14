@@ -125,7 +125,7 @@ module UncleKryon
       end
 
       if File.exist?(@filepath)
-        y = YAML.load_file(@filepath)
+        y = YAML.unsafe_load_file(@filepath)
 
         y.each do |id,trainer|
           if !@trainers.key?(id)

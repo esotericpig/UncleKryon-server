@@ -51,7 +51,7 @@ module UncleKryon
     end
 
     def self.load_file(filepath)
-      filedata = YAML.load_file(filepath) if File.exist?(filepath)
+      filedata = YAML.unsafe_load_file(filepath) if File.exist?(filepath)
       filedata = {} if !filedata
 
       artist = ArtistDataData.new

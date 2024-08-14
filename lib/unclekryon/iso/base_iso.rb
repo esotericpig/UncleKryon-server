@@ -128,7 +128,7 @@ module UncleKryon
     end
 
     def load_file(filepath)
-      y = YAML.load_file(filepath)
+      y = YAML.unsafe_load_file(filepath)
       @values.merge!(y[@id])
 
       return self

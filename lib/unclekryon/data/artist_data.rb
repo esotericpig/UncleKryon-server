@@ -63,7 +63,7 @@ module UncleKryon
     end
 
     def self.load_file(filepath)
-      y = YAML.load_file(filepath)
+      y = YAML.unsafe_load_file(filepath)
       artist = y[ID]
       return artist
     end
