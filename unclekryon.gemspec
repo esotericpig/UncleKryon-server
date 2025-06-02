@@ -7,7 +7,7 @@ require_relative 'lib/unclekryon/version'
 Gem::Specification.new do |spec|
   spec.name        = 'unclekryon'
   spec.version     = UncleKryon::VERSION
-  spec.authors     = ['Jonathan Bradley Whited']
+  spec.authors     = ['Bradley Whited']
   spec.email       = ['code@esotericpig.com']
   spec.licenses    = ['GPL-3.0-or-later']
   spec.homepage    = 'https://github.com/esotericpig/UncleKryon-server'

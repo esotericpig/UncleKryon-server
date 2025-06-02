@@ -13,11 +13,7 @@ Tasks include sending push notifications, building the database, and scraping th
 
 **Nokogiri:**
 
-- [Installing Nokogiri](https://www.nokogiri.org/tutorials/installing_nokogiri.html)
-    - Fedora / CentOS / Red Hat
-        - `$ sudo dnf install gcc ruby-devel zlib-devel`
-    - Ubuntu / Debian
-        - `$ sudo apt-get install build-essential libgmp-dev liblzma-dev patch ruby-dev zlib1g-dev`
+[Installing Nokogiri.](https://www.nokogiri.org/tutorials/installing_nokogiri.html)
 
 Alternatively, you can run one of the rake tasks:
 
@@ -40,7 +36,7 @@ $ bundle exec rake -T
 [GNU GPL v3+](LICENSE)
 
 > UncleKryon-server (https://github.com/esotericpig/UncleKryon-server)  
-> Copyright (c) 2017-2022 Jonathan Bradley Whited  
+> Copyright (c) 2017-2022 Bradley Whited  
 > 
 > UncleKryon-server is free software: you can redistribute it and/or modify  
 > it under the terms of the GNU General Public License as published by  

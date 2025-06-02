@@ -3,7 +3,7 @@
 
 #--
 # This file is part of UncleKryon-server.
-# Copyright (c) 2018-2022 Jonathan Bradley Whited
+# Copyright (c) 2018-2022 Bradley Whited
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
