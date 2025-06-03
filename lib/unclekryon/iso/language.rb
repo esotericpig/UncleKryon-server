@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nokogiri'
 require 'open-uri'
 require 'yaml'
@@ -31,7 +30,7 @@ module UncleKryon
     attr_reader :alpha3_code
     attr_reader :alpha3_code_b
 
-    def initialize(row=nil)
+    def initialize(row = nil)
       super()
 
       @names = nil
@@ -41,9 +40,9 @@ module UncleKryon
       @alpha3_code_b = nil
 
       if row.is_a?(Array)
-        @names = row[2].split(';').compact.uniq.map(&self.class.method(:fix_name))
+        @names = row[2].split(';').compact.uniq.map { |n| self.class.fix_name(n) }
         @alpha2_code = row[1].empty? ? nil : row[1]
-        @alpha3_code = row[0].split(/[[:space:]]*[\(\)][[:space:]]*/)
+        @alpha3_code = row[0].split(/[[:space:]]*[()][[:space:]]*/)
 
         if @alpha3_code.length <= 1
           @alpha3_code = row[0]
@@ -55,9 +54,7 @@ module UncleKryon
             c_up = c.upcase
 
             if c_up == 'B' || c_up == 'T'
-              if prev_was_tag
-                raise "Invalid alpha-3 code for: #{@names},#{@alpha2_code},#{@alpha3_code}"
-              end
+              raise "Invalid alpha-3 code for: #{@names},#{@alpha2_code},#{@alpha3_code}" if prev_was_tag
 
               case c_up
               when 'B'
@@ -81,7 +78,7 @@ module UncleKryon
         end
 
         @name = @names[0]
-        #@names = @names
+        # @names = @names
         @code = @alpha3_code
         @codes = [@alpha3_code,@alpha3_code_b,@alpha2_code].compact.uniq
       end
@@ -89,18 +86,18 @@ module UncleKryon
 
     # @see Languages.parse_and_save_to_file(...)
     def ==(other)
-      return super(other) &&
-        @names == other.names &&
-        @codes == other.codes &&
-        @alpha2_code == other.alpha2_code &&
-        @alpha3_code == other.alpha3_code &&
-        @alpha3_code_b == other.alpha3_code_b
+      return super &&
+             @names == other.names &&
+             @codes == other.codes &&
+             @alpha2_code == other.alpha2_code &&
+             @alpha3_code == other.alpha3_code &&
+             @alpha3_code_b == other.alpha3_code_b
     end
 
     def to_s
       s = '['.dup
-      s << %Q("#{@name}","#{@names.join(';')}",)
-      s << %Q(#{@code},"#{@codes.join(';')}",)
+      s << %("#{@name}","#{@names.join(';')}",)
+      s << %(#{@code},"#{@codes.join(';')}",)
       s << "#{@alpha2_code},#{@alpha3_code},#{@alpha3_code_b}"
       s << ']'
 
@@ -109,13 +106,13 @@ module UncleKryon
   end
 
   class Languages < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/languages.yaml"
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/languages.yaml".freeze
 
-    def find_by_kryon(text,add_english: false,**options)
+    def find_by_kryon(text,add_english: false,**_options)
       langs = []
       regexes = [
-        %r{[[:space:]]*[/\+][[:space:]]*}, # Multiple languages are usually separated by '/'
-        /[[:space:]]+/                    # Sometimes separated by space/newline
+        %r{[[:space:]]*[/+][[:space:]]*}, # Multiple languages are usually separated by '/'
+        /[[:space:]]+/,                   # Sometimes separated by space/newline
       ]
 
       regexes.each_with_index do |regex,i|
@@ -125,7 +122,7 @@ module UncleKryon
           # Fix misspellings and/or weird shortenings
           t = t.clone
           t.gsub!(/\AFRENC\z/i,'French')
-          t.gsub!(/[\+\*]+/,'') # Means more languages, but won't worry about it (since not listed)
+          t.gsub!(/[+*]+/,'') # Means more languages, but won't worry about it (since not listed)
           t.gsub!(/\ASPAN\z/i,'Spanish')
           t.gsub!(/\AENGLSH\z/i,'English')
           t.gsub!(/\AHUNGARY\z/i,'Hungarian')
@@ -160,14 +157,12 @@ module UncleKryon
 
       eng_code = find_by_code('eng').code
 
-      if add_english && !langs.include?(eng_code)
-        langs.push(eng_code)
-      end
+      langs.push(eng_code) if add_english && !langs.include?(eng_code)
 
       return langs.empty? ? nil : langs
     end
 
-    def self.load_file(filepath=DEFAULT_FILEPATH)
+    def self.load_file(filepath = DEFAULT_FILEPATH)
       return Languages.new.load_file(filepath)
     end
 
@@ -175,7 +170,7 @@ module UncleKryon
     #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   http://www.loc.gov/standards/iso639-2/php/code_list.php
-    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath = DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       tds = doc.css('td')
 
@@ -190,7 +185,7 @@ module UncleKryon
         tr.push(c)
 
         if (i += 1) >= 5
-          #puts tr.inspect()
+          # puts tr.inspect()
 
           add_it = true
           lang = Language.new(tr)
@@ -218,10 +213,11 @@ module UncleKryon
 end
 
 if $PROGRAM_NAME == __FILE__
-  if ARGV.length < 1
-    puts UncleKryon::Languages.load_file.to_s
+  if ARGV.empty?
+    puts UncleKryon::Languages.load_file
   else
-    UncleKryon::Languages.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
-      UncleKryon::Languages::DEFAULT_FILEPATH)
+    UncleKryon::Languages.parse_and_save_to_file(
+      ARGV[0],(ARGV.length >= 2) ? ARGV[1] : UncleKryon::Languages::DEFAULT_FILEPATH
+    )
   end
 end

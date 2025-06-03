@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nokogiri'
 require 'open-uri'
 
@@ -37,8 +36,8 @@ module UncleKryon
 
     alias_method :training?,:training
 
-    def initialize(artist=nil,url=nil,album: nil,training: false,train_filepath: nil,updated_on: nil,
-          **options)
+    def initialize(artist = nil,url = nil,album: nil,training: false,train_filepath: nil,updated_on: nil,
+                   **options)
       @album = album
       @artist = artist
       @options = options
@@ -71,17 +70,17 @@ module UncleKryon
       })
     end
 
-    def parse_site(artist=nil,url=nil)
+    def parse_site(artist = nil,url = nil)
       @artist = artist unless artist.nil?
       @url = url unless url.nil?
 
       # URLs that return 404 or are empty; fix by hand
       exclude_urls = %r{
-        awakeningzone\.com/Episode\.aspx\?EpisodeID\=|
-        www\.talkshoe\.com/talkshoe/web/audioPop\.jsp\?episodeId\=
+        awakeningzone\.com/Episode\.aspx\?EpisodeID=|
+        www\.talkshoe\.com/talkshoe/web/audioPop\.jsp\?episodeId=
       }ix
 
-      if @url =~ exclude_urls
+      if @url&.match?(exclude_urls)
         log.warn("Excluding Album URL #{@url}")
         return
       end
@@ -117,9 +116,7 @@ module UncleKryon
       @album.updated_on = @updated_on
       @album.url = @url
 
-      if old_album.nil?
-        @artist.albums[@url] = @album
-      end
+      @artist.albums[@url] = @album if old_album.nil?
 
       parse_dump(doc,@album) # Must be first because other methods rely on @local_dump
 
@@ -128,9 +125,7 @@ module UncleKryon
       parse_pics(doc,@album)
       parse_aums(doc,@album)
 
-      if @album == old_album
-        @album.updated_on = old_album.updated_on
-      end
+      @album.updated_on = old_album.updated_on if @album == old_album
 
       @artist.albums[@url] = @album
 
@@ -154,17 +149,15 @@ module UncleKryon
         }ix
 
         next if href.nil? || href.empty?
-        next if href !~ audio_file_regex
-        next if href =~ exclude_links
+        next if !href&.match?(audio_file_regex)
+        next if href&.match?(exclude_links)
 
         aum = AumData.new
         aum.url = Util.clean_data(href)
         aum.filename = Util.parse_url_filename(aum.url)
         aum.updated_on = @updated_on
 
-        if aum.url =~ %r{\A\.\.?/}
-          aum.url = Util.clean_link(@url,aum.url)
-        end
+        aum.url = Util.clean_link(@url,aum.url) if %r{\A\.\.?/}.match?(aum.url)
 
         # Filesize
         if !DevOpts.instance.test?
@@ -211,11 +204,11 @@ module UncleKryon
 
           log.warn(msg)
 
-          #if DevOpts.instance.dev?()
+          # if DevOpts.instance.dev?()
           #  raise "#{msg}:\n#{@local_dump}\n#{album.dump}"
-          #else
+          # else
           #  log.warn(msg)
-          #end
+          # end
         end
 
         # Filesize, if not set
@@ -245,19 +238,19 @@ module UncleKryon
 
       filename_regex = /\.mp3[[:space:]]*\z/i
       # 2017 "Petra, Jordan (5)" has a ":" in the megabytes cell
-      size_regex = /\A[[:space:]]*[[:digit:]]+(\.|\:|[[:digit:]]|[[:space:]])*megabytes[[:space:]]*\z/i
+      size_regex = /\A[[:space:]]*[[:digit:]]+(\.|:|[[:digit:]]|[[:space:]])*megabytes[[:space:]]*\z/i
       # 2017 "Monument Valley Tour (11)" has a "." in the minutes cell
       # 2017 "SUMMER LIGHT CONFERENCE PANEL (1)" is a special case ("One hour 6 minutes - (66 minutes)")
       time_regex = /
-        \A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*(minutes|Min)[[:space:]]*\z|
+        \A[[:space:]]*[[:digit:]]+(:|\.|[[:digit:]]|[[:space:]])*(minutes|Min)[[:space:]]*\z|
         \([[:space:]]*[[:digit:]]+[[:space:]]+minutes[[:space:]]*\)[[:space:]]*\z
       /ix
       # 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" doesn't have the word "megabytes"
-      time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(\:|\.|[[:digit:]]|[[:space:]])*\z/i
+      time_or_size_regex = /\A[[:space:]]*[[:digit:]]+(:|\.|[[:digit:]]|[[:space:]])*\z/i
       # 2015 ones have a lot of "13:12 Min - 15.9 megs"
       time_and_size_regex = /\A
-        [[:space:]]*[[:digit:]]+[\:\.][[:digit:]]+
-        [[:space:]]+Min[[:space:]]+\-
+        [[:space:]]*[[:digit:]]+[:.][[:digit:]]+
+        [[:space:]]+Min[[:space:]]+-
         [[:space:]]+[[:digit:]]+\.?[[:digit:]]*[[:space:]]*megs
       /xi
 
@@ -272,22 +265,22 @@ module UncleKryon
         c = Util.clean_data(orig_c)
 
         next if c.empty?
-        #if c =~ exclude_content_regex
+        # if c =~ exclude_content_regex
         #  log.warn("Excluding content: #{c}")
         #  next
-        #end
+        # end
 
         add_to_dump = true
 
-        if c =~ time_regex
+        if c&.match?(time_regex)
           @local_dump[:aum_timespan].push(TimespanData.new(c).to_s)
           add_to_dump = false
           time_count += 1
-        elsif c =~ size_regex
+        elsif c&.match?(size_regex)
           @local_dump[:aum_filesize].push(c)
           add_to_dump = false
           size_count += 1
-        elsif c =~ time_or_size_regex
+        elsif c&.match?(time_or_size_regex)
           # Time is usually before size
           if time_count == size_count
             @local_dump[:aum_timespan].push(TimespanData.new(c).to_s)
@@ -298,8 +291,8 @@ module UncleKryon
           end
 
           add_to_dump = false
-        elsif c =~ time_and_size_regex
-          time_and_size = c.split(/[[:space:]]*\-[[:space:]]*/) # Split on '-'
+        elsif c&.match?(time_and_size_regex)
+          time_and_size = c.split(/[[:space:]]*-[[:space:]]*/) # Split on '-'
 
           @local_dump[:aum_timespan].push(TimespanData.new(time_and_size[0]).to_s)
           time_count += 1
@@ -307,7 +300,7 @@ module UncleKryon
           size_count += 1
 
           add_to_dump = false
-        elsif c =~ filename_regex
+        elsif c&.match?(filename_regex)
           @local_dump[:aums] += 1
           add_to_dump = false
         else
@@ -328,34 +321,28 @@ module UncleKryon
                 end
               end
             else
-              #has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
+              # has_header = @local_dump[:album_title] || @local_dump[:album_dates] ||
               #  @local_dump[:album_locations] || @local_dump[:album_mini_desc] ||
               #  @local_dump[:album_main_desc]
               has_header = true
               tag = @trainers['aum_year_album'].tag(par)
 
               # For 2017 "RETURN TO LEMURIA (7)"
-              if par =~ /\A[[:space:]]*MEDITATION[[:space:]]+-
+              if /\A[[:space:]]*MEDITATION[[:space:]]+-
                            [[:space:]]+Kalei[[:space:]]+-
                            [[:space:]]+John[[:space:]]+-
-                           [[:space:]]+Amber[[:space:]]*\z/xi
+                           [[:space:]]+Amber[[:space:]]*\z/xi.match?(par)
                 tag = 'aum_title'
                 log.warn("Changing tag to aum_title: #{Util.clean_data(par)}")
               end
 
               case tag
               when 'album_title'
-                if !@local_dump[:album_title]
-                  @local_dump[:album_title] = true
-                end
+                @local_dump[:album_title] = true if !@local_dump[:album_title]
               when 'album_dates'
-                if !@local_dump[:album_dates]
-                  @local_dump[:album_dates] = true
-                end
+                @local_dump[:album_dates] = true if !@local_dump[:album_dates]
               when 'album_locations'
-                if !@local_dump[:album_locations]
-                  @local_dump[:album_locations] = true
-                end
+                @local_dump[:album_locations] = true if !@local_dump[:album_locations]
               when 'album_mini_desc'
                 par.split(/\n+/).each do |p|
                   p = Util.clean_data(p)
@@ -411,13 +398,13 @@ module UncleKryon
                     @local_dump[:aum_title].push(Util.clean_data(par))
 
                     # Special case for 2017 "LISBON, PORTUGAL (Fatima Tour) (3)"
-                    if par =~ /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/i
+                    if /\A[[:space:]]*Lisbon[[:space:]]+Channeling[[:space:]]+1[[:space:]]*\z/i.match?(par)
                       @local_dump[:aum_title].push('Lisbon Channeling 2')
                       @local_dump[:aum_title].push('Lisbon Channeling 3')
                       log.warn("Adding aum_titles for: #{Util.clean_data(par)}")
                     end
                     # For 2017 "KRYON INDIA-NEPAL TOUR PART 1 (10)" & "KRYON INDIA-NEPAL TOUR PART 2 (8)"
-                    if par =~ /\A[[:space:]]*PAGE[[:space:]]*(ONE|TWO)[[:space:]]*\z/i
+                    if /\A[[:space:]]*PAGE[[:space:]]*(ONE|TWO)[[:space:]]*\z/i.match?(par)
                       p = @local_dump[:aum_title].pop
                       log.warn("Ignoring aum title: #{p}")
                     end
@@ -436,7 +423,7 @@ module UncleKryon
           album.dump.push(c)
 
           # For now, don't do this; if the font size is big, it's bad for mobile anyway
-          #album.dump.push(Util.clean_data(td.to_s())) # For bold, etc. html
+          # album.dump.push(Util.clean_data(td.to_s())) # For bold, etc. html
         end
       end
     end
@@ -451,10 +438,10 @@ module UncleKryon
         freedownloadtype\.gif|
         handani\.gif|
         Kryonglobe\.jpg|
-        MP3\-download\.jpg|
-        MP3\-graphic\(SM\)\.jpg|
-        NavMenu\_AUDIOmaster\.png|
-        NavMenu\_master\.png|
+        MP3-download\.jpg|
+        MP3-graphic\(SM\)\.jpg|
+        NavMenu_AUDIOmaster\.png|
+        NavMenu_master\.png|
         testimonials\.png
       /ix
 
@@ -464,7 +451,7 @@ module UncleKryon
         src = img['src']
 
         next if src.nil? || src.empty?
-        if src =~ exclude_imgs
+        if src&.match?(exclude_imgs)
           log.warn("Excluding image: #{src}")
           next
         end

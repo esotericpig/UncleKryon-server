@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 IS_SCRIPT = ($PROGRAM_NAME == __FILE__)
 
 if IS_SCRIPT
@@ -52,10 +51,10 @@ require 'unclekryon/parsers/kryon_aum_year_parser'
 
 module UncleKryon
   class Main
-    OPT_HELP_UPDATED_ON = 'Change all "updated_*on" datetimes to <datetime>' \
-                          " (e.g., #{Util.format_datetime(DateTime.now)})"
-
     include Logging
+
+    OPT_HELP_UPDATED_ON = 'Change all "updated_*on" datetimes to <datetime> ' \
+                          "(e.g., #{Util.format_datetime(DateTime.now)})".freeze
 
     def initialize(args)
       @args = args
@@ -86,10 +85,11 @@ module UncleKryon
         op.on('-n','--no-clobber','No clobbering of files, dry run; prints to console') do
           @options[:no_clobber] = true
         end
-        op.on('-h','--help','Print help to console')
         op.on('-t','--test','Fill in training data with random values, etc. for fast testing') do
           DevOpts.instance.test = true
         end
+
+        op.on('-h','--help','Print help to console')
         op.on('-v','--version','Print version to console') do
           puts "#{op.program_name} v#{op.version}"
           exit
@@ -167,13 +167,13 @@ module UncleKryon
       parser = OptionParser.new do |op|
         op.banner = '<hax> options:'
 
-        op.on('-d','--dir <dir>','Directory to save the hax data to' \
-              " (default: #{Hacker::HAX_DIRNAME})") do |dir|
+        op.on('-d','--dir <dir>','Directory to save the hax data to ' \
+                                 "(default: #{Hacker::HAX_DIRNAME})") do |dir|
           @options[:hax_dirname] = dir
         end
         op.on('-t','--train','Train the data using machine learning')
-        op.on('-i','--train-dir <dir>','Directory to save the training data to' \
-              " (default: #{Hacker::TRAIN_DIRNAME})") do |dir|
+        op.on('-i','--train-dir <dir>','Directory to save the training data to ' \
+                                       "(default: #{Hacker::TRAIN_DIRNAME})") do |dir|
           @options[:train_dirname] = dir
         end
         op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
@@ -183,18 +183,14 @@ module UncleKryon
 
       add_parser(parser)
 
-      if do_cmd?
-        if @options[:updated_on]
-          hax_dirname = @options[:hax_dirname] || Hacker::HAX_DIRNAME
-          gsub_updated_on(hax_dirname,@options[:updated_on])
+      if do_cmd? && @options[:updated_on]
+        hax_dirname = @options[:hax_dirname] || Hacker::HAX_DIRNAME
+        gsub_updated_on(hax_dirname,@options[:updated_on])
 
-          @did_cmd = true
-        end
+        @did_cmd = true
       end
 
-      if shift_args
-        parse_hax_kryon_cmd
-      end
+      parse_hax_kryon_cmd if shift_args
     end
 
     def parse_hax_kryon_cmd
@@ -203,29 +199,25 @@ module UncleKryon
       parser = OptionParser.new do |op|
         op.banner = '<kryon> options:'
 
-        op.on('-f','--file <file>','File to save the hax data to' \
-              " (default: #{Hacker::HAX_KRYON_FILENAME})") do |file|
+        op.on('-f','--file <file>','File to save the hax data to ' \
+                                   "(default: #{Hacker::HAX_KRYON_FILENAME})") do |file|
           @options[:hax_kryon_filename] = file
         end
-        op.on('-t','--train-file <file>','File to save the training data to' \
-              " (default: #{Hacker::TRAIN_KRYON_FILENAME})") do |file|
+        op.on('-t','--train-file <file>','File to save the training data to ' \
+                                         "(default: #{Hacker::TRAIN_KRYON_FILENAME})") do |file|
           @options[:train_kryon_filename] = file
         end
       end
 
       add_parser(parser)
 
-      if shift_args
-        parse_hax_kryon_aum_cmd
-      end
+      parse_hax_kryon_aum_cmd if shift_args
     end
 
     def parse_hax_kryon_aum_cmd
       return if !cmd?('aum')
 
-      if shift_args
-        parse_hax_kryon_aum_year_cmd
-      end
+      parse_hax_kryon_aum_year_cmd if shift_args
     end
 
     def parse_hax_kryon_aum_year_cmd
@@ -286,8 +278,8 @@ module UncleKryon
       parser = OptionParser.new do |op|
         op.banner = '<iso> options:'
 
-        op.on('-d','--dir <dir>','Directory to read/write ISO data' \
-              " (default: #{BaseIsos::DEFAULT_DIR})") do |dir|
+        op.on('-d','--dir <dir>','Directory to read/write ISO data ' \
+                                 "(default: #{BaseIsos::DEFAULT_DIR})") do |dir|
           @options[:iso_dirname] = dir
         end
         op.on('-u','--updated-on <datetime>',OPT_HELP_UPDATED_ON) do |datetime|
@@ -297,18 +289,14 @@ module UncleKryon
 
       add_parser(parser)
 
-      if do_cmd?
-        if @options[:updated_on]
-          iso_dirname = @options[:iso_dirname] || BaseIsos::DEFAULT_DIR
-          gsub_updated_on(iso_dirname,@options[:updated_on])
+      if do_cmd? && @options[:updated_on]
+        iso_dirname = @options[:iso_dirname] || BaseIsos::DEFAULT_DIR
+        gsub_updated_on(iso_dirname,@options[:updated_on])
 
-          @did_cmd = true
-        end
+        @did_cmd = true
       end
 
-      if shift_args
-        parse_iso_list_cmd
-      end
+      parse_iso_list_cmd if shift_args
     end
 
     def parse_iso_list_cmd
@@ -359,7 +347,7 @@ module UncleKryon
         update_count = 0
 
         lines.each_with_index do |line,i|
-          if line =~ /\A\s*updated\_.*on\:.*\Z/i
+          if line.match?(/\A\s*updated_.*on:.*\Z/i)
             line = line.split(':')[0] << ": '#{updated_on}'"
             lines[i] = line
             update_count += 1
@@ -372,7 +360,7 @@ module UncleKryon
           end
         end
 
-        puts %Q("#{filepath}" updated_on: #{update_count})
+        puts %("#{filepath}" updated_on: #{update_count})
       end
     end
   end

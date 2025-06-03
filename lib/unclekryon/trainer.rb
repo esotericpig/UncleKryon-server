@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nbayes'
 
 require 'unclekryon/dev_opts'
@@ -33,7 +32,7 @@ module UncleKryon
       return tokens
     end
 
-    def initialize(tags={})
+    def initialize(tags = {})
       @max_tag_id_length = 0
       @max_tag_length = 0
       @tags = tags
@@ -64,9 +63,9 @@ module UncleKryon
       puts '# Training Tags #'
       puts '#################'
 
-      tf = '%%%is = %%%is' % [@max_tag_id_length,@max_tag_length]
+      tf = format('%%%is = %%%is',@max_tag_id_length,@max_tag_length)
       @tags.each do |id,tag|
-        puts tf % [id,tag]
+        puts format(tf,id,tag)
       end
       puts "<Enter> = Guess: #{guess_tag}"
 
@@ -114,7 +113,7 @@ module UncleKryon
     attr_accessor :filepath
     attr_accessor :trainers
 
-    def initialize(filepath=nil)
+    def initialize(filepath = nil)
       @filepath = filepath
       @trainers = {}
     end
@@ -198,9 +197,11 @@ if $PROGRAM_NAME == __FILE__
     puts "tea    => #{ts['tea'].tag(txt)}"
   else
     ts['coffee'] = UncleKryon::Trainer.new(
-      {'b' => 'black','c' => 'cappuccino','l' => 'latte'})
+      {'b' => 'black','c' => 'cappuccino','l' => 'latte'}
+    )
     ts['tea'] = UncleKryon::Trainer.new(
-      {'g' => 'green','r' => 'red','w' => 'white'})
+      {'g' => 'green','r' => 'red','w' => 'white'}
+    )
 
     ctx.each do |v|
       ts['coffee'].train(v)

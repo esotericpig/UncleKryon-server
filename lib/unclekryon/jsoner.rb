@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'json'
 require 'yaml'
 
@@ -20,20 +19,20 @@ require 'unclekryon/data/artist_data_data'
 
 module UncleKryon
   class Jsoner
-    def jsonify_all(pretty=false)
+    def jsonify_all(pretty = false)
       json = {}
 
-      #jsonify_iso(json)
+      # jsonify_iso(json)
       jsonify_artists(json)
 
       return pretty ? JSON.pretty_generate(json) : json.to_json
     end
 
     def jsonify_artists(json)
-      json['aum'] = {}
-      json['scroll'] = {}
-      json['vision'] = {}
-      json['pic'] = {}
+      json[ArtistDataData::AUMS_ID] = {}
+      json[ArtistDataData::SCROLLS_ID] = {}
+      json[ArtistDataData::VISIONS_ID] = {}
+      json[ArtistDataData::PICS_ID] = {}
 
       kryon = to_hash(ArtistData.load_file(File.join('hax','kryon.yaml')))
 
@@ -43,14 +42,14 @@ module UncleKryon
       jsonify_artist_data(json,kryon,File.join('hax','kryon_aums_2002-2005.yaml'))
 
       json['artist'] = {
-        kryon['id'] => kryon
+        kryon['id'] => kryon,
       }
     end
 
     def jsonify_artist_data(json,artist,file)
       data = ArtistDataData.load_file(file)
 
-      data.albums.each do |album_id,album|
+      data.albums.each do |_album_id,album|
         album.aums.each do |aum_id,aum|
           json[ArtistDataData::AUMS_ID][aum_id] = to_hash(aum)
         end
@@ -64,8 +63,8 @@ module UncleKryon
 
       artist[ArtistDataData::ALBUMS_ID] = to_hash(data.albums)
 
-      #attr_accessor :scrolls
-      #attr_accessor :visions
+      # attr_accessor :scrolls
+      # attr_accessor :visions
     end
 
     def jsonify_iso(json)
@@ -81,7 +80,7 @@ module UncleKryon
     def to_hash(obj)
       hash = {}
 
-      if obj.respond_to?(:instance_variables) && obj.instance_variables.length > 0
+      if obj.respond_to?(:instance_variables) && !obj.instance_variables.empty?
         obj.instance_variables.each do |var|
           hash[var.to_s.delete('@')] = to_hash(obj.instance_variable_get(var))
         end

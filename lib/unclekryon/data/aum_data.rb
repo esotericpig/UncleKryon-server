@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'unclekryon/data/base_data'
 
 module UncleKryon
@@ -24,7 +23,7 @@ module UncleKryon
     attr_accessor :mirrors
 
     def initialize
-      super()
+      super
 
       @title = ''
       @subtitle = ''
@@ -51,12 +50,12 @@ module UncleKryon
 
     def to_s
       s = ''
-      s << ('%-40s' % [@title])
-      s << (' | %30s' % [@subtitle])
-      s << (' | %10s' % [@languages.join(';')])
-      s << (' | %10s' % [@timespan])
-      s << (' | %10s' % [@filesize])
-      s << (' | %30s' % [@filename])
+      s << format('%-40s', @title)
+      s << format(' | %30s', @subtitle)
+      s << format(' | %10s', @languages.join(';'))
+      s << format(' | %10s', @timespan)
+      s << format(' | %10s', @filesize)
+      s << format(' | %30s', @filename)
       return s
     end
   end

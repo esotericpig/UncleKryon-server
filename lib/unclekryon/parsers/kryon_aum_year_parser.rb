@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'date'
 require 'nokogiri'
 require 'open-uri'
@@ -37,8 +36,8 @@ module UncleKryon
 
     alias_method :training?,:training
 
-    def initialize(title=nil,url=nil,artist=ArtistDataData.new(),training: false,train_filepath: nil,
-          updated_on: nil,**options)
+    def initialize(title = nil,url = nil,artist = ArtistDataData.new(),training: false,train_filepath: nil,
+                   updated_on: nil,**_options)
       @artist = artist
       @exclude_album = false
       @title = title
@@ -48,14 +47,14 @@ module UncleKryon
       @url = Util.empty_s?(url) ? self.class.get_kryon_year_url(title) : url
     end
 
-    def self.parse_kryon_date(date,year=nil)
+    def self.parse_kryon_date(date,year = nil)
       # Don't modify args and clean them up so can use /\s/ instead of /[[:space:]]/
       date = Util.clean_data(date.clone)
       year = Util.clean_data(year.clone)
 
       # Fix misspellings and/or weird shortenings
       date.gsub!(/Feburary/i,'February') # "Feburary 2-13, 2017"
-      date.gsub!(/SEPT(\s+|\-)/i,'Sep\1') # "SEPT 29 - OCT 9, 2017", "Sept-Oct 2015"
+      date.gsub!(/SEPT(\s+|-)/i,'Sep\1') # "SEPT 29 - OCT 9, 2017", "Sept-Oct 2015"
       date.gsub!(/Septembe\s+/i,'September ') # "Septembe 4, 2016"
       date.gsub!(/Ocotber/i,'October') # "Ocotber 10, 2015"
 
@@ -66,19 +65,19 @@ module UncleKryon
         if date.include?('-')
           case date
           # "Sept-Oct 2015"
-          when /\A[[:alpha:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
+          when /\A[[:alpha:]]+\s*-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
             r[1] = Date.strptime(date,'%b-%b %Y')
             r[0] = Date.strptime(date,'%b')
             r[0] = Date.new(r[1].year,r[0].month,r[0].day)
           # "4/28/12 - 4/29/12"
-          when %r{\A[[:digit:]]+\s*/\s*[[:digit:]]+\s*/\s*[[:digit:]]+\s*\-}
+          when %r{\A[[:digit:]]+\s*/\s*[[:digit:]]+\s*/\s*[[:digit:]]+\s*-}
             date = date.split(/\s*-\s*/)
 
             r[0] = Date.strptime(date[0],'%m/%d/%y')
             r[1] = Date.strptime(date[1],'%m/%d/%y')
           # "10-17 to 11-18, 2012"
-          when /\A[[:digit:]]+\s*\-\s*[[:digit:]]+\s+to\s+
-                  [[:digit:]]+\s*\-\s*[[:digit:]]+\s*,\s*
+          when /\A[[:digit:]]+\s*-\s*[[:digit:]]+\s+to\s+
+                  [[:digit:]]+\s*-\s*[[:digit:]]+\s*,\s*
                   [[:digit:]]+\z/xi
             date = date.split(/\s*to\s*/i)
 
@@ -88,12 +87,12 @@ module UncleKryon
           else
             case date
             # "SEPT 29 - OCT 9, 2017", "May 31-June 1, 2014"
-            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+[\,\s]+[[:digit:]]+\z/
-              date = date.gsub(/\s*\-\s*/,'-')
+            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*-\s*[[:alpha:]]+\s+[[:digit:]]+[,\s]+[[:digit:]]+\z/
+              date = date.gsub(/\s*-\s*/,'-')
               r1f = "%B %d-%B %d#{comma} %Y"
             # "OCT 25 - NOV 3" (2014)
-            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
-              date = date.gsub(/\s*\-\s*/,'-')
+            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*-\s*[[:alpha:]]+\s+[[:digit:]]+\z/
+              date = date.gsub(/\s*-\s*/,'-')
               r1f = '%B %d-%B %d'
 
               if !year.nil?
@@ -101,11 +100,11 @@ module UncleKryon
                 r1f << ', %Y'
               end
             # "December 12-13"
-            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
-              date = date.gsub(/\s*\-\s*/,'-')
+            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*-\s*[[:digit:]]+\z/
+              date = date.gsub(/\s*-\s*/,'-')
 
               # "September 16 - 2018"
-              if date =~ /-[[:digit:]]{4}\z/
+              if /-[[:digit:]]{4}\z/.match?(date)
                 r1f = '%B %d-%Y'
               else
                 r1f = '%B %d-%d'.dup
@@ -116,21 +115,21 @@ module UncleKryon
                 end
               end
             # "June 30-July 1-2018"
-            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*\-\s*
-                             [[:alpha:]]+\s+[[:digit:]]+\s*\-\s*
+            when /\A[[:alpha:]]+\s+[[:digit:]]+\s*-\s*
+                             [[:alpha:]]+\s+[[:digit:]]+\s*-\s*
                              [[:digit:]]+\z/x
-              date = date.gsub(/\s*\-\s*/,'-')
+              date = date.gsub(/\s*-\s*/,'-')
               r1f = '%B %d-%B %d-%Y'
             # "September 7 & 9-2018"
-            when /\A[[:alpha:]]+\s+[[:digit:]]+\s+\&\s+[[:digit:]]+\s*\-\s*[[:digit:]]+\z/
-              date = date.gsub(/\s*\-\s*/,'-')
+            when /\A[[:alpha:]]+\s+[[:digit:]]+\s+&\s+[[:digit:]]+\s*-\s*[[:digit:]]+\z/
+              date = date.gsub(/\s*-\s*/,'-')
               r1f = '%B %d & %d-%Y'
             else
               # "OCT 27 - 28 - 29, 2017"; remove spaces around dashes
-              date.gsub!(/\s+\-\s+/,'-')
+              date.gsub!(/\s+-\s+/,'-')
 
               # "June 7-9-16-17" & "June 9-10-11-12"
-              if date =~ /\A[[:alpha:]]+\s*[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\-[[:digit:]]+\z/
+              if /\A[[:alpha:]]+\s*[[:digit:]]+-[[:digit:]]+-[[:digit:]]+-[[:digit:]]+\z/.match?(date)
                 r1f = '%B %d-%d-%d-%d'
 
                 if !year.nil?
@@ -139,7 +138,7 @@ module UncleKryon
                 end
               else
                 # "MAY 15-16-17, 2017" and "January 7-8, 2017"
-                r1f = (date =~ /\-.*\-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
+                r1f = (date =~ /-.*-/) ? "%B %d-%d-%d#{comma} %Y" : "%B %d-%d#{comma} %Y"
               end
             end
 
@@ -149,7 +148,7 @@ module UncleKryon
           end
         elsif date.include?('/')
           # "1/7/2012"
-          if date =~ %r{\A[[:digit:]]+\s*/\s*[[:digit:]]+\s*/\s*[[:digit:]]+\z}
+          if %r{\A[[:digit:]]+\s*/\s*[[:digit:]]+\s*/\s*[[:digit:]]+\z}.match?(date)
             date = date.gsub(/\s+/,'')
 
             r[0] = Date.strptime(date,'%m/%d/%Y')
@@ -181,13 +180,13 @@ module UncleKryon
         raise
       end
 
-      r[0] = (!r[0].nil?) ? Util.format_date(r[0]) : ''
-      r[1] = (!r[1].nil?) ? Util.format_date(r[1]) : ''
+      r[0] = !r[0].nil? ? Util.format_date(r[0]) : ''
+      r[1] = !r[1].nil? ? Util.format_date(r[1]) : ''
 
       return r
     end
 
-    def parse_site(title=nil,url=nil,artist=nil)
+    def parse_site(title = nil,url = nil,artist = nil)
       @artist = artist unless artist.nil?
       @title = title unless title.nil?
 
@@ -270,7 +269,7 @@ module UncleKryon
       return false if cells.length <= 1
       return false if (cell = cells[1]).nil?
       return false if (cell = cell.css('a')).nil?
-      return false if cell.length < 1
+      return false if cell.empty?
 
       # For 2014 albums
       cells = cell
@@ -311,7 +310,7 @@ module UncleKryon
       return false if cells.length <= 3
       return false if (cell = cells[3]).nil?
       return false if (cell = cell.content).nil?
-      return false if cell =~ /[[:space:]]*RADIO[[:space:]]+SHOW[[:space:]]*/ # 2014
+      return false if /[[:space:]]*RADIO[[:space:]]+SHOW[[:space:]]*/.match?(cell) # 2014
       return false if (cell = Util.clean_data(cell)).empty?
 
       album.locations = Iso.find_kryon_locations(cell)
@@ -325,7 +324,7 @@ module UncleKryon
       return false if cells.length <= 2
       return false if (cell = cells[2]).nil?
       return false if (cell = cell.css('a')).nil?
-      return false if cell.length < 1
+      return false if cell.empty?
 
       # For 2017 "San Jose, California (3)"
       cells = cell
@@ -347,7 +346,7 @@ module UncleKryon
         PLEASE[[:space:]]+READ
       /ix
 
-      if album.title =~ exclude_topics
+      if album.title&.match?(exclude_topics)
         log.warn("Excluding album: Topic[#{album.title}]")
         @exclude_album = true
         return false
@@ -393,13 +392,13 @@ module UncleKryon
       year = fix_kryon_year_title(year)
 
       mirrors = {
-        'original' => "https://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html"
+        'original' => "https://www.kryon.com/freeAudio_folder/#{year}_freeAudio.html",
       }
 
       return mirrors
     end
 
-    def self.get_kryon_year_url(year,url_version=2)
+    def self.get_kryon_year_url(year,_url_version = 2)
       year = fix_kryon_year_title(year)
 
       return "https://www.kryon.com/freeAudio_folder/mobile_pages/#{year}_freeAudio_m.html"

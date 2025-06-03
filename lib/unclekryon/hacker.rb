@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'date'
 
 require 'unclekryon/log'
@@ -38,7 +37,7 @@ module UncleKryon
     alias_method :no_clobber?,:no_clobber
 
     def initialize(hax_dirname: HAX_DIRNAME,hax_kryon_filename: HAX_KRYON_FILENAME,no_clobber: false,
-          train_dirname: TRAIN_DIRNAME,train_kryon_filename: TRAIN_KRYON_FILENAME,**options)
+                   train_dirname: TRAIN_DIRNAME,train_kryon_filename: TRAIN_KRYON_FILENAME,**_options)
       @hax_dirname = hax_dirname
       @hax_kryon_filename = hax_kryon_filename
       @no_clobber = no_clobber
@@ -46,7 +45,7 @@ module UncleKryon
       @train_kryon_filename = train_kryon_filename
     end
 
-    def create_kryon_aum_year_album_parser(date,year=nil,index=nil)
+    def create_kryon_aum_year_album_parser(date,year = nil,index = nil)
       pd = parse_date(date,year,index)
       date = pd[:date]
       index = pd[:index]
@@ -81,7 +80,7 @@ module UncleKryon
       return year_parser
     end
 
-    def find_kryon_aum_year_album(artist,date,year=nil,index=nil)
+    def find_kryon_aum_year_album(artist,date,_year = nil,index = nil)
       album = nil
       albums = []
 
@@ -89,8 +88,8 @@ module UncleKryon
         date_begin = Util.parse_date_s(a.date_begin)
         date_end = Util.parse_date_s(a.date_end)
 
-        if (date_begin && ((date_end  && date >= date_begin && date <= date_end) ||
-                           (!date_end && date == date_begin)))
+        if date_begin && ((date_end  && date >= date_begin && date <= date_end) ||
+                          (!date_end && date == date_begin))
           albums.push([a,i])
         end
       end
@@ -108,7 +107,7 @@ module UncleKryon
       return album
     end
 
-    def parse_date(date,year=nil,index=nil)
+    def parse_date(date,year = nil,index = nil)
       if !date.is_a?(Date)
         ds = date.split(':')
         date = ds[0]
@@ -122,10 +121,7 @@ module UncleKryon
           new_date = Date.strptime(date,'%Y.%m.%d')
         rescue ArgumentError
           new_date = Date.strptime(date,'%m.%d')
-
-          if !year.nil?
-            new_date = Date.new(year.to_i,new_date.month,new_date.day)
-          end
+          new_date = Date.new(year.to_i,new_date.month,new_date.day) unless year.nil?
         end
 
         date = new_date
@@ -146,13 +142,13 @@ module UncleKryon
       release = year_parser.parse_site
 
       if @no_clobber
-        puts release.to_s
+        puts release
       else
         year_parser.artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
     end
 
-    def parse_kryon_aum_year_album(date,year=nil,index=nil)
+    def parse_kryon_aum_year_album(date,year = nil,index = nil)
       pd = parse_date(date,year,index)
       date = pd[:date]
       index = pd[:index]
@@ -162,13 +158,13 @@ module UncleKryon
       album_parser.parse_site
 
       if @no_clobber
-        puts album_parser.album.to_s
+        puts album_parser.album
       else
         album_parser.artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
     end
 
-    def parse_kryon_aum_year_albums(year,begin_album=nil)
+    def parse_kryon_aum_year_albums(year,begin_album = nil)
       if !begin_album.nil?
         pd = parse_date(begin_album,year)
         begin_album = pd[:date]
@@ -186,7 +182,9 @@ module UncleKryon
         year_parser = create_kryon_aum_year_parser(year)
         artist = year_parser.artist
         release = year_parser.parse_site
+
         raise "Release[#{year}] does not exist" if release.nil?
+
         updated_on = release.updated_on
       end
 
@@ -204,11 +202,11 @@ module UncleKryon
       albums.each do |album_id|
         album = artist.albums[album_id]
         log.info("Hacking album[#{album.date_begin},#{album.date_end},#{album.title}]")
-        #album = album_parser.parse_site(artist,album.url)
+        # album = album_parser.parse_site(artist,album.url)
       end
 
       if @no_clobber
-        puts release.to_s
+        puts release
       else
         artist.save_to_file(build_hax_kryon_aums_filepath(year))
       end
@@ -220,25 +218,25 @@ module UncleKryon
       year_parser.parse_site
 
       if @no_clobber
-        puts year_parser.trainers.to_s
+        puts year_parser.trainers
       else
         year_parser.trainers.save_to_file
       end
     end
 
-    def train_kryon_aum_year_album(date,year=nil,index=nil)
+    def train_kryon_aum_year_album(date,year = nil,index = nil)
       album_parser = create_kryon_aum_year_album_parser(date,year,index)
       album_parser.training = true
       album_parser.parse_site
 
       if @no_clobber
-        puts album_parser.trainers.to_s
+        puts album_parser.trainers
       else
         album_parser.trainers.save_to_file
       end
     end
 
-    def train_kryon_aum_year_albums(year,begin_album=nil)
+    def train_kryon_aum_year_albums(year,begin_album = nil)
       if !begin_album.nil?
         pd = parse_date(begin_album,year)
         begin_album = pd[:date]
@@ -274,10 +272,10 @@ module UncleKryon
         album_parser.training = true
 
         log.info("Training album[#{album.date_begin},#{album.date_end},#{album.title}]")
-        #album = album_parser.parse_site(artist,album.url)
+        # album = album_parser.parse_site(artist,album.url)
 
         if @no_clobber
-          puts album_parser.trainers.to_s
+          puts album_parser.trainers
         else
           album_parser.trainers.save_to_file
         end
@@ -307,7 +305,7 @@ end
 if $PROGRAM_NAME == __FILE__
   hacker = UncleKryon::Hacker.new(no_clobber: true)
 
-  #hacker.parse_kryon_aum_year('2017')
-  #hacker.parse_kryon_aum_year_albums('2017')
+  # hacker.parse_kryon_aum_year('2017')
+  # hacker.parse_kryon_aum_year_albums('2017')
   hacker.train_kryon_aum_year_album('2.2','2017')
 end

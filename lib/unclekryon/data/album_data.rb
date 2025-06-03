@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'unclekryon/util'
 
 require 'unclekryon/data/base_data'
@@ -34,7 +33,7 @@ module UncleKryon
     attr_accessor :dump
 
     def initialize
-      super()
+      super
 
       @date_begin = ''
       @date_end = ''
@@ -56,7 +55,7 @@ module UncleKryon
     end
 
     def initialize_copy(original)
-      super(original)
+      super
 
       @date_begin = @date_begin.clone
       @date_end = @date_end.clone
@@ -114,25 +113,25 @@ module UncleKryon
       return to_s(true)
     end
 
-    def to_s(mini=false)
+    def to_s(mini = false)
       s = ''
-      s << ('%-10s=>%-10s' % [@date_begin,@date_end])
-      s << (' | %60s' % [@title])
-      s << (' | %25s' % [@locations.join(';')])
-      s << (' | %10s' % [@languages.join(';')])
+      s << format('%-10s=>%-10s', @date_begin, @date_end)
+      s << format(' | %60s', @title)
+      s << format(' | %25s', @locations.join(';'))
+      s << format(' | %10s', @languages.join(';'))
 
       s << "\n- #{@desc}" unless mini
 
-      #s << (mini ? (' | pics:%3d'    % [@pics.length()]) :
+      # s << (mini ? (' | pics:%3d'    % [@pics.length()]) :
       #     ("\n- Pics:\n  - " << @pics.join("\n  - ")))
-      #s << (mini ? (' | aums:%3d'    % [@aums.length()]) :
+      # s << (mini ? (' | aums:%3d'    % [@aums.length()]) :
       #     ("\n- Aums:\n  - " << @aums.join("\n  - ")))
-      #s << (mini ? (' | scrolls:%3d' % [@scrolls.length()]) :
+      # s << (mini ? (' | scrolls:%3d' % [@scrolls.length()]) :
       #     ("\n- Scrolls:\n - " << @scrolls.join("\n  - ")))
-      #s << (mini ? (' | visions:%3d' % [@visions.length()]) :
+      # s << (mini ? (' | visions:%3d' % [@visions.length()]) :
       #     ("\n- Visions:\n - " << @visions.join("\n  - ")))
 
-      s << (mini ? (' | dump:%3d' % [@dump.length]) : ("\n- Dump:\n  - " << @dump.join("\n  - ")))
+      s << (mini ? format(' | dump:%3d', @dump.length) : ("\n- Dump:\n  - " << @dump.join("\n  - ")))
       return s
     end
   end

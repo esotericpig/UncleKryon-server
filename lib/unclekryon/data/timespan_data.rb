@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 ##
 # This is for parsing/formatting mp3/etc. duration data.
 # This should NOT extend BaseData/etc. It is basically just a String Util class.
@@ -19,15 +18,15 @@ module UncleKryon
     attr_accessor :mins
     attr_accessor :secs
 
-    def initialize(time=nil)
+    def initialize(time = nil)
       @hours = 0
       @mins = 0
       @secs = 0
 
       if !time.nil? && !(time = time.strip).empty?
-        time = time.gsub(/\A[^\(]+\(/,'') # "One hour 6 minutes - (66 minutes)"
-        time = time.gsub(/[^[[:digit:]]\:\.]+/,'')
-        a = time.split(/[\:\.]/)
+        time = time.gsub(/\A[^(]+\(/,'') # "One hour 6 minutes - (66 minutes)"
+        time = time.gsub(/[^[[:digit:]]:.]+/,'')
+        a = time.split(/[:.]/)
 
         if a.length == 1
           @mins = a[0].to_i
@@ -42,11 +41,11 @@ module UncleKryon
 
         if @secs >= 60
           @mins += (@secs / 60)
-          @secs = @secs % 60
+          @secs %= 60
         end
         if @mins >= 60
           @hours += (@mins / 60)
-          @mins = @mins % 60
+          @mins %= 60
         end
       end
     end

@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nokogiri'
 require 'open-uri'
 require 'yaml'
@@ -21,7 +20,7 @@ require 'unclekryon/iso/base_iso'
 ##
 module UncleKryon
   class UsaState < BaseIso
-    def initialize(row=nil)
+    def initialize(row = nil)
       super()
 
       if row.is_a?(Array)
@@ -32,15 +31,15 @@ module UncleKryon
   end
 
   class UsaStates < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/usa_states.yaml"
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/usa_states.yaml".freeze
 
     def initialize
-      super()
+      super
 
       @id = 'USA States'
     end
 
-    def self.load_file(filepath=DEFAULT_FILEPATH)
+    def self.load_file(filepath = DEFAULT_FILEPATH)
       return UsaStates.new.load_file(filepath)
     end
 
@@ -48,7 +47,7 @@ module UncleKryon
     #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#iso:code:3166:US
-    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath = DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       tds = doc.css('td')
 
@@ -63,7 +62,7 @@ module UncleKryon
         tr.push(c)
 
         if (i += 1) >= 7
-          #puts tr.inspect()
+          # puts tr.inspect()
           state = UsaState.new(tr)
           raise "USA state already exists: #{state.inspect}" if states.key?(state.code)
 
@@ -84,10 +83,11 @@ module UncleKryon
 end
 
 if $PROGRAM_NAME == __FILE__
-  if ARGV.length < 1
-    puts UncleKryon::UsaStates.load_file.to_s
+  if ARGV.empty?
+    puts UncleKryon::UsaStates.load_file
   else
-    UncleKryon::UsaStates.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
-      UncleKryon::UsaStates::DEFAULT_FILEPATH)
+    UncleKryon::UsaStates.parse_and_save_to_file(
+      ARGV[0],(ARGV.length >= 2) ? ARGV[1] : UncleKryon::UsaStates::DEFAULT_FILEPATH
+    )
   end
 end

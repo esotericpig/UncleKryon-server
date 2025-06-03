@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 module UncleKryon
   VERSION = '0.4.12-alpha'
 end

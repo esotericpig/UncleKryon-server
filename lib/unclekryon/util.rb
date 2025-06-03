@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'cgi'
 require 'date'
 require 'fileutils'
@@ -24,8 +23,8 @@ module UncleKryon
     DATETIME_FORMAT = '%F %T'
 
     def self.add_trail_slash(url)
-      #url = url + '/' if url !~ /\/\z/
-      #return url
+      # url = url + '/' if url !~ /\/\z/
+      # return url
 
       return File.join(url,'')
     end
@@ -44,7 +43,7 @@ module UncleKryon
     end
 
     def self.clean_link(url,link)
-      if url !~ %r{/\z}
+      if !url.end_with?('/')
         # Don't know if the end is a filename or a dirname, so just assume it is a filename and chop it off
         url = File.dirname(url)
         url = add_trail_slash(url)
@@ -53,7 +52,7 @@ module UncleKryon
       # 1st, handle "/" (because you won't have "/../filename", which is invalid)
       slash_regex = %r{\A(/+\.*/*)+}
 
-      if link =~ slash_regex
+      if link.match?(slash_regex)
         link = link.gsub(slash_regex,'')
         link = get_top_link(url) + link # get_top_link(...) adds a slash
 
@@ -80,7 +79,7 @@ module UncleKryon
       # 3rd, handle "./"
       dot_regex = %r{\A(\./+)+}
 
-      if link =~ dot_regex
+      if link.match?(dot_regex)
         link = link.gsub(dot_regex,'')
         link = url + link # Slash already added at top of method
 
@@ -88,12 +87,13 @@ module UncleKryon
       end
 
       # 4th, handle no path
-      #if link !~ /#{get_top_link(url)}/i
-      if link !~ /\Ahttps?:/i
-        link = url + link
-      else
-        link = link.sub(/\Ahttp:/i,'https:')
-      end
+      # if link !~ /#{get_top_link(url)}/i
+      link =
+        if !link.match?(/\Ahttps?:/i)
+          url + link
+        else
+          link.sub(/\Ahttp:/i,'https:')
+        end
 
       return link
     end
@@ -112,7 +112,7 @@ module UncleKryon
     end
 
     def self.fix_shortwith_text(text)
-      if text =~ %r{w/[[:alnum:]]}i
+      if text.match?(%r{w/[[:alnum:]]}i)
         # I think it looks better with a space, personally.
         #  Some grammar guides say no space, but the Chicago style guide says there should be a space when it
         #    is a word by itself.
@@ -123,17 +123,17 @@ module UncleKryon
     end
 
     def self.format_date(date)
-      return date.nil? ? nil : date.strftime(DATE_FORMAT)
+      return date&.strftime(DATE_FORMAT)
     end
 
     def self.format_datetime(datetime)
-      return datetime.nil? ? nil : datetime.strftime(DATETIME_FORMAT)
+      return datetime&.strftime(DATETIME_FORMAT)
     end
 
     def self.get_top_link(url)
-      raise "No top link: #{url}" if DevOpts.instance.dev? && url !~ /\Ahttps?\:/i
+      raise "No top link: #{url}" if DevOpts.instance.dev? && url !~ /\Ahttps?:/i
 
-      http_regex = /\Ahttps?\:|\A\./i # Check '.' to prevent infinite loop
+      http_regex = /\Ahttps?:|\A\./i # Check '.' to prevent infinite loop
 
       while File.basename(File.dirname(url)) !~ http_regex
         url = File.dirname(url).strip

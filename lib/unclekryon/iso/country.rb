@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nokogiri'
 require 'open-uri'
 require 'yaml'
@@ -29,7 +28,7 @@ module UncleKryon
     attr_reader :alpha3_code
     attr_reader :region
 
-    def initialize(row=nil)
+    def initialize(row = nil)
       super()
 
       @names = nil
@@ -51,8 +50,8 @@ module UncleKryon
 
     def to_s
       s = '['.dup
-      s << %Q("#{@name}","#{@names.join(';')}")
-      s << %Q(,#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
+      s << %("#{@name}","#{@names.join(';')}")
+      s << %(,#{@code},"#{@codes.join(';')}",#{@alpha2_code},#{@alpha3_code})
       s << ",#{@region}"
       s << ']'
 
@@ -61,9 +60,9 @@ module UncleKryon
   end
 
   class Countries < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/countries.yaml"
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/countries.yaml".freeze
 
-    def self.load_file(filepath=DEFAULT_FILEPATH)
+    def self.load_file(filepath = DEFAULT_FILEPATH)
       return Countries.new.load_file(filepath)
     end
 
@@ -71,7 +70,7 @@ module UncleKryon
     #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#search/code/
-    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath = DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       tds = doc.css('td')
 
@@ -86,7 +85,7 @@ module UncleKryon
         tr.push(c)
 
         if (i += 1) >= 5
-          #puts tr.inspect()
+          # puts tr.inspect()
           country = Country.new(tr)
           raise "Country already exists: #{country.inspect}" if countries.key?(country.code)
 
@@ -107,10 +106,11 @@ module UncleKryon
 end
 
 if $PROGRAM_NAME == __FILE__
-  if ARGV.length < 1
-    puts UncleKryon::Countries.load_file.to_s
+  if ARGV.empty?
+    puts UncleKryon::Countries.load_file
   else
-    UncleKryon::Countries.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
-      UncleKryon::Countries::DEFAULT_FILEPATH)
+    UncleKryon::Countries.parse_and_save_to_file(
+      ARGV[0],(ARGV.length >= 2) ? ARGV[1] : UncleKryon::Countries::DEFAULT_FILEPATH
+    )
   end
 end

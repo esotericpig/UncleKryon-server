@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'nokogiri'
 require 'open-uri'
 
@@ -20,7 +19,7 @@ require 'unclekryon/iso/base_iso'
 ##
 module UncleKryon
   class CanProvTerr < BaseIso
-    def initialize(row=nil)
+    def initialize(row = nil)
       super()
 
       if row.is_a?(Array)
@@ -31,15 +30,15 @@ module UncleKryon
   end
 
   class CanProvsTerrs < BaseIsos
-    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/can_provs_terrs.yaml"
+    DEFAULT_FILEPATH = "#{DEFAULT_DIR}/can_provs_terrs.yaml".freeze
 
     def initialize
-      super()
+      super
 
       @id = 'CAN Provinces & Territories'
     end
 
-    def self.load_file(filepath=DEFAULT_FILEPATH)
+    def self.load_file(filepath = DEFAULT_FILEPATH)
       return CanProvsTerrs.new.load_file(filepath)
     end
 
@@ -47,7 +46,7 @@ module UncleKryon
     #                                into local file
     # @param save_filepath  [String] local file to save YAML to
     # @see   https://www.iso.org/obp/ui/#iso:code:3166:CA
-    def self.parse_and_save_to_file(parse_filepath,save_filepath=DEFAULT_FILEPATH)
+    def self.parse_and_save_to_file(parse_filepath,save_filepath = DEFAULT_FILEPATH)
       doc = Nokogiri::HTML(URI(parse_filepath).open,nil,'utf-8')
       trs = doc.css('tr')
 
@@ -69,7 +68,7 @@ module UncleKryon
           tr.push(c)
 
           if (i += 1) >= 7
-            #puts tr.inspect()
+            # puts tr.inspect()
             prov_terr = CanProvTerr.new(tr)
             raise "CAN prov/terr already exists: #{prov_terr.inspect}" if provs_terrs.key?(prov_terr.code)
 
@@ -91,10 +90,11 @@ module UncleKryon
 end
 
 if $PROGRAM_NAME == __FILE__
-  if ARGV.length < 1
-    puts UncleKryon::CanProvsTerrs.load_file.to_s
+  if ARGV.empty?
+    puts UncleKryon::CanProvsTerrs.load_file
   else
-    UncleKryon::CanProvsTerrs.parse_and_save_to_file(ARGV[0],(ARGV.length >= 2) ? ARGV[1] :
-      UncleKryon::CanProvsTerrs::DEFAULT_FILEPATH)
+    UncleKryon::CanProvsTerrs.parse_and_save_to_file(
+      ARGV[0],(ARGV.length >= 2) ? ARGV[1] : UncleKryon::CanProvsTerrs::DEFAULT_FILEPATH
+    )
   end
 end

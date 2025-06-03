@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'yaml'
 
 require 'unclekryon/log'
@@ -22,7 +21,7 @@ module UncleKryon
     attr_reader :code
 
     def initialize
-      super()
+      super
 
       @name = nil
       @code = nil
@@ -34,17 +33,17 @@ module UncleKryon
 
     def self.flip_word_order(word)
       # e.g., change 'English, Old' to 'Old English'
-      return word.gsub(/([^\,\;]+)[[:space:]]*[\,\;]+[[:space:]]*([^\,\;]+)/,'\\2 \\1').strip
+      return word.gsub(/([^,;]+)[[:space:]]*[,;]+[[:space:]]*([^,;]+)/,'\\2 \\1').strip
     end
 
     def self.simplify_code(code)
       # e.g., remove 'US-' from 'US-AL'
-      return code.gsub(/[[:alnum:][:space:]]+\-[[:space:]]*/,'').strip
+      return code.gsub(/[[:alnum:][:space:]]+-[[:space:]]*/,'').strip
     end
 
     def self.simplify_name(name)
       # e.g., remove '(the)' from 'United States of America (the)'
-      return name.gsub(/[[:space:]]*\([^\)]*\)[[:space:]]*/,'').strip
+      return name.gsub(/[[:space:]]*\([^)]*\)[[:space:]]*/,'').strip
     end
 
     def ==(other)
@@ -52,7 +51,7 @@ module UncleKryon
     end
 
     def to_s
-      return %Q(["#{@name}",#{@code}])
+      return %(["#{@name}",#{@code}])
     end
   end
 
@@ -65,7 +64,7 @@ module UncleKryon
     attr_reader :values
 
     def initialize
-      super()
+      super
 
       @id = self.class.get_class_name(self)
       @values = {}
@@ -82,11 +81,11 @@ module UncleKryon
     def find_by_code(code)
       code = code.gsub(/[[:space:]]+/,'').downcase
 
-      @values.each do |k,v|
+      @values.each do |_k,v|
         codes = nil
 
         if v.respond_to?(:codes)
-          codes = v.codes()
+          codes = v.codes
         elsif v.respond_to?(:code)
           codes = [v.code]
         else
@@ -106,11 +105,11 @@ module UncleKryon
     def find_by_name(name)
       name = name.gsub(/[[:space:]]+/,'').downcase
 
-      @values.each do |k,v|
+      @values.each do |_k,v|
         names = nil
 
         if v.respond_to?(:names)
-          names = v.names()
+          names = v.names
         elsif v.respond_to?(:name)
           names = [v.name]
         else

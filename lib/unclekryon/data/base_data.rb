@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'date'
 
 require 'unclekryon/util'
@@ -22,7 +21,7 @@ module UncleKryon
     end
 
     def initialize_copy(original)
-      super(original)
+      super
 
       @updated_on = @updated_on.clone
     end
@@ -36,7 +35,7 @@ module UncleKryon
       max = nil
 
       instance_variables.each do |iv|
-        vuo = Util.parse_datetime_s(instance_variable_get(iv)) if iv.to_s =~ /\A@updated_.+_on\z/
+        vuo = Util.parse_datetime_s(instance_variable_get(iv)) if iv.to_s.match?(/\A@updated_.+_on\z/)
         max = vuo if max.nil? || vuo > max
       end
 
@@ -47,7 +46,7 @@ module UncleKryon
       max = nil
 
       if data.is_a?(Hash)
-        data.each do |k,v|
+        data.each do |_k,v|
           vuo = Util.parse_datetime_s(v.updated_on)
           max = vuo if max.nil? || vuo > max
         end

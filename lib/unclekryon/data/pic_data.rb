@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'unclekryon/data/base_data'
 
 module UncleKryon
@@ -23,7 +22,7 @@ module UncleKryon
     attr_accessor :mirrors
 
     def initialize
-      super()
+      super
 
       @name = ''
       @filename = ''
@@ -49,13 +48,13 @@ module UncleKryon
       s = ''.dup
 
       if @name.empty? || @name.strip.empty?
-        s << ('%-100s' % [@url])
+        s << format('%-100s', @url)
       else
-        s << ('%-30s' % [@name])
-        s << (' | %30s' % [@filename]) unless @name == @filename
+        s << format('%-30s', @name)
+        s << format(' | %30s', @filename) unless @name == @filename
 
-        s << (' | %30s' % [@alt]) unless @name == @alt
-        s << (' | %60s' % [@caption])
+        s << format(' | %30s', @alt) unless @name == @alt
+        s << format(' | %60s', @caption)
       end
 
       return s

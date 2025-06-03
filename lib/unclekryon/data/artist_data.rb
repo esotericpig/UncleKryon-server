@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'yaml'
 
 require 'unclekryon/util'
@@ -40,7 +39,7 @@ module UncleKryon
     attr_accessor :youtube
 
     def initialize
-      super()
+      super
 
       @updated_releases_on = ''
       @updated_albums_on = ''
@@ -68,7 +67,7 @@ module UncleKryon
       return artist
     end
 
-    def save_to_file(filepath,**options)
+    def save_to_file(filepath,**_options)
       raise "Empty filepath: #{filepath}" if filepath.nil? || (filepath = filepath.strip).empty?
 
       Util.mk_dirs_from_filepath(filepath)
@@ -82,15 +81,15 @@ module UncleKryon
       return to_s(true)
     end
 
-    def to_s(mini=false)
+    def to_s(_mini = false)
       s = ''
-      s << ('%-5s' % [@id])
-      s << (' | %15s' % [@name])
-      s << (' | %25s' % [@long_name])
-      s << (' | %s' % [@desc])
-      s << (' | fb: @%-20s' % [@facebook.username])
-      s << (' | tw: @%-20s' % [@twitter.username])
-      s << (' | yt: @%-35s' % [@youtube.username])
+      s << format('%-5s', @id)
+      s << format(' | %15s', @name)
+      s << format(' | %25s', @long_name)
+      s << format(' | %s', @desc)
+      s << format(' | fb: @%-20s', @facebook.username)
+      s << format(' | tw: @%-20s', @twitter.username)
+      s << format(' | yt: @%-35s', @youtube.username)
       return s
     end
   end

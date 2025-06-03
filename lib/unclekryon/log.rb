@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'logger'
 require 'singleton'
 
@@ -20,9 +19,9 @@ module UncleKryon
       @progname = self.class.to_s
     end
 
-    def build_message(message,error: nil,**options)
+    def build_message(message,error: nil,**_options)
       # Don't use mutable methods
-      message += error.backtrace.map{|e| "\n  > " + e}.join('') if !error.nil?
+      message += error.backtrace.map { |e| "\n  > #{e}" }.join if !error.nil?
 
       return message
     end

@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'unclekryon/data/base_data'
 
 module UncleKryon
@@ -21,7 +20,7 @@ module UncleKryon
     attr_accessor :albums
 
     def initialize
-      super()
+      super
 
       @title = ''
 
@@ -35,10 +34,10 @@ module UncleKryon
       return to_s(true)
     end
 
-    def to_s(mini=false)
+    def to_s(mini = false)
       s = ''
-      s << ('%-10s' % [@title])
-      s << (mini ? (' | %3d' % [@albums.length]) : ("\n- " << @albums.join("\n- ")))
+      s << format('%-10s', @title)
+      s << (mini ? format(' | %3d', @albums.length) : ("\n- " << @albums.join("\n- ")))
       return s
     end
   end

@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 require 'yaml'
 
 require 'unclekryon/dev_opts'
@@ -27,16 +26,16 @@ require 'unclekryon/iso/usa_state'
 
 module UncleKryon
   class Iso
-    DEFAULT_FILEPATH = "#{BaseIsos::DEFAULT_DIR}/iso.yaml"
+    DEFAULT_FILEPATH = "#{BaseIsos::DEFAULT_DIR}/iso.yaml".freeze
     ID = 'ISO'
 
-    @@can_provs_terrs = nil
-    @@countries = nil
-    @@iso = nil
-    @@languages = nil
-    @@regions = nil
-    @@subregions = nil
-    @@usa_states = nil
+    @can_provs_terrs = nil
+    @countries = nil
+    @iso = nil
+    @languages = nil
+    @regions = nil
+    @subregions = nil
+    @usa_states = nil
 
     attr_accessor :updated_can_provs_terrs_on
     attr_accessor :updated_countries_on
@@ -46,42 +45,38 @@ module UncleKryon
     attr_accessor :updated_usa_states_on
 
     def initialize
-      super()
+      super
 
       update_all
     end
 
     def self.can_provs_terrs
-      if !@@can_provs_terrs
-        @@can_provs_terrs = CanProvsTerrs.load_file
-      end
-      return @@can_provs_terrs
+      @can_provs_terrs ||= CanProvsTerrs.load_file
+      return @can_provs_terrs
     end
 
     def self.countries
-      if !@@countries
-        @@countries = Countries.load_file
-      end
-      return @@countries
+      @countries ||= Countries.load_file
+      return @countries
     end
 
     def self.find_kryon_locations(text)
       locs = []
 
       # Fix bad data
-      text = text.gsub(/\A[[:space:]]*SASKATOON\-CALGARY[[:space:]]*\z/,
-          'SASKATOON, SASKATCHEWAN, CANADA / CALGARY, ALBERTA, CANADA')
+      text = text.gsub(/\A[[:space:]]*SASKATOON-CALGARY[[:space:]]*\z/,
+                       'SASKATOON, SASKATCHEWAN, CANADA / CALGARY, ALBERTA, CANADA')
 
       # Multiple countries are separated by '/' or '&'
-      text.split(%r{[[:space:]]*[/\&][[:space:]]*}).each do |t|
+      text.split(%r{[[:space:]]*[/&][[:space:]]*}).each do |t|
         # Fix misspellings and/or weird shortenings
-        t = t.gsub(/Kansas[[:space:]]*\,[[:space:]]*City/i,'Kansas City')
-        t = t.gsub(/[\+\*]+/,'') # Means more countries, but won't worry about it (since not listed)
+        t = t.gsub(/Kansas[[:space:]]*,[[:space:]]*City/i,'Kansas City')
+        t = t.gsub(/[+*]+/,'') # Means more countries, but won't worry about it (since not listed)
         t = t.gsub(/Berkeley[[:space:]]+Spings/i,'Berkeley Springs, WV')
         t = t.gsub(/SWITZ[[:space:]]*\z/i,'Switzerland')
         t = t.gsub(/\A[[:space:]]*NEWPORT[[:space:]]+BEACH[[:space:]]*\z/,'Newport Beach, California')
         t = t.gsub(/\A[[:space:]]*SAN[[:space:]]+RAFAEL[[:space:]]*\z/,'San Rafael, California')
-        t = t.gsub(/\A[[:space:]]*MILANO\,[[:space:]]*MARITTIMA[[:space:]]*\z/,'MILANO MARITTIMA, ITALY')
+        t = t.gsub(/\A[[:space:]]*MILANO,[[:space:]]*MARITTIMA[[:space:]]*\z/,'MILANO MARITTIMA, ITALY')
         t = t.gsub(/\A[[:space:]]*MAR[[:space:]]+DEL[[:space:]]+PLATA[[:space:]]*\z/,
                    'MAR DEL PLATA, ARGENTINA')
         t = t.gsub(/\A[[:space:]]*PATAGONIA[[:space:]]+CRUISE[[:space:]]+2012[[:space:]]*\z/,
@@ -95,16 +90,16 @@ module UncleKryon
         t = t.gsub(/\ABLOGTALKRADIO\.COM\z/,'World')
         t = t.gsub(/\AAWAKENINGZONE\.COM\z/,'World')
         t = t.gsub(/\AGEMATRIA\s+SEMINAR\z/,'Sedona, Arizona')
-        t = t.gsub(/\AKONA\,\s+HAWAI\'I\z/,'Kona, Hawaii')
+        t = t.gsub(/\AKONA,\s+HAWAI'I\z/,'Kona, Hawaii')
         t = t.gsub(/\ATALKSHOE\.COM\z/,'World')
-        t = t.gsub(/\AConnor\'s\s+Corner\z/,'World')
+        t = t.gsub(/\AConnor's\s+Corner\z/,'World')
         t = t.gsub(/\AUNITED\s+NATIONS,\s+NEW\s+YORK\s+CITY\z/i,'United Nations, New York City, NY')
         t = t.gsub(/\AMEDITERRANEAN\s+CRUISE\s+[[:digit:]]+\z/i,'Western Mediterranean')
-        t = t.gsub(/\AHAWAI\'I\s+CRUISE\s+[[:digit:]]+\z/i,'Hawaii')
+        t = t.gsub(/\AHAWAI'I\s+CRUISE\s+[[:digit:]]+\z/i,'Hawaii')
         t = t.gsub(/\AALASKA\s+CRUISE\s+[[:digit:]]+\z/i,'Alaska')
         t = t.gsub(/\AGLASS\s+HOUSE\s+MT\.\s+\(AU\)\z/i,'Glass House Mountains, Australia')
 
-        parts = t.split(/[[:space:]\,\-]+/)
+        parts = t.split(/[[:space:],-]+/)
         last = parts.last
         last2 = (parts.length >= 2) ? (parts[-2] + last) : nil
 
@@ -152,21 +147,15 @@ module UncleKryon
               if country.nil?
                 # Subregion?
                 subregion = subregions.find_by_name(t)
-
-                if subregion.nil? && !last2.nil?
-                  subregion = subregions.find_by_name(last2)
-                end
+                subregion = subregions.find_by_name(last2) if subregion.nil? && !last2.nil?
 
                 if subregion.nil?
                   # Region?
                   region = regions.find_by_name(t)
-
-                  if region.nil? && !last2.nil?
-                    region = regions.find_by_name(last2)
-                  end
+                  region = regions.find_by_name(last2) if region.nil? && !last2.nil?
 
                   if region.nil?
-                    msg = %Q(No state/country/region: "#{text}","#{t}","#{last}")
+                    msg = %(No state/country/region: "#{text}","#{t}","#{last}")
 
                     if DevOpts.instance.dev?
                       raise msg
@@ -199,30 +188,28 @@ module UncleKryon
 
         if region.nil? || subregion.nil?
           # Not USA
-          if parse_state
-            if parts.length >= 2
-              state = parts[-2].gsub(/[[:space:]]+/,' ').strip
+          if parse_state && parts.length >= 2
+            state = parts[-2].gsub(/[[:space:]]+/,' ').strip
 
-              # CAN prov/terr? (use state var)
-              if country == countries.find_by_code('CAN').code
-                state = can_provs_terrs.find(state)
+            # CAN prov/terr? (use state var)
+            if country == countries.find_by_code('CAN').code
+              state = can_provs_terrs.find(state)
 
-                if state.nil?
-                  if parts.length >= 3
-                    state = can_provs_terrs.find_by_name(parts[-3] + parts[-2])
-                    state_i = parts.length - 3 unless state.nil?
-                  end
-                else
-                  state = state.code
-                  state_i = parts.length - 2
+              if state.nil?
+                if parts.length >= 3
+                  state = can_provs_terrs.find_by_name(parts[-3] + parts[-2])
+                  state_i = parts.length - 3 unless state.nil?
                 end
               else
-                if state.length == 2
-                  state = state.upcase
-                  state_i = parts.length - 2
-                else
-                  state = nil
-                end
+                state = state.code
+                state_i = parts.length - 2
+              end
+            else
+              if state.length == 2
+                state = state.upcase
+                state_i = parts.length - 2
+              else
+                state = nil
               end
             end
           end
@@ -237,9 +224,7 @@ module UncleKryon
           city = city.empty? ? nil : city.map(&:capitalize).join(' ')
 
           # Region
-          if !country.nil?
-            region = countries.find_by_code(country).region
-          end
+          region = countries.find_by_code(country).region unless country.nil?
         end
 
         # Location
@@ -251,33 +236,27 @@ module UncleKryon
     end
 
     def self.iso
-      if !@@iso
-        @@iso = Iso.load_file
-      end
-      return @@iso
+      @iso ||= Iso.load_file
+      return @iso
     end
 
     def self.languages
-      if !@@languages
-        @@languages = Languages.load_file
-      end
-      return @@languages
+      @languages ||= Languages.load_file
+      return @languages
     end
 
-    def self.load_file(filepath=DEFAULT_FILEPATH)
+    def self.load_file(filepath = DEFAULT_FILEPATH)
       y = YAML.unsafe_load_file(filepath)
       iso = y[ID]
       return iso
     end
 
     def self.regions
-      if !@@regions
-        @@regions = Regions.load_file
-      end
-      return @@regions
+      @regions ||= Regions.load_file
+      return @regions
     end
 
-    def save_to_file(filepath=DEFAULT_FILEPATH)
+    def save_to_file(filepath = DEFAULT_FILEPATH)
       File.open(filepath,'w') do |f|
         iso = {ID => self}
         YAML.dump(iso,f)
@@ -285,10 +264,8 @@ module UncleKryon
     end
 
     def self.subregions
-      if !@@subregions
-        @@subregions = Subregions.load_file
-      end
-      return @@subregions
+      @subregions ||= Subregions.load_file
+      return @subregions
     end
 
     def update_all
@@ -301,10 +278,8 @@ module UncleKryon
     end
 
     def self.usa_states
-      if !@@usa_states
-        @@usa_states = UsaStates.load_file
-      end
-      return @@usa_states
+      @usa_states ||= UsaStates.load_file
+      return @usa_states
     end
 
     def to_s

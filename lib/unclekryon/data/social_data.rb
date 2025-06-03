@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #++
 
-
 ##
 # This should NOT extend BaseData/etc. It is basically just a container/struct.
 ##
@@ -18,7 +17,7 @@ module UncleKryon
     attr_accessor :url
 
     def initialize
-      super()
+      super
 
       @username = ''
       @url = ''
