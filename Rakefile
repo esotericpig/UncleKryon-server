@@ -13,7 +13,7 @@ require 'unclekryon/version'
 
 PKG_DIR = 'pkg'
 
-CLEAN.exclude('{.git,stock}/**/*')
+CLEAN.exclude('{.git,.github,.idea,stock}/**/*')
 CLOBBER.include('doc/',"#{PKG_DIR}/")
 
 task default: [:irb]

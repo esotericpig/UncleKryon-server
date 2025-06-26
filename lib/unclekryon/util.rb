@@ -159,7 +159,7 @@ module UncleKryon
     def self.hash_def(hash,keys,value)
       v = hash
 
-      (0..keys.length - 2).each do |i|
+      (0..(keys.length - 2)).each do |i|
         v = v[keys[i]]
       end
 
@@ -170,7 +170,7 @@ module UncleKryon
     def self.hash_def_all(hash,keys,value)
       v = hash
 
-      (0..keys.length - 2).each do |i|
+      (0..(keys.length - 2)).each do |i|
         if v[keys[i]].nil?
           v[keys[i]] = {}
           v = v[keys[i]]
